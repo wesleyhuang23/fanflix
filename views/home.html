@@ -1,0 +1,38 @@
+<main>
+
+<div class="billboard-wrapper">
+  <div class="billboard">
+    <div class="left-info-wrapper">
+    <div class="left-info">
+    <h2>{{popular.original_title}}</h2>
+    <br>
+    <div class="second-row">
+    <p id="in-theatres">In Theatres {{imdb_detail.Released}}</p>
+    <p id="rating">{{imdb_detail.Rated}}</p>
+    <p id="runtime">{{imdb_detail.Runtime}}</p>
+  </div>
+
+    <br>
+    <p>{{imdb_detail.Plot}}</p>
+  </div>
+</div>
+  <div class="background-img">
+    <img ng-src="https://image.tmdb.org/t/p/original{{popular.backdrop_path}}"/>
+  </div>
+
+</div>
+</div>
+<br>
+<br>
+<div class="now-playing-container">
+  <h3>NOW PLAYING</h3>
+  <div class="poster-view">
+    <div class="poster">
+
+    </div>
+    <div class="release">
+  </div>
+  </div>
+</div>
+
+</main>
