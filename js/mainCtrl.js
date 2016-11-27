@@ -45,7 +45,11 @@ angular.module('flixApp').controller('mainCtrl', function($scope, mainSvc){
   // a must be equal to b
         return 0;
         });
-      $scope.nowPlaying = response;
+
+        var result = response.filter(function(response){
+          return response.vote_count > 0;
+        });
+      $scope.nowPlaying = result;
       console.log($scope.nowPlaying);
     });
   }

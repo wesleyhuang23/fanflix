@@ -50,22 +50,30 @@
   </div>
   <ul>
   <div class="poster-view" ng-repeat="films in nowPlaying">
+
       <li>
     <div class="poster">
+
       <img ng-src="https://image.tmdb.org/t/p/original{{films.poster_path}}">
-      <img id="arrow" src="./icons/Arrow-Left-icon.png"/>
+      <div class="arrow" id="ar-btn" style="background-image: url('./icons/Arrow-Left-icon.png')">
+      </div>
+      <a ui-sref="details({id:'{{films.id}}'})">
       <div class="release">
         <div class="title-wrapper">
         <p id="title">{{films.original_title}}</p>
       </div>
-        <p>{{films.release_date}}</p>
+        <p>{{films.release_date}}</p><p>
+        <br>
         <br>
         <p id="sum">{{films.overview}}</p>
     </div>
+      </a>
     <div id="sum-box">
     </div>
+  </a>
     </div>
   </li>
+
   </div>
 </ul>
   <div class="overview-wrapper" ng-app="overviewApp">

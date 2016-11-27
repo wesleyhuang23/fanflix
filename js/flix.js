@@ -7,8 +7,9 @@ angular.module('flixApp', ['ui.router'])
     templateUrl: 'views/home.html',
     url: '/'
   }).state('details', {
-    templateUrl: 'veiws/details.html',
-    url: '/details/:id'
+    templateUrl: 'details.html',
+    url: '/details/:id',
+    controller: 'detailsCtrl'
   });
 
 

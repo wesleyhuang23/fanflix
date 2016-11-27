@@ -114,6 +114,7 @@ HOME VIEW
   position: absolute;
   left:-140px;
   z-index: -1;
+  opacity: .8;
   height: 65vh;
   width: 37vw;
   background-color: black;
@@ -269,7 +270,7 @@ li{
   padding-right: 45px;
   cursor: pointer;
 }
-.poster:hover #arrow {
+.poster:hover .arrow {
   opacity: 1;
 }
 .poster:hover #sum {
@@ -285,11 +286,17 @@ li{
   filter: invert(100%);
   height: 150px;
 }
-.poster #arrow{
+.ar-btn:hover{
+  opacity: 0;
+}
+.arrow{
+  filter: invert(100%);
+  background-size: cover;
+  /*border: 1px solid green;*/
   transform: rotate(-90deg);
   position: absolute;
   z-index: 5;
-  bottom: -55px;
+  bottom: -65px;
   left: 120px;
   width: 100px;
   height: 150px;
@@ -298,10 +305,12 @@ li{
   cursor: pointer;
 }
 #sum{
+  /*border: 1px solid red;*/
   font-size: 15px;
   text-transform: inherit;
   text-align: left;
-  padding-left: 10px;
+  padding-left: 15px;
+  padding-bottom: 150px;
   opacity: 0;
   transition: opacity .4s ease-in-out;
 }
