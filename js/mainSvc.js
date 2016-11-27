@@ -32,4 +32,14 @@ angular.module('flixApp').service('mainSvc', function($http){
     });
   }
 
+  this.getNowPlaying = function(){
+    return $http({
+      method:'GET',
+      url: 'https://api.themoviedb.org/3/movie/now_playing?api_key=8eecf03080f34edf303e14b5f1476653&language=en-US&page=1'
+    }).then(function(response){
+      console.log(response.data);
+      return response.data.results;
+    })
+  }
+
 });

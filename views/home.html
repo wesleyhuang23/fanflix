@@ -4,16 +4,30 @@
   <div class="billboard">
     <div class="left-info-wrapper">
     <div class="left-info">
+      <div class="box">
+
+      </div>
     <h2>{{popular.original_title}}</h2>
     <br>
     <div class="second-row">
-    <p id="in-theatres">In Theatres {{imdb_detail.Released}}</p>
+    <p id="in-theatres">In Theatres <span id="date">{{imdb_detail.Released}}</span></p>
     <p id="rating">{{imdb_detail.Rated}}</p>
     <p id="runtime">{{imdb_detail.Runtime}}</p>
   </div>
 
     <br>
-    <p>{{imdb_detail.Plot}}</p>
+    <p id="plot">{{imdb_detail.Plot}}</p>
+    <br>
+    <p id="starring">Starring: <span id='actors'>{{imdb_detail.Actors}}</span></p>
+    <p id="genres">Genres: {{imdb_detail.Genre}}</p>
+    <div class="btn-row">
+    <div id="trailer-btn">
+      <p>Trailer</p>
+    </div>
+    <div id="details-btn">
+      <p>Details</p>
+    </div>
+  </div>
   </div>
 </div>
   <div class="background-img">
@@ -23,15 +37,30 @@
 </div>
 </div>
 <br>
-<br>
 <div class="now-playing-container">
   <h3>NOW PLAYING</h3>
-  <div class="poster-view">
+  <br>
+  <div class="right-ctrl">
+  </div>
+  <div class="left-ctrl">
+  </div>
+  <ul>
+  <div class="poster-view" ng-repeat="films in nowPlaying">
+      <li>
     <div class="poster">
-
+      <img ng-src="https://image.tmdb.org/t/p/original{{films.poster_path}}">
     </div>
     <div class="release">
+      <p id="title">{{films.original_title}}</p>
+      <p>{{films.release_date}}</p>
   </div>
+  </li>
+  </div>
+</ul>
+  <div class="overview-wrapper" ng-app="overviewApp">
+  <div class="overview">
+    <div ui-view>
+    </div>
   </div>
 </div>
 

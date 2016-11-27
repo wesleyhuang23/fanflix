@@ -3,22 +3,29 @@
   <head>
     <link rel="stylesheet" type="text/css" href="./styles/style.css"/>
     <link rel="stylesheet" type="text/css" href="./styles/details.css"/>
+    <link rel="stylesheet" type="text/css" href="./styles/overview.css"/>
     <meta charseth="utf-8">
     <title>Fanflix</title>
   </head>
   <body ng-controller="mainCtrl">
     <div class="container-fluid">
-    <header>
+
+    <header class="nav-bar">
       <div class="header-content">
       <h1><span class="o">FAN</span><span class="r">FLIX</span></h1>
+      <input type="text" placeholder="SEARCH"/>
+      <p class="search">Search</p>
     </div>
     </header>
-
+    <header>
+    </header>
 
     <div ui-view>
       <!-- SECRET PORTAL -->
     </div>
+    <footer>
 
+    </footer>
   </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.slim.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.js"></script>
@@ -26,6 +33,10 @@
 <script src="./js/flix.js"></script>
 <script src="./js/mainCtrl.js"></script>
 <script src="./js/mainSvc.js"></script>
+<script src="./js/animation.js"></script>
+<script src="./js/overview.js"></script>
+<script src="./js/overviewCtrl.js"></script>
+<script src="./js/overviewSvc.js"></script>
 <script src="https://unpkg.com/react@15/dist/react.js"></script>
 <script src="https://unpkg.com/react-dom@15/dist/react-dom.js"></script>
 <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/6.1.19/browser.js"></script>-->

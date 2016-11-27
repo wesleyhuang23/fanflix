@@ -33,4 +33,11 @@ angular.module('flixApp').controller('mainCtrl', function($scope, mainSvc){
 
   $scope.getPopular();
 
+  $scope.getNowPlaying = function(){
+    mainSvc.getNowPlaying().then(function(response){
+      $scope.nowPlaying = response;
+      console.log($scope.nowPlaying);
+    });
+  }
+  $scope.getNowPlaying();
 });
