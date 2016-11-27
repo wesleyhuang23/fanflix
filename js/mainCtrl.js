@@ -35,6 +35,16 @@ angular.module('flixApp').controller('mainCtrl', function($scope, mainSvc){
 
   $scope.getNowPlaying = function(){
     mainSvc.getNowPlaying().then(function(response){
+      response.sort(function (a, b) {
+        if (a.release_date < b.release_date) {
+          return 1;
+        }
+        if (a.release_date > b.release_date) {
+          return -1;
+        }
+  // a must be equal to b
+        return 0;
+        });
       $scope.nowPlaying = response;
       console.log($scope.nowPlaying);
     });

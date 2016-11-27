@@ -28,6 +28,8 @@
       <p>Details</p>
     </div>
   </div>
+  <div class="my-list">
+  </div>
   </div>
 </div>
   <div class="background-img">
@@ -41,19 +43,28 @@
   <h3>NOW PLAYING</h3>
   <br>
   <div class="right-ctrl">
+    <img id="arrow" src="./icons/Arrow-Left-icon.png"/>
   </div>
   <div class="left-ctrl">
+    <img id="arrow" src="./icons/Arrow-Left-icon.png"/>
   </div>
   <ul>
   <div class="poster-view" ng-repeat="films in nowPlaying">
       <li>
     <div class="poster">
       <img ng-src="https://image.tmdb.org/t/p/original{{films.poster_path}}">
+      <img id="arrow" src="./icons/Arrow-Left-icon.png"/>
+      <div class="release">
+        <div class="title-wrapper">
+        <p id="title">{{films.original_title}}</p>
+      </div>
+        <p>{{films.release_date}}</p>
+        <br>
+        <p id="sum">{{films.overview}}</p>
     </div>
-    <div class="release">
-      <p id="title">{{films.original_title}}</p>
-      <p>{{films.release_date}}</p>
-  </div>
+    <div id="sum-box">
+    </div>
+    </div>
   </li>
   </div>
 </ul>

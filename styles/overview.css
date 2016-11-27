@@ -1,4 +1,5 @@
 .overview-wrapper{
   background-color: white;
   height: 200px;
+  display: none;
 }
