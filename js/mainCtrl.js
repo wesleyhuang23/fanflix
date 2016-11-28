@@ -5,6 +5,8 @@ angular.module('flixApp').controller('mainCtrl', function($scope, mainSvc){
 
   $scope.getPopular = function(){
     mainSvc.getPopular().then(function(response){
+      console.log($scope.populars);
+      $scope.populars = response;
       $scope.popular = response[0];
       console.log($scope.popular);
 
@@ -54,4 +56,28 @@ angular.module('flixApp').controller('mainCtrl', function($scope, mainSvc){
     });
   }
   $scope.getNowPlaying();
+
+
+  $scope.getComingSoon = function(){
+    mainSvc.getComingSoon().then(function(response){
+      response.sort(function (a, b) {
+        if (a.release_date < b.release_date) {
+          return 1;
+        }
+        if (a.release_date > b.release_date) {
+          return -1;
+        }
+  // a must be equal to b
+        return 0;
+        });
+
+        var result = response.filter(function(response){
+          return response.vote_count > 0;
+        });
+      $scope.comingSoon = result;
+      console.log($scope.comingSoon);
+    })
+  }
+  $scope.getComingSoon();
+
 });

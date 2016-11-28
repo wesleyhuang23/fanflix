@@ -1,3 +1,4 @@
+
 *{
   font-family: helvetica;
   font-weight: lighter;
@@ -5,6 +6,9 @@
 }
 .container-fluid{
   padding-left: 5%;
+}
+a {
+  text-decoration: none
 }
 
 body{
@@ -254,6 +258,8 @@ li{
   z-index: 1;
   -webkit-animation-delay: 1s;
   transition: 1s;
+  transition-delay: .6s;
+  overflow: hidden;
 }
 .poster img{
   height: 370px;
@@ -270,9 +276,9 @@ li{
   padding-right: 45px;
   cursor: pointer;
 }
-.poster:hover .arrow {
+/*.poster:hover .arrow {
   opacity: 1;
-}
+}*/
 .poster:hover #sum {
   opacity: 1;
 }
@@ -313,6 +319,7 @@ li{
   padding-bottom: 150px;
   opacity: 0;
   transition: opacity .4s ease-in-out;
+  overflow: hidden;
 }
 #sum-box{
   background-color: black;
@@ -320,6 +327,7 @@ li{
   height: 371px;
   opacity: 0;
   position: absolute;
+  overflow: hidden;
   z-index: 1;
   transition: opacity .4s ease-in-out;
 }
@@ -341,6 +349,7 @@ li{
   display: inline;
   opacity: 0;
   transition: opacity .4s ease-in-out;
+  transition-delay: .6s;
 }
 .release p{
   position: relative;

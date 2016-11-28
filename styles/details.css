@@ -1,0 +1,137 @@
+*{
+  color:white;
+}
+main{
+  position: relative;
+}
+.detail-container{
+  /*border: 1px solid blue;*/
+  position: relative;
+  top: 455px;
+  width: 95vw;
+  display: flex;
+  justify-content: center;
+}
+.first-row{
+  display: flex;
+  flex-direction: row;
+}
+.backdrop-wrapper{
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+.backdrop{
+  position: absolute;
+  width: 1500px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 60vh;
+  opacity: .5;
+}
+
+.details_poster img{
+  height: 500px;
+}
+.info-section{
+  margin-left: 20px;
+  height: auto;
+  width: 820px;
+  /*border: 1px solid red;*/
+  position: relative;
+  background-color: rgba(0, 0, 0, 0);
+}
+.info-section h3{
+  color: #EF7622;
+}
+.info-section h2{
+  font-size: 40px;
+}
+.info-section span{
+  color: gray;
+  font-size: 30px;
+}
+.overview{
+  display: flex;
+  flex-direction: row;
+}
+#o-left{
+  width: 800px;
+}
+#o-right{
+  margin-left: 30px;
+  width: 400px;
+}
+.buttons{
+  display: flex;
+  flex-direction: row;
+}
+.btn{
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  border: 1px solid white;
+  width: 100px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  margin-left: 20px;
+  border-radius: 200px;
+}
+#fav{
+  background-color: red;
+}
+.second-row-wrapper{
+  /*border: 1px solid green;*/
+  text-align: center;
+  display: flex;
+  overflow: scroll;
+  overflow-x:auto;
+  overflow-y: hidden;
+  width: 1200px;
+}
+.second-row{
+  text-align: center;
+  display: inline-block;
+  font-size: 12px;
+}
+.cast-view{
+  /*border: 1px solid green;*/
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.cast-view img{
+  position: relative;
+  left: -15px;
+  margin-left: 30px;
+  border-radius: 500px;
+  height: 200px;
+  border: 2px solid #EF7622;
+}
+.videos-container{
+  display: flex;
+  width: 1200px;
+  /*border: 1px solid red;*/
+  overflow: scroll;
+  overflow-y: hidden;
+}
+.videos{
+  display: inline-block;
+}
+.similar-container{
+  width: 1200px;
+  display: flex;
+  flex-direction: row;
+  overflow: scroll;
+  overflow-y: hidden;
+}
+.similar{
+  text-align: center;
+}
+.similar h4{
+  text-transform: uppercase;
+}
+.similar img{
+  width: 400px;
+}
