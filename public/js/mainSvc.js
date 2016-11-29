@@ -119,7 +119,7 @@ angular.module('flixApp').service('mainSvc', function($http){
     console.log(fav);
     return $http({
       method:'POST',
-      url: 'http://localhost:3000/mylist/favorites',
+      url: '/mylist/favorites',
       data: fav
     }).then(function(response){
       return response;

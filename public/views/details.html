@@ -1,0 +1,126 @@
+<main>
+  <div class="backdrop-wrapper">
+  <img src="https://image.tmdb.org/t/p/original/{{detail.backdrop_path}}">
+  <div class="shadow">
+  </div>
+  </div>
+</div>
+  <div class="detail-container">
+    <div class="detail-wrapper">
+  <div class="first-row">
+  <div class="details_poster">
+    <img ng-src="https://image.tmdb.org/t/p/original{{detail.poster_path}}"/>
+  </div>
+<div class="info-section">
+  <h2>{{detail.title}}<span> ({{imdb.Year}})</span></h2>
+  <br>
+  <div class="buttons">
+    <div class="btn" id="fav" ng-click="addToFavFunc()">
+      <p>Favorite</p>
+    </div>
+    <div class="btn" id="list" ng-click="addToWatch()">
+      <p>Watchlist</p>
+    </div>
+  </div>
+  <br>
+  <div class="overview">
+    <div id="o-left">
+  <h3>Plot</h3>
+  <p>{{detail.overview}}</p>
+  <br>
+  <h3>Director</h3>
+  <p>{{imdb.Director}}</p>
+  <br>
+  <h3>Writer</h3>
+  <p>{{imdb.Writer}}</p>
+  <br>
+  <h3>Production Companies</p>
+    <div ng-repeat="company in production_companies">
+  <p>{{company.name}}</p>
+  </div>
+</div>
+<div id="o-right">
+  <h3>Genre</h3>
+  <p>{{imdb.Genre}}</p>
+  <br>
+  <h3>Runtime</h3>
+  <p>{{imdb.Runtime}}</p>
+  <br>
+  <h3>Release Date</h3>
+  <p>{{imdb.Released}}</p>
+  <br>
+  <h3>Country</h3>
+  <p>{{imdb.Country}}</p>
+  <br>
+  <h3>Language</h3>
+  <p>{{imdb.Language}}</p>
+  <br>
+  <h3>Rating</h3>
+  <p>{{imdb.Rated}}</p>
+</div>
+</div>
+
+
+</div>
+</div>
+<br>
+<br>
+<h3>LEADING CAST</h3>
+<br>
+<div class="second-row-wrapper">
+
+<br>
+<div class="second-row-detail" ng-repeat="person in cast">
+
+  <div class="cast-view">
+    <img ng-src="https://image.tmdb.org/t/p/w300_and_h450_bestv2{{person.profile_path}}"/>
+    <br>
+    <p style="text-transform:uppercase; font-size:13px;font-weight:900">{{person.name}}</p>
+    <br>
+    <p>{{person.character}}</p>
+  </div>
+</div>
+
+</div>
+
+<div class="full-cast-btn-container">
+<div class="full-cast-btn">
+  <p>Show Full Cast</p>
+</div>
+</div>
+
+<br>
+<br>
+<h3>VIDEOS</h3>
+<br>
+<div class="videos-container">
+  <div class="videos" ng-repeat="video in videos">
+    <iframe width="1200" height="675" ng-src="{{trustSrc(video)}}" frameborder="0" allowfullscreen></iframe>
+  </div>
+</div>
+<br>
+<h3>BACKDROPS</h3>
+<br>
+<div class="backdrops-container">
+  <div class="backdrops" ng-repeat="photo in backDrops">
+    <a href="https://image.tmdb.org/t/p/original{{photo.file_path}}"/>
+    <img src="https://image.tmdb.org/t/p/original{{photo.file_path}}"/>
+  </a>
+  </div>
+</div>
+<br>
+<h3>SIMILAR MOVIES</h3>
+<br>
+<div class="similar-container">
+  <div class="similar-wrapper" ng-repeat="film in similar">
+    <a ui-sref="details({id:'{{film.id}}'})">
+    <div class="similar">
+    <img src="https://image.tmdb.org/t/p/original{{film.backdrop_path}}"/>
+    <h4>{{film.title}}</h4>
+  </div>
+</a>
+  </div>
+</div>
+</div>
+</div>
+</main>

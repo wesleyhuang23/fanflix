@@ -1,0 +1,236 @@
+*{
+  color:white;
+}
+main{
+  position: relative;
+}
+
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+::-webkit-scrollbar-button {
+  width: 46px;
+  height: 46px;
+}
+::-webkit-scrollbar-thumb {
+  background: #000000;
+  border: 79px solid #373737;
+  border-radius: 24px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #000000;
+}
+::-webkit-scrollbar-thumb:active {
+  background: #000000;
+}
+::-webkit-scrollbar-track {
+  background: #464448;
+  border: 57px none #ffffff;
+  border-radius: 0px;
+}
+::-webkit-scrollbar-track:hover {
+  background: #000000;
+}
+::-webkit-scrollbar-track:active {
+  background: #000000;
+}
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+
+
+.detail-container{
+  /*border: 1px solid blue;*/
+  position: relative;
+  top: -105px;
+  width: 95vw;
+  z-index: 5;
+  display: flex;
+  justify-content: center;
+}
+.first-row{
+  display: flex;
+  flex-direction: row;
+}
+.shadow{
+   box-shadow: inset 0 -120px 50em black;
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   z-index: 2;
+   content: "";
+}
+.backdrop-wrapper{
+  position: absolute;
+  /*border: 1px solid red;*/
+  height: 589px;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+.backdrop-wrapper img{
+  position: absolute;
+  width: 1500px;
+  opacity: 1;
+  overflow: hidden;
+}
+
+.details_poster img{
+  height: 500px;
+  box-shadow: 10px 20px 50px black;
+}
+.info-section{
+  margin-left: 20px;
+  height: auto;
+  width: 820px;
+  /*border: 1px solid red;*/
+  position: relative;
+  background-color: rgba(0, 0, 0, 0);
+}
+.info-section h3{
+  color: #EF7622;
+}
+.info-section h2{
+  font-size: 40px;
+  width: 980px;
+}
+.info-section span{
+  font-size: 20px;
+  color: gray;
+}
+.overview{
+  display: flex;
+  flex-direction: row;
+}
+#o-left{
+  width: 800px;
+}
+#o-right{
+  margin-left: 30px;
+  width: 400px;
+}
+.buttons{
+  display: flex;
+  flex-direction: row;
+}
+.btn{
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  border: 1px solid white;
+  width: 100px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  border-radius: 200px;
+  transition: transform 1s;
+}
+#fav{
+  background-color: rgba(255, 0, 0, .5);
+}
+#list{
+  background-color: rgba(239, 118, 34, .5);
+  margin-left: 20px;
+}
+#fav:hover{
+  background-color: red;
+  transform: scale(1.15);
+}
+#list:hover{
+  background-color: rgba(239, 118, 34, 1);
+    transform: scale(1.15);
+}
+.second-row-wrapper{
+  /*border: 1px solid green;*/
+  text-align: center;
+  display: flex;
+  overflow: scroll;
+  overflow-x:auto;
+  overflow-y: hidden;
+  width: 1200px;
+}
+.second-row-detail{
+  text-align: center;
+  display: inline-block;
+  font-size: 12px;
+}
+.cast-view{
+  /*border: 1px solid green;*/
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.cast-view img{
+  position: relative;
+  left: -15px;
+  margin-left: 30px;
+  border-radius: 500px;
+  height: 200px;
+  border: 2px solid #EF7622;
+}
+.full-cast-btn-container{
+  margin-top: 50px;
+  width: 1200px;
+  display: none;
+  justify-content: center;
+  cursor: pointer;
+}
+.full-cast-btn{
+  width: 150px;
+  height: 40px;
+  background-color: white;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.full-cast-btn p{
+  text-align: center;
+  color: black;
+  font-weight: bolder;
+}
+
+.videos-container{
+  display: flex;
+  width: 1200px;
+  /*border: 1px solid red;*/
+  overflow: scroll;
+  overflow-y: hidden;
+}
+.videos{
+  display: inline-block;
+  scroll-snap-type: mandatory;
+  scroll-snap-points-x: 100%;
+  scroll-snap-destination: 50% 50%;
+}
+.backdrops-container{
+  width: 1200px;
+  display: flex;
+  flex-direction: row;
+  overflow: scroll;
+  overflow-y: hidden;
+}
+.backdrops img{
+  width: 600px;
+}
+.similar-container{
+  width: 1200px;
+  display: flex;
+  flex-direction: row;
+  overflow: scroll;
+  overflow-y: hidden;
+
+}
+.similar{
+  text-align: center;
+}
+.similar h4{
+  text-transform: uppercase;
+}
+.similar img{
+  width: 400px;
+}
