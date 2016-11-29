@@ -8,6 +8,7 @@
 
       </div>
     <h2>{{popular.original_title}}</h2>
+
     <br>
     <div class="second-row">
     <p id="in-theatres">In Theatres <span id="date">{{imdb_detail.Released}}</span></p>
@@ -29,9 +30,23 @@
       <p>Details</p>
     </div>
   </a>
+  <br>
   </div>
-  <div class="my-list">
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <div class="buttons">
+    <div class="btn" id="fav">
+      <p>Favorite</p>
+    </div>
+    <div class="btn" id="list">
+      <p>Watchlist</p>
+    </div>
   </div>
+
   </div>
 </div>
   <div class="background-img">
@@ -44,13 +59,14 @@
 <div class="now-playing-container">
   <h3>NOW PLAYING</h3>
   <br>
-  <div class="right-ctrl">
+  <!-- <div class="right-ctrl">
     <img id="arrow" src="./icons/Arrow-Left-icon.png"/>
   </div>
   <div class="left-ctrl">
     <img id="arrow" src="./icons/Arrow-Left-icon.png"/>
-  </div>
-  <ul>
+  </div> -->
+
+  <ul id="now-playing" class="slider">
   <div class="poster-view" ng-repeat="films in nowPlaying">
 
       <li>
@@ -64,6 +80,7 @@
         <div class="title-wrapper">
         <p id="title">{{films.original_title}}</p>
       </div>
+      <br>
         <p>{{films.release_date}}</p><p>
         <br>
         <br>
@@ -75,9 +92,13 @@
   </a>
     </div>
   </li>
-
   </div>
 </ul>
+<br>
+<div class="slide-btn">
+<button type="button" class="slick-prev"><img src="./bxslider-4/src/images/controls.png"></button>
+<button type="button" class="slick-next"><img src="./bxslider-4/src/images/controls.png"></button>
+</div>
   <div class="overview-wrapper" ng-app="overviewApp">
   <div class="overview">
     <div ui-view>
@@ -96,7 +117,7 @@
   <div class="left-ctrl">
     <img id="arrow" src="./icons/Arrow-Left-icon.png"/>
   </div>
-  <ul>
+  <ul id="coming-soon">
   <div class="poster-view" ng-repeat="films in comingSoon">
 
       <li>
@@ -142,7 +163,7 @@
   <div class="left-ctrl">
     <img id="arrow" src="./icons/Arrow-Left-icon.png"/>
   </div>
-  <ul>
+  <ul id="Popular">
   <div class="poster-view" ng-repeat="films in populars">
 
       <li>

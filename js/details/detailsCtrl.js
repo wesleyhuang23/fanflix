@@ -41,7 +41,11 @@ angular.module('flixApp').controller('detailsCtrl', function($scope, $stateParam
 }
   $scope.getCast = function(imdb_id){
     mainSvc.getCast(imdb_id).then(function(response){
-      $scope.cast = response.cast;
+      var newCast = [];
+      for(var i = 0; i < 7;i++){
+        newCast.push(response.cast[i]);
+      }
+      $scope.cast = newCast;
       $scope.crew = response.crew;
       console.log($scope.cast);
       console.log($scope.crew);

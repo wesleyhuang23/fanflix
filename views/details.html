@@ -1,6 +1,8 @@
 <main>
   <div class="backdrop-wrapper">
-  <div class="backdrop" style="background-image:url('https://image.tmdb.org/t/p/original/{{detail.backdrop_path}}')">
+  <img src="https://image.tmdb.org/t/p/original/{{detail.backdrop_path}}">
+  <div class="shadow">
+  </div>
   </div>
 </div>
   <div class="detail-container">
@@ -10,9 +12,8 @@
     <img ng-src="https://image.tmdb.org/t/p/original{{detail.poster_path}}"/>
   </div>
 <div class="info-section">
-  <h2>{{detail.original_title}}<span> ({{imdb.Year}})</span></h2>
+  <h2>{{detail.title}}<span> ({{imdb.Year}})</span></h2>
   <br>
-  <h4>{{detail.tagline}}</h4>
   <br>
   <div class="buttons">
     <div class="btn" id="fav">
@@ -23,7 +24,7 @@
     </div>
   </div>
   <br>
-
+  <br>
   <div class="overview">
     <div id="o-left">
   <h3>Plot</h3>
@@ -66,12 +67,12 @@
 </div>
 <br>
 <br>
-<h3>Leading Cast</h3>
+<h3>LEADING CAST</h3>
 <br>
 <div class="second-row-wrapper">
 
 <br>
-<div class="second-row" ng-repeat="person in cast">
+<div class="second-row-detail" ng-repeat="person in cast">
 
   <div class="cast-view">
     <img ng-src="https://image.tmdb.org/t/p/w300_and_h450_bestv2{{person.profile_path}}"/>
@@ -83,15 +84,16 @@
 </div>
 </div>
 <br>
-<h3>Videos</h3>
+<br>
+<h3>VIDEOS</h3>
 <br>
 <div class="videos-container">
   <div class="videos" ng-repeat="video in videos">
-    <iframe width="400" height="228" ng-src="{{trustSrc(video)}}" frameborder="0" allowfullscreen></iframe>
+    <iframe width="1200" height="675" ng-src="{{trustSrc(video)}}" frameborder="0" allowfullscreen></iframe>
   </div>
 </div>
 <br>
-<h3>Similar</h3>
+<h3>SIMILAR MOVIES</h3>
 <br>
 <div class="similar-container">
   <div class="similar-wrapper" ng-repeat="film in similar">

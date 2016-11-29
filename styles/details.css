@@ -4,11 +4,49 @@
 main{
   position: relative;
 }
+
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+::-webkit-scrollbar-button {
+  width: 46px;
+  height: 46px;
+}
+::-webkit-scrollbar-thumb {
+  background: #000000;
+  border: 79px solid #373737;
+  border-radius: 24px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #000000;
+}
+::-webkit-scrollbar-thumb:active {
+  background: #000000;
+}
+::-webkit-scrollbar-track {
+  background: #464448;
+  border: 57px none #ffffff;
+  border-radius: 0px;
+}
+::-webkit-scrollbar-track:hover {
+  background: #000000;
+}
+::-webkit-scrollbar-track:active {
+  background: #000000;
+}
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+
+
 .detail-container{
   /*border: 1px solid blue;*/
   position: relative;
-  top: 455px;
+  top: -130px;
   width: 95vw;
+  z-index: 5;
   display: flex;
   justify-content: center;
 }
@@ -16,23 +54,35 @@ main{
   display: flex;
   flex-direction: row;
 }
+.shadow{
+   box-shadow: inset 0 -120px 50em black;
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   z-index: 2;
+   content: "";
+}
 .backdrop-wrapper{
+  position: absolute;
+  /*border: 1px solid red;*/
+  height: 589px;
   display: flex;
   justify-content: center;
   position: relative;
+  overflow: hidden;
 }
-.backdrop{
+.backdrop-wrapper img{
   position: absolute;
   width: 1500px;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  height: 60vh;
-  opacity: .5;
+  opacity: 1;
+  overflow: hidden;
 }
 
 .details_poster img{
   height: 500px;
+  box-shadow: 10px 20px 50px black;
 }
 .info-section{
   margin-left: 20px;
@@ -47,10 +97,11 @@ main{
 }
 .info-section h2{
   font-size: 40px;
+  width: 980px;
 }
 .info-section span{
+  font-size: 20px;
   color: gray;
-  font-size: 30px;
 }
 .overview{
   display: flex;
@@ -77,9 +128,21 @@ main{
   padding-bottom: 3px;
   margin-left: 20px;
   border-radius: 200px;
+  transition: transform 1s;
 }
 #fav{
+  background-color: rgba(255, 0, 0, .5);
+}
+#list{
+  background-color: rgba(239, 118, 34, .5)
+}
+#fav:hover{
   background-color: red;
+  transform: scale(1.15);
+}
+#list:hover{
+  background-color: rgba(239, 118, 34, 1);
+    transform: scale(1.15);
 }
 .second-row-wrapper{
   /*border: 1px solid green;*/
@@ -90,7 +153,7 @@ main{
   overflow-y: hidden;
   width: 1200px;
 }
-.second-row{
+.second-row-detail{
   text-align: center;
   display: inline-block;
   font-size: 12px;
@@ -118,6 +181,9 @@ main{
 }
 .videos{
   display: inline-block;
+  scroll-snap-type: mandatory;
+  scroll-snap-points-x: 100%;
+  scroll-snap-destination: 50% 50%;
 }
 .similar-container{
   width: 1200px;
@@ -125,6 +191,7 @@ main{
   flex-direction: row;
   overflow: scroll;
   overflow-y: hidden;
+
 }
 .similar{
   text-align: center;

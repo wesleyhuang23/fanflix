@@ -6,4 +6,10 @@ $(document).ready(function(){
   $('.overview-wrapper').click(function(){
     console.log('clicked');
   });
+
+  $('.slick-next').click(function(){
+    console.log('clicked');
+    $('#now-playing').animate({marginLeft: '500px'});
+  });
+
 });

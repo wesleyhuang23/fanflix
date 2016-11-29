@@ -49,7 +49,7 @@ angular.module('flixApp').controller('mainCtrl', function($scope, mainSvc){
         });
 
         var result = response.filter(function(response){
-          return response.vote_count > 0;
+          return response.vote_count > 1;
         });
       $scope.nowPlaying = result;
       console.log($scope.nowPlaying);
@@ -72,7 +72,7 @@ angular.module('flixApp').controller('mainCtrl', function($scope, mainSvc){
         });
 
         var result = response.filter(function(response){
-          return response.vote_count > 0;
+          return response.vote_count > 1;
         });
       $scope.comingSoon = result;
       console.log($scope.comingSoon);
