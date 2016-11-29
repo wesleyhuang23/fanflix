@@ -17,6 +17,7 @@ angular.module('flixApp').controller('detailsCtrl', function($scope, $stateParam
       $scope.getVideos(imdb_id);
       $scope.getCast(imdb_id);
       $scope.getSimilars(imdb_id);
+      $scope.getImages(imdb_id);
     });
   }
   $scope.getDetails(id);
@@ -49,6 +50,16 @@ angular.module('flixApp').controller('detailsCtrl', function($scope, $stateParam
       $scope.crew = response.crew;
       console.log($scope.cast);
       console.log($scope.crew);
+    });
+  }
+  $scope.getImages = function(imdb_id){
+    mainSvc.getImages(imdb_id).then(function(response){
+      // for(var i = 0; i < response.backdrops.length; i++){
+      //    response.backdrops[i].file_path = 'https://image.tmdb.org/t/p/original' + response.backdrops[i].file_path
+      // };
+
+      $scope.backDrops = response.backdrops;
+      console.log('IMAGES', $scope.backDrops);
     });
   }
   $scope.getSimilars = function(imdb_id){

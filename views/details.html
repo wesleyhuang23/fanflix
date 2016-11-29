@@ -14,7 +14,6 @@
 <div class="info-section">
   <h2>{{detail.title}}<span> ({{imdb.Year}})</span></h2>
   <br>
-  <br>
   <div class="buttons">
     <div class="btn" id="fav">
       <p>Favorite</p>
@@ -23,7 +22,6 @@
       <p>Watchlist</p>
     </div>
   </div>
-  <br>
   <br>
   <div class="overview">
     <div id="o-left">
@@ -82,7 +80,15 @@
     <p>{{person.character}}</p>
   </div>
 </div>
+
 </div>
+
+<div class="full-cast-btn-container">
+<div class="full-cast-btn">
+  <p>Show Full Cast</p>
+</div>
+</div>
+
 <br>
 <br>
 <h3>VIDEOS</h3>
@@ -90,6 +96,16 @@
 <div class="videos-container">
   <div class="videos" ng-repeat="video in videos">
     <iframe width="1200" height="675" ng-src="{{trustSrc(video)}}" frameborder="0" allowfullscreen></iframe>
+  </div>
+</div>
+<br>
+<h3>BACKDROPS</h3>
+<br>
+<div class="backdrops-container">
+  <div class="backdrops" ng-repeat="photo in backDrops">
+    <a href="https://image.tmdb.org/t/p/original{{photo.file_path}}"/>
+    <img src="https://image.tmdb.org/t/p/original{{photo.file_path}}"/>
+  </a>
   </div>
 </div>
 <br>
@@ -101,7 +117,6 @@
     <div class="similar">
     <img src="https://image.tmdb.org/t/p/original{{film.backdrop_path}}"/>
     <h4>{{film.title}}</h4>
-    <br>
   </div>
 </a>
   </div>

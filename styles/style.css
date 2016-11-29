@@ -41,6 +41,7 @@ header{
   flex-direction: row;
 }
 .header-right{
+  position: relative;
   width: 360px;
   display: flex;
   align-items: center;
@@ -86,6 +87,11 @@ input{
   color: white;
   display: flex;
   align-items: center;
+}
+.search img{
+  position: absolute;
+  top: 3px;
+  cursor: pointer;
 }
 footer{
   height: 20vh;
@@ -260,6 +266,7 @@ NOW PLAYING
 }
 
 ul{
+  position: relative;
   display: flex;
   flex-direction: row;
   padding-left: 0;

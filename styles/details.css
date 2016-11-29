@@ -44,7 +44,7 @@ main{
 .detail-container{
   /*border: 1px solid blue;*/
   position: relative;
-  top: -130px;
+  top: -105px;
   width: 95vw;
   z-index: 5;
   display: flex;
@@ -126,7 +126,6 @@ main{
   width: 100px;
   padding-top: 3px;
   padding-bottom: 3px;
-  margin-left: 20px;
   border-radius: 200px;
   transition: transform 1s;
 }
@@ -134,7 +133,8 @@ main{
   background-color: rgba(255, 0, 0, .5);
 }
 #list{
-  background-color: rgba(239, 118, 34, .5)
+  background-color: rgba(239, 118, 34, .5);
+  margin-left: 20px;
 }
 #fav:hover{
   background-color: red;
@@ -172,6 +172,28 @@ main{
   height: 200px;
   border: 2px solid #EF7622;
 }
+.full-cast-btn-container{
+  margin-top: 50px;
+  width: 1200px;
+  display: none;
+  justify-content: center;
+  cursor: pointer;
+}
+.full-cast-btn{
+  width: 150px;
+  height: 40px;
+  background-color: white;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.full-cast-btn p{
+  text-align: center;
+  color: black;
+  font-weight: bolder;
+}
+
 .videos-container{
   display: flex;
   width: 1200px;
@@ -184,6 +206,16 @@ main{
   scroll-snap-type: mandatory;
   scroll-snap-points-x: 100%;
   scroll-snap-destination: 50% 50%;
+}
+.backdrops-container{
+  width: 1200px;
+  display: flex;
+  flex-direction: row;
+  overflow: scroll;
+  overflow-y: hidden;
+}
+.backdrops img{
+  width: 400px;
 }
 .similar-container{
   width: 1200px;

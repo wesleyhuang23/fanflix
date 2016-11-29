@@ -45,7 +45,7 @@ angular.module('flixApp').service('mainSvc', function($http){
   this.getComingSoon = function(){
     return $http({
       method: 'GET',
-      url: 'https://api.themoviedb.org/3/movie/upcoming?api_key=8eecf03080f34edf303e14b5f1476653&language=en-US&page=1'
+      url: 'https://api.themoviedb.org/3/movie/upcoming?api_key=8eecf03080f34edf303e14b5f1476653&language=en-US&page=2'
     }).then(function(response){
       console.log(response.data);
       return response.data.results;
@@ -96,5 +96,21 @@ angular.module('flixApp').service('mainSvc', function($http){
       console.log(response.data);
       return response.data.results;
     })
+  }
+  this.getSearchMovie = function(term){
+    return $http({
+      method:'GET',
+      url: 'https://api.themoviedb.org/3/search/movie?api_key=8eecf03080f34edf303e14b5f1476653&language=en-US&query=' + term
+    }).then(function(response){
+      return response.data.results;
+    });
+  }
+  this.getImages = function(imdb_id){
+    return $http({
+      method: 'GET',
+      url: 'http://api.themoviedb.org/3/movie/' + imdb_id + '/images?api_key=8eecf03080f34edf303e14b5f1476653'
+    }).then(function(response){
+      return response.data;
+    });
   }
 });

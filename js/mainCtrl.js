@@ -80,4 +80,15 @@ angular.module('flixApp').controller('mainCtrl', function($scope, mainSvc){
   }
   $scope.getComingSoon();
 
+
+  $scope.getSearch = function(term){
+    console.log('search', term);
+    mainSvc.getSearchMovie(term).then(function(response){
+      for(var i = 0; i < response.length; i++){
+        response[i].release_date = response[i].release_date.substring(0, 4);
+      }
+      $scope.movieSearch = response;
+      console.log($scope.movieSearch);
+    });
+  };
 });

@@ -5,6 +5,7 @@
     <link rel="stylesheet" type="text/css" href="./styles/details.css"/>
     <link rel="stylesheet" type="text/css" href="./styles/overview.css"/>
     <link href="./bxslider-4/src/css/jquery.bxslider.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="./styles/search.css"/>
     <meta charseth="utf-8">
     <title>Fanflix</title>
   </head>
@@ -15,14 +16,14 @@
 
       <div class="header-content">
         <a ui-sref="home">
-      <h1><span class="o">FAN</span><span class="r">FLIX</span></h1>
+      <h1 id="logo"><span class="o">FAN</span><span class="r">FLIX</span></h1>
         </a>
     <div class="header-right">
       <div class="search"/>
-      <input type="text" placeholder="Search"/>
-      <img src="./icons/6983-200.png"/>
+      <input id="input-search" type="text" placeholder="Search" ng-model="term"/>
+      <a ui-sref="search"><img src="./icons/6983-200.png" ng-click="getSearch(term)"/></a>
     </div>
-      <p>My Watchlist</p>
+      <a ui-sref="mylist"><p>My List</p></a>
     </div>
 
     </div>
@@ -48,6 +49,7 @@
 <script src="./js/overview.js"></script>
 <script src="./js/overviewCtrl.js"></script>
 <script src="./js/overviewSvc.js"></script>
+<script src="./js/search/searchCtrl.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.slim.js"></script>
 <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> -->
 <script src="./js/animation.js"></script>

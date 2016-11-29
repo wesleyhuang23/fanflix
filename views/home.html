@@ -1,200 +1,197 @@
 <main>
 
-<div class="billboard-wrapper">
-  <div class="billboard">
-    <div class="left-info-wrapper">
-    <div class="left-info">
-      <div class="box">
+    <div class="billboard-wrapper">
+        <div class="billboard">
+            <div class="left-info-wrapper">
+                <div class="left-info">
+                    <div class="box"></div>
+                    <h2>{{popular.original_title}}</h2>
 
-      </div>
-    <h2>{{popular.original_title}}</h2>
+                    <br>
+                    <div class="second-row">
+                        <p id="in-theatres">In Theatres
+                            <span id="date">{{imdb_detail.Released}}</span>
+                        </p>
+                        <p id="rating">{{imdb_detail.Rated}}</p>
+                        <p id="runtime">{{imdb_detail.Runtime}}</p>
+                    </div>
 
+                    <br>
+                    <p id="plot">{{imdb_detail.Plot}}</p>
+                    <br>
+                    <p id="starring">Starring:
+                        <span id='actors'>{{imdb_detail.Actors}}</span>
+                    </p>
+                    <p id="genres">Genres:
+                        {{imdb_detail.Genre}}</p>
+                    <div class="btn-row">
+                        <div id="trailer-btn">
+                            <p>Trailer</p>
+                        </div>
+                        <a ui-sref="details({id:'{{popular.id}}'})">
+                            <div id="details-btn">
+                                <p>Details</p>
+                            </div>
+                        </a>
+                        <br>
+                    </div>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <div class="buttons">
+                        <div class="btn" id="fav">
+                            <p>Favorite</p>
+                        </div>
+                        <div class="btn" id="list">
+                            <p>Watchlist</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="background-img">
+                <img ng-src="https://image.tmdb.org/t/p/original{{popular.backdrop_path}}"/>
+            </div>
+
+        </div>
+    </div>
     <br>
-    <div class="second-row">
-    <p id="in-theatres">In Theatres <span id="date">{{imdb_detail.Released}}</span></p>
-    <p id="rating">{{imdb_detail.Rated}}</p>
-    <p id="runtime">{{imdb_detail.Runtime}}</p>
-  </div>
-
-    <br>
-    <p id="plot">{{imdb_detail.Plot}}</p>
-    <br>
-    <p id="starring">Starring: <span id='actors'>{{imdb_detail.Actors}}</span></p>
-    <p id="genres">Genres: {{imdb_detail.Genre}}</p>
-    <div class="btn-row">
-    <div id="trailer-btn">
-      <p>Trailer</p>
-    </div>
-    <a ui-sref="details({id:'{{popular.id}}'})">
-    <div id="details-btn">
-      <p>Details</p>
-    </div>
-  </a>
-  <br>
-  </div>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <div class="buttons">
-    <div class="btn" id="fav">
-      <p>Favorite</p>
-    </div>
-    <div class="btn" id="list">
-      <p>Watchlist</p>
-    </div>
-  </div>
-
-  </div>
-</div>
-  <div class="background-img">
-    <img ng-src="https://image.tmdb.org/t/p/original{{popular.backdrop_path}}"/>
-  </div>
-
-</div>
-</div>
-<br>
-<div class="now-playing-container">
-  <h3>NOW PLAYING</h3>
-  <br>
-  <!-- <div class="right-ctrl">
+    <div class="now-playing-container">
+        <h3>NOW PLAYING</h3>
+        <br>
+        <!-- <div class="right-ctrl">
     <img id="arrow" src="./icons/Arrow-Left-icon.png"/>
   </div>
   <div class="left-ctrl">
     <img id="arrow" src="./icons/Arrow-Left-icon.png"/>
   </div> -->
 
-  <ul id="now-playing" class="slider">
-  <div class="poster-view" ng-repeat="films in nowPlaying">
+        <ul id="now-playing" class="slider">
+            <div class="poster-view" ng-repeat="films in nowPlaying">
 
-      <li>
-    <div class="poster">
+                <li>
+                    <div class="poster">
 
-      <img ng-src="https://image.tmdb.org/t/p/original{{films.poster_path}}">
-      <div class="arrow" id="ar-btn" style="background-image: url('./icons/Arrow-Left-icon.png')">
-      </div>
-      <a ui-sref="details({id:'{{films.id}}'})">
-      <div class="release">
-        <div class="title-wrapper">
-        <p id="title">{{films.original_title}}</p>
-      </div>
-      <br>
-        <p>{{films.release_date}}</p><p>
+                        <img ng-src="https://image.tmdb.org/t/p/original{{films.poster_path}}">
+                        <div class="arrow" id="ar-btn" style="background-image: url('./icons/Arrow-Left-icon.png')"></div>
+                        <a ui-sref="details({id:'{{films.id}}'})">
+                            <div class="release">
+                                <div class="title-wrapper">
+                                    <p id="title">{{films.original_title}}</p>
+                                </div>
+                                <br>
+                                <p>{{films.release_date}}</p>
+                                <p>
+                                    <br>
+                                    <br>
+                                    <p id="sum">{{films.overview}}</p>
+                                </div>
+                            </a>
+                            <div id="sum-box"></div>
+                        </a>
+                    </div>
+                </li>
+            </div>
+        </ul>
+        <br>
+        <div class="slide-btn">
+            <button type="button" class="slick-prev"><img src="./bxslider-4/src/images/controls.png"></button>
+            <button type="button" class="slick-next"><img src="./bxslider-4/src/images/controls.png"></button>
+        </div>
+        <div class="overview-wrapper" ng-app="overviewApp">
+            <div class="overview">
+                <div ui-view></div>
+            </div>
+        </div>
         <br>
         <br>
-        <p id="sum">{{films.overview}}</p>
-    </div>
-      </a>
-    <div id="sum-box">
-    </div>
-  </a>
-    </div>
-  </li>
-  </div>
-</ul>
-<br>
-<div class="slide-btn">
-<button type="button" class="slick-prev"><img src="./bxslider-4/src/images/controls.png"></button>
-<button type="button" class="slick-next"><img src="./bxslider-4/src/images/controls.png"></button>
-</div>
-  <div class="overview-wrapper" ng-app="overviewApp">
-  <div class="overview">
-    <div ui-view>
-    </div>
-  </div>
-</div>
-<br>
-<br>
-<br>
-<div class="now-playing-container">
-  <h3>Coming Soon</h3>
-  <br>
-  <div class="right-ctrl">
-    <img id="arrow" src="./icons/Arrow-Left-icon.png"/>
-  </div>
-  <div class="left-ctrl">
-    <img id="arrow" src="./icons/Arrow-Left-icon.png"/>
-  </div>
-  <ul id="coming-soon">
-  <div class="poster-view" ng-repeat="films in comingSoon">
-
-      <li>
-    <div class="poster">
-
-      <img ng-src="https://image.tmdb.org/t/p/original{{films.poster_path}}">
-      <div class="arrow" id="ar-btn" style="background-image: url('./icons/Arrow-Left-icon.png')">
-      </div>
-      <a ui-sref="details({id:'{{films.id}}'})">
-      <div class="release">
-        <div class="title-wrapper">
-        <p id="title">{{films.original_title}}</p>
-      </div>
-        <p>{{films.release_date}}</p><p>
         <br>
-        <br>
-        <p id="sum">{{films.overview}}</p>
-    </div>
-      </a>
-    <div id="sum-box">
-    </div>
-  </a>
-    </div>
-  </li>
+        <div class="now-playing-container">
+            <h3>Coming Soon</h3>
+            <br>
+            <div class="right-ctrl">
+                <img id="arrow" src="./icons/Arrow-Left-icon.png"/>
+            </div>
+            <div class="left-ctrl">
+                <img id="arrow" src="./icons/Arrow-Left-icon.png"/>
+            </div>
+            <ul id="coming-soon">
+                <div class="poster-view" ng-repeat="films in comingSoon">
 
-  </div>
-</ul>
-  <div class="overview-wrapper" ng-app="overviewApp">
-  <div class="overview">
-    <div ui-view>
-    </div>
-  </div>
-</div>
-<br>
-<br>
-<br>
-<div class="now-playing-container">
-  <h3>Popular</h3>
-  <br>
-  <div class="right-ctrl">
-    <img id="arrow" src="./icons/Arrow-Left-icon.png"/>
-  </div>
-  <div class="left-ctrl">
-    <img id="arrow" src="./icons/Arrow-Left-icon.png"/>
-  </div>
-  <ul id="Popular">
-  <div class="poster-view" ng-repeat="films in populars">
+                    <li>
+                        <div class="poster">
 
-      <li>
-    <div class="poster">
+                            <img ng-src="https://image.tmdb.org/t/p/original{{films.poster_path}}">
+                            <div class="arrow" id="ar-btn" style="background-image: url('./icons/Arrow-Left-icon.png')"></div>
+                            <a ui-sref="details({id:'{{films.id}}'})">
+                                <div class="release">
+                                    <div class="title-wrapper">
+                                        <p id="title">{{films.original_title}}</p>
+                                    </div>
+                                    <p>{{films.release_date}}</p>
+                                    <p>
+                                        <br>
+                                        <br>
+                                        <p id="sum">{{films.overview}}</p>
+                                    </div>
+                                </a>
+                                <div id="sum-box"></div>
+                            </a>
+                        </div>
+                    </li>
 
-      <img ng-src="https://image.tmdb.org/t/p/original{{films.poster_path}}">
-      <div class="arrow" id="ar-btn" style="background-image: url('./icons/Arrow-Left-icon.png')">
-      </div>
-      <a ui-sref="details({id:'{{films.id}}'})">
-      <div class="release">
-        <div class="title-wrapper">
-        <p id="title">{{films.original_title}}</p>
-      </div>
-        <p>{{films.release_date}}</p><p>
-        <br>
-        <br>
-        <p id="sum">{{films.overview}}</p>
-    </div>
-      </a>
-    <div id="sum-box">
-    </div>
-  </a>
-    </div>
-  </li>
+                </div>
+            </ul>
+            <div class="overview-wrapper" ng-app="overviewApp">
+                <div class="overview">
+                    <div ui-view></div>
+                </div>
+            </div>
+            <br>
+            <br>
+            <br>
+            <div class="now-playing-container">
+                <h3>Popular</h3>
+                <br>
+                <div class="right-ctrl">
+                    <img id="arrow" src="./icons/Arrow-Left-icon.png"/>
+                </div>
+                <div class="left-ctrl">
+                    <img id="arrow" src="./icons/Arrow-Left-icon.png"/>
+                </div>
+                <ul id="Popular">
+                    <div class="poster-view" ng-repeat="films in populars">
 
-  </div>
-</ul>
-  <div class="overview-wrapper" ng-app="overviewApp">
-  <div class="overview">
-    <div ui-view>
-    </div>
-  </div>
-</div>
-</main>
+                        <li>
+                            <div class="poster">
+
+                                <img ng-src="https://image.tmdb.org/t/p/original{{films.poster_path}}">
+                                <div class="arrow" id="ar-btn" style="background-image: url('./icons/Arrow-Left-icon.png')"></div>
+                                <a ui-sref="details({id:'{{films.id}}'})">
+                                    <div class="release">
+                                        <div class="title-wrapper">
+                                            <p id="title">{{films.original_title}}</p>
+                                        </div>
+                                        <p>{{films.release_date}}</p>
+                                        <p>
+                                            <br>
+                                            <br>
+                                            <p id="sum">{{films.overview}}</p>
+                                        </div>
+                                    </a>
+                                    <div id="sum-box"></div>
+                                </a>
+                            </div>
+                        </li>
+
+                    </div>
+                </ul>
+                <div class="overview-wrapper" ng-app="overviewApp">
+                    <div class="overview">
+                        <div ui-view></div>
+                    </div>
+                </div>
+            </main>

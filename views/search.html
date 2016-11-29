@@ -1,0 +1,15 @@
+<main>
+  <div class="search-container">
+    <div class="search-wrapper">
+    <div class="search-view" ng-repeat="film in movieSearch track by film.id">
+      <div class="search-content">
+        <a ui-sref="details({id:'{{film.id}}'})">
+      <img ng-src="https://image.tmdb.org/t/p/original{{film.poster_path}}"/>
+      <p>{{film.title}}</p>
+      <p>({{film.release_date}})</p>
+    </a>
+  </div>
+    </div>
+  </div>
+  </div>
+</main>
