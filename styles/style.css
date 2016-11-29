@@ -248,7 +248,12 @@ HOME VIEW
   align-items: center;
   cursor: pointer;
 }
-
+.buttons-home{
+  display: flex;
+}
+.buttons-home #fav{
+  margin-left: 20px;
+}
 /*==========
 NOW PLAYING
 ===========*/

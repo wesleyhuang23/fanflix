@@ -22,7 +22,7 @@ $(document).ready(function(){
 
   $('.search-container').on('click', function(){
     console.log('clicked');
-    $('#input-search').val(0);
+    $('#input-search').val("");
   });
 
   // if($('input').val().length === 0){
