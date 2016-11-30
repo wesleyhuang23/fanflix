@@ -8,11 +8,12 @@ module.exports = {
     var release = req.body.release_date;
     var poster = 'https://image.tmdb.org/t/p/original' + req.body.poster_path;
     var status = '1';
+    var plot = req.body.overview;
     var mdb_id = req.body.id;
     var imdb_id = req.body.imdb_id;
     console.log(status);
 
-    db.add_to_mylist([title, runtime, release, poster, status, mdb_id, imdb_id], function(err, favorites){
+    db.add_to_mylist([title, runtime, release, poster, status, plot, mdb_id, imdb_id], function(err, favorites){
       console.log(err);
       console.log(favorites);
       res.send('Added to your favorites');
@@ -30,12 +31,13 @@ module.exports = {
     var runtime = req.body.runtime;
     var release = req.body.release_date;
     var poster = 'https://image.tmdb.org/t/p/original' + req.body.poster_path;
-    var status = '2'
+    var status = '2';
+    var plot = req.body.overview;
     var mdb_id = req.body.id;
     var imdb_id = req.body.imdb_id;
     console.log(status);
 
-    db.add_to_mylist([title, runtime, release, poster, status, mdb_id, imdb_id], function(err, watchlist){
+    db.add_to_mylist([title, runtime, release, poster, status, plot, mdb_id, imdb_id], function(err, watchlist){
       console.log(err);
       console.log(watchlist);
       res.send('Added to your watchlist');

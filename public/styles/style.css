@@ -1,4 +1,3 @@
-
 *{
   font-family: helvetica;
   font-weight: lighter;
@@ -19,6 +18,8 @@ body{
   overflow: hidden;
 }
 .nav-bar{
+  position: relative;
+  top:0px;
   background-color: rgba(0,0,0,.7);
   height: 7.5vh;
   width: 100vw;

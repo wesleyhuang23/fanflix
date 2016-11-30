@@ -5,6 +5,7 @@ CREATE TABLE mylist (
   release TEXT,
   poster TEXT,
   status INT,
+  plot TEXT,
   mdb_id TEXT UNIQUE,
   imdb_id TEXT UNIQUE
 )

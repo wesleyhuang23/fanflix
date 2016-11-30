@@ -24,7 +24,11 @@ $(document).ready(function(){
     console.log('clicked');
     $('#input-search').val("");
   });
-
+  // 
+  // $('.btn').click(function(){
+  //   console.log('clicked btn');
+  //   $('.btn').css({transform: "scale(1)"});
+  // });
   // if($('input').val().length === 0){
   //   $('.search-view').addClass(disapear);
   // }

@@ -15,12 +15,16 @@
   <h2>{{detail.title}}<span> ({{imdb.Year}})</span></h2>
   <br>
   <div class="buttons">
+
     <div class="btn" id="fav" ng-click="addToFavFunc()">
       <p>Favorite</p>
     </div>
+
+
     <div class="btn" id="list" ng-click="addToWatchFunc()">
       <p>Watchlist</p>
     </div>
+
   </div>
   <br>
   <div class="overview">
@@ -57,6 +61,9 @@
   <br>
   <h3>Rating</h3>
   <p>{{imdb.Rated}}</p>
+  <br>
+  <h3>Also Known As</h3>
+  <p>{{detail.original_title}}</p>
 </div>
 </div>
 

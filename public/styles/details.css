@@ -138,11 +138,11 @@ main{
 }
 #fav:hover{
   background-color: red;
-  transform: scale(1.15);
+  transform: scale(1.2);
 }
 #list:hover{
   background-color: rgba(239, 118, 34, 1);
-    transform: scale(1.15);
+    transform: scale(1.2);
 }
 .second-row-wrapper{
   /*border: 1px solid green;*/
