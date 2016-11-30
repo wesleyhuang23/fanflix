@@ -75,7 +75,8 @@ var watch;
       console.log('similar', $scope.similar);
     });
   }
-
+  
+  //DETAIL AND WATCH LIST BUTTONS
   $scope.addToFav = function(fav){
     console.log(fav);
     console.log('i am in add to fav func');
@@ -83,8 +84,17 @@ var watch;
       $scope.favorite = response;
     })
   };
+  $scope.addToWatch = function(fav){
+    console.log('film sent', fav);
+    mainSvc.addToWatch(fav).then(function(response){
+      $scope.watch = response;
+    });
+  };
 
   $scope.addToFavFunc = function(){
     $scope.addToFav(fav);
+  }
+  $scope.addToWatchFunc = function(){
+    $scope.addToWatch(fav);
   }
 });

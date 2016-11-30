@@ -1,2 +1,2 @@
 SELECT * FROM mylist
-WHERE status = 1;
+WHERE status = 2;

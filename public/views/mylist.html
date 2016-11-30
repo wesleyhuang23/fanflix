@@ -1,14 +1,26 @@
 <main>
   <h2>Watchlist</h2>
   <hr>
+  <div class="watch-container">
+    <div class="watch-wrapper" ng-repeat="film in watch">
+      <a ui-sref="details({id:'{{film.mdb_id}}'})">
+      <div class="watch-view">
+        <img src="{{film.poster}}"/>
+        <p>{{film.title}}</p>
+      </div>
+      </a>
+    </div>
+  </div>
   <h2>My Favorites</h2>
   <hr>
   <div class="fav-container">
     <div class="fav-wrapper" ng-repeat="film in favorites">
+      <a ui-sref="details({id:'{{film.mdb_id}}'})">
       <div class="fav-view">
         <img src="{{film.poster}}"/>
         <p>{{film.title}}</p>
       </div>
+      </a>
     </div>
   </div>
 </main>

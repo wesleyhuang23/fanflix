@@ -1,3 +1,6 @@
+.fav-container{
+  margin-top: 10px;
+}
 .fav-wrapper{
   display: inline;
 }
@@ -9,6 +12,25 @@
   width: 200px;
 }
 .fav-view{
+  display: inline-block;
+  text-align: center;
+  width: 200px;
+}
+.watch-container{
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+.watch-wrapper{
+  display: inline;
+}
+.watch-view img{
+  width: 200px;
+}
+.watch-view p{
+  position: absolute;
+  width: 200px;
+}
+.watch-view{
   display: inline-block;
   text-align: center;
   width: 200px;

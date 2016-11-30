@@ -17,12 +17,21 @@ app.use(express.static(__dirname + './../public'));
 
 var nodeCtrl = require('./nodeCtrl.js');
 
-// db.create_favorites(function(err, films){
-//   console.log('favs table init');
-// });
+//creating tables
+db.create_mylist(function(err, films){
+  console.log('mylist table init');
+});
+// db.create_watchlist(function(err, films){
+//   console.log('watchlist table init');
+// })
 
-app.post('/mylist/favorites', nodeCtrl.add_to_fav);
-app.get('/mylist/favorites', nodeCtrl.get_favorites);
+//favorites
+app.post('/favorites', nodeCtrl.add_to_fav);
+app.get('/favorites', nodeCtrl.get_favorites);
+
+//watchlist
+app.post('/watchlist', nodeCtrl.add_to_watch);
+app.get('/watchlist', nodeCtrl.get_watchlist);
 
 app.listen(3000, function(){
   console.log('listening on port 3000...');

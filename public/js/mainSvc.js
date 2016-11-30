@@ -119,7 +119,7 @@ angular.module('flixApp').service('mainSvc', function($http){
     console.log(fav);
     return $http({
       method:'POST',
-      url: 'http://localhost:3000/mylist/favorites',
+      url: 'http://localhost:3000/favorites',
       data: fav
     }).then(function(response){
       return response;
@@ -129,7 +129,27 @@ angular.module('flixApp').service('mainSvc', function($http){
   this.getFavs = function(){
     return $http({
       method: 'GET',
-      url: 'http://localhost:3000/mylist/favorites'
+      url: 'http://localhost:3000/favorites'
+    }).then(function(response){
+      return response.data;
+    });
+  }
+
+  this.addToWatch = function(fav){
+    console.log('adding to watchlist...', fav);
+    return $http({
+      method: 'POST',
+      url: 'http://localhost:3000/watchlist',
+      data: fav
+    }).then(function(response){
+      return response.data;
+    });
+  }
+  this.getWatch = function(){
+    console.log('getting watchlist...');
+    return $http({
+      method: 'GET',
+      url: 'http://localhost:3000/watchlist'
     }).then(function(response){
       return response.data;
     });

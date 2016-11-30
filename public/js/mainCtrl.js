@@ -101,4 +101,12 @@ angular.module('flixApp').controller('mainCtrl', function($scope, mainSvc){
   }
 
   $scope.getFavs();
+
+  $scope.getWatch = function(){
+    mainSvc.getWatch().then(function(response){
+      $scope.watch = response;
+      console.log('watchlist', $scope.watch);
+    });
+  }
+  $scope.getWatch();
 });
