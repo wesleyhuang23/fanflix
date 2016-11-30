@@ -102,11 +102,24 @@ angular.module('flixApp').controller('mainCtrl', function($scope, mainSvc){
 
   $scope.getFavs();
 
+  var watchlist
+
   $scope.getWatch = function(){
     mainSvc.getWatch().then(function(response){
       $scope.watch = response;
       console.log('watchlist', $scope.watch);
+      watchlist = response;
     });
   }
   $scope.getWatch();
+
+
+  $scope.updateFav = function(mdb_id){
+    var id = {}
+    id.id = mdb_id;
+    console.log(id);
+    mainSvc.updateFav(id).then(function(response){
+      console.log('your list is updated');
+    });
+  }
 });

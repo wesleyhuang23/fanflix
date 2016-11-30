@@ -45,5 +45,12 @@ module.exports = {
     db.get_watchlist([], function(err, watchlist){
       res.send(watchlist);
     })
+  },
+  update_to_fav: function(req, res, next){
+    console.log(req.body.id);
+    var favStatus = 1;
+    db.update_to_fav([req.body.id, favStatus], function(err, favorites){
+      res.send(favorites);
+    });
   }
 };

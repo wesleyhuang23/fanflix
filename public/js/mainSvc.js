@@ -154,4 +154,15 @@ angular.module('flixApp').service('mainSvc', function($http){
       return response.data;
     });
   }
+  this.updateFav = function(id){
+
+    console.log('updating to fav');
+    return $http({
+      method: 'PUT',
+      url: 'http://localhost:3000/update',
+      data: id
+    }).then(function(response){
+      return response;
+    });
+  }
 });

@@ -33,6 +33,9 @@ app.get('/favorites', nodeCtrl.get_favorites);
 app.post('/watchlist', nodeCtrl.add_to_watch);
 app.get('/watchlist', nodeCtrl.get_watchlist);
 
+//update
+app.put('/update', nodeCtrl.update_to_fav);
+
 app.listen(3000, function(){
   console.log('listening on port 3000...');
 })
