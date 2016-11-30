@@ -1,0 +1,15 @@
+.fav-wrapper{
+  display: inline;
+}
+.fav-view img{
+  width: 200px;
+}
+.fav-view p{
+  position: absolute;
+  width: 200px;
+}
+.fav-view{
+  display: inline-block;
+  text-align: center;
+  width: 200px;
+}

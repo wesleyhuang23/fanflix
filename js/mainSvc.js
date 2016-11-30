@@ -125,4 +125,14 @@ angular.module('flixApp').service('mainSvc', function($http){
       return response;
     });
   }
+
+  this.getFavs = function(){
+    console.log('getting favs...')
+    return $http({
+      method:'GET',
+      url: 'http://localhost:3000/mylist/favorites'
+    }).then(function(response){
+      return response.data;
+    });
+  }
 });

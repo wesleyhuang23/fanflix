@@ -80,7 +80,7 @@ angular.module('flixApp').controller('mainCtrl', function($scope, mainSvc){
   }
   $scope.getComingSoon();
 
-
+  //SEARCH VIEW
   $scope.getSearch = function(term){
     console.log('search', term);
     mainSvc.getSearchMovie(term).then(function(response){
@@ -91,4 +91,14 @@ angular.module('flixApp').controller('mainCtrl', function($scope, mainSvc){
       console.log($scope.movieSearch);
     });
   };
+
+  //MYLIST VIEW
+  $scope.getFavs = function(){
+    mainSvc.getFavs().then(function(response){
+      $scope.favorites = response;
+      console.log($scope.favorites);
+    });
+  }
+
+  $scope.getFavs();
 });

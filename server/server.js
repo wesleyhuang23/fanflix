@@ -22,6 +22,7 @@ var nodeCtrl = require('./nodeCtrl.js');
 // });
 
 app.post('/mylist/favorites', nodeCtrl.add_to_fav);
+app.get('/mylist/favorites', nodeCtrl.get_favorites);
 
 app.listen(3000, function(){
   console.log('listening on port 3000...');

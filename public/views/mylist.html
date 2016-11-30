@@ -3,4 +3,12 @@
   <hr>
   <h2>My Favorites</h2>
   <hr>
+  <div class="fav-container">
+    <div class="fav-wrapper" ng-repeat="film in favorites">
+      <div class="fav-view">
+        <img src="{{film.poster}}"/>
+        <p>{{film.title}}</p>
+      </div>
+    </div>
+  </div>
 </main>
