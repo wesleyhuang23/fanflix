@@ -52,5 +52,12 @@ module.exports = {
     db.update_to_fav([req.body.id, favStatus], function(err, favorites){
       res.send(favorites);
     });
+  },
+  delete: function(req, res, next){
+    console.log('del func', req.query.id);
+    db.delete([req.query.id], function(err, mylist){
+      console.log(err);
+      res.send(mylist);
+    });
   }
 };

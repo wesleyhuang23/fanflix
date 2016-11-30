@@ -165,4 +165,16 @@ angular.module('flixApp').service('mainSvc', function($http){
       return response;
     });
   }
+
+  this.delete = function(del_id){
+    console.log('deleting');
+    console.log(del_id);
+    return $http({
+      method:'DELETE',
+      url: 'http://localhost:3000/delete?' + 'id=' + del_id.id
+    }).then(function(response){
+      console.log("From Service: ", response)
+      return response;
+    });
+  }
 });

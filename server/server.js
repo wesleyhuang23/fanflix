@@ -36,6 +36,9 @@ app.get('/watchlist', nodeCtrl.get_watchlist);
 //update
 app.put('/update', nodeCtrl.update_to_fav);
 
+//delete
+app.delete('/delete', nodeCtrl.delete);
+
 app.listen(3000, function(){
   console.log('listening on port 3000...');
 })
