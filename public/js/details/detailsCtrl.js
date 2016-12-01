@@ -75,7 +75,7 @@ var watch;
       console.log('similar', $scope.similar);
     });
   }
-  
+
   //DETAIL AND WATCH LIST BUTTONS
   $scope.addToFav = function(fav){
     console.log(fav);
@@ -90,11 +90,21 @@ var watch;
       $scope.watch = response;
     });
   };
+  $scope.addtoWatched = function(fav){
+    console.log('adding to watched...', fav);
+    mainSvc.addtoWatched(fav).then(function(response){
+      $scope.watched = response;
+      console.log($scope.watched);
+    });
+  };
 
   $scope.addToFavFunc = function(){
     $scope.addToFav(fav);
   }
   $scope.addToWatchFunc = function(){
     $scope.addToWatch(fav);
+  }
+  $scope.addToWatchedFunc = function(){
+    $scope.addtoWatched(fav);
   }
 });

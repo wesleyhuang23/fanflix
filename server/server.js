@@ -33,6 +33,10 @@ app.get('/favorites', nodeCtrl.get_favorites);
 app.post('/watchlist', nodeCtrl.add_to_watch);
 app.get('/watchlist', nodeCtrl.get_watchlist);
 
+//watched
+app.post('/watched', nodeCtrl.add_to_watched);
+app.get('/watched', nodeCtrl.get_watched);
+
 //update
 app.put('/update', nodeCtrl.update_to_fav);
 

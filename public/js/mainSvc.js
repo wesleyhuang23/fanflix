@@ -134,6 +134,27 @@ angular.module('flixApp').service('mainSvc', function($http){
       return response.data;
     });
   }
+  this.addtoWatched = function(fav){
+    console.log(fav);
+    return $http({
+      method:'POST',
+      url: 'http://localhost:3000/watched',
+      data: fav
+    }).then(function(response){
+      return response;
+    });
+  }
+
+  this.getWatched = function(fav){
+    console.log(fav);
+    return $http({
+      method: 'GET',
+      url: 'http://localhost:3000/watched',
+    }).then(function(response){
+      console.log('get_watched', response.data);
+      return response.data;
+    });
+  }
 
   this.addToWatch = function(fav){
     console.log('adding to watchlist...', fav);

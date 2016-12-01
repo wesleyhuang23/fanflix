@@ -27,6 +27,34 @@
     </div>
   </div>
 
+  <h2>Watched</h2>
+  <hr>
+  <div class="watch-container">
+    <div class="watch-wrapper" ng-repeat="film in watched">
+
+
+      <div class="watch-view">
+        <div class="black-bg">
+        </div>
+        <div class=watch-box>
+
+          <div class="img-box-watched">
+          <img id="x" src="./icons/x-mark-4-512.png" ng-click="delete(film.mdb_id)" onClick="window.location.reload()"/>
+          <img id="heart" src="./icons/Heart_corazón.svg.png" ng-click="updateFav(film.mdb_id)" onClick="window.location.reload()"/>
+          <img id="review" src="./icons/menu-alt-512.png"/>
+          <a ui-sref="details({id:'{{film.mdb_id}}'})">
+          <img id="i" src="./icons/info-icon--6.png"/>
+          </a>
+
+        </div>
+      </div>
+        <img id="watch-poster" src="{{film.poster}}"/>
+        <p>{{film.title}}</p>
+      </div>
+
+    </div>
+  </div>
+
   <h2>My Favorites</h2>
   <hr>
   <div class="fav-container">

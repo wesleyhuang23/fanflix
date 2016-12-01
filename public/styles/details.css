@@ -136,6 +136,15 @@ main{
   background-color: rgba(239, 118, 34, .5);
   margin-left: 20px;
 }
+#watched{
+  margin-left: 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+#watched:hover{
+  background-color: red;
+  transform: scale(1.2);
+  background-color: rgba(0, 0, 0, 1);
+}
 #fav:hover{
   background-color: red;
   transform: scale(1.2);
