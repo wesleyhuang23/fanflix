@@ -8,6 +8,7 @@
 }
 .fav-view img{
   width: 200px;
+  height: 300px;
 }
 .fav-view p{
   position: absolute;
@@ -28,6 +29,7 @@
 }
 .watch-view img{
   width: 200px;
+  height: 300px;
 }
 .watch-view p{
   position: absolute;
@@ -53,13 +55,14 @@
   width: 200px;
   height: 300px;
   opacity: 0;
+  transition: .7s;
 }
 .img-box{
-  /*border: 1px solid blue;*/
+/*  border: 1px solid blue;*/
   position: absolute;
   top:0px;
-  left: 5px;
-  width: 200px;
+  left: 15px;
+  width: 170px;
   height: 100px;
   display: flex;
   justify-content: space-between;
@@ -80,6 +83,7 @@
   width: 45px;
   opacity: 0;
   cursor: pointer;
+  transition: opacity .7s;
 }
 .watch-box #heart{
   position: relative;
@@ -92,6 +96,7 @@
   width: 30px;
   opacity: 0;
   cursor: pointer;
+  transition: opacity 1s;
 }
 
 #review{
@@ -105,6 +110,7 @@
   border: 3px solid black;
   border-radius: 100px;
   opacity: 0;
+  transition: opacity .7s;
 }
 #i{
   filter: invert(100%);
@@ -115,6 +121,7 @@
   padding: 5px;
   border-radius: 100px;
   opacity: 0;
+  transition: opacity .7s;
 }
 #i-fav{
   filter: invert(100%);
@@ -124,6 +131,32 @@
   padding: 5px;
   border-radius: 100px;
   opacity: 0;
+  transition: opacity .7s;
+}
+#i:active{
+  position: relative;
+  top: 10px;
+  left: 2px;
+}
+#i-fav:active{
+  position: relative;
+  top:10px;
+  left: 2px;
+}
+#x:active{
+  position: relative;
+  top:10px;
+  left: 2px;
+}
+#review:active{
+  position: relative;
+  top:3px;
+  left: 2px;
+}
+#heart:active{
+  position: relative;
+  top:10px;
+  left: 2px;
 }
 .watch-view:hover .black-bg{
   opacity: .5;

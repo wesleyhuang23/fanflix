@@ -20,11 +20,22 @@ $(document).ready(function(){
     $('.search img').click();
   });
 
-  $('.search-container').on('click', function(){
-    console.log('clicked');
-    $('#input-search').val("");
+  $('.search-content').on('click', function(){
+    console.log('search-content clicked');
+    $('#input-search input[type="text"]').val(" ");
   });
-  // 
+
+  $('.search img').click(function(){
+    console.log('input length', $('input').val().length);
+    if($('input').val().length === 0){
+      $('.search-wrapper').hide();
+    } else {
+        $('.search-wrapper').show();
+      }
+  });
+
+
+  //
   // $('.btn').click(function(){
   //   console.log('clicked btn');
   //   $('.btn').css({transform: "scale(1)"});

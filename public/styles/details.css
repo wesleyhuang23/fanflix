@@ -144,6 +144,11 @@ main{
   background-color: rgba(239, 118, 34, 1);
     transform: scale(1.2);
 }
+.btn:active{
+  position: relative;
+  top: 3px;
+  left: 2px;
+}
 .second-row-wrapper{
   /*border: 1px solid green;*/
   text-align: center;
