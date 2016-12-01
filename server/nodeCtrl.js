@@ -116,5 +116,11 @@ module.exports = {
     db.add_review([tagline, author, review, id], function(err, reviews){
       res.send(reviews)
     });
+  },
+  update_review: function(req, res, next){
+    console.log(req.params);
+    db.update_review([req.params.mdb_id], function(err, reviews){
+      res.send(reviews);
+    });
   }
 };

@@ -5,20 +5,20 @@
     </div>
 
     <div class="info-div">
-  <input type="text" placeholder="tagline" ng-model="tagline">
+  <input id="tagline-box" type="text" placeholder="tagline" ng-model="tagline">
   <br>
   <br>
-  <input type="text" placeholder="author" ng-model="author">
+  <input id="author-box" type="text" placeholder="author" ng-model="author">
   <br>
   <br>
-  <textarea type="text" placeholder="your review" ng-model="comments"/>{{review}}</textarea>
+  <textarea type="text" id="box-value" placeholder="your review" ng-model="comments"/></textarea>
   <br>
   <br>
   <!-- <a ui-sref="reviews"> -->
-  <div class="submit" ng-click="submitReview(tagline, author, comments)">
+  <div class="submit" ng-click="submitReview(tagline, author, comments)" onClick="window.location.reload()">
     <p>SUBMIT</p>
   </div>
-</a>
+<!-- </a> -->
 </div>
   </div>
 </main>

@@ -3,12 +3,12 @@
   height: 450px;
 }
 .edit-container{
-  border: 1px solid green;
+  /*border: 1px solid green;*/
   display: flex;
   flex-direction: row;
 }
 .info-div{
-  margin: 50px;
+  margin-left: 50px;
 }
 textarea{
   overflow-y: scroll;

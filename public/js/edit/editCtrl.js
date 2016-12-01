@@ -6,6 +6,7 @@ angular.module('flixApp').controller('editCtrl', function($scope, mainSvc, $stat
     mainSvc.getDetails(id).then(function(response){
       $scope.editDetails = response;
       console.log($scope.editDetails);
+
     });
   }
   $scope.getEditDetails(id);
@@ -22,4 +23,5 @@ angular.module('flixApp').controller('editCtrl', function($scope, mainSvc, $stat
 
     });
   };
+
 });

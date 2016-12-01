@@ -44,6 +44,7 @@ app.get('/watched', nodeCtrl.get_watched);
 app.post('/reviews', nodeCtrl.add_to_reviews);
 app.get('/reviews', nodeCtrl.get_reviews);
 app.post('/comments', nodeCtrl.add_review);
+app.get('/update/:mdb_id', nodeCtrl.update_review);
 
 //update
 app.put('/update', nodeCtrl.update_to_fav);

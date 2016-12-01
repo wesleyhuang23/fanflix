@@ -164,4 +164,16 @@ angular.module('flixApp').controller('mainCtrl', function($scope, mainSvc){
     });
   }
   $scope.getReviews();
+
+    $scope.editReview = function(mdb_id){
+      console.log(mdb_id);
+      mainSvc.editReview(mdb_id).then(function(response){
+        $scope.reviewToEdit = response;
+        console.log('review to edit', $scope.reviewToEdit);
+
+        $scope.comments = response[0].review;
+        $scope.tagline = response[0].tagline;
+        $scope.author = response[0].author;
+      });
+    };
 });

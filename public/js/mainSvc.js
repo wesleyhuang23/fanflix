@@ -236,4 +236,13 @@ angular.module('flixApp').service('mainSvc', function($http){
       return response.data;
     });
   };
+
+  this.editReview = function(mdb_id){
+    return $http({
+      method: 'GET',
+      url: 'http://localhost:3000/update/' + mdb_id,
+    }).then(function(response){
+      return response.data;
+    });
+  }
 });
