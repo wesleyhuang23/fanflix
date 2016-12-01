@@ -17,6 +17,13 @@ angular.module('flixApp', ['ui.router'])
   }).state('mylist', {
     templateUrl: 'views/mylist.html',
     url: '/mylist'
+  }).state('reviews', {
+    templateUrl: 'views/reviews.html',
+    url: '/reviews'
+  }).state('edit', {
+    templateUrl: 'views/edit.html',
+    url: '/edit/:id',
+    controller: 'editCtrl'
   });
 
 

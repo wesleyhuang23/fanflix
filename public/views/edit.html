@@ -1,0 +1,24 @@
+<main>
+  <div class="edit-container">
+    <div class="edit-left-wrapper">
+      <img ng-src="https://image.tmdb.org/t/p/original{{editDetails.poster_path}}"/>
+    </div>
+
+    <div class="info-div">
+  <input type="text" placeholder="tagline" ng-model="tagline">
+  <br>
+  <br>
+  <input type="text" placeholder="author" ng-model="author">
+  <br>
+  <br>
+  <textarea type="text" placeholder="your review" ng-model="comments"/>{{review}}</textarea>
+  <br>
+  <br>
+  <!-- <a ui-sref="reviews"> -->
+  <div class="submit" ng-click="submitReview(tagline, author, comments)">
+    <p>SUBMIT</p>
+  </div>
+</a>
+</div>
+  </div>
+</main>

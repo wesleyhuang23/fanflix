@@ -140,4 +140,28 @@ angular.module('flixApp').controller('mainCtrl', function($scope, mainSvc){
       console.log('movie deleted');
     });
   }
+  $scope.deleteReview = function(mdb_id){
+    var del_id = {}
+    del_id.id = mdb_id;
+    console.log(del_id);
+    mainSvc.deleteReview(del_id).then(function(response){
+      console.log('movie deleted');
+    });
+  }
+
+  //reviews
+  $scope.addToReviews = function(film){
+    console.log(film);
+    mainSvc.addToReviews(film).then(function(response){
+      $scope.reviews = response;
+    });
+  }
+
+  $scope.getReviews = function(){
+    mainSvc.getReviews().then(function(response){
+      $scope.reviews = response;
+      console.log($scope.reviews);
+    });
+  }
+  $scope.getReviews();
 });

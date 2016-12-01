@@ -24,6 +24,9 @@ db.create_mylist(function(err, films){
 // db.create_watchlist(function(err, films){
 //   console.log('watchlist table init');
 // })
+db.create_reviews(function(err, reviews){
+  console.log('reviews table init');
+});
 
 //favorites
 app.post('/favorites', nodeCtrl.add_to_fav);
@@ -37,11 +40,17 @@ app.get('/watchlist', nodeCtrl.get_watchlist);
 app.post('/watched', nodeCtrl.add_to_watched);
 app.get('/watched', nodeCtrl.get_watched);
 
+//reviews
+app.post('/reviews', nodeCtrl.add_to_reviews);
+app.get('/reviews', nodeCtrl.get_reviews);
+app.post('/comments', nodeCtrl.add_review);
+
 //update
 app.put('/update', nodeCtrl.update_to_fav);
 
 //delete
 app.delete('/delete', nodeCtrl.delete);
+app.delete('/deletereview', nodeCtrl.delete_review);
 
 app.listen(3000, function(){
   console.log('listening on port 3000...');

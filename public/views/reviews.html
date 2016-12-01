@@ -1,0 +1,41 @@
+<main>
+  <input type="text" placeholder="search your reviews" ng-model="titleFilter.title"/>
+  <br>
+  <br>
+  <h2 id="reviews">Reviews</h2>
+  <hr>
+  <div class="review-container">
+    <div class="review-wrapper">
+      <div class="review-view" ng-repeat="film in reviews | filter: titleFilter">
+      <div class="review">
+        <div class="poster-right-info">
+        <div class="review-box">
+          <div class="review-poster">
+          <div class="black-bg-review">
+          </div>
+          <div class="icons-row">
+          <img id="x-review" src="./icons/x-mark-4-512.png" ng-click="deleteReview(film.mdb_id)" />
+          <a ui-sref="edit({id:'{{film.mdb_id}}'})">
+          <img id="edit" src="./icons/edit-icon-png-24.png"/>
+        </a>
+        </div>
+
+        <img src="{{film.poster}}" />
+      </div>
+
+    </div>
+    <div class="right-info">
+    <h1> {{film.title}}</h1>
+    <br>
+    <h2> {{film.tagline}}</h2>
+    <h3> By: {{film.author}}</h3>
+    <br>
+    <p> {{film.review}}</p>
+  </div>
+</div>
+        <hr>
+      </div>
+    </div>
+    </div>
+  </div>
+</main>

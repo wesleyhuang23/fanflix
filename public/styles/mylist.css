@@ -1,5 +1,12 @@
 @import url('//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css');
 
+#watchlist{
+  color: #EF7622;
+}
+
+#favorites{
+  color: red;
+}
 .fav-container{
   margin-top: 10px;
 }

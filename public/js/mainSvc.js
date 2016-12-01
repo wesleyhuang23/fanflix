@@ -145,8 +145,7 @@ angular.module('flixApp').service('mainSvc', function($http){
     });
   }
 
-  this.getWatched = function(fav){
-    console.log(fav);
+  this.getWatched = function(){
     return $http({
       method: 'GET',
       url: 'http://localhost:3000/watched',
@@ -198,4 +197,43 @@ angular.module('flixApp').service('mainSvc', function($http){
       return response;
     });
   }
+
+  this.deleteReview = function(del_id){
+    console.log('deleting review');
+    return $http({
+      method: 'DELETE',
+      url: 'http://localhost:3000/deletereview?' + 'id=' + del_id.id
+    })
+  }
+
+  this.addToReviews = function(film){
+    console.log('adding to reviews', film);
+    return $http({
+      method: 'POST',
+      url: 'http://localhost:3000/reviews',
+      data: film
+    }).then(function(response){
+      return response.data;
+    });
+  }
+
+  this.getReviews = function(){
+    return $http({
+      method: 'GET',
+      url: 'http://localhost:3000/reviews'
+    }).then(function(response){
+      return response.data;
+    });
+  }
+
+  this.submitReview = function(review){
+    console.log(review);
+    return $http({
+      method: 'POST',
+      url: 'http://localhost:3000/comments',
+      data: review
+    }).then(function(response){
+      return response.data;
+    });
+  };
 });
