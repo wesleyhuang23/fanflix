@@ -13,6 +13,7 @@ var watch;
     mainSvc.getDetails(id).then(function(response){
       var imdb_id = response.imdb_id;
       console.log(imdb_id);
+      console.log(response.id);
       fav = response;
       watch = response;
       console.log('FAV BTN', fav);
@@ -25,6 +26,7 @@ var watch;
       $scope.getCast(imdb_id);
       $scope.getSimilars(imdb_id);
       $scope.getImages(imdb_id);
+      $scope.getGuideBox(response.id);
     });
   }
   $scope.getDetails(id);
@@ -75,7 +77,32 @@ var watch;
       console.log('similar', $scope.similar);
     });
   }
-
+  $scope.getGuideBox = function(id){
+    console.log(id);
+    mainSvc.getGuideBox(id).then(function(response){
+      console.log(response.id);
+      var gb_id = response.id
+      $scope.getGuideBoxDetails(gb_id);
+    });
+  }
+  $scope.getGuideBoxDetails = function(gb_id){
+    mainSvc.getGuideBoxDetails(gb_id).then(function(response){
+      $scope.guidebox = response;
+      console.log('GUIDEBOX DETAILS', $scope.guidebox)
+      $scope.guideboxVideo = response.trailers.web;
+      console.log('gb-videos', $scope.guideboxVideo);
+      var webPurchase = response.purchase_web_sources;
+      console.log(webPurchase);
+      var result = webPurchase.filter(function(webPurchase){
+        return webPurchase.source === "google_play" || webPurchase.source === "itunes" || webPurchase.source === "amazon_buy";
+      });
+      result[0].img = "https://smoothjazzandmore.files.wordpress.com/2016/07/itunes-button.png";
+      result[1].img = "https://static1.squarespace.com/static/54d05749e4b08a66f8bde05e/569c35d505caa74dde794ce3/569c35e81115e0984d256776/1453078092910/available-on-amazon.png";
+      result[2].img = "http://vignette2.wikia.nocookie.net/implosion/images/7/74/Google_play.png/revision/latest?cb=20150411081733"
+      $scope.guideboxPurchases = result;
+      console.log('GUIDEBOX', $scope.guideboxPurchases);
+    });
+  }
   //DETAIL AND WATCH LIST BUTTONS
   $scope.addToFav = function(fav){
     console.log(fav);

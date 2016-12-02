@@ -248,3 +248,12 @@ main{
 .similar img{
   width: 400px;
 }
+.platforms-container{
+  width: 330px;
+  display: flex;
+  justify-content: space-between;
+}
+.platforms img{
+  width: 102px;
+  height: 37px;
+}

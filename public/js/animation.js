@@ -28,6 +28,7 @@ $(document).ready(function(){
   $('.search img').click(function(){
     console.log('input length', $('input').val().length);
     if($('input').val().length === 0){
+      console.log('clicked home click');
       $('.search-wrapper').hide();
     } else {
         $('.search-wrapper').show();

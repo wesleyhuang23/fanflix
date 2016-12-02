@@ -15,10 +15,12 @@
     <div class="container-fluid">
 
     <header class="nav-bar">
-
+      <div class="header-wrapper">
       <div class="header-content">
-        <a ui-sref="home">
+        <a id="home-btn" ui-sref="home">
+          <div id="logo-container" onClick="window.location.reload()">
       <h1 id="logo"><span class="o">FAN</span><span class="r">FLIX</span></h1>
+    </div>
         </a>
     <div class="header-right">
       <div class="search"/>
@@ -30,10 +32,11 @@
       <a ui-sref="reviews">
       <p>Reviews</p>
     </a>
+      <p>Login</p>
     </div>
 
     </div>
-
+  </div>
     </header>
     <header>
     </header>

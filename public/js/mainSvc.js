@@ -97,6 +97,24 @@ angular.module('flixApp').service('mainSvc', function($http){
       return response.data.results;
     })
   }
+  this.getGuideBox = function(id){
+    return $http({
+      method: 'GET',
+      url: 'https://api-public.guidebox.com/v1.43/US/rKsvLMllrJ7ebTRG3cMa5smyjptG5sDJ/search/movie/id/themoviedb/' + id
+    }).then(function(response){
+      console.log('guidebox', response.data)
+      return response.data;
+    });
+  }
+  this.getGuideBoxDetails = function(id){
+    return $http({
+      method: 'GET',
+      url: 'https://api-public.guidebox.com/v1.43/US/rKsvLMllrJ7ebTRG3cMa5smyjptG5sDJ/movie/' + id
+    }).then(function(response){
+      return response.data;
+    });
+  }
+  //search view
   this.getSearchMovie = function(term){
     return $http({
       method:'GET',

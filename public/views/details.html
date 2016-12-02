@@ -72,11 +72,16 @@
   <p>{{detail.original_title}}</p>
 </div>
 </div>
-
-
 </div>
 </div>
 <br>
+<div class="platforms-container">
+  <div class="platforms" ng-repeat="platform in guideboxPurchases">
+    <a href="{{platform.link}}"/>
+    <img src="{{platform.img}}"/>
+  </a>
+  </div>
+</div>
 <br>
 <h3>LEADING CAST</h3>
 <br>

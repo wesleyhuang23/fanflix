@@ -42,16 +42,23 @@ header{
 }
 
 .header-content{
+  /*border: 1px solid red;*/
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
+}
+.header-wrapper{
+  /*border: 1px solid green;*/
+  width: 94vw;
 }
 .header-right{
+  /*border: 1px solid green;*/
   position: relative;
-  width: 360px;
+  width: 500px;
+  margin-right: 170px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-left: 900px;
 }
 .search{
   position: relative;
