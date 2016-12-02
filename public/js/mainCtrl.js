@@ -80,6 +80,7 @@ angular.module('flixApp').controller('mainCtrl', function($scope, mainSvc){
   }
   $scope.getComingSoon();
 
+
   //SEARCH VIEW
   $scope.getSearch = function(term){
     console.log('search', term);

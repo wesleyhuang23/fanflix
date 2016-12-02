@@ -183,6 +183,84 @@
 
                     </div>
                 </ul>
+                <br>
+                <br>
+                <br>
+                <div class="now-playing-container">
+                    <h3>Favorites</h3>
+                    <br>
+                    <div class="right-ctrl">
+                        <img id="arrow" src="./icons/Arrow-Left-icon.png"/>
+                    </div>
+                    <div class="left-ctrl">
+                        <img id="arrow" src="./icons/Arrow-Left-icon.png"/>
+                    </div>
+                    <ul id="Popular">
+                        <div class="poster-view" ng-repeat="films in favorites">
+
+                            <li>
+                                <div class="poster">
+
+                                    <img ng-src="{{films.poster}}">
+                                    <div class="arrow" id="ar-btn" style="background-image: url('./icons/Arrow-Left-icon.png')"></div>
+                                    <a ui-sref="details({id:'{{films.mdb_id}}'})">
+                                        <div class="release">
+                                            <div class="title-wrapper">
+                                                <p id="title">{{films.title}}</p>
+                                            </div>
+                                            <p>{{films.release_date}}</p>
+                                            <p>
+                                                <br>
+                                                <br>
+                                                <p id="sum">{{films.plot}}</p>
+                                            </div>
+                                        </a>
+                                        <div id="sum-box"></div>
+                                    </a>
+                                </div>
+                            </li>
+
+                        </div>
+                    </ul>
+                    <br>
+                    <br>
+                    <br>
+                    <div class="now-playing-container">
+                        <h3>Watchlist</h3>
+                        <br>
+                        <div class="right-ctrl">
+                            <img id="arrow" src="./icons/Arrow-Left-icon.png"/>
+                        </div>
+                        <div class="left-ctrl">
+                            <img id="arrow" src="./icons/Arrow-Left-icon.png"/>
+                        </div>
+                        <ul id="Popular">
+                            <div class="poster-view" ng-repeat="films in watch">
+
+                                <li>
+                                    <div class="poster">
+
+                                        <img ng-src="{{films.poster}}">
+                                        <div class="arrow" id="ar-btn" style="background-image: url('./icons/Arrow-Left-icon.png')"></div>
+                                        <a ui-sref="details({id:'{{films.mdb_id}}'})">
+                                            <div class="release">
+                                                <div class="title-wrapper">
+                                                    <p id="title">{{films.title}}</p>
+                                                </div>
+                                                <p>{{films.release_date}}</p>
+                                                <p>
+                                                    <br>
+                                                    <br>
+                                                    <p id="sum">{{films.plot}}</p>
+                                                </div>
+                                            </a>
+                                            <div id="sum-box"></div>
+                                        </a>
+                                    </div>
+                                </li>
+
+                            </div>
+                        </ul>
                 <div class="overview-wrapper" ng-app="overviewApp">
                     <div class="overview">
                         <div ui-view></div>

@@ -13,6 +13,7 @@ a {
 body{
   margin: 0;
   background-color: black;
+  animation: fadein 2s;
 }
 .container-fluid{
   overflow: hidden;
@@ -473,4 +474,13 @@ li{
 }
 .left-ctrl:hover{
   background-color: rgba(0,0,0,.7);
+}
+
+@keyframes fadein {
+    from {
+      opacity: 0;
+    }
+    to   {
+      opacity: 1;
+    }
 }
