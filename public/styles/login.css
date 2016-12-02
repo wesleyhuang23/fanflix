@@ -8,15 +8,17 @@
   position: relative;
 }
 .login-wrapper{
-  border: 2px solid white;
+  border: 2px solid #EF7622;
   width: 300px;
   height: 500px;
   text-align: center;
   display: flex;
   justify-content: center;
+  position: relative;
+  z-index: 5;
 }
 .login-box{
-  margin-top: 100px;
+  margin-top: 80px;
 }
 
 .fb-btn{

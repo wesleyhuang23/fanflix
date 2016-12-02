@@ -2,9 +2,48 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var cors = require('cors');
 var massive = require('massive');
+var session = require('express-session');
+var passport = require('passport');
+var FacebookStrategy = require('passport-facebook').Strategy;
+var config = require('./config.js');
 var connectionString = 'postgres://wesleyhuang@localhost/fanflix';
 
 var app = module.exports = express();
+
+// app.use(session({secret: '98h32diwuenfweif'}));
+
+// app.use(passport.initialize());
+// app.use(passport.session());
+//
+// passport.use(new FacebookStrategy({
+//   clientID: config.facebookId,
+//   clientSecret: config.facebookSecret,
+//   callbackUrl: config.baseDomian + '/auth/facebook/callback'
+// }, function(token, refreshToken, profile, done) {
+//   console.log('token', token);
+//   console.log('profile', profile);
+//   return done(null, profile);
+// }));
+//
+// app.get('/auth/facebook', passport.authenticate('facebook'));
+// app.get('/auth/facebook/callback', passport.authenticate('facebook', {
+//   successRediret: '/',
+//   failureRedirect: '/login'
+// }, function(req, res){
+//   console.log(req.session);
+// }));
+//
+// passport.serializeUser(function(user, done){
+//   done(null, user);
+// });
+//
+// passport.deserializeUser(function(obj, done){
+//   done(null, obj);
+// });
+//
+// app.get('/', function(req, res){
+//   return res.send(req.user);
+// })
 
 var massiveInstance = massive.connectSync({connectionString : connectionString});
 
