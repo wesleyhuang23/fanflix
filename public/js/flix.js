@@ -24,6 +24,10 @@ angular.module('flixApp', ['ui.router'])
     templateUrl: 'views/edit.html',
     url: '/edit/:id',
     controller: 'editCtrl'
+  }).state('login', {
+    templateUrl: 'views/login.html',
+    url: '/login',
+    controller: 'loginCtrl'
   });
 
 
