@@ -88,10 +88,11 @@ module.exports = {
   },
   delete_review: function(req, res, next){
     console.log('deleteing review', req.query.id);
-    db.delete_review([req.body.id], function(err, reviews){
+    db.delete_review([req.query.id], function(err, reviews){
       console.log(err);
+      console.log(reviews);
       res.send(reviews);
-    })
+    });
   },
   add_to_reviews: function(req, res, next){
     var title = req.body.title;

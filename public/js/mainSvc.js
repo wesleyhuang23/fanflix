@@ -221,7 +221,7 @@ angular.module('flixApp').service('mainSvc', function($http){
     return $http({
       method: 'DELETE',
       url: 'http://localhost:3000/deletereview?' + 'id=' + del_id.id
-    })
+    });
   }
 
   this.addToReviews = function(film){

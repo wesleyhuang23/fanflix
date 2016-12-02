@@ -69,11 +69,6 @@
 #edit2:hover{
   transform: scale(1.1);
 }
-#x-review:active{
-  position: absolute;
-  top: 30px;
-  left: 5px;
-}
 .right-info h2{
   text-transform: uppercase;
   font-weight: bolder;

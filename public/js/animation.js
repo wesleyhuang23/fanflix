@@ -35,14 +35,14 @@ $(document).ready(function(){
       }
   });
 
-  var unorderedlist = document.getElementById('watchlist-ul');
-
-  var listItems = unorderedlist.getElementsByTagName('li').length;
-  console.log(unorderedlist.length);
-
-  if(!listItems){
-    $('#watchlist-homepage').hide();
-  }
+  // var unorderedlist = document.getElementById('watchlist-ul');
+  //
+  // var listItems = unorderedlist.getElementsByTagName('li').length;
+  // console.log(unorderedlist.length);
+  //
+  // if(!listItems){
+  //   $('#watchlist-homepage').hide();
+  // }
   //
   // $('.btn').click(function(){
   //   console.log('clicked btn');
