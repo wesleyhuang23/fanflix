@@ -10,21 +10,20 @@
       <div class="review">
         <div class="poster-right-info">
         <div class="review-box">
-          <div class="review-poster">
-          <div class="black-bg-review">
-          </div>
-          <div class="icons-row">
-          <img id="x-review" src="./icons/x-mark-4-512.png" ng-click="deleteReview(film.mdb_id)" />
-          <a ui-sref="edit({id:'{{film.mdb_id}}'})">
-          <!-- <img id="edit" src="./icons/add-512.png"/> -->
-          <img id="edit2" src="./icons/edit-icon-png-24.png" ng-click="editReview(film.mdb_id)"/>
-        </a>
-        </div>
 
         <img src="{{film.poster}}" />
+
+        <div class="icons-row">
+        <img id="x-review" src="./icons/x-mark-4-512.png" ng-click="deleteReview(film.mdb_id)" />
+        <a ui-sref="edit({id:'{{film.mdb_id}}'})">
+        <!-- <img id="edit" src="./icons/add-512.png"/> -->
+        <img id="edit2" src="./icons/edit-icon-png-24.png" ng-click="editReview(film.mdb_id)"/>
+      </a>
+      </div>
+      
       </div>
 
-    </div>
+
     <div class="right-info">
     <h1> {{film.title}}</h1>
     <br>

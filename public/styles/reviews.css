@@ -4,6 +4,9 @@
   float: left;
   margin-top: 10px;
 }
+.review-box{
+  margin-bottom: 100px;
+}
 #reviews{
   margin-bottom: 10px;
 }
@@ -33,32 +36,25 @@
   margin-left: 20px;
   margin-bottom: 20px;
 }
+.icons-row{
+  width: 300px;
+}
 #x-review{
-  position: absolute;
-  left: 5px;
+  position: relative;
+  top: 5px;
   height: 50px;
   width: 50px;
   filter: invert(100%);
-  opacity: 0;
+  opacity: 1;
   cursor: pointer;
 }
-#edit{
-  position: absolute;
-  left: 60px;
-  filter: invert(100%);
-  height: 50px;
-  width: 50px;
-  cursor: pointer;
-  opacity: 0;
-}
+
 #edit2{
-  position: absolute;
-  left: 110px;
   filter: invert(100%);
   height: 60px;
   width: 60px;
   cursor: pointer;
-  opacity: 0;
+  opacity: 1;
 }
 .review-poster{
   height: 450px;
@@ -66,17 +62,12 @@
   padding: 5px;
   padding-bottom: 20px;
 }
-.review-poster:hover .black-bg-review{
-  opacity: .5
+
+#x-review:hover{
+  transform: scale(1.1);
 }
-.review-poster:hover #x-review{
-  opacity: 1;
-}
-.review-poster:hover #edit{
-  opacity: 1;
-}
-.review-poster:hover #edit2{
-  opacity: 1;
+#edit2:hover{
+  transform: scale(1.1);
 }
 #x-review:active{
   position: absolute;
