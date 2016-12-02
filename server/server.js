@@ -29,9 +29,9 @@ passport.use(new FacebookStrategy({
   },
   function(accessToken, refreshToken, profile, done) {
     //sql function to check if the user exist
-    db.user.findOne({fb_id: profile.id}, function(err, user){
-      if(!user){
-        db.user.insert({
+    db.users.findOne({fb_id: profile.id}, function(err, users){
+      if(!users){
+        db.users.insert({
           name: profile.displayName,
           fb_id: profile.id,
           photo: 'http://graph.facebook.com/' + profile.id + '/picture?width=9999'
@@ -39,7 +39,7 @@ passport.use(new FacebookStrategy({
           return done(null, user);
         });
       } else {
-        return done(null, user);
+        return done(null, users);
       }
     })
     //if they dont exist create them in the database;
@@ -58,16 +58,17 @@ app.get('/auth/facebook/callback', passport.authenticate('facebook', {
   successRedirect: '/',
   failureRedirect: '/login'
 }), function(req, res){
-  console.lof(req.session);
+  console.log(req.session);
 });
 
 app.get('/user', function(req, res){
   return res.send(req.user);
 });
 
-
-
-
+app.get('/logout', function(req, res){
+  req.logout();
+  return res.status(200).json({user: null})
+})
 
 var nodeCtrl = require('./nodeCtrl.js');
 
@@ -83,7 +84,7 @@ db.create_reviews(function(err, reviews){
 });
 db.create_user(function(err, users){
   console.log('users table init');
-})
+});
 //favorites
 app.post('/favorites', nodeCtrl.add_to_fav);
 app.get('/favorites', nodeCtrl.get_favorites);

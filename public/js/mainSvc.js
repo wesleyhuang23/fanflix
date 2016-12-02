@@ -272,4 +272,13 @@ angular.module('flixApp').service('mainSvc', function($http){
       return response;
     });
   }
+
+  this.logoutUser = function(){
+    return $http({
+      method: 'GET',
+      url: '/logout'
+    }).then(function(response){
+      return response;
+    })
+  }
 });

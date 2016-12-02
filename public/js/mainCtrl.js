@@ -178,6 +178,14 @@ angular.module('flixApp').controller('mainCtrl', function($scope, mainSvc){
       });
     };
 
+  $scope.logoutUser = function() {
+    mainSvc.logoutUser().then(function(response) {
+      console.log(response);
+      if (!response.data.user) {
+        $scope.user = null;
+      }
+    })
+  }
     mainSvc.getUser().then(function(response){
       if(response.data){
         console.log('user', response.data);
