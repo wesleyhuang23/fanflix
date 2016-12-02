@@ -177,4 +177,11 @@ angular.module('flixApp').controller('mainCtrl', function($scope, mainSvc){
         $scope.author = response[0].author;
       });
     };
+
+    mainSvc.getUser().then(function(response){
+      if(response.data){
+        console.log('user', response.data);
+        $scope.user = response.data;
+      }
+    });
 });
