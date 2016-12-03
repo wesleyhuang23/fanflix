@@ -37,9 +37,11 @@
   border: 2px solid white;
   background-color: #DB4437;
   cursor: pointer;
+  display: none;
 }
 .background-img-login{
   position: absolute;
+  left: 2px;
   width: 94vw;
   height: 94vh;
   opacity: .4;

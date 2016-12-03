@@ -12,7 +12,16 @@ a {
 #watchlist-home{
   color: #EF7622;
 }
-
+.carosel-wrapper{
+  background-color: #141414;
+  width: 100vw;
+  position: relative;
+  left: -100px;
+  padding-left: 100px;
+  padding-right: 200px;
+  padding-bottom: 70px;
+  padding-top: 20px;
+}
 body{
   margin: 0;
   background-color: black;
@@ -22,7 +31,6 @@ body{
   overflow: hidden;
 }
 .nav-bar{
-  position: relative;
   top:0px;
   background-color: rgba(0,0,0,.7);
   height: 7.5vh;
@@ -30,6 +38,8 @@ body{
   display: flex;
   align-items: center;
   position: fixed;
+  padding-left: 79px;
+  left: 0px;
   z-index: 10;
 }
 .user-box{
@@ -125,7 +135,6 @@ HOME VIEW
     overflow: hidden;
     height: 62vh;
     position: relative;
-    margin-bottom: 20px;
 }
 .billboard{
   background-color: #000000;
