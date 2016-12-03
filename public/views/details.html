@@ -26,7 +26,6 @@
   <h2>{{detail.title}}<span> ({{imdb.Year}})</span></h2>
   <br>
   <h3 id="tagline-detail" ng-show="detail.tagline">"{{detail.tagline}}"</h3>
-  <br>
   <div class="buttons">
 
 
@@ -60,6 +59,9 @@
   <h3>Genre</h3>
   <p>{{imdb.Genre}}</p>
   <br>
+  <h3>Rating</h3>
+  <p>{{imdb.Rated}}</p>
+  <br>
   <h3>Production Companies</p>
     <div ng-repeat="company in production_companies">
   <p>{{company.name}}</p>
@@ -79,9 +81,6 @@
   <h3>Language</h3>
   <p>{{imdb.Language}}</p>
   <br>
-  <h3>Rating</h3>
-  <p>{{imdb.Rated}}</p>
-  <br>
   <h3>Also Known As</h3>
   <p>{{detail.original_title}}</p>
   <br>
@@ -97,6 +96,7 @@
 </div>
 </div>
 <br>
+<br>
 <h3>LEADING CAST</h3>
 <br>
 <div class="second-row-wrapper">
@@ -104,7 +104,7 @@
 <br>
 <div class="second-row-detail" ng-repeat="person in cast">
 
-  <div class="cast-view">
+  <div class="cast-view" ng-show="{{person.profile_path}}">
     <img ng-src="https://image.tmdb.org/t/p/w300_and_h450_bestv2{{person.profile_path}}"/>
     <br>
     <p style="text-transform:uppercase; font-size:13px;font-weight:900">{{person.name}}</p>
@@ -146,7 +146,7 @@
 <div class="similar-container">
   <div class="similar-wrapper" ng-repeat="film in similar">
     <a ui-sref="details({id:'{{film.id}}'})">
-    <div class="similar">
+    <div class="similar" ng-show="{{film.backdrop_path}}">
     <img src="https://image.tmdb.org/t/p/original{{film.backdrop_path}}"/>
     <h4>{{film.title}}</h4>
   </div>

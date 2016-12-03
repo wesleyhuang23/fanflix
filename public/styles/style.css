@@ -308,6 +308,7 @@ li{
 }
 #title{
   width: 200px;
+  transition: opacity .4s ease-in-out;
   /*border: 1px solid green;*/
 }
 .poster{
@@ -345,6 +346,9 @@ li{
   opacity: 1;
 }
 .poster:hover .release{
+  opacity: 1;
+}
+.poster:hover #title{
   opacity: 1;
 }
 .poster:hover #sum-box{

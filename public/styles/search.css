@@ -3,6 +3,7 @@
   height: 420px;
 }
 .search-content p{
+  position: absolute;
   width: 250px;
 }
 .search-container{
@@ -16,6 +17,6 @@
 .search-content{
   display: inline-block;
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 45px;
   animation: fadein 2s;
 }
