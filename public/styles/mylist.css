@@ -66,11 +66,11 @@
   transition: .7s;
 }
 .img-box{
-/*  border: 1px solid blue;*/
+/*border: 1px solid blue;*/
   position: absolute;
   top:0px;
-  left: 15px;
-  width: 170px;
+  left: 2px;
+  width: 200px;
   height: 100px;
   display: flex;
   justify-content: space-between;
@@ -108,6 +108,7 @@
 .watch-box #heart{
   position: relative;
   top:5px;
+  left: 2px;
   border: 5px solid white;
   border-radius: 100px;
   align-items: center;
@@ -117,6 +118,20 @@
   opacity: 0;
   cursor: pointer;
   transition: opacity 1s;
+}
+.watch-box #eye{
+  position: relative;
+  filter: invert(100%);
+  top:5px;
+  border: 5px solid black;
+  border-radius: 100px;
+  align-items: center;
+  padding: 3px;
+  height: 30px;
+  width: 30px;
+  opacity: 0;
+  transition: opacity 1s;
+  cursor: pointer;
 }
 
 #review{
@@ -187,6 +202,9 @@
 .watch-view:hover #heart{
   opacity: 1;
 }
+.watch-view:hover #eye{
+  opacity: 1;
+}
 .watch-view:hover #i{
   opacity: 1;
 }
@@ -195,6 +213,9 @@
 }
 
 #heart:hover{
+  transform: scale(1.15);
+}
+#eye:hover{
   transform: scale(1.15);
 }
 #x:hover{

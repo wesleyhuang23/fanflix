@@ -85,6 +85,13 @@ module.exports = {
       res.send(mylist);
     });
   },
+  update_to_watched: function(req, res, next){
+    console.log(req.body);
+    var watchedStatus = 3;
+    db.update_to_watched([req.body.id, watchedStatus, req.body.fb_id], function(err, mylist){
+      res.send(mylist);
+    });
+  },
   delete: function(req, res, next){
     console.log('del func', req.params);
     db.delete([req.params.id, req.params.fb_id], function(err, mylist){

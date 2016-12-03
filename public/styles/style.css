@@ -123,8 +123,9 @@ HOME VIEW
 ============*/
 .billboard-wrapper{
     overflow: hidden;
-    height: 65vh;
+    height: 62vh;
     position: relative;
+    margin-bottom: 20px;
 }
 .billboard{
   background-color: #000000;
@@ -167,7 +168,7 @@ HOME VIEW
   position: absolute;
   left:-140px;
   z-index: -1;
-  height: 65vh;
+  height: 63vh;
   width: 37vw;
   background-color: black;
   box-shadow: 120px 0 2000px black;

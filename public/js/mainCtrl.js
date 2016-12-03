@@ -144,6 +144,16 @@ angular.module('flixApp').controller('mainCtrl', function($scope, mainSvc){
     });
   }
 
+  $scope.updateWatched = function(mdb_id, fb_id){
+    var id = {};
+    id.id = mdb_id;
+    id.fb_id = fb_id;
+    console.log(id);
+    mainSvc.updateWatched(id).then(function(response){
+      
+    });
+  }
+
   $scope.updateFav = function(mdb_id, fb_id){
     var id = {}
     id.id = mdb_id;

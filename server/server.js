@@ -105,6 +105,7 @@ app.get('/update/:mdb_id/:fb_id', nodeCtrl.update_review);
 
 //update
 app.put('/update', nodeCtrl.update_to_fav);
+app.put('/update_watched', nodeCtrl.update_to_watched);
 
 //delete
 app.delete('/delete/:id/:fb_id', nodeCtrl.delete);

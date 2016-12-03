@@ -203,7 +203,16 @@ angular.module('flixApp').service('mainSvc', function($http){
       return response;
     });
   }
-
+  this.updateWatched = function(id){
+    console.log('updating watched');
+    return $http({
+      method: 'PUT',
+      url: 'http://localhost:3000/update_watched',
+      data: id
+    }).then(function(response){
+      return response;
+    })
+  }
   this.delete = function(del_id){
     console.log('deleting');
     console.log(del_id);
