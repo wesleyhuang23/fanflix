@@ -10,7 +10,18 @@
   <div class="first-row">
   <div class="details_poster">
     <img ng-src="https://image.tmdb.org/t/p/original{{detail.poster_path}}"/>
+    <br>
+    <br>
+    <div class="platforms-container">
+      <div class="platforms" ng-repeat="platform in guideboxPurchases">
+        <a href="{{platform.link}}"/>
+        <img src="{{platform.img}}"/>
+      </a>
+      </div>
+    </div>
   </div>
+
+  <br>
 <div class="info-section">
   <h2>{{detail.title}}<span> ({{imdb.Year}})</span></h2>
   <br>
@@ -73,14 +84,6 @@
 </div>
 </div>
 </div>
-</div>
-<br>
-<div class="platforms-container">
-  <div class="platforms" ng-repeat="platform in guideboxPurchases">
-    <a href="{{platform.link}}"/>
-    <img src="{{platform.img}}"/>
-  </a>
-  </div>
 </div>
 <br>
 <h3>LEADING CAST</h3>

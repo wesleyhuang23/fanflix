@@ -32,7 +32,20 @@ body{
   position: fixed;
   z-index: 10;
 }
-
+.user-box{
+  /*border: 1px solid green;*/
+  display: flex;
+  padding: 5px;
+  padding-right: 10px;
+  align-items: center;
+  width: auto;
+  background-color: rgba(161, 161, 161, .4);
+}
+.user-box img{
+  height: 35px;
+  width: 35px;
+  margin-right: 15px;
+}
 header{
   background-color: rgba(0,0,0,.7);
   height: 7.5vh;
@@ -52,10 +65,10 @@ header{
   width: 94vw;
 }
 .header-right{
-  /*border: 1px solid green;*/
+  /*border: 1px solid blue;*/
   position: relative;
-  width: 500px;
-  margin-right: 170px;
+  width: 700px;
+  margin-right: 40px;
   display: flex;
   align-items: center;
   justify-content: space-between;

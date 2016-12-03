@@ -40,7 +40,7 @@ passport.use(new FacebookStrategy({
         });
       } else {
         return done(null, users);
-      }
+      };
     })
     //if they dont exist create them in the database;
   }

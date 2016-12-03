@@ -22,12 +22,15 @@
                     <p id="starring">Starring:
                         <span id='actors'>{{imdb_detail.Actors}}</span>
                     </p>
+                    <br>
                     <p id="genres">Genres:
                         {{imdb_detail.Genre}}</p>
+                        <br>
+                        <p id="genres">Companies:</p>
+                        <div class="companies-home" ng-repeat="company in companies"/>
+                    <p id="genres"> {{company.name}}</p>
+                  </div>
                     <div class="btn-row">
-                        <div id="trailer-btn">
-                            <p>Trailer</p>
-                        </div>
                         <a ui-sref="details({id:'{{popular.id}}'})">
                             <div id="details-btn">
                                 <p>Details</p>
@@ -39,14 +42,6 @@
                     <br>
                     <br>
                     <br>
-                    <div class="buttons-home">
-                        <div class="btn" id="fav">
-                            <p>Favorite</p>
-                        </div>
-                        <div class="btn" id="list">
-                            <p>Watchlist</p>
-                        </div>
-                    </div>
 
                 </div>
             </div>
@@ -57,6 +52,47 @@
         </div>
     </div>
     <br>
+
+    <div id="watchlist-homepage" ng-show="watch[0].id" class="now-playing-container">
+        <h3 id="watchlist-home">Watchlist</h3>
+        <br>
+        <div class="right-ctrl">
+            <img id="arrow" src="./icons/Arrow-Left-icon.png"/>
+        </div>
+        <div class="left-ctrl">
+            <img id="arrow" src="./icons/Arrow-Left-icon.png"/>
+        </div>
+        <ul id="watchlist-ul">
+            <div class="poster-view" ng-repeat="films in watch">
+
+                <li>
+                    <div class="poster">
+
+                        <img ng-src="{{films.poster}}">
+                        <div class="arrow" id="ar-btn" style="background-image: url('./icons/Arrow-Left-icon.png')"></div>
+                        <a ui-sref="details({id:'{{films.mdb_id}}'})">
+                            <div class="release">
+                                <div class="title-wrapper">
+                                    <p id="title">{{films.title}}</p>
+                                </div>
+                                <p>{{films.release_date}}</p>
+                                <p>
+                                    <br>
+                                    <br>
+                                    <p id="sum">{{films.plot}}</p>
+                                </div>
+                            </a>
+                            <div id="sum-box"></div>
+                        </a>
+                    </div>
+                </li>
+
+            </div>
+        </ul>
+      </div>
+        <br>
+        <br>
+        <br>
     <div class="now-playing-container">
         <h3>NOW PLAYING</h3>
         <br>
@@ -94,6 +130,7 @@
                 </li>
             </div>
         </ul>
+      </div>
         <br>
         <div class="overview-wrapper" ng-app="overviewApp">
             <div class="overview">
@@ -139,6 +176,7 @@
 
                 </div>
             </ul>
+          </div>
             <div class="overview-wrapper" ng-app="overviewApp">
                 <div class="overview">
                     <div ui-view></div>
@@ -183,48 +221,5 @@
 
                     </div>
                 </ul>
-                    <br>
-                    <br>
-                    <br>
-                    <div id="watchlist-homepage" class="now-playing-container">
-                        <h3 id="watchlist-home">Watchlist</h3>
-                        <br>
-                        <div class="right-ctrl">
-                            <img id="arrow" src="./icons/Arrow-Left-icon.png"/>
-                        </div>
-                        <div class="left-ctrl">
-                            <img id="arrow" src="./icons/Arrow-Left-icon.png"/>
-                        </div>
-                        <ul id="watchlist-ul">
-                            <div class="poster-view" ng-repeat="films in watch">
-
-                                <li>
-                                    <div class="poster">
-
-                                        <img ng-src="{{films.poster}}">
-                                        <div class="arrow" id="ar-btn" style="background-image: url('./icons/Arrow-Left-icon.png')"></div>
-                                        <a ui-sref="details({id:'{{films.mdb_id}}'})">
-                                            <div class="release">
-                                                <div class="title-wrapper">
-                                                    <p id="title">{{films.title}}</p>
-                                                </div>
-                                                <p>{{films.release_date}}</p>
-                                                <p>
-                                                    <br>
-                                                    <br>
-                                                    <p id="sum">{{films.plot}}</p>
-                                                </div>
-                                            </a>
-                                            <div id="sum-box"></div>
-                                        </a>
-                                    </div>
-                                </li>
-
-                            </div>
-                        </ul>
-                <div class="overview-wrapper" ng-app="overviewApp">
-                    <div class="overview">
-                        <div ui-view></div>
-                    </div>
-                </div>
+              </div>
             </main>

@@ -94,11 +94,11 @@ var watch;
       var webPurchase = response.purchase_web_sources;
       console.log(webPurchase);
       var result = webPurchase.filter(function(webPurchase){
-        return webPurchase.source === "google_play" || webPurchase.source === "itunes" || webPurchase.source === "amazon_buy";
+        return webPurchase.source === "google_play" || webPurchase.source === "itunes"; //webPurchase.source === "amazon_buy";
       });
       result[0].img = "https://smoothjazzandmore.files.wordpress.com/2016/07/itunes-button.png";
       result[1].img = "https://static1.squarespace.com/static/54d05749e4b08a66f8bde05e/569c35d505caa74dde794ce3/569c35e81115e0984d256776/1453078092910/available-on-amazon.png";
-      result[2].img = "http://vignette2.wikia.nocookie.net/implosion/images/7/74/Google_play.png/revision/latest?cb=20150411081733"
+      result[1].img = "http://vignette2.wikia.nocookie.net/implosion/images/7/74/Google_play.png/revision/latest?cb=20150411081733"
       $scope.guideboxPurchases = result;
       console.log('GUIDEBOX', $scope.guideboxPurchases);
     });

@@ -20,7 +20,7 @@ angular.module('flixApp').controller('mainCtrl', function($scope, mainSvc){
     mainSvc.getPopularDetails(id).then(function(response){
       $scope.popularDetail = response;
       console.log('popDeets', $scope.popularDetail);
-
+      $scope.companies = response.production_companies;
       imdb_id.id = response.imdb_id;
       console.log(imdb_id);
       $scope.getPopImdb(imdb_id);

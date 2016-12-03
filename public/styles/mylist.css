@@ -26,12 +26,11 @@
   display: inline-block;
   text-align: center;
   width: 200px;
-  padding-bottom: 55px;
+  margin-bottom: 60px;
 }
-
 .watch-container{
   margin-top: 10px;
-  margin-bottom: 40px;
+  margin-bottom: 60px;
 }
 .watch-wrapper{
   display: inline;
@@ -41,7 +40,7 @@
   height: 300px;
 }
 .watch-view p{
-  position: relative;
+  position: absolute;
   width: 200px;
 }
 .watch-view{

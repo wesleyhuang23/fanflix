@@ -20,7 +20,14 @@
 .login-box{
   margin-top: 80px;
 }
-
+.login-btn{
+  border: 2px solid white;
+  cursor: pointer;
+}
+.signup-btn{
+  border: 2px solid white;
+  cursor: pointer;
+}
 .fb-btn{
   border: 2px solid white;
   background-color: blue;
@@ -41,6 +48,6 @@
   position: absolute;
   width: 1920px;
   height: 1080px;
-  opacity: .2;
+  opacity: .4;
   filter: grayscale(100%);
 }

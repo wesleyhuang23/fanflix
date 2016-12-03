@@ -249,11 +249,11 @@ main{
   width: 400px;
 }
 .platforms-container{
-  width: 330px;
+  width: 270px;
   display: flex;
   justify-content: space-between;
 }
 .platforms img{
-  width: 102px;
-  height: 37px;
+  width: 130px;
+  height: 47px;
 }

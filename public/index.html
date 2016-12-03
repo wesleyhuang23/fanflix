@@ -37,9 +37,13 @@
       <a ui-sref="login" ng-hide="user.name"/>
       <p>Login</p>
     </a>
-    <a ng-click="logoutUser()" ng-show="user.name"/>
+    <a ng-click="logoutUser()" ng-show="user.name" onClick="window.location.reload()"/>
     <p>Logout</p>
   </a>
+  <div class="user-box">
+    <img src="https://scontent.xx.fbcdn.net/t31.0-1/10457710_10152849643220033_7996853287290615145_o.jpg" />
+    {{user.name}}
+  </div>
     </div>
 
     </div>
