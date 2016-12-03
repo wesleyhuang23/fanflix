@@ -6,6 +6,6 @@ CREATE TABLE reviews (
   tagline TEXT,
   author TEXT,
   review TEXT,
-  FOREIGN KEY (mdb_id) REFERENCES mylist(mdb_id)
+  fb_id TEXT,
   FOREIGN KEY (fb_id) REFERENCES users(fb_id)
 );

@@ -144,10 +144,10 @@ angular.module('flixApp').service('mainSvc', function($http){
     });
   }
 
-  this.getFavs = function(){
+  this.getFavs = function(fb_id){
     return $http({
       method: 'GET',
-      url: 'http://localhost:3000/favorites'
+      url: 'http://localhost:3000/favorites/' + fb_id,
     }).then(function(response){
       return response.data;
     });
@@ -163,10 +163,10 @@ angular.module('flixApp').service('mainSvc', function($http){
     });
   }
 
-  this.getWatched = function(){
+  this.getWatched = function(fb_id){
     return $http({
       method: 'GET',
-      url: 'http://localhost:3000/watched',
+      url: 'http://localhost:3000/watched/' + fb_id,
     }).then(function(response){
       console.log('get_watched', response.data);
       return response.data;
@@ -183,11 +183,11 @@ angular.module('flixApp').service('mainSvc', function($http){
       return response.data;
     });
   }
-  this.getWatch = function(){
+  this.getWatch = function(fb_id){
     console.log('getting watchlist...');
     return $http({
       method: 'GET',
-      url: 'http://localhost:3000/watchlist'
+      url: 'http://localhost:3000/watchlist/' + fb_id
     }).then(function(response){
       return response.data;
     });

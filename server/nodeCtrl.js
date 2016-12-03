@@ -11,18 +11,20 @@ module.exports = {
     var plot = req.body.overview;
     var mdb_id = req.body.id;
     var imdb_id = req.body.imdb_id;
-    console.log(status);
+    var fb_id = req.body.fb_id;
+    console.log(fb_id);
 
-    db.add_to_mylist([title, runtime, release, poster, status, plot, mdb_id, imdb_id], function(err, favorites){
+    db.add_to_mylist([title, runtime, release, poster, status, plot, mdb_id, imdb_id, fb_id], function(err, favorites){
       console.log(err);
       console.log(favorites);
       res.send('Added to your favorites');
     });
   },
   get_favorites: function(req, res, next){
-    db.get_favorites([], function(err, favorites){
-      console.log(favorites);
-      res.send(favorites);
+    console.log(req.params);
+    db.get_favorites([req.params.fb_id], function(err, mylist){
+      console.log(mylist);
+      res.send(mylist);
     })
   },
   add_to_watch: function(req, res, next){
@@ -35,9 +37,10 @@ module.exports = {
     var plot = req.body.overview;
     var mdb_id = req.body.id;
     var imdb_id = req.body.imdb_id;
+    var fb_id = req.body.fb_id;
     console.log(status);
 
-    db.add_to_mylist([title, runtime, release, poster, status, plot, mdb_id, imdb_id], function(err, watchlist){
+    db.add_to_mylist([title, runtime, release, poster, status, plot, mdb_id, imdb_id, fb_id], function(err, watchlist){
       console.log(err);
       console.log(watchlist);
       res.send('Added to your watchlist');
@@ -53,30 +56,33 @@ module.exports = {
     var plot = req.body.overview;
     var mdb_id = req.body.id;
     var imdb_id = req.body.imdb_id;
+    var fb_id = req.body.fb_id;
     console.log(status);
 
-    db.add_to_mylist([title, runtime, release, poster, status, plot, mdb_id, imdb_id], function(err, watchlist){
+    db.add_to_mylist([title, runtime, release, poster, status, plot, mdb_id, imdb_id, fb_id], function(err, mylist){
       console.log(err);
-      console.log(watchlist);
+      console.log(mylist);
       res.send('Added to your watched');
     });
   },
   get_watched: function(req, res, next){
-    db.get_watched([], function(err, watched){
+    console.log(req.params);
+    db.get_watched([req.params.fb_id], function(err, mylist){
       console.log('get_watched');
-      res.send(watched);
+      res.send(mylist);
     });
   },
   get_watchlist: function(req, res, next){
-    db.get_watchlist([], function(err, watchlist){
-      res.send(watchlist);
+    console.log(req.params);
+    db.get_watchlist([req.params.fb_id], function(err, mylist){
+      res.send(mylist);
     });
   },
   update_to_fav: function(req, res, next){
     console.log(req.body.id);
     var favStatus = 1;
-    db.update_to_fav([req.body.id, favStatus], function(err, favorites){
-      res.send(favorites);
+    db.update_to_fav([req.body.id, favStatus, req.body.fb_id], function(err, mylist){
+      res.send(mylist);
     });
   },
   delete: function(req, res, next){

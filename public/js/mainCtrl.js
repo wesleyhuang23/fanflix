@@ -94,17 +94,38 @@ angular.module('flixApp').controller('mainCtrl', function($scope, mainSvc){
   };
 
   //MYLIST VIEW
-  $scope.getFavs = function(){
-    mainSvc.getFavs().then(function(response){
+      var fb_id;
+
+  $scope.logoutUser = function() {
+    mainSvc.logoutUser().then(function(response) {
+      console.log(response);
+      if (!response.data.user) {
+        $scope.user = null;
+      }
+    })
+  }
+    mainSvc.getUser().then(function(response){
+      if(response.data){
+        console.log('user', response.data);
+        $scope.user = response.data;
+        fb_id = response.data.fb_id;
+        console.log(fb_id);
+          $scope.getFavs(fb_id);
+          $scope.getWatch(fb_id);
+          $scope.getWatched(fb_id);
+      }
+    });
+
+  $scope.getFavs = function(fb_id){
+    console.log(fb_id);
+    mainSvc.getFavs(fb_id).then(function(response){
       $scope.favorites = response;
       console.log($scope.favorites);
     });
   }
 
-  $scope.getFavs();
-
-  $scope.getWatched = function(){
-    mainSvc.getWatched().then(function(response){
+  $scope.getWatched = function(fb_id){
+    mainSvc.getWatched(fb_id).then(function(response){
       $scope.watched = response;
       console.log('watched', $scope.watched);
     });
@@ -114,19 +135,20 @@ angular.module('flixApp').controller('mainCtrl', function($scope, mainSvc){
 
   var watchlist
 
-  $scope.getWatch = function(){
-    mainSvc.getWatch().then(function(response){
+  $scope.getWatch = function(fb_id){
+    mainSvc.getWatch(fb_id).then(function(response){
       $scope.watch = response;
       console.log('watchlist', $scope.watch);
       watchlist = response;
     });
   }
-  $scope.getWatch();
 
 
-  $scope.updateFav = function(mdb_id){
+
+  $scope.updateFav = function(mdb_id, fb_id){
     var id = {}
     id.id = mdb_id;
+    id.fb_id = fb_id;
     console.log(id);
     mainSvc.updateFav(id).then(function(response){
       console.log('your list is updated');
@@ -178,18 +200,5 @@ angular.module('flixApp').controller('mainCtrl', function($scope, mainSvc){
       });
     };
 
-  $scope.logoutUser = function() {
-    mainSvc.logoutUser().then(function(response) {
-      console.log(response);
-      if (!response.data.user) {
-        $scope.user = null;
-      }
-    })
-  }
-    mainSvc.getUser().then(function(response){
-      if(response.data){
-        console.log('user', response.data);
-        $scope.user = response.data;
-      }
-    });
+
 });

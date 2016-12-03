@@ -87,15 +87,15 @@ db.create_user(function(err, users){
 });
 //favorites
 app.post('/favorites', nodeCtrl.add_to_fav);
-app.get('/favorites', nodeCtrl.get_favorites);
+app.get('/favorites/:fb_id', nodeCtrl.get_favorites);
 
 //watchlist
 app.post('/watchlist', nodeCtrl.add_to_watch);
-app.get('/watchlist', nodeCtrl.get_watchlist);
+app.get('/watchlist/:fb_id', nodeCtrl.get_watchlist);
 
 //watched
 app.post('/watched', nodeCtrl.add_to_watched);
-app.get('/watched', nodeCtrl.get_watched);
+app.get('/watched/:fb_id', nodeCtrl.get_watched);
 
 //reviews
 app.post('/reviews', nodeCtrl.add_to_reviews);

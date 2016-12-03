@@ -8,5 +8,6 @@ CREATE TABLE mylist (
   plot TEXT,
   mdb_id TEXT,
   imdb_id TEXT,
+  fb_id TEXT NOT NULL,
   FOREIGN KEY (fb_id) REFERENCES users(fb_id)
-)
+);

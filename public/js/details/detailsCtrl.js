@@ -6,6 +6,18 @@ angular.module('flixApp').controller('detailsCtrl', function($scope, $stateParam
   return $sce.trustAsResourceUrl(link);
 };
 
+var fb_id;
+
+$scope.getFbUser = function(){
+  mainSvc.getUser().then(function(response){
+      console.log('user', response.data);
+      fb_id = response.data.fb_id;
+      console.log('fb_id', fb_id);
+});
+}
+$scope.getFbUser();
+
+
 var fav;
 var watch;
 
@@ -97,14 +109,15 @@ var watch;
         return webPurchase.source === "google_play" || webPurchase.source === "itunes"; //webPurchase.source === "amazon_buy";
       });
       result[0].img = "https://smoothjazzandmore.files.wordpress.com/2016/07/itunes-button.png";
-      result[1].img = "https://static1.squarespace.com/static/54d05749e4b08a66f8bde05e/569c35d505caa74dde794ce3/569c35e81115e0984d256776/1453078092910/available-on-amazon.png";
-      result[1].img = "http://vignette2.wikia.nocookie.net/implosion/images/7/74/Google_play.png/revision/latest?cb=20150411081733"
+      // result[1].img = "https://static1.squarespace.com/static/54d05749e4b08a66f8bde05e/569c35d505caa74dde794ce3/569c35e81115e0984d256776/1453078092910/available-on-amazon.png";
+      result[1].img = "http://vignette2.wikia.nocookie.net/implosion/images/7/74/Google_play.png/revision/latest?cb=20150411081733";
       $scope.guideboxPurchases = result;
       console.log('GUIDEBOX', $scope.guideboxPurchases);
     });
   }
   //DETAIL AND WATCH LIST BUTTONS
   $scope.addToFav = function(fav){
+    fav.fb_id = fb_id;
     console.log(fav);
     console.log('i am in add to fav func');
     mainSvc.addToFav(fav).then(function(response){
@@ -112,18 +125,21 @@ var watch;
     })
   };
   $scope.addToWatch = function(fav){
+    fav.fb_id = fb_id;
     console.log('film sent', fav);
     mainSvc.addToWatch(fav).then(function(response){
       $scope.watch = response;
     });
   };
   $scope.addtoWatched = function(fav){
+    fav.fb_id = fb_id;
     console.log('adding to watched...', fav);
     mainSvc.addtoWatched(fav).then(function(response){
       $scope.watched = response;
       console.log($scope.watched);
     });
-  };
+  }
+
 
   $scope.addToFavFunc = function(){
     $scope.addToFav(fav);
