@@ -17,7 +17,7 @@
         <img id="x-review" src="./icons/x-mark-4-512.png" ng-click="deleteReview(film.mdb_id)" onClick="window.location.reload()"/>
         <a ui-sref="edit({id:'{{film.mdb_id}}'})">
         <!-- <img id="edit" src="./icons/add-512.png"/> -->
-        <img id="edit2" src="./icons/edit-icon-png-24.png" ng-click="editReview(film.mdb_id)"/>
+        <img id="edit2" src="./icons/edit-icon-png-24.png" ng-click="editReview(film.mdb_id, user.fb_id)"/>
       </a>
       </div>
 
@@ -28,7 +28,7 @@
     <h1> {{film.title}}</h1>
     <br>
     <h2> {{film.tagline}}</h2>
-    <h3> By:{{film.author}}</h3>
+    <h3> By: {{film.author}}</h3>
     <br>
     <p> {{film.review}}</p>
   </div>

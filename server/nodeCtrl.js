@@ -104,13 +104,17 @@ module.exports = {
     var title = req.body.title;
     var poster = req.body.poster;
     var mdb_id = req.body.mdb_id;
-
-    db.add_to_reviews([title, poster, mdb_id], function(err, reviews){
+    var fb_id = req.body.fb_id;
+    var author = req.body.user_name;
+    console.log(author);
+    db.add_to_reviews([title, poster, mdb_id, author, fb_id], function(err, reviews){
+      console.log(err);
       res.send(reviews);
-    })
+    });
   },
   get_reviews: function(req, res, next){
-    db.get_reviews([], function(err, reviews){
+    console.log(req.params);
+    db.get_reviews([req.params.fb_id], function(err, reviews){
       res.send(reviews);
     });
   },
@@ -120,13 +124,14 @@ module.exports = {
     var tagline = req.body.tagline;
     var review = req.body.review;
     var id = req.body.mdb_id;
-    db.add_review([tagline, author, review, id], function(err, reviews){
+    var fb_id = req.body.fb_id;
+    db.add_review([tagline, author, review, id, fb_id], function(err, reviews){
       res.send(reviews)
     });
   },
   update_review: function(req, res, next){
     console.log(req.params);
-    db.update_review([req.params.mdb_id], function(err, reviews){
+    db.update_review([req.params.mdb_id, req.params.fb_id], function(err, reviews){
       res.send(reviews);
     });
   }

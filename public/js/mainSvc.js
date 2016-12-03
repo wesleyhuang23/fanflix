@@ -236,10 +236,10 @@ angular.module('flixApp').service('mainSvc', function($http){
     });
   }
 
-  this.getReviews = function(){
+  this.getReviews = function(fb_id){
     return $http({
       method: 'GET',
-      url: 'http://localhost:3000/reviews'
+      url: 'http://localhost:3000/reviews/' + fb_id
     }).then(function(response){
       return response.data;
     });
@@ -256,10 +256,11 @@ angular.module('flixApp').service('mainSvc', function($http){
     });
   };
 
-  this.editReview = function(mdb_id){
+  this.editReview = function(edit){
+    console.log(edit);
     return $http({
       method: 'GET',
-      url: 'http://localhost:3000/update/' + mdb_id,
+      url: 'http://localhost:3000/update/' + edit.mdb_id + '/' + edit.fb_id
     }).then(function(response){
       return response.data;
     });

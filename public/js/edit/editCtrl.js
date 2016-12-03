@@ -11,13 +11,14 @@ angular.module('flixApp').controller('editCtrl', function($scope, mainSvc, $stat
   }
   $scope.getEditDetails(id);
 
-  $scope.submitReview = function(tagline, author, comments){
+  $scope.submitReview = function(tagline, author, comments, fb_id){
     var review = {}
     console.log(review);
     review.tagline = tagline;
     review.author = author;
     review.review = comments;
     review.mdb_id = id;
+    review.fb_id = fb_id;
     console.log(review);
     mainSvc.submitReview(review).then(function(response){
 

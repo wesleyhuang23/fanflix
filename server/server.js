@@ -99,9 +99,9 @@ app.get('/watched/:fb_id', nodeCtrl.get_watched);
 
 //reviews
 app.post('/reviews', nodeCtrl.add_to_reviews);
-app.get('/reviews', nodeCtrl.get_reviews);
+app.get('/reviews/:fb_id', nodeCtrl.get_reviews);
 app.post('/comments', nodeCtrl.add_review);
-app.get('/update/:mdb_id', nodeCtrl.update_review);
+app.get('/update/:mdb_id/:fb_id', nodeCtrl.update_review);
 
 //update
 app.put('/update', nodeCtrl.update_to_fav);

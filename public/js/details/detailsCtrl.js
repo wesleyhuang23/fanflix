@@ -7,12 +7,14 @@ angular.module('flixApp').controller('detailsCtrl', function($scope, $stateParam
 };
 
 var fb_id;
+var user_name;
 
 $scope.getFbUser = function(){
   mainSvc.getUser().then(function(response){
       console.log('user', response.data);
       fb_id = response.data.fb_id;
-      console.log('fb_id', fb_id);
+      user_name = response.data.name
+      console.log('fb_id', fb_id, 'user_name', user_name);
 });
 }
 $scope.getFbUser();

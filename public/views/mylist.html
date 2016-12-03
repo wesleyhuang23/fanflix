@@ -47,7 +47,7 @@
           <img id="heart" src="./icons/Heart_corazón.svg.png" ng-click="updateFav(film.mdb_id)" />
 
           <a ui-sref="reviews">
-          <img id="review" src="./icons/menu-alt-512.png" ng-click="addToReviews(film)"/>
+          <img id="review" src="./icons/menu-alt-512.png" ng-click="addToReviews(film, user.name)"/>
         </a>
           <a ui-sref="details({id:'{{film.mdb_id}}'})">
           <img id="i" src="./icons/info-icon--6.png"/>

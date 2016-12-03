@@ -113,6 +113,7 @@ angular.module('flixApp').controller('mainCtrl', function($scope, mainSvc){
           $scope.getFavs(fb_id);
           $scope.getWatch(fb_id);
           $scope.getWatched(fb_id);
+          $scope.getReviews(fb_id);
       }
     });
 
@@ -143,8 +144,6 @@ angular.module('flixApp').controller('mainCtrl', function($scope, mainSvc){
     });
   }
 
-
-
   $scope.updateFav = function(mdb_id, fb_id){
     var id = {}
     id.id = mdb_id;
@@ -174,24 +173,28 @@ angular.module('flixApp').controller('mainCtrl', function($scope, mainSvc){
   }
 
   //reviews
-  $scope.addToReviews = function(film){
+  $scope.addToReviews = function(film, name){
+    film.user_name = name;
     console.log(film);
     mainSvc.addToReviews(film).then(function(response){
       $scope.reviews = response;
     });
   }
 
-  $scope.getReviews = function(){
-    mainSvc.getReviews().then(function(response){
+  $scope.getReviews = function(fb_id){
+    mainSvc.getReviews(fb_id).then(function(response){
       $scope.reviews = response;
       console.log($scope.reviews);
     });
   }
   $scope.getReviews();
 
-    $scope.editReview = function(mdb_id){
-      console.log(mdb_id);
-      mainSvc.editReview(mdb_id).then(function(response){
+    $scope.editReview = function(mdb_id, fb_id){
+      var edit = {};
+      edit.mdb_id = mdb_id;
+      edit.fb_id = fb_id;
+      console.log(edit);
+      mainSvc.editReview(edit).then(function(response){
         $scope.reviewToEdit = response;
         console.log('review to edit', $scope.reviewToEdit);
 
