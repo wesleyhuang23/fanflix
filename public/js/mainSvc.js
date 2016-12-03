@@ -209,7 +209,8 @@ angular.module('flixApp').service('mainSvc', function($http){
     console.log(del_id);
     return $http({
       method:'DELETE',
-      url: 'http://localhost:3000/delete?' + 'id=' + del_id.id
+      // url: 'http://localhost:3000/delete?' + 'id=' + del_id.id + 'fb_id=' + del_id.fb_id
+      url: 'http://localhost:3000/delete/' + del_id.id + '/' + del_id.fb_id
     }).then(function(response){
       console.log("From Service: ", response)
       return response;

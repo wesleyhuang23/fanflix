@@ -107,7 +107,7 @@ app.get('/update/:mdb_id', nodeCtrl.update_review);
 app.put('/update', nodeCtrl.update_to_fav);
 
 //delete
-app.delete('/delete', nodeCtrl.delete);
+app.delete('/delete/:id/:fb_id', nodeCtrl.delete);
 app.delete('/deletereview', nodeCtrl.delete_review);
 
 app.listen(3000, function(){

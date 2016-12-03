@@ -86,8 +86,8 @@ module.exports = {
     });
   },
   delete: function(req, res, next){
-    console.log('del func', req.query.id);
-    db.delete([req.query.id], function(err, mylist){
+    console.log('del func', req.params);
+    db.delete([req.params.id, req.params.fb_id], function(err, mylist){
       console.log(err);
       res.send(mylist);
     });

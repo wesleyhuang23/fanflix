@@ -155,9 +155,10 @@ angular.module('flixApp').controller('mainCtrl', function($scope, mainSvc){
     });
   }
 
-  $scope.delete = function(mdb_id){
+  $scope.delete = function(mdb_id, fb_id){
     var del_id = {}
     del_id.id = mdb_id;
+    del_id.fb_id = fb_id;
     console.log(del_id);
     mainSvc.delete(del_id).then(function(response){
       console.log('movie deleted');
