@@ -34,7 +34,7 @@ passport.use(new FacebookStrategy({
         db.users.insert({
           name: profile.displayName,
           fb_id: profile.id,
-          photo: 'http://graph.facebook.com/' + profile.id + '/picture?width=9999'
+          photo: 'https://scontent.xx.fbcdn.net/t31.0-1/10457710_' + profile.id + '_7996853287290615145_o.jpg'
         }, function(err, user){
           return done(null, user);
         });

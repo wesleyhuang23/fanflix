@@ -25,6 +25,8 @@
 <div class="info-section">
   <h2>{{detail.title}}<span> ({{imdb.Year}})</span></h2>
   <br>
+  <h3 id="tagline-detail" ng-show="detail.tagline">"{{detail.tagline}}"</h3>
+  <br>
   <div class="buttons">
 
 
@@ -55,15 +57,16 @@
   <h3>Writer</h3>
   <p>{{imdb.Writer}}</p>
   <br>
+  <h3>Genre</h3>
+  <p>{{imdb.Genre}}</p>
+  <br>
   <h3>Production Companies</p>
     <div ng-repeat="company in production_companies">
   <p>{{company.name}}</p>
   </div>
 </div>
 <div id="o-right">
-  <h3>Genre</h3>
-  <p>{{imdb.Genre}}</p>
-  <br>
+
   <h3>Runtime</h3>
   <p>{{imdb.Runtime}}</p>
   <br>
@@ -81,6 +84,14 @@
   <br>
   <h3>Also Known As</h3>
   <p>{{detail.original_title}}</p>
+  <br>
+  <h3>Budget</h3>
+  <p ng-show="detail.budget">{{detail.budget | currency:"USD$":0}}</p>
+  <p ng-show="!detail.budget">N/A</p>
+  <br>
+  <h3>Revenue</h3>
+  <p ng-show="detail.revenue">{{detail.revenue | currency:"USD$":0 }}</p>
+  <p ng-show="!detail.revenue">N/A</p>
 </div>
 </div>
 </div>

@@ -6,6 +6,7 @@ CREATE TABLE mylist (
   poster TEXT,
   status INT,
   plot TEXT,
-  mdb_id TEXT UNIQUE,
-  imdb_id TEXT UNIQUE
+  mdb_id TEXT,
+  imdb_id TEXT,
+  FOREIGN KEY (fb_id) REFERENCES users(fb_id)
 )
