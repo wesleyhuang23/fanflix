@@ -235,10 +235,12 @@ angular.module('flixApp').service('mainSvc', function($http){
   }
 
   this.deleteReview = function(del_id){
-    console.log('deleting review');
+    console.log('deleting review', del_id);
     return $http({
       method: 'DELETE',
-      url: 'http://localhost:3000/deletereview?' + 'id=' + del_id.id
+      url: 'http://localhost:3000/deletereview/' + del_id.id + '/' + del_id.fb_id
+    }).then(function(response){
+      return response
     });
   }
 

@@ -100,8 +100,8 @@ module.exports = {
     });
   },
   delete_review: function(req, res, next){
-    console.log('deleteing review', req.query.id);
-    db.delete_review([req.query.id], function(err, reviews){
+    console.log('deleteing review', req.params);
+    db.delete_review([req.params.id, req.params.fb_id], function(err, reviews){
       console.log(err);
       console.log(reviews);
       res.send(reviews);

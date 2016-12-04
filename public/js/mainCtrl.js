@@ -180,9 +180,10 @@ angular.module('flixApp').controller('mainCtrl', function($scope, mainSvc){
       console.log('movie deleted');
     });
   }
-  $scope.deleteReview = function(mdb_id){
+  $scope.deleteReview = function(mdb_id, fb_id){
     var del_id = {}
     del_id.id = mdb_id;
+    del_id.fb_id = fb_id;
     console.log(del_id);
     mainSvc.deleteReview(del_id).then(function(response){
       console.log('movie deleted');

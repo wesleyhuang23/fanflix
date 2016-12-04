@@ -253,11 +253,11 @@ main{
   width: 400px;
 }
 .platforms-container{
-  width: 270px;
+  width: 330px;
   display: flex;
   justify-content: space-between;
 }
 .platforms img{
-  width: 130px;
-  height: 47px;
+  width: 160px;
+  height: 57px;
 }
