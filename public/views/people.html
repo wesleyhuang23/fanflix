@@ -1,0 +1,77 @@
+<main>
+
+  <div class="person-container">
+    <div class="person-wrapper">
+    <div class="picture">
+      <br>
+      <img ng-src="https://image.tmdb.org/t/p/w640{{personDetail.profile_path}}"/>
+      <br>
+      <br>
+      <hr>
+      <br>
+      <h3>Place of Birth</h3>
+      <p> {{personDetail.place_of_birth}}</p>
+      <br>
+      <h3>Birthday</h3>
+      <p> {{personDetail.birthday}}</p>
+      <br>
+      <h3 ng-show="{{personDetail.deathday}}">Date of Death</h3>
+      <p ng-show="{{personDetail.deathday}}"> {{personDetail.deathday}}</p>
+      <h3>Number of Known Credits</h3>
+      <p>{{credNum}}</p>
+    </div>
+
+    <div class="info-right">
+      <br>
+      <h2> {{personDetail.name}}</h2>
+      <br>
+      <h3>Bio</h3>
+      <p>{{personDetail.biography}}</p>
+      <br>
+      <h3>Known For</h3>
+      <br>
+      <div class="credit-container">
+        <div id="known" class="credit-wrapper" ng-repeat="credit in knownFor | filter:titleFilter">
+          <a ui-sref="details({id:'{{credit.id}}'})">
+          <div class="credit-view">
+            <img ng-src="https://image.tmdb.org/t/p/w640{{credit.poster_path}}" ng-show="{{credit.poster_path}}"/>
+            <p ng-show="{{credit.poster_path}}">{{credit.title}}<br> ({{credit.release_date}})</p>
+          </div>
+        </a>
+        </div>
+      </div>
+      <h3>Credits</h3>
+      <br>
+      <input id="person-input" type="text" placeholder="search credits" ng-model="titleFilter.title"/>
+    <br>
+    <br>
+    <h3>As Cast</h3>
+    <hr>
+    <br>
+      <div class="credit-container">
+        <div class="credit-wrapper" ng-repeat="credit in personCast | filter:titleFilter">
+          <a ui-sref="details({id:'{{credit.id}}'})">
+          <div class="credit-view">
+            <img ng-src="https://image.tmdb.org/t/p/w640{{credit.poster_path}}" ng-show="{{credit.poster_path}}"/>
+            <p ng-show="{{credit.poster_path}}">{{credit.title}}<br> ({{credit.release_date}})</p>
+          </div>
+        </a>
+        </div>
+      </div>
+      <h3>As Crew</h3>
+      <hr>
+      <br>
+      <div class="credit-container">
+        <div class="credit-wrapper" ng-repeat="film in crew | filter:titleFilter">
+          <a ui-sref="details({id:'{{film.id}}'})">
+          <div class="credit-view">
+            <img ng-src="https://image.tmdb.org/t/p/w640{{film.poster_path}}" ng-show="{{film.poster_path}}"/>
+            <p ng-show="{{film.poster_path}}">{{film.title}}<br>({{film.job}})</p>
+          </div>
+        </a>
+        </div>
+    </div>
+  </div>
+
+  </div>
+</main>

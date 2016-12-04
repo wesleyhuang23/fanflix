@@ -1,0 +1,48 @@
+
+.person-container{
+  /*border: 1px solid green;*/
+  display: flex;
+  justify-content: center;
+    background-color: #141414;
+    position: relative;
+}
+.person-wrapper{
+  /*border: 1px solid orange;*/
+  display: flex;
+  flex-direction: row;
+  width: 1200px;
+}
+.picture img{
+  width: 300px;
+  height: 450px;
+}
+.info-right{
+  margin-left: 20px;
+}
+.info-right h2{
+  font-size: 40px;
+  margin: 0px;
+}
+.person-container h3{
+  color: #EF7622;
+}
+.credit-wrapper{
+  display: inline-block;
+}
+.credit-view{
+  margin-bottom: 50px;
+}
+.credit-view img{
+  width: 176px;
+  height: 264px;
+  display: inline;
+}
+.credit-view p{
+  position: absolute;
+  text-align: center;
+  font-size: 12px;
+  width: 176px;
+}
+#known{
+  padding-right: 10px;
+}

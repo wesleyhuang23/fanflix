@@ -101,7 +101,7 @@
 
 <br>
 <div class="second-row-detail" ng-repeat="person in cast">
-
+  <a ui-sref="people({id:'{{person.id}}'})">
   <div class="cast-view" ng-show="{{person.profile_path}}">
     <img ng-src="https://image.tmdb.org/t/p/w300_and_h450_bestv2{{person.profile_path}}"/>
     <br>
@@ -109,6 +109,7 @@
     <br>
     <p>{{person.character}}</p>
   </div>
+</a>
 </div>
 
 </div>

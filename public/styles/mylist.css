@@ -193,6 +193,11 @@
   top:10px;
   left: 2px;
 }
+#eye:active{
+  position: relative;
+  top:10px;
+  left: 2px;
+}
 .watch-view:hover .black-bg{
   opacity: .5;
 }

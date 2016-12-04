@@ -123,6 +123,14 @@ angular.module('flixApp').service('mainSvc', function($http){
       return response.data.results;
     });
   }
+  this.getPeople = function(term){
+    return $http({
+      method: 'GET',
+      url: 'https://api.themoviedb.org/3/search/person?api_key=8eecf03080f34edf303e14b5f1476653&language=en-US&query=' + term + '&page=1&include_adult=false'
+    }).then(function(response){
+      return response.data.results;
+    });
+  }
   this.getImages = function(imdb_id){
     return $http({
       method: 'GET',
@@ -291,5 +299,30 @@ angular.module('flixApp').service('mainSvc', function($http){
     }).then(function(response){
       return response;
     })
+  }
+  //people page STUFF
+  this.getPersonDetails = function(person_id){
+    return $http({
+      method: 'GET',
+      url: 'https://api.themoviedb.org/3/person/' + person_id + '?api_key=8eecf03080f34edf303e14b5f1476653&language=en-US'
+    }).then(function(response){
+      return response.data;
+    });
+  }
+  this.getPersonMovieCredits = function(person_id){
+    return $http({
+      method: 'GET',
+      url: 'https://api.themoviedb.org/3/person/' + person_id + '/movie_credits?api_key=8eecf03080f34edf303e14b5f1476653&language=en-US'
+    }).then(function(response){
+      return response.data;
+    });
+  };
+  this.getKnownFor = function(person_name){
+    return $http({
+    method: 'GET',
+    url: 'https://api.themoviedb.org/3/search/person?api_key=8eecf03080f34edf303e14b5f1476653&language=en-US&query=' + person_name + '&page=1&include_adult=false'
+  }).then(function(response){
+    return response.data;
+  });
   }
 });

@@ -83,6 +83,7 @@ angular.module('flixApp').controller('mainCtrl', function($scope, mainSvc){
 
   //SEARCH VIEW
   $scope.getSearch = function(term){
+    $scope.getPeople(term);
     console.log('search', term);
     mainSvc.getSearchMovie(term).then(function(response){
       for(var i = 0; i < response.length; i++){
@@ -92,6 +93,12 @@ angular.module('flixApp').controller('mainCtrl', function($scope, mainSvc){
       console.log($scope.movieSearch);
     });
   };
+  $scope.getPeople = function(term){
+    mainSvc.getPeople(term).then(function(response){
+      $scope.person = response;
+      console.log('PERSON SEARCH', $scope.person);
+    });
+  }
 
   //MYLIST VIEW
       var fb_id;
@@ -150,7 +157,7 @@ angular.module('flixApp').controller('mainCtrl', function($scope, mainSvc){
     id.fb_id = fb_id;
     console.log(id);
     mainSvc.updateWatched(id).then(function(response){
-      
+
     });
   }
 
