@@ -55,13 +55,16 @@
     <div id="watchlist-homepage" ng-show="watch[0].id" class="now-playing-container">
         <h3 id="watchlist-home">Watchlist</h3>
         <br>
-        <div class="right-ctrl">
-            <img id="arrow" src="./icons/Arrow-Left-icon.png"/>
-        </div>
-        <div class="left-ctrl">
-            <img id="arrow" src="./icons/Arrow-Left-icon.png"/>
-        </div>
+
         <ul id="watchlist-ul">
+          <div class="btn-div-watch">
+          <div id="right-watchlist" class="right-ctrl">
+          <img id="arrow" src="./icons/Arrow-Left-icon.png"/>
+          </div>
+          <div id="left-watchlist" class="left-ctrl">
+          <img id="arrow" src="./icons/Arrow-Left-icon.png"/>
+          </div>
+          </div>
             <div class="poster-view" ng-repeat="films in watch">
 
                 <li>
@@ -95,14 +98,18 @@
     <div class="now-playing-container">
         <h3>NOW PLAYING</h3>
         <br>
-        <!-- <div class="right-ctrl">
-    <img id="arrow" src="./icons/Arrow-Left-icon.png"/>
-  </div>
-  <div class="left-ctrl">
-    <img id="arrow" src="./icons/Arrow-Left-icon.png"/>
-  </div> -->
+
 
         <ul id="now-playing" class="slider">
+          <div class="btn-div-now">
+          <div id="right-now-playing" class="right-ctrl">
+      <img id="arrow" src="./icons/Arrow-Left-icon.png"/>
+    </div>
+    <div id="left-now-playing" class="left-ctrl">
+      <img id="arrow" src="./icons/Arrow-Left-icon.png"/>
+    </div>
+  </div>
+
             <div class="poster-view" ng-repeat="films in nowPlaying">
 
                 <li>
@@ -142,13 +149,16 @@
         <div class="now-playing-container">
             <h3>Coming Soon</h3>
             <br>
-            <div class="right-ctrl">
-                <img id="arrow" src="./icons/Arrow-Left-icon.png"/>
-            </div>
-            <div class="left-ctrl">
-                <img id="arrow" src="./icons/Arrow-Left-icon.png"/>
-            </div>
+
             <ul id="coming-soon">
+              <div class="btn-div-coming">
+              <div id="right-coming-soon" class="right-ctrl">
+              <img id="arrow" src="./icons/Arrow-Left-icon.png"/>
+              </div>
+              <div id="left-coming-soon" class="left-ctrl">
+              <img id="arrow" src="./icons/Arrow-Left-icon.png"/>
+              </div>
+              </div>
                 <div class="poster-view" ng-repeat="films in comingSoon">
 
                     <li>
@@ -187,13 +197,16 @@
             <div class="now-playing-container">
                 <h3>Popular</h3>
                 <br>
-                <div class="right-ctrl">
-                    <img id="arrow" src="./icons/Arrow-Left-icon.png"/>
-                </div>
-                <div class="left-ctrl">
-                    <img id="arrow" src="./icons/Arrow-Left-icon.png"/>
-                </div>
+
                 <ul id="Popular">
+                  <div class="btn-div-popular">
+                  <div id="right-pop" class="right-ctrl">
+                  <img id="arrow" src="./icons/Arrow-Left-icon.png"/>
+                  </div>
+                  <div id="left-pop" class="left-ctrl">
+                  <img id="arrow" src="./icons/Arrow-Left-icon.png"/>
+                  </div>
+                  </div>
                     <div class="poster-view" ng-repeat="films in populars">
 
                         <li>

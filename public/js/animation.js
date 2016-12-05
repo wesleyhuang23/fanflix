@@ -35,6 +35,15 @@ $(document).ready(function(){
       }
   });
 
+  $('#left-now-playing').click(function(){
+    console.log('left button clicked!');
+    $('#now-playing').css({'margin-left' : '-1590px'});
+  });
+  $('#right-now-playing').click(function() {
+    console.log('right button clicked!');
+    $('#now-playing').removeAttr('style');
+  })
+
   // var unorderedlist = document.getElementById('watchlist-ul');
   //
   // var listItems = unorderedlist.getElementsByTagName('li').length;

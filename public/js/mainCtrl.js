@@ -3,7 +3,7 @@ angular.module('flixApp').controller('mainCtrl', function($scope, mainSvc){
   var id = {}
   var imdb_id = {}
 
-  $scope.getPopular = function(){
+  $scope.getPopular = () => {
     mainSvc.getPopular().then(response => {
       console.log($scope.populars);
       $scope.populars = response;
@@ -35,7 +35,7 @@ angular.module('flixApp').controller('mainCtrl', function($scope, mainSvc){
 
   $scope.getPopular();
 
-  $scope.getNowPlaying = function(){
+  $scope.getNowPlaying = () => {
     mainSvc.getNowPlaying().then(response => {
       response.sort(function (a, b) {
         if (a.release_date < b.release_date) {
@@ -58,7 +58,7 @@ angular.module('flixApp').controller('mainCtrl', function($scope, mainSvc){
   $scope.getNowPlaying();
 
 
-  $scope.getComingSoon = function(){
+  $scope.getComingSoon = () => {
     mainSvc.getComingSoon().then(response => {
       response.sort(function (a, b) {
         if (a.release_date < b.release_date) {
@@ -103,7 +103,7 @@ angular.module('flixApp').controller('mainCtrl', function($scope, mainSvc){
   //MYLIST VIEW
       var fb_id;
 
-  $scope.logoutUser = function() {
+  $scope.logoutUser = () => {
     mainSvc.logoutUser().then(response => {
       console.log(response);
       if (!response.data.user) {
@@ -143,7 +143,7 @@ angular.module('flixApp').controller('mainCtrl', function($scope, mainSvc){
 
   var watchlist
 
-  $scope.getWatch = function(fb_id){
+  $scope.getWatch = fb_id => {
     mainSvc.getWatch(fb_id).then(response => {
       $scope.watch = response;
       console.log('watchlist', $scope.watch);

@@ -162,13 +162,13 @@ var watch;
   }
 
 
-  $scope.addToFavFunc = function(){
+  $scope.addToFavFunc = () => {
     $scope.addToFav(fav);
   }
-  $scope.addToWatchFunc = function(){
+  $scope.addToWatchFunc = () => {
     $scope.addToWatch(fav);
   }
-  $scope.addToWatchedFunc = function(){
+  $scope.addToWatchedFunc = () => {
     $scope.addtoWatched(fav);
   }
 });

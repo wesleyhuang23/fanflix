@@ -308,8 +308,10 @@ ul{
   position: relative;
   display: flex;
   flex-direction: row;
-  padding-left: 0;
-
+  padding-left: 0px;
+  padding-right: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
 }
 li{
   text-align: center;
@@ -435,19 +437,19 @@ li{
   font-weight: bolder;
 }
 .right-ctrl{
-  /*border: 1px solid red;*/
+  border: 1px solid red;
   height:370px;
   width: 80px;
   position: absolute;
-  top: 731px;
-  right: 0px;
+  top: 5px;
+  left: 1690px;
+  margin: auto;
   z-index: 2;
   background-color: rgba(0,0,0,.5);
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  display: none;
 }
 .right-ctrl img{
   transform: rotate(180deg);
@@ -459,39 +461,19 @@ li{
 .shiftRight {
     transform: translate3d(260px, 0, 0);
 }
-.slick-prev{
-  overflow: hidden;
-  height: 34px;
-  width: 50px;
-}
-.slick-next{
-  overflow:hidden;
-  height: 34px;
-  width: 45px;
-  transform: rotate(180deg);
-}
-.slide-btn{
-  display: flex;
-  justify-content: space-between;
-  width: 90vw;
-}
-.slide-btn button{
-  cursor: pointer;
-}
 .left-ctrl{
-/*  border: 1px solid blue;*/
+  border: 1px solid blue;
   height:370px;
   width: 80px;
   z-index: 2;
   position: absolute;
-  top: 731px;
+  top: 5px;
   left: 0px;
   background-color: rgba(0,0,0,.5);
   cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
-  display: none;
 }
 .right-ctrl #arrow{
   opacity: .3;
