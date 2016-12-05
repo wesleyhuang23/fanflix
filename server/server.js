@@ -6,6 +6,7 @@ var session = require('express-session');
 var passport = require('passport');
 var FacebookStrategy = require('passport-facebook').Strategy;
 var config = require('./config.js');
+//var port = serverConfig.serverPort;
 var connectionString = 'postgres://wesleyhuang@localhost/fanflix';
 
 var app = module.exports = express();

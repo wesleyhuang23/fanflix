@@ -6,8 +6,13 @@ angular.module('flixApp').controller('mainCtrl', function($scope, mainSvc){
   $scope.getPopular = () => {
     mainSvc.getPopular().then(response => {
       console.log($scope.populars);
-      $scope.populars = response;
+
       $scope.popular = response[0];
+      var result = []
+      for(var i = 0; i < 7; i++){
+        result.push(response[i]);
+      }
+      $scope.populars = result;
       console.log($scope.popular);
 
       id.id = response[0].id;
@@ -51,8 +56,12 @@ angular.module('flixApp').controller('mainCtrl', function($scope, mainSvc){
         var result = response.filter(response => {
           return response.vote_count > 1;
         });
-      $scope.nowPlaying = result;
-      console.log($scope.nowPlaying);
+        var result2 = [];
+        for(var i = 0; i < 7; i++){
+          result2.push(result[i]);
+        }
+      $scope.nowPlaying = result2;
+      console.log('now playing', $scope.nowPlaying);
     });
   }
   $scope.getNowPlaying();
@@ -74,7 +83,11 @@ angular.module('flixApp').controller('mainCtrl', function($scope, mainSvc){
         var result = response.filter(response => {
           return response.vote_count > 1;
         });
-      $scope.comingSoon = result;
+        var result2 = [];
+        for(var i = 0; i < 7; i++){
+          result2.push(result[i]);
+        }
+      $scope.comingSoon = result2;
       console.log($scope.comingSoon);
     })
   }

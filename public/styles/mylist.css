@@ -47,6 +47,7 @@
   display: inline-block;
   text-align: center;
   width: 200px;
+  margin-bottom: 60px;
 }
 .watch-box{
   /*border: 1px solid green;*/
@@ -57,6 +58,7 @@
   justify-content: center;
   flex-direction: column;
 }
+
 .black-bg{
   position: absolute;
   background-color: black;
@@ -68,13 +70,22 @@
 .img-box{
 /*border: 1px solid blue;*/
   position: absolute;
-  top:0px;
-  left: 2px;
-  width: 200px;
+  top:40px;
+  left: 40px;
+  width: 120px;
   height: 100px;
-  display: flex;
-  justify-content: space-between;
   align-items: center;
+}
+#watchlist-box #heart{
+  top: 2px;
+  left: 2px;
+}
+#watchlist-box #heart:active{
+  top:5px;
+  left: 5px;
+}
+.img-box img{
+  display: inline-block;
 }
 .img-box-fav{
   position: relative;

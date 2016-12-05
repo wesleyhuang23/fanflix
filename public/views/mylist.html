@@ -11,7 +11,7 @@
       <div class="watch-view">
         <div class="black-bg">
         </div>
-        <div class=watch-box>
+        <div id="watchlist-box" class=watch-box>
 
           <div class="img-box">
           <img id="x" src="./icons/x-mark-4-512.png" ng-click="delete(film.mdb_id, user.fb_id)" onClick="window.location.reload()"/>
@@ -45,12 +45,12 @@
           <div class="img-box-watched">
           <img id="x" src="./icons/x-mark-4-512.png" ng-click="delete(film.mdb_id, user.fb_id)" onClick="window.location.reload()"/>
 
-          <img id="heart" src="./icons/Heart_corazón.svg.png" ng-click="updateFav(film.mdb_id)"
+          <img id="heart" src="./icons/Heart_corazón.svg.png" ng-click="updateFav(film.mdb_id, user.fb_id)"
           onClick="window.location.reload()"/>
 
-
-          <img id="review" src="./icons/menu-alt-512.png" ng-click="addToReviews(film, user.name)" onClick="window.location.reload()"/>
-
+          <a href="http://localhost:3000/#/reviews" onClick="window.location.reload()">
+          <img id="review" src="./icons/menu-alt-512.png" ng-click="addToReviews(film, user.name)" />
+        </a>
           <a ui-sref="details({id:'{{film.mdb_id}}'})">
           <img id="i" src="./icons/info-icon--6.png"/>
           </a>
@@ -76,8 +76,9 @@
           <div class="img-box-fav">
           <img id="x" src="./icons/x-mark-4-512.png" ng-click="delete(film.mdb_id, user.fb_id)" onClick="window.location.reload()"/>
 
-          <img id="review" src="./icons/menu-alt-512.png" ng-click="addToReviews(film)" onClick="window.location.reload()"/>
-
+          <a href="http://localhost:3000/#/reviews" onClick="window.location.reload()">
+          <img id="review" src="./icons/menu-alt-512.png" ng-click="addToReviews(film, user.name)" onClick="window.location.reload()"/>
+        </a>
           <a ui-sref="details({id:'{{film.mdb_id}}'})">
           <img id="i-fav" src="./icons/info-icon--6.png"/>
           </a>

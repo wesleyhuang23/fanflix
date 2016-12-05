@@ -29,7 +29,7 @@ angular.module('flixApp').service('mainSvc', function($http){
   this.getNowPlaying = function(){
     return $http({
       method:'GET',
-      url: 'https://api.themoviedb.org/3/movie/now_playing?api_key=8eecf03080f34edf303e14b5f1476653&language=en-US&page=2'
+      url: 'https://api.themoviedb.org/3/movie/now_playing?api_key=8eecf03080f34edf303e14b5f1476653&language=en-US'
     }).then(response => response.data.results);
       console.log(response.data);
   };
@@ -37,7 +37,7 @@ angular.module('flixApp').service('mainSvc', function($http){
   this.getComingSoon = function(){
     return $http({
       method: 'GET',
-      url: 'https://api.themoviedb.org/3/movie/upcoming?api_key=8eecf03080f34edf303e14b5f1476653&language=en-US&page=1'
+      url: 'https://api.themoviedb.org/3/movie/upcoming?api_key=8eecf03080f34edf303e14b5f1476653&language=en-US'
     }).then(function(response){
       console.log(response.data);
       return response.data.results;
@@ -115,7 +115,7 @@ angular.module('flixApp').service('mainSvc', function($http){
   this.getUserReviews = mdb_id => {
     return $http({
       method: 'GET',
-      url: 'http://localhost:3000/user_reviews/' + mdb_id
+      url: '/user_reviews/' + mdb_id
     }).then(response => response.data);
   };
   //DATABASE STUFF
@@ -123,7 +123,7 @@ angular.module('flixApp').service('mainSvc', function($http){
     console.log(fav);
     return $http({
       method:'POST',
-      url: 'http://localhost:3000/favorites',
+      url: '/favorites',
       data: fav
     }).then(function(response){
       return response;
@@ -133,7 +133,7 @@ angular.module('flixApp').service('mainSvc', function($http){
   this.getFavs = fb_id => {
     return $http({
       method: 'GET',
-      url: 'http://localhost:3000/favorites/' + fb_id,
+      url: '/favorites/' + fb_id,
     }).then(function(response){
       return response.data;
     });
@@ -142,7 +142,7 @@ angular.module('flixApp').service('mainSvc', function($http){
     console.log(fav);
     return $http({
       method:'POST',
-      url: 'http://localhost:3000/watched',
+      url: '/watched',
       data: fav
     }).then(function(response){
       return response;
@@ -152,7 +152,7 @@ angular.module('flixApp').service('mainSvc', function($http){
   this.getWatched = function(fb_id){
     return $http({
       method: 'GET',
-      url: 'http://localhost:3000/watched/' + fb_id,
+      url: '/watched/' + fb_id,
     }).then(function(response){
       console.log('get_watched', response.data);
       return response.data;
@@ -163,7 +163,7 @@ angular.module('flixApp').service('mainSvc', function($http){
     console.log('adding to watchlist...', fav);
     return $http({
       method: 'POST',
-      url: 'http://localhost:3000/watchlist',
+      url: '/watchlist',
       data: fav
     }).then(function(response){
       return response.data;
@@ -173,7 +173,7 @@ angular.module('flixApp').service('mainSvc', function($http){
     console.log('getting watchlist...');
     return $http({
       method: 'GET',
-      url: 'http://localhost:3000/watchlist/' + fb_id
+      url: '/watchlist/' + fb_id
     }).then(function(response){
       return response.data;
     });
@@ -183,7 +183,7 @@ angular.module('flixApp').service('mainSvc', function($http){
     console.log('updating to fav');
     return $http({
       method: 'PUT',
-      url: 'http://localhost:3000/update',
+      url: '/update',
       data: id
     }).then(function(response){
       return response;
@@ -193,7 +193,7 @@ angular.module('flixApp').service('mainSvc', function($http){
     console.log('updating watched');
     return $http({
       method: 'PUT',
-      url: 'http://localhost:3000/update_watched',
+      url: '/update_watched',
       data: id
     }).then(function(response){
       return response;
@@ -205,7 +205,7 @@ angular.module('flixApp').service('mainSvc', function($http){
     return $http({
       method:'DELETE',
       // url: 'http://localhost:3000/delete?' + 'id=' + del_id.id + 'fb_id=' + del_id.fb_id
-      url: 'http://localhost:3000/delete/' + del_id.id + '/' + del_id.fb_id
+      url: '/delete/' + del_id.id + '/' + del_id.fb_id
     }).then(function(response){
       console.log("From Service: ", response)
       return response;
@@ -216,7 +216,7 @@ angular.module('flixApp').service('mainSvc', function($http){
     console.log('deleting review', del_id);
     return $http({
       method: 'DELETE',
-      url: 'http://localhost:3000/deletereview/' + del_id.id + '/' + del_id.fb_id
+      url: '/deletereview/' + del_id.id + '/' + del_id.fb_id
     }).then(function(response){
       return response
     });
@@ -226,7 +226,7 @@ angular.module('flixApp').service('mainSvc', function($http){
     console.log('adding to reviews', film);
     return $http({
       method: 'POST',
-      url: 'http://localhost:3000/reviews',
+      url: '/reviews',
       data: film
     }).then(function(response){
       return response.data;
@@ -236,7 +236,7 @@ angular.module('flixApp').service('mainSvc', function($http){
   this.getReviews = function(fb_id){
     return $http({
       method: 'GET',
-      url: 'http://localhost:3000/reviews/' + fb_id
+      url: '/reviews/' + fb_id
     }).then(function(response){
       return response.data;
     });
@@ -246,7 +246,7 @@ angular.module('flixApp').service('mainSvc', function($http){
     console.log(review);
     return $http({
       method: 'POST',
-      url: 'http://localhost:3000/comments',
+      url: '/comments',
       data: review
     }).then(function(response){
       return response.data;
@@ -257,7 +257,7 @@ angular.module('flixApp').service('mainSvc', function($http){
     console.log(edit);
     return $http({
       method: 'GET',
-      url: 'http://localhost:3000/update/' + edit.mdb_id + '/' + edit.fb_id
+      url: '/update/' + edit.mdb_id + '/' + edit.fb_id
     }).then(function(response){
       return response.data;
     });

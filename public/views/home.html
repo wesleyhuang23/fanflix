@@ -53,7 +53,7 @@
     </div>
     <div class="carosel-wrapper">
     <div id="watchlist-homepage" ng-show="watch[0].id" class="now-playing-container">
-        <h3 id="watchlist-home">Watchlist</h3>
+        <h3 id="watchlist-home">WATCHLIST</h3>
         <br>
 
         <ul id="watchlist-ul">
@@ -67,7 +67,7 @@
           </div>
             <div class="poster-view" ng-repeat="films in watch">
 
-                <li>
+                <li id="watchlist-li">
                     <div class="poster">
 
                         <img ng-src="{{films.poster}}">
@@ -92,7 +92,6 @@
             </div>
         </ul>
       </div>
-        <br>
         <br>
         <br>
     <div class="now-playing-container">
@@ -145,7 +144,6 @@
         </div>
         <br>
         <br>
-        <br>
         <div class="now-playing-container">
             <h3>Coming Soon</h3>
             <br>
@@ -191,7 +189,6 @@
                     <div ui-view></div>
                 </div>
             </div>
-            <br>
             <br>
             <br>
             <div class="now-playing-container">

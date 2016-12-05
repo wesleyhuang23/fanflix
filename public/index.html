@@ -38,7 +38,7 @@
       <a ui-sref="login" ng-hide="user.name"/>
       <p>Login</p>
     </a>
-    <a ng-click="logoutUser()" ng-show="user.name" href="http://localhost:3000/#/" />
+    <a ng-click="logoutUser()" ng-show="user.name" href="http://localhost:3000/#/" onClick="window.location.reload()"/>
     <p>Logout</p>
   </a>
   <div class="user-box" ng-show="user.name">
