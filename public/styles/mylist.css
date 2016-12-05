@@ -144,6 +144,7 @@
   margin-left: 5px;
   border: 3px solid black;
   border-radius: 100px;
+  cursor: pointer;
   opacity: 0;
   transition: opacity .7s;
 }
@@ -185,7 +186,7 @@
 }
 #review:active{
   position: relative;
-  top:3px;
+  top:8px;
   left: 2px;
 }
 #heart:active{

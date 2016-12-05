@@ -77,8 +77,8 @@ header{
 .header-right{
   /*border: 1px solid blue;*/
   position: relative;
-  width: 700px;
-  margin-right: 40px;
+  width: 750px;
+  margin-right: 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -114,6 +114,7 @@ input{
   color: white;
   outline: none;
   font-size: 20px;
+  width: 250px;
 }
 .search{
   color: white;
@@ -123,6 +124,7 @@ input{
 .search img{
   position: absolute;
   top: 3px;
+  left: 230px;
   cursor: pointer;
 }
 footer{

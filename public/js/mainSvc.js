@@ -115,40 +115,33 @@ angular.module('flixApp').service('mainSvc', function($http){
     });
   }
   //search view
-  this.getSearchMovie = function(term){
+  this.getSearchMovie = term =>{
     return $http({
       method:'GET',
       url: 'https://api.themoviedb.org/3/search/movie?api_key=8eecf03080f34edf303e14b5f1476653&language=en-US&query=' + term
-    }).then(function(response){
-      return response.data.results;
-    });
-  }
-  this.getPeople = function(term){
+    }).then(response => response.data.results);
+  };
+  this.getPeople = term =>{
     return $http({
       method: 'GET',
       url: 'https://api.themoviedb.org/3/search/person?api_key=8eecf03080f34edf303e14b5f1476653&language=en-US&query=' + term + '&page=1&include_adult=false'
-    }).then(function(response){
-      return response.data.results;
-    });
-  }
-  this.getImages = function(imdb_id){
+    }).then(response => response.data.results);
+    //function(response);
+  };
+  this.getImages = imdb_id => {
     return $http({
       method: 'GET',
       url: 'http://api.themoviedb.org/3/movie/' + imdb_id + '/images?api_key=8eecf03080f34edf303e14b5f1476653'
-    }).then(function(response){
-      return response.data;
-    });
-  }
-  this.getUserReviews = function(mdb_id){
+    }).then(response => response.data);
+  };
+  this.getUserReviews = mdb_id => {
     return $http({
       method: 'GET',
       url: 'http://localhost:3000/user_reviews/' + mdb_id
-    }).then(function(response){
-      return response.data;
-    });
-  }
+    }).then(response => response.data);
+  };
   //DATABASE STUFF
-  this.addToFav = function(fav){
+  this.addToFav = fav => {
     console.log(fav);
     return $http({
       method:'POST',
@@ -159,7 +152,7 @@ angular.module('flixApp').service('mainSvc', function($http){
     });
   }
 
-  this.getFavs = function(fb_id){
+  this.getFavs = fb_id => {
     return $http({
       method: 'GET',
       url: 'http://localhost:3000/favorites/' + fb_id,
@@ -167,7 +160,7 @@ angular.module('flixApp').service('mainSvc', function($http){
       return response.data;
     });
   }
-  this.addtoWatched = function(fav){
+  this.addtoWatched = fav => {
     console.log(fav);
     return $http({
       method:'POST',

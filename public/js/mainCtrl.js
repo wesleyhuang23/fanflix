@@ -82,7 +82,7 @@ angular.module('flixApp').controller('mainCtrl', function($scope, mainSvc){
 
 
   //SEARCH VIEW
-  $scope.getSearch = function(term){
+  $scope.getSearch = term => {
     $scope.getPeople(term);
     console.log('search', term);
     mainSvc.getSearchMovie(term).then(function(response){
@@ -93,7 +93,7 @@ angular.module('flixApp').controller('mainCtrl', function($scope, mainSvc){
       console.log($scope.movieSearch);
     });
   };
-  $scope.getPeople = function(term){
+  $scope.getPeople = term => {
     mainSvc.getPeople(term).then(function(response){
       $scope.person = response;
       console.log('PERSON SEARCH', $scope.person);

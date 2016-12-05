@@ -296,7 +296,7 @@ main{
   overflow: scroll;
 }
 #profile-pic{
-  position: relative;
+  position: absolute;
   height: 50px;
   width: 50px;
   border-radius: 100px;
@@ -304,7 +304,7 @@ main{
   opacity: 1;
 }
 .user-review-view{
-  border: 1px solid orange;
+  border: 2px solid orange;
   height: auto;
   margin: 10px;
   width: 480px;
@@ -314,7 +314,7 @@ main{
   flex-direction: row;
 }
 .review-info-right{
-  margin-left: 10px;
+  margin-left: 60px;
 }
 .review-info-right h3{
   font-weight: bold;
