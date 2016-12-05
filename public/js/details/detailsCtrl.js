@@ -24,8 +24,8 @@ $scope.getFbUser();
 var fav;
 var watch;
 
-  $scope.getDetails = function(id){
-    mainSvc.getDetails(id).then(function(response){
+  $scope.getDetails = id => {
+    mainSvc.getDetails(id).then(response => {
       var imdb_id = response.imdb_id;
       console.log(imdb_id);
       console.log(response.id);
@@ -47,15 +47,15 @@ var watch;
   }
   $scope.getDetails(id);
 
-  $scope.getImdb = function(imdb_id){
-    mainSvc.getImdb(imdb_id).then(function(response){
+  $scope.getImdb = imdb_id => {
+    mainSvc.getImdb(imdb_id).then(response => {
       $scope.imdb = response;
       console.log('imdb_details',$scope.imdb);
     });
   }
 
-  $scope.getVideos = function(imdb_id){
-  mainSvc.getVideos(imdb_id).then(function(response){
+  $scope.getVideos = imdb_id => {
+  mainSvc.getVideos(imdb_id).then(response => {
     var links = []
     for(var i = 0; i < response.length; i++){
       links.push('https://www.youtube.com/embed/' + response[i].key);
@@ -65,8 +65,8 @@ var watch;
     console.log($scope.videos);
   })
 }
-  $scope.getCast = function(imdb_id){
-    mainSvc.getCast(imdb_id).then(function(response){
+  $scope.getCast = imdb_id => {
+    mainSvc.getCast(imdb_id).then(response => {
       var newCast = [];
       for(var i = 0; i < 7;i++){
         newCast.push(response.cast[i]);
@@ -77,8 +77,8 @@ var watch;
       console.log($scope.crew);
     });
   }
-  $scope.getImages = function(imdb_id){
-    mainSvc.getImages(imdb_id).then(function(response){
+  $scope.getImages = imdb_id => {
+    mainSvc.getImages(imdb_id).then(response => {
       // for(var i = 0; i < response.backdrops.length; i++){
       //    response.backdrops[i].file_path = 'https://image.tmdb.org/t/p/original' + response.backdrops[i].file_path
       // };
@@ -92,30 +92,30 @@ var watch;
       console.log('second backdrop', $scope.secondBackdrop);
     });
   }
-  $scope.getSimilars = function(imdb_id){
-    mainSvc.getSimilars(imdb_id).then(function(response){
+  $scope.getSimilars = imdb_id => {
+    mainSvc.getSimilars(imdb_id).then(response => {
       $scope.similar = response;
       console.log('similar', $scope.similar);
 
     });
   }
-  $scope.getGuideBox = function(id){
+  $scope.getGuideBox = id => {
     console.log(id);
-    mainSvc.getGuideBox(id).then(function(response){
+    mainSvc.getGuideBox(id).then(response => {
       console.log(response.id);
       var gb_id = response.id
       $scope.getGuideBoxDetails(gb_id);
     });
   }
-  $scope.getGuideBoxDetails = function(gb_id){
-    mainSvc.getGuideBoxDetails(gb_id).then(function(response){
+  $scope.getGuideBoxDetails = gb_id => {
+    mainSvc.getGuideBoxDetails(gb_id).then(response => {
       $scope.guidebox = response;
       console.log('GUIDEBOX DETAILS', $scope.guidebox)
       $scope.guideboxVideo = response.trailers.web;
       console.log('gb-videos', $scope.guideboxVideo);
       var webPurchase = response.purchase_web_sources;
       console.log(webPurchase);
-      var result = webPurchase.filter(function(webPurchase){
+      var result = webPurchase.filter(webPurchase => {
         return webPurchase.source === "google_play" || webPurchase.source === "itunes"; //webPurchase.source === "amazon_buy";
       });
       result[0].img = "https://smoothjazzandmore.files.wordpress.com/2016/07/itunes-button.png";
@@ -125,9 +125,9 @@ var watch;
       console.log('GUIDEBOX', $scope.guideboxPurchases);
     });
   }
-  $scope.getUserReviews = function(mdb_id){
+  $scope.getUserReviews = mdb_id => {
     console.log('user review id', mdb_id);
-    mainSvc.getUserReviews(mdb_id).then(function(response){
+    mainSvc.getUserReviews(mdb_id).then(response => {
       // for(var i = 0; i < response.length; i++){
       //   response[i].photo = "https://scontent.xx.fbcdn.net/t31.0-1/10457710_" + response[i].fb_id + '_7996853287290615145_o.jpg'
       // }
@@ -137,25 +137,25 @@ var watch;
     });
   }
   //DETAIL AND WATCH LIST BUTTONS
-  $scope.addToFav = function(fav){
+  $scope.addToFav = fav => {
     fav.fb_id = fb_id;
     console.log(fav);
     console.log('i am in add to fav func');
-    mainSvc.addToFav(fav).then(function(response){
+    mainSvc.addToFav(fav).then(response => {
       $scope.favorite = response;
     })
   };
-  $scope.addToWatch = function(fav){
+  $scope.addToWatch = fav => {
     fav.fb_id = fb_id;
     console.log('film sent', fav);
-    mainSvc.addToWatch(fav).then(function(response){
+    mainSvc.addToWatch(fav).then(response => {
       $scope.watch = response;
     });
   };
-  $scope.addtoWatched = function(fav){
+  $scope.addtoWatched = fav => {
     fav.fb_id = fb_id;
     console.log('adding to watched...', fav);
-    mainSvc.addtoWatched(fav).then(function(response){
+    mainSvc.addtoWatched(fav).then(response => {
       $scope.watched = response;
       console.log($scope.watched);
     });

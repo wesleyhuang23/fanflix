@@ -2,8 +2,8 @@ angular.module('flixApp').controller('peopleCtrl', function($scope, $stateParams
   var person_id = $stateParams.id;
   console.log(person_id);
 
-  $scope.getPersonDetails = function(person_id){
-    mainSvc.getPersonDetails(person_id).then(function(response){
+  $scope.getPersonDetails = person_id => {
+    mainSvc.getPersonDetails(person_id).then(response => {
       var person_name = response.name
       $scope.personDetail = response;
       console.log($scope.personDetail);
@@ -12,8 +12,8 @@ angular.module('flixApp').controller('peopleCtrl', function($scope, $stateParams
     }
   $scope.getPersonDetails(person_id);
 
-  $scope.getKnownFor = function(person_name){
-    mainSvc.getKnownFor(person_name).then(function(response){
+  $scope.getKnownFor = person_name => {
+    mainSvc.getKnownFor(person_name).then(response => {
       $scope.knownFor = response.results[0].known_for;
       console.log('Known for', $scope.knownFor);
       $scope.firstKnown = response.results[0].known_for[0];
@@ -21,9 +21,9 @@ angular.module('flixApp').controller('peopleCtrl', function($scope, $stateParams
     });
   }
 
-  $scope.getPersonMovieCredits = function(person_id){
+  $scope.getPersonMovieCredits = person_id => {
 
-    mainSvc.getPersonMovieCredits(person_id).then(function(response){
+    mainSvc.getPersonMovieCredits(person_id).then(response => {
       $scope.credNum = response.cast.length + response.crew.length;
 
       var personCast = response.cast;

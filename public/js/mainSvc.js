@@ -4,43 +4,35 @@ angular.module('flixApp').service('mainSvc', function($http){
     return $http({
       method: 'GET',
       url: 'https://api.themoviedb.org/3/movie/popular?api_key=8eecf03080f34edf303e14b5f1476653&language=en-US'
-    }).then(function(response){
+    }).then(response => response.data.results);
       console.log(response.data.results);
-      return response.data.results;
-    })
-  }
+  };
 
-  this.getPopularDetails = function(id){
+  this.getPopularDetails = id => {
     console.log(id.id);
     return $http({
       method: 'GET',
       url: 'https://api.themoviedb.org/3/movie/' + id.id + '?api_key=8eecf03080f34edf303e14b5f1476653&language=en-US&append_to_response=undefined'
-    }).then(function(response){
+    }).then(response => response.data);
       console.log(response);
-      return response.data;
-    });
-  }
+  };
 
-  this.getPopImdb = function(imdb_id){
+  this.getPopImdb = imdb_id => {
     console.log(imdb_id.id);
     return $http({
       method: 'GET',
       url: 'http://www.omdbapi.com/?i=' + imdb_id.id
-    }).then(function(response){
+    }).then(response => response.data);
       console.log(response);
-      return response.data;
-    });
-  }
+  };
 
   this.getNowPlaying = function(){
     return $http({
       method:'GET',
       url: 'https://api.themoviedb.org/3/movie/now_playing?api_key=8eecf03080f34edf303e14b5f1476653&language=en-US&page=1'
-    }).then(function(response){
+    }).then(response => response.data.results);
       console.log(response.data);
-      return response.data.results;
-    })
-  }
+  };
 
   this.getComingSoon = function(){
     return $http({
@@ -53,67 +45,53 @@ angular.module('flixApp').service('mainSvc', function($http){
   }
   //DETAILS SECTION
 
-  this.getDetails = function(id){
+  this.getDetails = id => {
     return $http({
       method:'GET',
       url: 'https://api.themoviedb.org/3/movie/'+ id + '?api_key=8eecf03080f34edf303e14b5f1476653&language=en-US&append_to_response=undefined'
-    }).then(function(response){
+    }).then(response => response.data);
       console.log(response.data);
-      return (response.data);
-    });
-  }
-  this.getImdb = function(imdb_id){
+  };
+  this.getImdb = imdb_id => {
     console.log(imdb_id);
     return $http({
       method:'GET',
       url: 'http://www.omdbapi.com/?i=' + imdb_id
-    }).then(function(response){
+    }).then(response => response.data);
       console.log('imdb_deets', response);
-      return response.data;
-    });
-  }
-  this.getVideos = function(imdb_id){
+  };
+  this.getVideos = imdb_id => {
     return $http({
       method:'GET',
       url:'https://api.themoviedb.org/3/movie/'+ imdb_id +'/videos?api_key=8eecf03080f34edf303e14b5f1476653'
-    }).then(function(response){
-      return response.data.results;
-    });
-  }
-  this.getCast = function(imdb_id){
+    }).then(response => response.data.results);
+  };
+  this.getCast = imdb_id => {
     return $http({
       method: 'GET',
       url:'https://api.themoviedb.org/3/movie/'+ imdb_id +'/credits?api_key=8eecf03080f34edf303e14b5f1476653'
-    }).then(function(response){
-      return response.data;
-    });
-  }
-  this.getSimilars = function(imdb_id){
+    }).then(response => response.data);
+  };
+  this.getSimilars = imdb_id => {
     return $http({
       method:'GET',
       url:'https://api.themoviedb.org/3/movie/' + imdb_id + '/similar?api_key=8eecf03080f34edf303e14b5f1476653&language=en-US'
-    }).then(function(response){
+    }).then(response => response.data.results);
       console.log(response.data);
-      return response.data.results;
-    })
-  }
-  this.getGuideBox = function(id){
+  };
+  this.getGuideBox = id => {
     return $http({
       method: 'GET',
       url: 'https://api-public.guidebox.com/v1.43/US/rKsvLMllrJ7ebTRG3cMa5smyjptG5sDJ/search/movie/id/themoviedb/' + id
-    }).then(function(response){
+    }).then(response => response.data);
       console.log('guidebox', response.data)
-      return response.data;
-    });
-  }
-  this.getGuideBoxDetails = function(id){
+  };
+  this.getGuideBoxDetails = id => {
     return $http({
       method: 'GET',
       url: 'https://api-public.guidebox.com/v1.43/US/rKsvLMllrJ7ebTRG3cMa5smyjptG5sDJ/movie/' + id
-    }).then(function(response){
-      return response.data;
-    });
-  }
+    }).then(response => response.data);
+  };
   //search view
   this.getSearchMovie = term =>{
     return $http({
