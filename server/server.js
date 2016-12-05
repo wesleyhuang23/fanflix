@@ -102,6 +102,7 @@ app.post('/reviews', nodeCtrl.add_to_reviews);
 app.get('/reviews/:fb_id', nodeCtrl.get_reviews);
 app.post('/comments', nodeCtrl.add_review);
 app.get('/update/:mdb_id/:fb_id', nodeCtrl.update_review);
+app.get('/user_reviews/:mdb_id', nodeCtrl.get_user_reviews);
 
 //update
 app.put('/update', nodeCtrl.update_to_fav);

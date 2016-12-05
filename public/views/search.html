@@ -6,7 +6,7 @@
       <div class="search-content">
         <a ui-sref="details({id:'{{film.id}}'})">
       <img ng-show="{{film.poster_path}}" ng-src="https://image.tmdb.org/t/p/original{{film.poster_path}}"/>
-      <p ng-show="{{film.title}}">{{film.title}} ({{film.release_date}})</p>
+      <p ng-show="{{film.poster_path}}">{{film.title}} ({{film.release_date}})</p>
     </a>
   </div>
     </div>

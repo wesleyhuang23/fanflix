@@ -140,6 +140,31 @@
   </div>
 </div>
 <br>
+<h3>USER REVIEWS</h3>
+<br>
+<div class="user-review-container">
+  <div class="review-bg-container">
+  <img ng-src="https://image.tmdb.org/t/p/original{{secondBackdrop.file_path}}"/>
+  </div>
+  <div class="box-user">
+  <div class="user-review-wrapper" ng-repeat="review in userReviews">
+      <div class="user-review-view">
+        <img id="profile-pic" ng-src="{{review.photo}}"/>
+        <div class="review-info-right">
+        <h3>{{review.title}}</h3>
+        <p>{{review.tagline}}</p>
+        <p>by: {{review.name}}</p>
+        <br>
+        <p>{{review.review}}</p>
+      </div>
+  </div>
+  </div>
+  <div ng-show="!review" class="no-review">
+    <p> currently no user reviews for this film</p>
+  </div>
+</div>
+</div>
+<br>
 <h3>SIMILAR MOVIES</h3>
 <br>
 <div class="similar-container">

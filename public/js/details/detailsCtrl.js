@@ -2,6 +2,7 @@ angular.module('flixApp').controller('detailsCtrl', function($scope, $stateParam
   var id = $stateParams.id;
   console.log(id);
 
+
   $scope.trustSrc = function(link) {
   return $sce.trustAsResourceUrl(link);
 };
@@ -41,6 +42,7 @@ var watch;
       $scope.getSimilars(imdb_id);
       $scope.getImages(imdb_id);
       $scope.getGuideBox(response.id);
+      $scope.getUserReviews(response.id);
     });
   }
   $scope.getDetails(id);
@@ -80,15 +82,21 @@ var watch;
       // for(var i = 0; i < response.backdrops.length; i++){
       //    response.backdrops[i].file_path = 'https://image.tmdb.org/t/p/original' + response.backdrops[i].file_path
       // };
-
+      if(response.backdrops.length > 1){
+        $scope.secondBackdrop = response.backdrops[1]
+      } else {
+        $scope.secondBackdrop = response.backdrops[0];
+      }
       $scope.backDrops = response.backdrops;
-      console.log('IMAGES', $scope.backDrops);
+      console.log('back drop IMAGES', $scope.backDrops);
+      console.log('second backdrop', $scope.secondBackdrop);
     });
   }
   $scope.getSimilars = function(imdb_id){
     mainSvc.getSimilars(imdb_id).then(function(response){
       $scope.similar = response;
       console.log('similar', $scope.similar);
+
     });
   }
   $scope.getGuideBox = function(id){
@@ -115,6 +123,17 @@ var watch;
       result[1].img = "http://vignette2.wikia.nocookie.net/implosion/images/7/74/Google_play.png/revision/latest?cb=20150411081733";
       $scope.guideboxPurchases = result;
       console.log('GUIDEBOX', $scope.guideboxPurchases);
+    });
+  }
+  $scope.getUserReviews = function(mdb_id){
+    console.log('user review id', mdb_id);
+    mainSvc.getUserReviews(mdb_id).then(function(response){
+      // for(var i = 0; i < response.length; i++){
+      //   response[i].photo = "https://scontent.xx.fbcdn.net/t31.0-1/10457710_" + response[i].fb_id + '_7996853287290615145_o.jpg'
+      // }
+
+      $scope.userReviews = response;
+      console.log('USER REVIEWS', $scope.userReviews);
     });
   }
   //DETAIL AND WATCH LIST BUTTONS

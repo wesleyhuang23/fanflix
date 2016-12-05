@@ -125,6 +125,12 @@ module.exports = {
       res.send(reviews);
     });
   },
+  get_user_reviews: function(req, res, next){
+    console.log(req.params);
+    db.get_user_reviews([req.params.mdb_id], function(err, reviews){
+      res.send(reviews);
+    });
+  },
   add_review: function(req, res, next){
     console.log(req.body);
     var author = req.body.author;

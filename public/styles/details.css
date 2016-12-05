@@ -261,3 +261,67 @@ main{
   width: 160px;
   height: 57px;
 }
+.user-review-container{
+/*  border: 1px solid green;*/
+  width: 1200px;
+  width: 300px;
+  position: relative;
+}
+.review-bg-container{
+/*  border: 1px solid blue;*/
+  height: 400px;
+  width: 1200px;
+  overflow: hidden;
+  align-items: center;
+  position: absolute;
+
+}
+.user-review-wrapper{
+  width: 1200px;
+  position: relative;
+  /*border: 1px solid green;*/
+}
+.review-bg-container img{
+  width: 1200px;
+  opacity: .1;
+  position: absolute;
+  display: block;
+}
+.box-user{
+/*  border: 1px solid pink;*/
+  width: 1200px;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  overflow: scroll;
+}
+#profile-pic{
+  position: relative;
+  height: 50px;
+  width: 50px;
+  border-radius: 100px;
+  border: 1px solid orange;
+  opacity: 1;
+}
+.user-review-view{
+  border: 1px solid orange;
+  height: auto;
+  margin: 10px;
+  width: 480px;
+  position: relative;
+  padding: 40px;
+  display: flex;
+  flex-direction: row;
+}
+.review-info-right{
+  margin-left: 10px;
+}
+.review-info-right h3{
+  font-weight: bold;
+}
+.review-info-right p{
+  font-size: 15px;
+}
+.no-review{
+  margin: auto;
+}

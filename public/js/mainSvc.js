@@ -139,7 +139,14 @@ angular.module('flixApp').service('mainSvc', function($http){
       return response.data;
     });
   }
-
+  this.getUserReviews = function(mdb_id){
+    return $http({
+      method: 'GET',
+      url: 'http://localhost:3000/user_reviews/' + mdb_id
+    }).then(function(response){
+      return response.data;
+    });
+  }
   //DATABASE STUFF
   this.addToFav = function(fav){
     console.log(fav);
