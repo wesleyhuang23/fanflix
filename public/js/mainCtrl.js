@@ -1,5 +1,5 @@
 angular.module('flixApp').controller('mainCtrl', function($scope, mainSvc){
-  function colorPicker(rating){
+  $scope.colorPicker = function(rating){
     if(rating >= 7){
       return 'green';
     }
@@ -175,7 +175,7 @@ angular.module('flixApp').controller('mainCtrl', function($scope, mainSvc){
       }
     });
 
-  $scope.getFavs = fb_id => {
+  $scope.getFavs = () => {
     console.log(fb_id);
     mainSvc.getFavs(fb_id).then(response => {
       $scope.favorites = response;
@@ -183,10 +183,9 @@ angular.module('flixApp').controller('mainCtrl', function($scope, mainSvc){
     });
   }
 
-  $scope.getWatched = fb_id => {
+  $scope.getWatched = () => {
     mainSvc.getWatched(fb_id).then(response => {
       $scope.watched = response;
-      console.log('watched', $scope.watched);
     });
   }
 
@@ -194,10 +193,13 @@ angular.module('flixApp').controller('mainCtrl', function($scope, mainSvc){
 
   var watchlist
 
-  $scope.getWatch = fb_id => {
+  $scope.getWatch = () => {
+      // console.log('$scope.getWatch fired')
     mainSvc.getWatch(fb_id).then(response => {
       $scope.watch = response;
-      console.log('watchlist', $scope.watch);
+      // console.log('mainSvc.getWatch fired')
+
+      // console.log('watchlist', $scope.watch);
       watchlist = response;
     });
   }
@@ -208,7 +210,8 @@ angular.module('flixApp').controller('mainCtrl', function($scope, mainSvc){
     id.fb_id = fb_id;
     console.log(id);
     mainSvc.updateWatched(id).then(response => {
-
+      $scope.getWatched();
+      $scope.getWatch();
     });
   }
 
@@ -219,6 +222,9 @@ angular.module('flixApp').controller('mainCtrl', function($scope, mainSvc){
     console.log(id);
     mainSvc.updateFav(id).then(response => {
       console.log('your list is updated');
+      $scope.getFavs();
+      $scope.getWatched();
+      $scope.getWatch();
     });
   }
 
@@ -229,6 +235,9 @@ angular.module('flixApp').controller('mainCtrl', function($scope, mainSvc){
     console.log(del_id);
     mainSvc.delete(del_id).then(response => {
       console.log('movie deleted');
+      $scope.getFavs();
+      $scope.getWatched();
+      $scope.getWatch();
     });
   }
   $scope.deleteReview = function(mdb_id, fb_id){
@@ -247,6 +256,7 @@ angular.module('flixApp').controller('mainCtrl', function($scope, mainSvc){
     console.log(film);
     mainSvc.addToReviews(film).then(response => {
       $scope.reviews = response;
+      $scope.getReviews(fb_id);
     });
   }
 
@@ -256,13 +266,13 @@ angular.module('flixApp').controller('mainCtrl', function($scope, mainSvc){
       //   response[i].rating = Number(response[i].rating);
       // }
       for(var i = 0; i < response.length; i++){
-        response[i].reviewColor = colorPicker(response[i].rating);
+        response[i].reviewColor = $scope.colorPicker(response[i].rating);
       }
       $scope.reviews = response;
       console.log('REVIEWS', $scope.reviews);
     });
   }
-  $scope.getReviews();
+
 
     $scope.editReview = function(mdb_id, fb_id){
       var edit = {};

@@ -2,17 +2,17 @@ angular.module('flixApp').controller('detailsCtrl', function($scope, $stateParam
   var id = $stateParams.id;
   console.log(id);
 
-  function colorPicker(rating){
-    if(rating >= 8){
-      return 'green';
-    }
-    else if(rating >= 4){
-      return 'orange';
-    }
-    else if(rating >= 0){
-      return 'red';
-    }
-  }
+  // function colorPicker(rating){
+  //   if(rating >= 8){
+  //     return 'green';
+  //   }
+  //   else if(rating >= 4){
+  //     return 'orange';
+  //   }
+  //   else if(rating >= 0){
+  //     return 'red';
+  //   }
+  // }
 
 
   $scope.trustSrc = function(link) {
@@ -151,45 +151,37 @@ var watch;
       //   response[i].photo = "https://scontent.xx.fbcdn.net/t31.0-1/10457710_" + response[i].fb_id + '_7996853287290615145_o.jpg'
       // }
       for(var i = 0; i < response.length; i++){
-        response[i].reviewColor = colorPicker(response[i].rating);
+        response[i].reviewColor = $scope.colorPicker(response[i].rating);
       }
       $scope.userReviews = response;
       console.log('USER REVIEWS', $scope.userReviews);
     });
   }
   //DETAIL AND WATCH LIST BUTTONS
-  $scope.addToFav = fav => {
+  $scope.addToFav = () => {
     fav.fb_id = fb_id;
     console.log(fav);
     console.log('i am in add to fav func');
     mainSvc.addToFav(fav).then(response => {
-      $scope.favorite = response;
+      $scope.getFavs();
+      console.log('detailsCTRL', response);
     })
   };
-  $scope.addToWatch = fav => {
+  $scope.addToWatch = () => {
+
     fav.fb_id = fb_id;
     console.log('film sent', fav);
     mainSvc.addToWatch(fav).then(response => {
-      $scope.watch = response;
+
+      $scope.getWatch();
     });
   };
-  $scope.addtoWatched = fav => {
+  $scope.addToWatched = () => {
     fav.fb_id = fb_id;
-    console.log('adding to watched...', fav);
     mainSvc.addtoWatched(fav).then(response => {
-      $scope.watched = response;
-      console.log($scope.watched);
+      $scope.getWatched();
     });
   }
 
 
-  $scope.addToFavFunc = () => {
-    $scope.addToFav(fav);
-  }
-  $scope.addToWatchFunc = () => {
-    $scope.addToWatch(fav);
-  }
-  $scope.addToWatchedFunc = () => {
-    $scope.addtoWatched(fav);
-  }
 });

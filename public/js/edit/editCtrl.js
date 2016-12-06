@@ -22,7 +22,7 @@ angular.module('flixApp').controller('editCtrl', function($scope, mainSvc, $stat
     review.fb_id = fb_id;
     console.log(review);
     mainSvc.submitReview(review).then(function(response){
-
+      $scope.getReviews(fb_id);
     });
   };
 
