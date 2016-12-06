@@ -125,184 +125,146 @@ angular.module('flixApp').service('mainSvc', function($http){
       method:'POST',
       url: '/favorites',
       data: fav
-    }).then(function(response){
-      return response;
-    });
-  }
+    }).then(response => response);
+  };
 
   this.getFavs = fb_id => {
     return $http({
       method: 'GET',
       url: '/favorites/' + fb_id,
-    }).then(function(response){
-      return response.data;
-    });
-  }
+    }).then(response => response.data);
+  };
   this.addtoWatched = fav => {
     console.log(fav);
     return $http({
       method:'POST',
       url: '/watched',
       data: fav
-    }).then(function(response){
-      return response;
-    });
-  }
+    }).then(response => response);
+  };
 
-  this.getWatched = function(fb_id){
+  this.getWatched = fb_id => {
     return $http({
       method: 'GET',
       url: '/watched/' + fb_id,
-    }).then(function(response){
+    }).then(response => response.data);
       console.log('get_watched', response.data);
-      return response.data;
-    });
-  }
+  };
 
-  this.addToWatch = function(fav){
+  this.addToWatch = fav => {
     console.log('adding to watchlist...', fav);
     return $http({
       method: 'POST',
       url: '/watchlist',
       data: fav
-    }).then(function(response){
-      return response.data;
-    });
-  }
-  this.getWatch = function(fb_id){
+    }).then(response => response.data);
+  };
+  this.getWatch = fb_id => {
     console.log('getting watchlist...');
     return $http({
       method: 'GET',
       url: '/watchlist/' + fb_id
-    }).then(function(response){
-      return response.data;
-    });
-  }
-  this.updateFav = function(id){
+    }).then(response => response.data);
+  };
+  this.updateFav = id => {
 
     console.log('updating to fav');
     return $http({
       method: 'PUT',
       url: '/update',
       data: id
-    }).then(function(response){
-      return response;
-    });
-  }
-  this.updateWatched = function(id){
+    }).then(response => response);
+  };
+  this.updateWatched = id => {
     console.log('updating watched');
     return $http({
       method: 'PUT',
       url: '/update_watched',
       data: id
-    }).then(function(response){
-      return response;
-    })
+    }).then(response => response);
   }
-  this.delete = function(del_id){
+  this.delete = del_id => {
     console.log('deleting');
     console.log(del_id);
     return $http({
       method:'DELETE',
       // url: 'http://localhost:3000/delete?' + 'id=' + del_id.id + 'fb_id=' + del_id.fb_id
       url: '/delete/' + del_id.id + '/' + del_id.fb_id
-    }).then(function(response){
-      console.log("From Service: ", response)
-      return response;
-    });
-  }
+    }).then(response => response);
+      console.log("From Service: ", response);
+  };
 
-  this.deleteReview = function(del_id){
+  this.deleteReview = del_id => {
     console.log('deleting review', del_id);
     return $http({
       method: 'DELETE',
       url: '/deletereview/' + del_id.id + '/' + del_id.fb_id
-    }).then(function(response){
-      return response
-    });
-  }
+    }).then(response => response);
+  };
 
-  this.addToReviews = function(film){
+  this.addToReviews = film => {
     console.log('adding to reviews', film);
     return $http({
       method: 'POST',
       url: '/reviews',
       data: film
-    }).then(function(response){
-      return response.data;
-    });
+    }).then(response => response.data);
   }
 
-  this.getReviews = function(fb_id){
+  this.getReviews = fb_id => {
     return $http({
       method: 'GET',
       url: '/reviews/' + fb_id
-    }).then(function(response){
-      return response.data;
-    });
+    }).then(response => response.data);
   }
 
-  this.submitReview = function(review){
+  this.submitReview = review => {
     console.log(review);
     return $http({
       method: 'POST',
       url: '/comments',
       data: review
-    }).then(function(response){
-      return response.data;
-    });
+    }).then(response => response.data);
   };
 
-  this.editReview = function(edit){
+  this.editReview = edit => {
     console.log(edit);
     return $http({
       method: 'GET',
       url: '/update/' + edit.mdb_id + '/' + edit.fb_id
-    }).then(function(response){
-      return response.data;
-    });
+    }).then(response => response.data);
   };
 
-  this.getUser = function(){
+  this.getUser = () => {
     return $http({
       method: 'GET',
       url: '/user'
-    }).then(function(response){
-      return response;
-    });
-  }
+    }).then(response => response);
+  };
 
-  this.logoutUser = function(){
+  this.logoutUser = () => {
     return $http({
       method: 'GET',
       url: '/logout'
-    }).then(function(response){
-      return response;
-    })
-  }
+    }).then(response => response);
+  };
   //people page STUFF
-  this.getPersonDetails = function(person_id){
+  this.getPersonDetails = person_id => {
     return $http({
       method: 'GET',
       url: 'https://api.themoviedb.org/3/person/' + person_id + '?api_key=8eecf03080f34edf303e14b5f1476653&language=en-US'
-    }).then(function(response){
-      return response.data;
-    });
-  }
-  this.getPersonMovieCredits = function(person_id){
+    }).then(response => response.data);
+  };
+  this.getPersonMovieCredits = person_id => {
     return $http({
       method: 'GET',
       url: 'https://api.themoviedb.org/3/person/' + person_id + '/movie_credits?api_key=8eecf03080f34edf303e14b5f1476653&language=en-US'
-    }).then(function(response){
-      return response.data;
-    });
+    }).then(response => response.data);
   };
-  this.getKnownFor = function(person_name){
+  this.getKnownFor = person_name => {
     return $http({
     method: 'GET',
     url: 'https://api.themoviedb.org/3/search/person?api_key=8eecf03080f34edf303e14b5f1476653&language=en-US&query=' + person_name + '&page=1&include_adult=false'
-  }).then(function(response){
-    return response.data;
-  });
-  }
+  }).then(response => response.data);
+};
 });

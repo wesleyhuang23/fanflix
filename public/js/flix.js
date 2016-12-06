@@ -36,6 +36,10 @@ angular.module('flixApp', ['ui.router'])
     templateUrl: 'views/user_reviews.html',
     url: '/user_reviews/:id',
     controller: 'userReviewsCtrl'
+  }).state('credits',  {
+    templateUrl: 'views/credit.html',
+    url: '/credit/:id',
+    controller: 'detailsCtrl'
   });
 
 

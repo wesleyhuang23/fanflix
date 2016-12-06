@@ -191,11 +191,12 @@ main{
   border: 2px solid #EF7622;
 }
 .full-cast-btn-container{
-  margin-top: 50px;
+  /*border: 1px solid green;*/
+  margin-top: 30px;
   width: 1200px;
-  display: none;
+  display: flex;
   justify-content: center;
-  cursor: pointer;
+
 }
 .full-cast-btn{
   width: 150px;
@@ -205,6 +206,10 @@ main{
   display: flex;
   justify-content: center;
   align-items: center;
+    cursor: pointer;
+}
+.full-cast-btn:hover{
+  background-color: red;
 }
 .full-cast-btn p{
   text-align: center;

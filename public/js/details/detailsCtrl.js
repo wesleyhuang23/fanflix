@@ -72,9 +72,16 @@ var watch;
         newCast.push(response.cast[i]);
       }
       $scope.cast = newCast;
-      $scope.crew = response.crew;
+      var crew = response.crew;
+
+      var director = crew.filter(function(crew){
+        return crew.job === 'Director' && crew.department === 'Directing';
+      });
+      $scope.director = director;
+      $scope.crew = response.crew2;
       console.log($scope.cast);
-      console.log($scope.crew);
+      console.log('DIRECTOR', $scope.director);
+      console.log('$scope.crew', $scope.crew);
     });
   }
   $scope.getImages = imdb_id => {
