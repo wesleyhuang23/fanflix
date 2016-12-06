@@ -253,6 +253,7 @@ angular.module('flixApp').controller('mainCtrl', function($scope, mainSvc){
     del_id.fb_id = fb_id;
     console.log(del_id);
     mainSvc.deleteReview(del_id).then(response => {
+      $scope.getReviews(fb_id);
       console.log('movie deleted');
     });
   }
