@@ -11,12 +11,20 @@
   <input id="author-box" type="text" placeholder="author" ng-model="author">
   <br>
   <br>
+      <p>Rating: </p>
+      <br>
+  <div class="rating-div">
+
+  <input id="rating" type="number" name="rating" min="0" max="10" ng-model="rating">/10
+</div>
+  <br>
+  <br>
   <textarea type="text" id="box-value" placeholder="your review" ng-model="comments"/></textarea>
   <br>
   <br>
   <!-- <a ui-sref="reviews"> -->
   <a href="http://localhost:3000/#/reviews" onClick="window.location.reload()">
-  <div class="submit" ng-click="submitReview(tagline, author, comments, user.fb_id)">
+  <div class="submit" ng-click="submitReview(tagline, author, comments, rating, user.fb_id)">
     <p>SUBMIT</p>
   </div>
 </a>

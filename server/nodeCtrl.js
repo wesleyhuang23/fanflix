@@ -137,8 +137,9 @@ module.exports = {
     var tagline = req.body.tagline;
     var review = req.body.review;
     var id = req.body.mdb_id;
+    var rating = req.body.rating;
     var fb_id = req.body.fb_id;
-    db.add_review([tagline, author, review, id, fb_id], function(err, reviews){
+    db.add_review([tagline, author, rating, review, id, fb_id], function(err, reviews){
       res.send(reviews)
     });
   },

@@ -241,6 +241,9 @@ angular.module('flixApp').controller('mainCtrl', function($scope, mainSvc){
 
   $scope.getReviews = fb_id => {
     mainSvc.getReviews(fb_id).then(response => {
+      for(var i = 0; i < response.length; i++){
+        response[i].rating = Number(response[i].rating);
+      }
       $scope.reviews = response;
       console.log($scope.reviews);
     });
@@ -259,6 +262,7 @@ angular.module('flixApp').controller('mainCtrl', function($scope, mainSvc){
         $scope.comments = response[0].review;
         $scope.tagline = response[0].tagline;
         $scope.author = response[0].author;
+        $scope.rating = Number(response[0].rating);
       });
     };
 

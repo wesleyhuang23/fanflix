@@ -20,7 +20,14 @@ textarea{
   outline: 0px;
   font-size: 20px;
 }
-
+.rating-div{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+#rating{
+  width: 40px;
+}
 .submit{
   border: 2px solid white;
   padding: 5px;
