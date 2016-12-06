@@ -306,10 +306,7 @@ NOW PLAYING
 #watchlist-ul{
   overflow: scroll;
 }
-#watchlist-ul li{
-  margin-top: 40px;
-  margin-bottom: 50px;
-}
+
 ul{
   position: relative;
   display: flex;
@@ -319,7 +316,8 @@ ul{
   padding-right: 0px;
   margin-left: 0px;
   margin-right: 0px;
-  overflow: auto;
+  overflow-x: scroll;
+  overflow-y: hidden;
 }
 li{
   text-align: center;

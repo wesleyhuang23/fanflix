@@ -156,10 +156,15 @@ angular.module('flixApp').controller('mainCtrl', function($scope, mainSvc){
 
   $scope.logoutUser = () => {
     mainSvc.logoutUser().then(response => {
+
       console.log(response);
       if (!response.data.user) {
         $scope.user = null;
+        fb_id = null;
+        $scope.getWatch();
+        console.log('logout getWatch');
       }
+
     })
   }
     mainSvc.getUser().then(response => {
@@ -197,12 +202,14 @@ angular.module('flixApp').controller('mainCtrl', function($scope, mainSvc){
       // console.log('$scope.getWatch fired')
     mainSvc.getWatch(fb_id).then(response => {
       $scope.watch = response;
+      console.log('WATCHLIST', $scope.watch);
       // console.log('mainSvc.getWatch fired')
 
       // console.log('watchlist', $scope.watch);
-      watchlist = response;
+      // watchlist = response;
     });
   }
+  // $scope.getWatch(fb_id);
 
   $scope.updateWatched = function(mdb_id, fb_id){
     var id = {};
