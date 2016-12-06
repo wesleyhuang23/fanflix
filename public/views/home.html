@@ -134,6 +134,31 @@
                     </div>
                 </li>
             </div>
+            <div class="poster-view" ng-repeat="films in nowPlaying2">
+
+                <li>
+                    <div class="poster">
+
+                        <img ng-src="https://image.tmdb.org/t/p/original{{films.poster_path}}">
+                        <div class="arrow" id="ar-btn" style="background-image: url('./icons/Arrow-Left-icon.png')"></div>
+                        <a ui-sref="details({id:'{{films.id}}'})">
+                            <div class="release">
+                                <div class="title-wrapper">
+                                    <p id="title">{{films.original_title}}</p>
+                                </div>
+                                <br>
+                                <p>{{films.release_date}}</p>
+                                <p>
+                                    <br>
+                                    <br>
+                                    <p id="sum">{{films.overview}}</p>
+                                </div>
+                            </a>
+                            <div id="sum-box"></div>
+                        </a>
+                    </div>
+                </li>
+            </div>
         </ul>
       </div>
         <br>
@@ -182,6 +207,7 @@
                     </li>
 
                 </div>
+
             </ul>
           </div>
             <div class="overview-wrapper" ng-app="overviewApp">

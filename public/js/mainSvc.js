@@ -33,6 +33,12 @@ angular.module('flixApp').service('mainSvc', function($http){
     }).then(response => response.data.results);
       console.log(response.data);
   };
+  this.getNowPlaying2 = () => {
+    return $http({
+      method: 'GET',
+      url: 'https://api.themoviedb.org/3/movie/now_playing?api_key=8eecf03080f34edf303e14b5f1476653&language=en-US&page=2'
+    }).then(response => response.data.results);
+  };
 
   this.getComingSoon = function(){
     return $http({
@@ -43,6 +49,12 @@ angular.module('flixApp').service('mainSvc', function($http){
       return response.data.results;
     })
   }
+  this.getComingSoon2 = () => {
+    return $http({
+      method: 'GET',
+      url: 'https://api.themoviedb.org/3/movie/upcoming?api_key=8eecf03080f34edf303e14b5f1476653&language=en-US&page=2'
+    }).then(response => response.data.results);
+  };
   //DETAILS SECTION
 
   this.getDetails = id => {

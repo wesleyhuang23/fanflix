@@ -12,7 +12,7 @@ angular.module('flixApp').controller('mainCtrl', function($scope, mainSvc){
       for(var i = 0; i < 7; i++){
         result.push(response[i]);
       }
-      $scope.populars = result;
+      $scope.populars = response;
       console.log($scope.popular);
 
       id.id = response[0].id;
@@ -42,6 +42,13 @@ angular.module('flixApp').controller('mainCtrl', function($scope, mainSvc){
 
   $scope.getNowPlaying = () => {
     mainSvc.getNowPlaying().then(response => {
+      $scope.getNowPlaying2 = () => {
+      mainSvc.getNowPlaying2().then(response => {
+        $scope.nowPlaying2 = response;
+      });
+    }
+      $scope.getNowPlaying2();
+
       response.sort(function (a, b) {
         if (a.release_date < b.release_date) {
           return 1;
@@ -53,14 +60,15 @@ angular.module('flixApp').controller('mainCtrl', function($scope, mainSvc){
         return 0;
         });
 
-        var result = response.filter(response => {
-          return response.vote_count > 1;
-        });
-        var result2 = [];
-        for(var i = 0; i < 7; i++){
-          result2.push(result[i]);
-        }
-      $scope.nowPlaying = result2;
+        // var result = response.filter(response => {
+        //   return response.vote_count > 1;
+        // });
+        // var result2 = [];
+        // for(var i = 0; i < 7; i++){
+        //   result2.push(result[i]);
+        // }
+
+      $scope.nowPlaying = response;
       console.log('now playing', $scope.nowPlaying);
     });
   }
@@ -69,7 +77,25 @@ angular.module('flixApp').controller('mainCtrl', function($scope, mainSvc){
 
   $scope.getComingSoon = () => {
     mainSvc.getComingSoon().then(response => {
-      response.sort(function (a, b) {
+      var masterComingSoon = [];
+
+      for(var i = 0; i < response.length; i++){
+        masterComingSoon.push(response[i]);
+      }
+
+      $scope.getComingSoon2 = () => {
+        mainSvc.getComingSoon2().then(response => {
+          for(var j = 0; j < response.length; j++){
+            masterComingSoon.push(response[j]);
+          }
+
+        });
+      };
+      $scope.getComingSoon2();
+
+
+
+      masterComingSoon.sort(function (a, b) {
         if (a.release_date < b.release_date) {
           return 1;
         }
@@ -80,15 +106,16 @@ angular.module('flixApp').controller('mainCtrl', function($scope, mainSvc){
         return 0;
         });
 
-        var result = response.filter(response => {
-          return response.vote_count > 1;
-        });
-        var result2 = [];
-        for(var i = 0; i < 7; i++){
-          result2.push(result[i]);
-        }
-      $scope.comingSoon = result2;
-      console.log($scope.comingSoon);
+        // var result = response.filter(response => {
+        //   return response.vote_count > 1;
+        // });
+        // var result2 = [];
+        // for(var i = 0; i < 7; i++){
+        //   result2.push(result[i]);
+        // }
+      $scope.comingSoon = masterComingSoon;
+
+      console.log('master coming soon', $scope.comingSoon);
     })
   }
   $scope.getComingSoon();

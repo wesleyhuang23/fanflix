@@ -314,11 +314,12 @@ ul{
   position: relative;
   display: flex;
   flex-direction: row;
-  width: 95vw;
+  width: 90vw;
   padding-left: 0px;
   padding-right: 0px;
   margin-left: 0px;
   margin-right: 0px;
+  overflow: auto;
 }
 li{
   text-align: center;
@@ -326,8 +327,9 @@ li{
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  margin-bottom: 50px;
+  margin-top: 40px;
 }
-
 #title{
   width: 200px;
   text-transform: uppercase;
