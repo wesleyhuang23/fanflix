@@ -123,7 +123,7 @@ input{
 }
 .search img{
   position: absolute;
-  top: 3px;
+  top: 5px;
   left: 230px;
   cursor: pointer;
 }
@@ -135,7 +135,7 @@ HOME VIEW
 ============*/
 .billboard-wrapper{
     overflow: hidden;
-    height: 62vh;
+    height: 650px;
     position: relative;
 }
 .billboard{
@@ -146,17 +146,26 @@ HOME VIEW
 }
 .background-img{
   /*border: 1px solid green;*/
-  width: 70vw;
+  width: 80vw;
   z-index: 0;
 }
 .background-img img{
-  width: 70vw;
+  width: 80vw;
   position: absolute;
   right: 0;
   z-index: 0;
   box-shadow: 100px 20px 700px black;
 }
-
+.bg-img-shadow{
+  /*border: 1px solid red;*/
+  position: absolute;
+  z-index: 1;
+  right: 0px;
+  width: 80vw;
+  height: 650px;
+  opacity: 1;
+  box-shadow: inset 200px -110px 234em black;
+}
 .left-info-wrapper{
   /*border: 1px solid green;*/
   width: 35vw;
@@ -179,8 +188,8 @@ HOME VIEW
   position: absolute;
   left:-140px;
   z-index: -1;
-  height: 63vh;
-  width: 37vw;
+  height: 650px;
+  width: 33vw;
   background-color: black;
   box-shadow: 120px 0 2000px black;
 }
@@ -196,11 +205,13 @@ HOME VIEW
   margin: 0;
   padding: 0;
 }
-#rating{
+#rating-home{
   border: 1px solid gray;
-  max-width: 70px;
-  padding-left: 5px;
-  padding-right: 5px;
+  max-width: 60px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -235,7 +246,9 @@ HOME VIEW
   color: #666666;
 }
 .second-row{
+  /*border: 1px solid green;*/
   display: flex;
+  align-items: center;
   width: 500px;
 }
 
@@ -527,5 +540,38 @@ li{
   }
   to {
     opacity: 0;
+  }
+}
+
+@media (max-width: 1445px){
+  .billboard-wrapper{
+      height: 550px;
+  }
+  .bg-img-shadow{
+    height: 550px;
+  }
+  .box{
+    height: 550px;
+  }
+}
+
+@media (max-width: 1125px){
+  #input-search{
+    font-size: 20px;
+    width: 150px;
+  }
+  .search{
+    color: white;
+    display: flex;
+    align-items: center;
+    margin-left: 50px;
+  }
+  .search img{
+    position: absolute;
+    left: 130px;
+    cursor: pointer;
+  }
+  .header-right{
+    width: 700px;
   }
 }

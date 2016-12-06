@@ -18,7 +18,7 @@ angular.module('flixApp').controller('mainCtrl', function($scope, mainSvc){
     mainSvc.getPopular().then(response => {
       console.log($scope.populars);
 
-      $scope.popular = response[0];
+      $scope.popular = response[5];
       var result = []
       for(var i = 0; i < 7; i++){
         result.push(response[i]);
@@ -26,7 +26,7 @@ angular.module('flixApp').controller('mainCtrl', function($scope, mainSvc){
       $scope.populars = response;
       console.log($scope.popular);
 
-      id.id = response[0].id;
+      id.id = response[5].id;
         console.log(id);
           $scope.getPopularDetails(id);
     });

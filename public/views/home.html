@@ -12,7 +12,7 @@
                         <p id="in-theatres">In Theatres
                             <span id="date">{{imdb_detail.Released}}</span>
                         </p>
-                        <p id="rating">{{imdb_detail.Rated}}</p>
+                        <p id="rating-home">{{imdb_detail.Rated}}</p>
                         <p id="runtime">{{imdb_detail.Runtime}}</p>
                     </div>
 
@@ -46,6 +46,8 @@
                 </div>
             </div>
             <div class="background-img">
+              <div class="bg-img-shadow">
+              </div>
                 <img ng-src="https://image.tmdb.org/t/p/original{{popular.backdrop_path}}"/>
             </div>
 

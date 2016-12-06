@@ -44,8 +44,6 @@ $(document).ready(function(){
     $('#now-playing').removeAttr('style');
   })
 
-  var rating = $('#rating-input').val();
-  console.log(rating);
 
   // if($('#rating-box').val())
   // var unorderedlist = document.getElementById('watchlist-ul');
