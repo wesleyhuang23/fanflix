@@ -1,4 +1,15 @@
 angular.module('flixApp').controller('mainCtrl', function($scope, mainSvc){
+  function colorPicker(rating){
+    if(rating >= 7){
+      return 'green';
+    }
+    else if(rating >= 4){
+      return 'orange';
+    }
+    else if(rating >= 0){
+      return 'red';
+    }
+  }
 
   var id = {}
   var imdb_id = {}
@@ -172,7 +183,7 @@ angular.module('flixApp').controller('mainCtrl', function($scope, mainSvc){
     });
   }
 
-  $scope.getWatched = function(fb_id){
+  $scope.getWatched = fb_id => {
     mainSvc.getWatched(fb_id).then(response => {
       $scope.watched = response;
       console.log('watched', $scope.watched);
@@ -241,11 +252,14 @@ angular.module('flixApp').controller('mainCtrl', function($scope, mainSvc){
 
   $scope.getReviews = fb_id => {
     mainSvc.getReviews(fb_id).then(response => {
+      // for(var i = 0; i < response.length; i++){
+      //   response[i].rating = Number(response[i].rating);
+      // }
       for(var i = 0; i < response.length; i++){
-        response[i].rating = Number(response[i].rating);
+        response[i].reviewColor = colorPicker(response[i].rating);
       }
       $scope.reviews = response;
-      console.log($scope.reviews);
+      console.log('REVIEWS', $scope.reviews);
     });
   }
   $scope.getReviews();

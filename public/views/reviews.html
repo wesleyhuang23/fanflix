@@ -30,7 +30,10 @@
     <h2> {{film.tagline}}</h2>
     <h3> By: {{film.author}}</h3>
     <br>
-    <input id="rating-input" type="text" value="{{film.rating}}" readonly>
+    <div ng-show="film.rating" id="rating-input" ng-style="{'background-color': film.reviewColor}">
+      <p>{{film.rating}}</p>
+    </div>
+    <!-- <input id="rating-input" type="text" value="{{film.rating}}" readonly> -->
     <br>
     <p> {{film.review}}</p>
   </div>

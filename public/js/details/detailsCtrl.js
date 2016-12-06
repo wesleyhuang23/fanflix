@@ -2,6 +2,18 @@ angular.module('flixApp').controller('detailsCtrl', function($scope, $stateParam
   var id = $stateParams.id;
   console.log(id);
 
+  function colorPicker(rating){
+    if(rating >= 8){
+      return 'green';
+    }
+    else if(rating >= 4){
+      return 'orange';
+    }
+    else if(rating >= 0){
+      return 'red';
+    }
+  }
+
 
   $scope.trustSrc = function(link) {
   return $sce.trustAsResourceUrl(link);
@@ -138,7 +150,9 @@ var watch;
       // for(var i = 0; i < response.length; i++){
       //   response[i].photo = "https://scontent.xx.fbcdn.net/t31.0-1/10457710_" + response[i].fb_id + '_7996853287290615145_o.jpg'
       // }
-
+      for(var i = 0; i < response.length; i++){
+        response[i].reviewColor = colorPicker(response[i].rating);
+      }
       $scope.userReviews = response;
       console.log('USER REVIEWS', $scope.userReviews);
     });

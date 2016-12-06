@@ -71,12 +71,14 @@
   padding: 5px;
 }
 #rating-input{
+  border: 2px solid white;
   width: 30px;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-left: 22px;
+  padding-left: 10px;
   padding-top: 5px;
+  padding-right: 10px;
   padding-bottom: 5px;
 }
 #x-review:hover{
