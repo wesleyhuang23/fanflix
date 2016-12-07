@@ -9,7 +9,7 @@
 
                     <br>
                     <div class="second-row">
-                        <p id="in-theatres">In Theatres
+                        <p id="in-theatres">Release Date
                             <span id="date">{{imdb_detail.Released}}</span>
                         </p>
                         <p id="rating-home">{{imdb_detail.Rated}}</p>
@@ -69,7 +69,7 @@
           </div>
             <div class="poster-view" ng-repeat="films in watch">
 
-                <li id="watchlist-li">
+                <li id="watchlist-li" ng-hide="!films.poster">
                     <div class="poster">
 
                         <img ng-src="{{films.poster}}">

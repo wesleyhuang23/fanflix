@@ -1,3 +1,30 @@
 <main>
-  
+  <h2>Reviews by: {{userAuthor}}</h2>
+  <div class="user-rev-container">
+    <div class="user-rev-wrapper">
+      <div class="user-rev-view" ng-repeat="film in userReviews2">
+
+        <div class="user-rev" ng-style="{'border': '{{film.reviewColor}} 1px solid'}">
+
+          <img id="rev-poster" ng-src="{{film.poster}}">
+
+          <div class="right-rev-info">
+            <div class="right-rev-img">
+              <img id="rev-profile" ng-src="{{film.photo}}"/>
+            </div>
+            <div class="rev-info">
+              <h3 style="text-transform: uppercase">{{film.title}}</h3>
+              <p>{{film.tagline}}</p>
+              <br>
+              <p id="rev-rating" ng-style="{'background-color': film.reviewColor}">{{film.rating}}</p>
+              <br>
+              <p>{{film.review}}</p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </main>

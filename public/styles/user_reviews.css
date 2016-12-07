@@ -1,0 +1,43 @@
+.user-rev img{
+  width: 200px;
+  height: 300px;
+}
+#rev-poster{
+  margin: 30px;
+}
+.user-rev{
+  /*border: 1px solid #3E8EDE;*/
+  width: 1200px;
+  display: flex;
+  flex-direction: row;
+  margin: 20px;
+}
+.user-rev-container{
+  /*border: 2px solid red;*/
+  display: flex;
+  justify-content: center;
+}
+
+.right-rev-info{
+  /*border: 1px solid green;*/
+  width: 700px;
+  display: flex;
+  flex-direction: row;
+  padding: 30px;
+}
+.right-rev-img img{
+  margin-left: 10px;
+  margin-right: 10px;
+  height: 50px;
+  width: 50px;
+  border-radius: 100px;
+  border: 1px solid orange;
+}
+#rev-rating{
+  border: 2px solid white;
+  width: 40px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

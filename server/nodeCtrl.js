@@ -131,6 +131,13 @@ module.exports = {
       res.send(reviews);
     });
   },
+  get_user_reviews2: function(req, res, next){
+    console.log('getUserReviews2', req.params);
+    db.get_user_reviews2([req.params.id], function(err, reviews){
+      console.log(err);
+      res.send(reviews);
+    });
+  },
   add_review: function(req, res, next){
     console.log(req.body);
     var author = req.body.author;

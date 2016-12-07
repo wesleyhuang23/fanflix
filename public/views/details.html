@@ -168,11 +168,13 @@
   <div class="box-user">
   <div class="user-review-wrapper" ng-repeat="review in userReviews">
       <div class="user-review-view">
+        <a ui-sref="user_review({id:'{{review.fb_id}}'})">
         <img id="profile-pic" ng-src="{{review.photo}}"/>
         <div class="review-info-right">
         <h3>{{review.title}}</h3>
         <p>{{review.tagline}}</p>
         <p>by: {{review.name}}</p>
+      </a>
         <br>
         <div id="rating-input" ng-style="{'background-color': review.reviewColor}">
           <p>{{review.rating}}</p>

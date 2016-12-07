@@ -246,7 +246,12 @@ angular.module('flixApp').service('mainSvc', function($http){
       url: '/update/' + edit.mdb_id + '/' + edit.fb_id
     }).then(response => response.data);
   };
-
+  this.getUserReviews2 = id => {
+    return $http({
+    method: 'GET',
+    url: '/user_reviews2' + '/' + id.id
+  }).then(response => response.data);
+};
   this.getUser = () => {
     return $http({
       method: 'GET',

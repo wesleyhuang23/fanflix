@@ -269,36 +269,39 @@ main{
 .user-review-container{
 /*  border: 1px solid green;*/
   width: 1200px;
-  width: 300px;
+  height: 500px;
   position: relative;
+  z-index: 1;
+  /*position: relative;*/
 }
 .review-bg-container{
-/*  border: 1px solid blue;*/
-  height: 400px;
+  /*border: 1px solid blue;*/
+  height: 500px;
   width: 1200px;
   overflow: hidden;
   align-items: center;
   position: absolute;
-
+  z-index: -1;
 }
 .user-review-wrapper{
   width: 1200px;
-  position: relative;
+  /*position: relative;*/
+  display: inline-block;
+  display: flex;
+  justify-content: center;
   /*border: 1px solid green;*/
 }
 .review-bg-container img{
   width: 1200px;
-  opacity: .1;
+  opacity: .2;
   position: absolute;
-  display: block;
 }
 .box-user{
-/*  border: 1px solid pink;*/
+/*border: 1px solid pink;*/
   width: 1200px;
-  height: 400px;
-  display: flex;
-  justify-content: center;
+  height: 500px;
   overflow: scroll;
+  overflow-x: hidden;
 }
 #profile-pic{
   position: absolute;
@@ -309,14 +312,14 @@ main{
   opacity: 1;
 }
 .user-review-view{
-  border: 2px solid orange;
+  border: 1px solid orange;
   height: auto;
   margin: 10px;
-  width: 480px;
+  width: 600px;
   position: relative;
   padding: 40px;
-  display: flex;
-  flex-direction: row;
+  /*display: flex;
+  flex-direction: row;*/
 }
 .review-info-right{
   margin-left: 60px;
@@ -328,5 +331,7 @@ main{
   font-size: 15px;
 }
 .no-review{
-  margin: auto;
+  position: relative;
+  top: 50%;
+  left: 40%;
 }
