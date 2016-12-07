@@ -46,7 +46,7 @@
   border-radius: 100px;
   width: 125px;
   height: 185px;
-  margin-bottom: 26px;
+  margin-bottom: 20px;
   position: relative;
   left: 15px;
 }
@@ -57,14 +57,13 @@
     position: relative;
     top: 0px;
 }
-.cast-view-cred p{
+.cast-view-wrapper-cred p{
   width: 205px;
   font-size: 12px;
-
   margin: auto;
 }
 .cast-view-wrapper-cred{
-  width: 200px;
+  width: 189px;
   position: relative;
   top: 0px;
   /*border: 1px solid pink;*/
@@ -80,13 +79,13 @@
 }
 .show-box{
   position: relative;
-  top:-30px;
+  top:-25px;
   left: 8px;
 }
 .initial-box{
   /*border: 1px solid red;*/
   position: relative;
-  top:-30px;
+  top:-25px;
   left: 12px;
   margin-bottom: 10px;
 }

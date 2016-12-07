@@ -4,9 +4,10 @@ var cors = require('cors');
 var massive = require('massive');
 var session = require('express-session');
 var passport = require('passport');
+var serverConfig = require("./server_config.js");
 var FacebookStrategy = require('passport-facebook').Strategy;
 var config = require('./config.js');
-//var port = serverConfig.serverPort;
+var port = serverConfig.serverPort;
 var connectionString = 'postgres://wesleyhuang@localhost/fanflix';
 
 var app = module.exports = express();
@@ -114,6 +115,6 @@ app.put('/update_watched', nodeCtrl.update_to_watched);
 app.delete('/delete/:id/:fb_id/:id2', nodeCtrl.delete);
 app.delete('/deletereview/:id/:fb_id/:id2', nodeCtrl.delete_review);
 
-app.listen(3000, function(){
+app.listen(port, function(){
   console.log('listening on port 3000...');
 })
