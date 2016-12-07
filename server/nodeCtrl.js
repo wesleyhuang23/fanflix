@@ -94,14 +94,14 @@ module.exports = {
   },
   delete: function(req, res, next){
     console.log('del func', req.params);
-    db.delete([req.params.id, req.params.fb_id], function(err, mylist){
+    db.delete([req.params.id, req.params.fb_id, req.params.id2], function(err, mylist){
       console.log(err);
       res.send(mylist);
     });
   },
   delete_review: function(req, res, next){
     console.log('deleteing review', req.params);
-    db.delete_review([req.params.id, req.params.fb_id], function(err, reviews){
+    db.delete_review([req.params.id, req.params.fb_id, req.params.id2], function(err, reviews){
       console.log(err);
       console.log(reviews);
       res.send(reviews);

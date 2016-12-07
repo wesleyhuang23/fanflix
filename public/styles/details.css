@@ -293,8 +293,9 @@ main{
 }
 .review-bg-container img{
   width: 1200px;
-  opacity: .2;
+  opacity: .1;
   position: absolute;
+  filter: grayscale(100%);
 }
 .box-user{
 /*border: 1px solid pink;*/
@@ -308,16 +309,16 @@ main{
   height: 50px;
   width: 50px;
   border-radius: 100px;
-  border: 1px solid orange;
+  border: 1px solid #EF7622;
   opacity: 1;
 }
 .user-review-view{
-  border: 1px solid orange;
+  border: 1px solid #EF7622;
   height: auto;
   margin: 10px;
-  width: 600px;
+  width: 700px;
   position: relative;
-  padding: 40px;
+  padding: 50px;
   /*display: flex;
   flex-direction: row;*/
 }

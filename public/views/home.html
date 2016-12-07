@@ -26,18 +26,22 @@
                     <p id="genres">Genres:
                         {{imdb_detail.Genre}}</p>
                         <br>
-                        <p id="genres">Companies:</p>
+
+                        <div class="company-wrapper">
+                          <p id="genres">Companies:</p>
                         <div class="companies-home" ng-repeat="company in companies"/>
                     <p id="genres"> {{company.name}}</p>
+
                   </div>
-                    <div class="btn-row">
-                        <a ui-sref="details({id:'{{popular.id}}'})">
-                            <div id="details-btn">
-                                <p>Details</p>
-                            </div>
-                        </a>
-                        <br>
-                    </div>
+                </div>
+                  <div class="btn-row">
+                      <a ui-sref="details({id:'{{popular.id}}'})">
+                          <div id="details-btn">
+                              <p>Details</p>
+                          </div>
+                      </a>
+                      <br>
+                  </div>
                     <br>
                     <br>
                     <br>

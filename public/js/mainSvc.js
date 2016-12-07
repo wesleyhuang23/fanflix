@@ -201,7 +201,7 @@ angular.module('flixApp').service('mainSvc', function($http){
     return $http({
       method:'DELETE',
       // url: 'http://localhost:3000/delete?' + 'id=' + del_id.id + 'fb_id=' + del_id.fb_id
-      url: '/delete/' + del_id.id + '/' + del_id.fb_id
+      url: '/delete/' + del_id.id + '/' + del_id.fb_id + '/' + del_id.id2
     }).then(response => response);
       console.log("From Service: ", response);
   };
@@ -210,7 +210,7 @@ angular.module('flixApp').service('mainSvc', function($http){
     console.log('deleting review', del_id);
     return $http({
       method: 'DELETE',
-      url: '/deletereview/' + del_id.id + '/' + del_id.fb_id
+      url: '/deletereview/' + del_id.id + '/' + del_id.fb_id + '/' + del_id.id2
     }).then(response => response);
   };
 

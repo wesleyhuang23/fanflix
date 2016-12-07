@@ -135,7 +135,7 @@ HOME VIEW
 ============*/
 .billboard-wrapper{
     overflow: hidden;
-    height: 650px;
+    height: 675px;
     position: relative;
 }
 .billboard{
@@ -162,13 +162,13 @@ HOME VIEW
   z-index: 1;
   right: 0px;
   width: 80vw;
-  height: 650px;
+  height: 675px;
   opacity: 1;
   box-shadow: inset 200px -110px 234em black;
 }
 .left-info-wrapper{
   /*border: 1px solid green;*/
-  width: 35vw;
+  width: 29vw;
   height: auto;
   position: absolute;
   z-index: 4;
@@ -179,7 +179,7 @@ HOME VIEW
   color: white;
   font-weight: bold;
   background-color: rgba(0,0,0,0);
-  width: 35vw;
+  width: 29vw;
   height: 65vh;
   margin-top: 20px;
   position: absolute;
@@ -189,8 +189,8 @@ HOME VIEW
   position: absolute;
   left:-140px;
   z-index: -1;
-  height: 650px;
-  width: 33vw;
+  height: 675px;
+  width: 29vw;
   background-color: black;
   box-shadow: 120px 0 2000px black;
 }
@@ -205,6 +205,13 @@ HOME VIEW
   font-weight: bolder;
   margin: 0;
   padding: 0;
+}
+.company-wrapper{
+  display: flex;
+}
+.companies-home{
+  margin-right: 10px;
+  margin-left: 10px;
 }
 #rating-home{
   border: 1px solid gray;

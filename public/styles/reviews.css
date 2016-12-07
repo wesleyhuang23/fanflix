@@ -88,13 +88,13 @@
   transform: scale(1.1);
 }
 .right-info h2{
-  text-transform: uppercase;
   font-weight: bolder;
 }
 .right-info h3{
   text-transform: capitalize;
 }
 .right-info h1{
+  font-weight: 100;
   font-size: 50px;
 }
 .right-info p{

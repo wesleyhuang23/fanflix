@@ -17,7 +17,9 @@
   display: flex;
   justify-content: center;
 }
-
+#rev-input{
+  width: 200px;
+}
 .right-rev-info{
   /*border: 1px solid green;*/
   width: 700px;
@@ -25,11 +27,11 @@
   flex-direction: row;
   padding: 30px;
 }
-.right-rev-img img{
+.top-rev-img img{
   margin-left: 10px;
   margin-right: 10px;
-  height: 50px;
-  width: 50px;
+  height: 150px;
+  width: 150px;
   border-radius: 100px;
   border: 1px solid orange;
 }

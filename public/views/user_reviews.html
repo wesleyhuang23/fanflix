@@ -1,17 +1,23 @@
 <main>
-  <h2>Reviews by: {{userAuthor}}</h2>
+
+  <h2>Reviews by User: {{userAuthor}}</h2>
+  <br>
+  <div class="top-rev-img">
+    <img id="rev-profile" ng-src="{{userReviews2[0].photo}}"/>
+  </div>
+  <br>
+  <input id="rev-input" type="text" placeholder="Search" ng-model="titleFilter.title">
+  <br>
   <div class="user-rev-container">
     <div class="user-rev-wrapper">
-      <div class="user-rev-view" ng-repeat="film in userReviews2">
+      <div class="user-rev-view" ng-repeat="film in userReviews2 | filter: titleFilter">
 
         <div class="user-rev" ng-style="{'border': '{{film.reviewColor}} 1px solid'}">
 
           <img id="rev-poster" ng-src="{{film.poster}}">
 
           <div class="right-rev-info">
-            <div class="right-rev-img">
-              <img id="rev-profile" ng-src="{{film.photo}}"/>
-            </div>
+
             <div class="rev-info">
               <h3 style="text-transform: uppercase">{{film.title}}</h3>
               <p>{{film.tagline}}</p>

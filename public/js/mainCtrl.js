@@ -235,10 +235,11 @@ angular.module('flixApp').controller('mainCtrl', function($scope, mainSvc){
     });
   }
 
-  $scope.delete = function(mdb_id, fb_id){
+  $scope.delete = function(mdb_id, fb_id, id){
     var del_id = {}
     del_id.id = mdb_id;
     del_id.fb_id = fb_id;
+    del_id.id2 = id;
     console.log(del_id);
     mainSvc.delete(del_id).then(response => {
       console.log('movie deleted');
@@ -247,10 +248,11 @@ angular.module('flixApp').controller('mainCtrl', function($scope, mainSvc){
       $scope.getWatch();
     });
   }
-  $scope.deleteReview = function(mdb_id, fb_id){
+  $scope.deleteReview = function(mdb_id, fb_id, id){
     var del_id = {}
     del_id.id = mdb_id;
     del_id.fb_id = fb_id;
+    del_id.id2 = id;
     console.log(del_id);
     mainSvc.deleteReview(del_id).then(response => {
       $scope.getReviews(fb_id);

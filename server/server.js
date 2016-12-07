@@ -111,8 +111,8 @@ app.put('/update', nodeCtrl.update_to_fav);
 app.put('/update_watched', nodeCtrl.update_to_watched);
 
 //delete
-app.delete('/delete/:id/:fb_id', nodeCtrl.delete);
-app.delete('/deletereview/:id/:fb_id', nodeCtrl.delete_review);
+app.delete('/delete/:id/:fb_id/:id2', nodeCtrl.delete);
+app.delete('/deletereview/:id/:fb_id/:id2', nodeCtrl.delete_review);
 
 app.listen(3000, function(){
   console.log('listening on port 3000...');
