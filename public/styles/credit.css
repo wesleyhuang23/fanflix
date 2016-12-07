@@ -39,7 +39,7 @@
 .cast-view img{
   width: 105px;
   height: 150px;
-  margin-bottom: 5px;
+  margin-bottom: 30px;
   position: relative;
   left: 15px;
 }
@@ -47,19 +47,50 @@
     padding: 8px;
     display: flex;
     justify-content: center;
+    position: relative;
+    top: 0px;
 }
 .cast-view p{
   width: 205px;
   font-size: 12px;
+
   margin: auto;
 }
 .cast-view-wrapper{
   width: 200px;
+  position: relative;
+  top: 0px;
   /*border: 1px solid pink;*/
   text-align: center;
   display: inline-block;
 }
+.img-text{
+  border: 1px solid blue;
+}
 #actor-name{
   text-transform: uppercase;
   font-weight: bolder;
+}
+.show-box{
+  position: relative;
+  top:-30px;
+  left: 8px;
+}
+.initial-box{
+  /*border: 1px solid red;*/
+  position: absolute;
+  top:-55px;
+  left: 35px;
+}
+.firstletter{
+  border: 2px solid #EF7622;
+  border-radius: 100px;
+  position: absolute;
+  top: -214px;
+  left: 54px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 150px;
+  width: 105px;
 }

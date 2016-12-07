@@ -19,9 +19,24 @@
           <div class="cast-view-wrapper" ng-repeat="actor in cast | filter:namefilter">
             <a ui-sref="people({id:actor.id})">
             <div class="cast-view">
-              <img ng-src="https://image.tmdb.org/t/p/w300_and_h450_bestv2{{actor.profile_path}}"/>
-              <p id="actor-name">{{actor.name}}</p>
-              <p>{{actor.character}}</p>
+              <!-- <div class="img-text"> -->
+              <img ng-src="https://image.tmdb.org/t/p/w300_and_h450_bestv2{{actor.profile_path}}" ng-hide="!actor.profile_path"/>
+            </div>
+            <div class="show-box">
+            <p id="actor-name" ng-hide="!actor.profile_path">{{actor.name}}</p>
+            <p ng-hide="!actor.profile_path">{{actor.character}}</p>
+          </div>
+
+
+
+              <div class="firstletter" ng-show="!actor.profile_path">
+                <h1>{{actor.firstLetter}}</h1>
+              </div>
+              <div class="initial-box">
+              <p  ng-show="!actor.profile_path"id="actor-name">{{actor.name}}</p>
+              <p ng-show="!actor.profile_path">{{actor.character}}</p>
+            <!-- </div> -->
+          </div>
             </div>
           </a>
           </div>
@@ -33,7 +48,7 @@
           <div class="crew-container">
           <h4>Directing Department</h4>
           <hr>
-      
+
           <br>
           <div class="cast-view-wrapper" ng-repeat="person in directing | filter:namefilter">
             <div class="cast-view">

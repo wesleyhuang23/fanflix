@@ -8,6 +8,11 @@ angular.module('flixApp').controller('creditsCtrl', function($scope, $stateParam
       $scope.cast = response.cast;
       $scope.crew = response.crew;
       $scope.numCredits = response.cast.length + response.crew.length;
+
+      for(var i = 0; i < response.cast.length; i++){
+        response.cast[i].firstLetter = response.cast[i].name[0];
+      }
+
       var crew = response.crew
 
       var directing = crew.filter(function(crew){
