@@ -44,9 +44,9 @@
 .cast-view-cred img{
   border: 2px solid #EF7622;
   border-radius: 100px;
-  width: 105px;
-  height: 150px;
-  margin-bottom: 30px;
+  width: 125px;
+  height: 185px;
+  margin-bottom: 26px;
   position: relative;
   left: 15px;
 }
@@ -85,19 +85,30 @@
 }
 .initial-box{
   /*border: 1px solid red;*/
-  position: absolute;
-  top:-55px;
-  left: 35px;
+  position: relative;
+  top:-30px;
+  left: 12px;
+  margin-bottom: 10px;
 }
 .firstletter{
   border: 2px solid #EF7622;
   border-radius: 100px;
-  position: absolute;
-  top: -214px;
-  left: 54px;
+  position: relative;
+  top: -33px;
+  left: 47px;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 150px;
-  width: 105px;
+  width: 125px;
+  height: 185px;
+}
+@media (max-width: 1625px){
+  .credits-view{
+    width: 65vw;
+  }
+}
+@media (max-width: 1190px){
+  .credits-view{
+    width: 50vw;
+  }
 }

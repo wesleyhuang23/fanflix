@@ -580,6 +580,7 @@ li{
     cursor: pointer;
   }
   .header-right{
-    width: 700px;
+    width: 500px;
+    margin-right: 50px;
   }
 }
