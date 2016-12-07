@@ -84,6 +84,13 @@ angular.module('flixApp').service('mainSvc', function($http){
       url:'https://api.themoviedb.org/3/movie/'+ imdb_id +'/credits?api_key=8eecf03080f34edf303e14b5f1476653'
     }).then(response => response.data);
   };
+  this.getCredits = id => {
+    return $http({
+      url: 'https://api.themoviedb.org/3/movie/'+ id +'/credits?api_key=8eecf03080f34edf303e14b5f1476653'
+    }).then(function(response){
+      return response.data;
+    });
+  };
   this.getSimilars = imdb_id => {
     return $http({
       method:'GET',

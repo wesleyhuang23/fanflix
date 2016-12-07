@@ -45,6 +45,7 @@ var watch;
       watch = response;
       console.log('FAV BTN', fav);
       console.log('WATCH BTN', watch);
+      $scope.id = response;
       $scope.detail = response;
       $scope.production_companies = response.production_companies;
       console.log($scope.detail);

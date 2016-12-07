@@ -37,9 +37,9 @@ angular.module('flixApp', ['ui.router'])
     url: '/user_reviews/:id',
     controller: 'userReviewsCtrl'
   }).state('credits',  {
-    templateUrl: 'views/credit.html',
-    url: '/credit/:id',
-    controller: 'detailsCtrl'
+    templateUrl: 'views/credits.html',
+    url: '/credits/:id',
+    controller: 'creditsCtrl'
   });
 
 

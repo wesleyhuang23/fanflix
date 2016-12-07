@@ -101,8 +101,8 @@
 
 <br>
 <div class="second-row-detail" ng-repeat="person in cast">
-  <a ui-sref="people({id:'{{person.id}}'})">
-  <div class="cast-view" ng-show="{{person.profile_path}}">
+  <a ui-sref="people({id:person.id})">
+  <div class="cast-view" ng-show="person.profile_path">
     <img ng-src="https://image.tmdb.org/t/p/w300_and_h450_bestv2{{person.profile_path}}"/>
     <br>
     <p style="text-transform:uppercase; font-size:13px;font-weight:900">{{person.name}}</p>
@@ -133,11 +133,14 @@
 
 </div> -->
 
-<!-- <div class="full-cast-btn-container">
+<div class="full-cast-btn-container">
+  <a ui-sref="credits({id:detail.id})">
 <div class="full-cast-btn">
   <p>Full Cast & Crew</p>
 </div>
-</div> -->
+</a>
+</div>
+
 <br>
 <h3>VIDEOS</h3>
 <br>
@@ -196,7 +199,7 @@
 <div class="similar-container">
   <div class="similar-wrapper" ng-repeat="film in similar">
     <a ui-sref="details({id:'{{film.id}}'})">
-    <div class="similar" ng-show="{{film.backdrop_path}}">
+    <div class="similar" ng-show="film.backdrop_path">
     <img src="https://image.tmdb.org/t/p/original{{film.backdrop_path}}"/>
     <h4>{{film.title}}</h4>
   </div>

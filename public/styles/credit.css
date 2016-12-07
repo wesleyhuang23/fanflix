@@ -1,0 +1,65 @@
+.credits-container{
+  /*border: 1px solid red;*/
+}
+.crew-container .cast-view-wrapper{
+  border: 1px solid orange;
+  width: 220px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-top: 25px;
+  margin-left: 10px;
+  transition: background-color 2s;
+}
+.crew-container .cast-view-wrapper:hover{
+  background-color: red;
+}
+.crew-container .cast-view{
+  display: flex;
+  align-items: center;
+}
+.credits-wrapper{
+  display: flex;
+  flex-direction: row;
+}
+.credits h1{
+  font-size: 40px;
+}
+.credit-img{
+  margin-left: 20px;
+}
+.credits-wrapper img{
+  width: 330px;
+  height: 495px;
+}
+.credits-view{
+  margin-left: 20px;
+  /*border: 1px solid green;*/
+  width: 80vw;
+}
+.cast-view img{
+  width: 105px;
+  height: 150px;
+  margin-bottom: 5px;
+  position: relative;
+  left: 15px;
+}
+.cast-view{
+    padding: 8px;
+    display: flex;
+    justify-content: center;
+}
+.cast-view p{
+  width: 205px;
+  font-size: 12px;
+  margin: auto;
+}
+.cast-view-wrapper{
+  width: 200px;
+  /*border: 1px solid pink;*/
+  text-align: center;
+  display: inline-block;
+}
+#actor-name{
+  text-transform: uppercase;
+  font-weight: bolder;
+}

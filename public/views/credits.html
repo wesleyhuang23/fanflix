@@ -1,0 +1,196 @@
+<main>
+  <div class="credits-container">
+    <div class="credits-wrapper">
+      <div class="credit-img">
+      <img ng-src="https://image.tmdb.org/t/p/original{{creditDetails.poster_path}}"/>
+      <h3>Number of Credits</h3>
+      <p>{{numCredits}}</p>
+
+    </div>
+      <div class="credits-view">
+        <div class="credits">
+          <h1>{{creditDetails.title}}</h1>
+          <br>
+          <input type="text" placeholder="Search by name" ng-model="namefilter.name">
+          <br>
+          <br>
+          <h3>CAST</h3>
+          <br>
+          <div class="cast-view-wrapper" ng-repeat="actor in cast | filter:namefilter">
+            <a ui-sref="people({id:actor.id})">
+            <div class="cast-view">
+              <img ng-src="https://image.tmdb.org/t/p/w300_and_h450_bestv2{{actor.profile_path}}"/>
+              <p id="actor-name">{{actor.name}}</p>
+              <p>{{actor.character}}</p>
+            </div>
+          </a>
+          </div>
+          <br>
+          <br>
+          <h3>CREW</h3>
+          <br>
+          <br>
+          <div class="crew-container">
+          <h4>Directing Department</h4>
+          <hr>
+      
+          <br>
+          <div class="cast-view-wrapper" ng-repeat="person in directing | filter:namefilter">
+            <div class="cast-view">
+              <a ui-sref="people({id:person.id})">
+              <!-- <img ng-src="https://image.tmdb.org/t/p/w300_and_h450_bestv2{{person.profile_path}}"/> -->
+              <p id="actor-name">{{person.name}}</p>
+              <p>{{person.job}}</p>
+            </a>
+            </div>
+            </div>
+            <br>
+            <br>
+            <br>
+            <h4>Camera Department</h4>
+            <hr>
+
+            <br>
+            <div class="cast-view-wrapper" ng-repeat="person in camera | filter:namefilter">
+              <div class="cast-view">
+                <a ui-sref="people({id:person.id})">
+                <!-- <img ng-src="https://image.tmdb.org/t/p/w300_and_h450_bestv2{{person.profile_path}}"/> -->
+                <p id="actor-name">{{person.name}}</p>
+                <p>{{person.job}}</p>
+              </a>
+              </div>
+              </div>
+            <br>
+            <br>
+            <br>
+            <h4>Writing Department</h4>
+            <hr>
+
+            <br>
+            <div class="cast-view-wrapper" ng-repeat="person in writing | filter:namefilter">
+              <div class="cast-view">
+                <a ui-sref="people({id:person.id})">
+                <!-- <img ng-src="https://image.tmdb.org/t/p/w300_and_h450_bestv2{{person.profile_path}}"/> -->
+                <p id="actor-name">{{person.name}}</p>
+                <p>{{person.job}}</p>
+              </a>
+              </div>
+              </div>
+              <br>
+              <br>
+              <br>
+              <h4>Art Department</h4>
+              <hr>
+
+              <br>
+              <div class="cast-view-wrapper" ng-repeat="person in art | filter:namefilter">
+                <div class="cast-view">
+                  <a ui-sref="people({id:person.id})">
+                  <!-- <img ng-src="https://image.tmdb.org/t/p/w300_and_h450_bestv2{{person.profile_path}}"/> -->
+                  <p id="actor-name">{{person.name}}</p>
+                  <p>{{person.job}}</p>
+                </a>
+                </div>
+                </div>
+                <br>
+                <br>
+                <br>
+                <h4>Production Department</h4>
+                <hr>
+                <br>
+
+                <div class="cast-view-wrapper" ng-repeat="person in production | filter:namefilter">
+                  <div class="cast-view">
+                    <a ui-sref="people({id:person.id})">
+                    <!-- <img ng-src="https://image.tmdb.org/t/p/w300_and_h450_bestv2{{person.profile_path}}"/> -->
+                    <p id="actor-name">{{person.name}}</p>
+                    <p>{{person.job}}</p>
+                  </a>
+                  </div>
+                  </div>
+                  <br>
+                  <br>
+                  <br>
+                  <h4>Editing Department</h4>
+                  <hr>
+                  <br>
+
+                  <div class="cast-view-wrapper" ng-repeat="person in editing | filter:namefilter">
+                    <div class="cast-view">
+                      <a ui-sref="people({id:person.id})">
+                      <!-- <img ng-src="https://image.tmdb.org/t/p/w300_and_h450_bestv2{{person.profile_path}}"/> -->
+                      <p id="actor-name">{{person.name}}</p>
+                      <p>{{person.job}}</p>
+                    </a>
+                    </div>
+                    </div>
+                  <br>
+                  <br>
+                  <br>
+                  <h4>Sound Department</h4>
+                  <hr>
+                  <br>
+                  <div class="cast-view-wrapper" ng-repeat="person in sound | filter:namefilter">
+                    <div class="cast-view">
+                      <a ui-sref="people({id:person.id})">
+                      <!-- <img ng-src="https://image.tmdb.org/t/p/w300_and_h450_bestv2{{person.profile_path}}"/> -->
+                      <p id="actor-name">{{person.name}}</p>
+                      <p>{{person.job}}</p>
+                    </a>
+                    </div>
+                    </div>
+                    <br>
+                    <br>
+                    <br>
+                    <h4>Visual Effects Department</h4>
+                    <hr>
+                    <br>
+                    <br>
+                    <div class="cast-view-wrapper" ng-repeat="person in visualEffects | filter:namefilter">
+                      <div class="cast-view">
+                        <a ui-sref="people({id:person.id})">
+                        <!-- <img ng-src="https://image.tmdb.org/t/p/w300_and_h450_bestv2{{person.profile_path}}"/> -->
+                        <p id="actor-name">{{person.name}}</p>
+                        <p>{{person.job}}</p>
+                      </a>
+                      </div>
+                      </div>
+                      <br>
+                      <br>
+                      <br>
+                      <h4>Lighting Department</h4>
+                      <hr>
+                      <br>
+
+                      <div class="cast-view-wrapper" ng-repeat="person in lighting | filter:namefilter">
+                        <div class="cast-view">
+                          <a ui-sref="people({id:person.id})">
+                          <!-- <img ng-src="https://image.tmdb.org/t/p/w300_and_h450_bestv2{{person.profile_path}}"/> -->
+                          <p id="actor-name">{{person.name}}</p>
+                          <p>{{person.job}}</p>
+                        </a>
+                        </div>
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                        <h4>Crew Department</h4>
+                        <hr>
+                        <br>
+
+                        <div class="cast-view-wrapper" ng-repeat="person in crewDep | filter:namefilter">
+                          <div class="cast-view">
+                            <a ui-sref="people({id:person.id})">
+                            <!-- <img ng-src="https://image.tmdb.org/t/p/w300_and_h450_bestv2{{person.profile_path}}"/> -->
+                            <p id="actor-name">{{person.name}}</p>
+                            <p>{{person.job}}</p>
+                          </a>
+                          </div>
+                          </div>
+                        </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
