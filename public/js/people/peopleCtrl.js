@@ -5,6 +5,8 @@ angular.module('flixApp').controller('peopleCtrl', function($scope, $stateParams
   $scope.getPersonDetails = person_id => {
     mainSvc.getPersonDetails(person_id).then(response => {
       var person_name = response.name
+      response.firstLetter = response.name[0];
+
       $scope.personDetail = response;
       console.log($scope.personDetail);
       $scope.getKnownFor(person_name);

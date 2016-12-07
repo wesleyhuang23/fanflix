@@ -1,7 +1,9 @@
 .credits-container{
   /*border: 1px solid red;*/
+  display: flex;
+  flex-direction: row;
 }
-.crew-container .cast-view-wrapper{
+.crew-container .cast-view-wrapper-cred{
   border: 1px solid orange;
   width: 220px;
   padding-top: 20px;
@@ -10,10 +12,10 @@
   margin-left: 10px;
   transition: background-color 2s;
 }
-.crew-container .cast-view-wrapper:hover{
+.crew-container .cast-view-wrapper-cred:hover{
   background-color: red;
 }
-.crew-container .cast-view{
+.crew-container .cast-view-cred{
   display: flex;
   align-items: center;
 }
@@ -25,38 +27,43 @@
   font-size: 40px;
 }
 .credit-img{
-  margin-left: 20px;
+  /*border: 1px solid pink;*/
+  float: left;
 }
-.credits-wrapper img{
+.credits-wrapper-cred img{
+
   width: 330px;
   height: 495px;
 }
 .credits-view{
   margin-left: 20px;
   /*border: 1px solid green;*/
-  width: 80vw;
+  float: right;
+  width: 73vw;
 }
-.cast-view img{
+.cast-view-cred img{
+  border: 2px solid #EF7622;
+  border-radius: 100px;
   width: 105px;
   height: 150px;
   margin-bottom: 30px;
   position: relative;
   left: 15px;
 }
-.cast-view{
+.cast-view-cred{
     padding: 8px;
     display: flex;
     justify-content: center;
     position: relative;
     top: 0px;
 }
-.cast-view p{
+.cast-view-cred p{
   width: 205px;
   font-size: 12px;
 
   margin: auto;
 }
-.cast-view-wrapper{
+.cast-view-wrapper-cred{
   width: 200px;
   position: relative;
   top: 0px;

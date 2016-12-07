@@ -16,6 +16,15 @@
   width: 300px;
   height: 450px;
 }
+.first-letter{
+  width: 300px;
+  height: 450px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 70px;
+  background-color: gray;
+}
 .info-right{
   margin-left: 20px;
 }

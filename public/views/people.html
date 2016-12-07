@@ -4,7 +4,10 @@
     <div class="person-wrapper">
     <div class="picture">
       <br>
-      <img ng-src="https://image.tmdb.org/t/p/w640{{personDetail.profile_path}}"/>
+      <img ng-src="https://image.tmdb.org/t/p/w640{{personDetail.profile_path}}" ng-show="personDetail.profile_path"/>
+      <div class="first-letter" ng-show="!personDetail.profile_path">
+        <h1>{{personDetail.firstLetter}}</h1>
+      </div>
       <br>
       <br>
       <hr>
