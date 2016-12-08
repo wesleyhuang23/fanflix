@@ -375,7 +375,7 @@ main{
   color: orange;
 }
 #favorites-modal{
-  display: none;
+  display: block;
 }
 #fav-modal-content{
     border: 2px solid red;
@@ -396,14 +396,16 @@ main{
     background-color: none;
     margin: 15% auto; /* 15% from the top and centered */
     padding: 20px;
-    width: 30%; /* Could be more or less, depending on screen size */
+    width: 60%; /* Could be more or less, depending on screen size */
+    height: 80px;
+    height: auto;
     position: relative;
     display: flex;
     justify-content: center;
 }
 .modal-content p{
   color: white;
-  font-size: 25px;
+  font-size: 20px;
 }
 .close {
     color: #aaa;

@@ -161,8 +161,9 @@ var watch;
   //DETAIL AND WATCH LIST BUTTONS
   $scope.addToFav = () => {
     fav.fb_id = fb_id;
-    console.log(fav);
-    console.log('i am in add to fav func');
+    $scope.showModal = true;
+    // console.log(fav);
+    // console.log('i am in add to fav func');
     mainSvc.addToFav(fav).then(response => {
       $scope.getFavs();
 
@@ -172,21 +173,22 @@ var watch;
           current = true;
         }
       }
-      
+
       $scope.currentFilm = current;
-      console.log('detailsCTRL', response);
+      // console.log('detailsCTRL', response);
     })
   };
   $scope.addToWatch = () => {
-
+    $scope.showModalwatchlist = true;
     fav.fb_id = fb_id;
-    console.log('film sent', fav);
+    // console.log('film sent', fav);
     mainSvc.addToWatch(fav).then(response => {
 
       $scope.getWatch();
     });
   };
   $scope.addToWatched = () => {
+    $scope.showModalwatch = true;
     fav.fb_id = fb_id;
     mainSvc.addtoWatched(fav).then(response => {
       $scope.getWatched();

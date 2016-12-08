@@ -1,23 +1,23 @@
 <main>
 
-  <div id="favorites-modal" class="modal">
+  <div ng-show="showModal" ng-click="showModal = !showModal" id="favorites-modal" class="modal">
     <div id="fav-modal-content" class="modal-content">
     <span class="close">x</span>
-    <p><span id="title-span">"{{detail.title}}"</span> has been added to your <span id="fav-span">Favorites List</span>.</p>
+    <p><span id="title-span">"{{detail.title}}"</span> is added to your <span id="fav-span">Favorites List.</span></p>
   </div>
   </div>
 
-  <div id="watched-modal" class="modal">
+  <div ng-show="showModalwatch" ng-click="showModalwatch = !showModalwatch" id="favorites-modal" class="modal" id="watched-modal" class="modal">
     <div id= "watched-modal-content" class="modal-content">
     <span class="close">x</span>
-    <p><span id="title-span">"{{detail.title}}"</span> has been added to your <span id="watched-span">Watched List</span>.</p>
+    <p><span id="title-span">"{{detail.title}}"</span> is added to your <span id="watched-span">Watched List</span>.</p>
   </div>
   </div>
 
-  <div id="watchlist-modal" class="modal">
+  <div ng-show="showModalwatchlist" ng-click="showModalwatchlist = !showModalwatchlist" id="favorites-modal" class="modal" id="watchlist-modal" class="modal">
     <div id="watchlist-modal-content" class="modal-content">
     <span class="close">x</span>
-    <p><span id="title-span">"{{detail.title}}"</span> has been added to your <span id="watchlist-span">Watchlist</span>.</p>
+    <p><span id="title-span">"{{detail.title}}"</span> is added to your <span id="watchlist-span">Watchlist</span>.</p>
   </div>
   </div>
 
@@ -54,7 +54,6 @@
     <div class="btn" id="fav" ng-click="addToFav()">
       <p>Favorite</p>
     </div>
-
 
 
     <div class="btn" id="watched" ng-click="addToWatched()">
