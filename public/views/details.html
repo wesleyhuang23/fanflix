@@ -1,4 +1,26 @@
 <main>
+
+  <div id="favorites-modal" class="modal">
+    <div id="fav-modal-content" class="modal-content">
+    <span class="close">x</span>
+    <p><span id="title-span">"{{detail.title}}"</span> has been added to your <span id="fav-span">Favorites List</span>.</p>
+  </div>
+  </div>
+
+  <div id="watched-modal" class="modal">
+    <div id= "watched-modal-content" class="modal-content">
+    <span class="close">x</span>
+    <p><span id="title-span">"{{detail.title}}"</span> has been added to your <span id="watched-span">Watched List</span>.</p>
+  </div>
+  </div>
+
+  <div id="watchlist-modal" class="modal">
+    <div id="watchlist-modal-content" class="modal-content">
+    <span class="close">x</span>
+    <p><span id="title-span">"{{detail.title}}"</span> has been added to your <span id="watchlist-span">Watchlist</span>.</p>
+  </div>
+  </div>
+
   <div class="backdrop-wrapper">
   <img src="https://image.tmdb.org/t/p/original/{{detail.backdrop_path}}">
   <div class="shadow">
@@ -29,17 +51,16 @@
   <div class="buttons">
 
 
-    <div class="btn" id="fav" ng-click="addToFav()" >
+    <div class="btn" id="fav" ng-click="addToFav()">
       <p>Favorite</p>
     </div>
 
 
 
-    <div class="btn" id="watched" ng-click="addToWatched()" >
+    <div class="btn" id="watched" ng-click="addToWatched()">
       <p>Watched</p>
     </div>
-
-    <div class="btn" id="list" ng-click="addToWatch()" >
+    <div class="btn" id="list" ng-click="addToWatch()">
       <p>Watchlist</p>
     </div>
 

@@ -165,6 +165,15 @@ var watch;
     console.log('i am in add to fav func');
     mainSvc.addToFav(fav).then(response => {
       $scope.getFavs();
+
+      var current = false;
+      for(var i = 0; i < $scope.favorites.length; i++){
+        if($scope.favorites[i].id === fav.id){
+          current = true;
+        }
+      }
+      
+      $scope.currentFilm = current;
       console.log('detailsCTRL', response);
     })
   };

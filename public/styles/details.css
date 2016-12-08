@@ -336,3 +336,87 @@ main{
   top: 50%;
   left: 40%;
 }
+.first-details-row{
+  border: 1px solid red;
+  display: flex;
+  flex-direction: row;
+}
+.iconz-indicators{
+  border: 1px solid white;
+  border-radius: 100px;
+  height: 24px;
+  width: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.iconz-indicators img{
+  height: 20px;
+  filter: invert(100%);
+}
+.modal{
+  background-color: rgba(0, 0, 0, .7);
+  position: fixed;
+  z-index: 10;
+  height: 100%;
+  width: 100%;
+}
+#title-span{
+  text-transform: uppercase;
+  font-weight: bolder;
+}
+#fav-span{
+  color: red;
+}
+#watched-span{
+  color: white;
+}
+#watchlist-span{
+  color: orange;
+}
+#favorites-modal{
+  display: none;
+}
+#fav-modal-content{
+    border: 2px solid red;
+}
+#watched-modal{
+  display: none;
+}
+#watched-modal-content{
+  border: 2px solid white;
+}
+#watchlist-modal{
+  display: none;
+}
+#watchlist-modal-content{
+  border: 2px solid orange;
+}
+.modal-content {
+    background-color: none;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    width: 30%; /* Could be more or less, depending on screen size */
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+.modal-content p{
+  color: white;
+  font-size: 25px;
+}
+.close {
+    color: #aaa;
+    position: absolute;
+    top:0px;
+    right: 10px;
+    font-size: 28px;
+    font-weight: bold;
+    display: none;
+}
+.close:hover,
+.close:focus {
+    color: orange;
+    text-decoration: none;
+    cursor: pointer;
+}
