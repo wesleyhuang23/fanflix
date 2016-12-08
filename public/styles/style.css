@@ -129,6 +129,15 @@ input{
 }
 footer{
   height: 20vh;
+  display: flex;
+  align-items: center;
+}
+.contact{
+  /*border: 1px solid red;*/
+  font-size: 12px;
+}
+.contact p{
+  color: #666666;
 }
 /*============
 HOME VIEW
@@ -181,7 +190,6 @@ HOME VIEW
   background-color: rgba(0,0,0,0);
   width: 29vw;
   height: 65vh;
-  margin-top: 20px;
   position: absolute;
   z-index: 2;
 }

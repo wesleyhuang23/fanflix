@@ -11,7 +11,7 @@ var port = serverConfig.serverPort;
 var connectionString = 'postgres://wesleyhuang@localhost/fanflix';
 
 var app = module.exports = express();
-var massiveInstance = massive.connectSync({connectionString : connectionString});
+var massiveInstance = massive.connectSync({connectionString : serverConfig.dbString});
 
 app.set('db', massiveInstance);
 var db = app.get('db');
@@ -36,7 +36,7 @@ passport.use(new FacebookStrategy({
         db.users.insert({
           name: profile.displayName,
           fb_id: profile.id,
-          photo: 'https://scontent.xx.fbcdn.net/t31.0-1/10457710_' + profile.id + '_7996853287290615145_o.jpg'
+          photo: 'http://graph.facebook.com/' + profile.id + '/picture?width=9999'
         }, function(err, user){
           return done(null, user);
         });
