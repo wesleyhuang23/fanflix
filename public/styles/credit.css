@@ -24,7 +24,7 @@
   flex-direction: row;
 }
 .credits h1{
-  font-size: 40px;
+  font-size: 50px;
 }
 .credit-img{
   /*border: 1px solid pink;*/
@@ -109,5 +109,11 @@
 @media (max-width: 1190px){
   .credits-view{
     width: 50vw;
+  }
+}
+@media (max-width: 795px){
+  .credits-view{
+    float: none;
+    width: 60vw;
   }
 }
