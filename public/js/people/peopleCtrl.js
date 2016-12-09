@@ -19,7 +19,7 @@ angular.module('flixApp').controller('peopleCtrl', function($scope, $stateParams
       $scope.knownFor = response.results[0].known_for;
       console.log('Known for', $scope.knownFor);
       $scope.firstKnown = response.results[0].known_for[0];
-      console.log('first knwon', $scope.firstKnown);
+      // console.log('first knwon', $scope.firstKnown);
     });
   }
 
