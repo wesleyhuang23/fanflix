@@ -122,7 +122,7 @@ var watch;
   $scope.getGuideBox = id => {
     console.log(id);
     mainSvc.getGuideBox(id).then(response => {
-      console.log(response.id);
+      // console.log(response.id);
       var gb_id = response.id
       $scope.getGuideBoxDetails(gb_id);
     });
@@ -140,9 +140,9 @@ var watch;
       });
       result[0].img = "https://smoothjazzandmore.files.wordpress.com/2016/07/itunes-button.png";
       // result[1].img = "https://static1.squarespace.com/static/54d05749e4b08a66f8bde05e/569c35d505caa74dde794ce3/569c35e81115e0984d256776/1453078092910/available-on-amazon.png";
-      result[1].img = "http://vignette2.wikia.nocookie.net/implosion/images/7/74/Google_play.png/revision/latest?cb=20150411081733";
+      result[1].img = "https://vignette2.wikia.nocookie.net/implosion/images/7/74/Google_play.png/revision/latest?cb=20150411081733";
       $scope.guideboxPurchases = result;
-      console.log('GUIDEBOX', $scope.guideboxPurchases);
+      // console.log('GUIDEBOX', $scope.guideboxPurchases);
     });
   }
   $scope.getUserReviews = mdb_id => {
