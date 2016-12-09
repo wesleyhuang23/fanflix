@@ -21,7 +21,7 @@ angular.module('flixApp').service('mainSvc', function($http){
     console.log(imdb_id.id);
     return $http({
       method: 'GET',
-      url: 'http://www.omdbapi.com/?i=' + imdb_id.id
+      url: 'https://www.omdbapi.com/?i=' + imdb_id.id
     }).then(response => response.data);
       console.log(response);
   };
