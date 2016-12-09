@@ -45,7 +45,7 @@ angular.module('flixApp').service('mainSvc', function($http){
       method: 'GET',
       url: 'https://api.themoviedb.org/3/movie/upcoming?api_key=8eecf03080f34edf303e14b5f1476653&language=en-US'
     }).then(function(response){
-      console.log(response.data);
+      //console.log(response.data);
       return response.data.results;
     })
   }

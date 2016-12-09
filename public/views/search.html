@@ -5,7 +5,7 @@
     <div class="search-view" ng-repeat="film in movieSearch track by film.id">
       <div class="search-content">
         <a ui-sref="details({id:'{{film.id}}'})">
-      <img ng-show="{{film.poster_path}}" ng-src="https://image.tmdb.org/t/p/original{{film.poster_path}}"/>
+      <img ng-show="{{film.poster_path}}" ng-src="https://image.tmdb.org/t/p/original/{{film.poster_path}}"/>
       <p ng-show="{{film.poster_path}}">{{film.title}} ({{film.release_date}})</p>
     </a>
   </div>
@@ -22,7 +22,7 @@
   <div class="search-view" ng-repeat="person in person">
     <div id="people-search" class="search-content">
       <a ui-sref="people({id:'{{person.id}}'})">
-    <img ng-show="{{person.profile_path}}" ng-src="https://image.tmdb.org/t/p/w1280{{person.profile_path}}"/>
+    <img ng-show="{{person.profile_path}}" ng-src="https://image.tmdb.org/t/p/w1280/{{person.profile_path}}"/>
     <p id="people-name" ng-show="{{person.profile_path}}">{{person.name}}</p>
   </a>
 </div>
