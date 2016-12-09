@@ -27,7 +27,7 @@ app.use(passport.session());
 passport.use(new FacebookStrategy({
     clientID: config.facebookId,
     clientSecret: config.facebookSecret,
-    callbackURL: config.baseDomian + '/auth/facebook/callback'
+    callbackURL: config.baseDomian + 'auth/facebook/callback'
   },
   function(accessToken, refreshToken, profile, done) {
     //sql function to check if the user exist
