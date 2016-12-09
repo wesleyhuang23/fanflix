@@ -119,7 +119,7 @@ angular.module('flixApp').service('mainSvc', function($http){
     console.log(fav);
     return $http({
       method:'POST',
-      url: 'https://fanflix.herokuapp.com/mylist/favorites',
+      url: 'http://www.fanflix.club/mylist/favorites',
       data: fav
     }).then(function(response){
       return response;
@@ -130,7 +130,7 @@ angular.module('flixApp').service('mainSvc', function($http){
     console.log('getting favs...')
     return $http({
       method:'GET',
-      url: 'https://fanflix.herokuapp.com/mylist/favorites'
+      url: 'http://www.fanflix.club/mylist/favorites'
     }).then(function(response){
       return response.data;
     });
