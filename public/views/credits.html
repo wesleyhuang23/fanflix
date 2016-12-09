@@ -2,7 +2,7 @@
   <div class="credits-container">
     <div class="credits-wrapper-cred">
       <div class="credit-img">
-      <img ng-src="https://image.tmdb.org/t/p/original{{creditDetails.poster_path}}"/>
+      <img ng-src="https://image.tmdb.org/t/p/original/{{creditDetails.poster_path}}"/>
     </div>
       <div class="credits-view">
         <div class="credits">
@@ -17,7 +17,7 @@
             <a ui-sref="people({id:actor.id})">
             <div class="cast-view-cred">
               <!-- <div class="img-text"> -->
-              <img ng-src="https://image.tmdb.org/t/p/w300_and_h450_bestv2{{actor.profile_path}}" ng-hide="!actor.profile_path"/>
+              <img ng-src="https://image.tmdb.org/t/p/w300_and_h450_bestv2/{{actor.profile_path}}" ng-hide="!actor.profile_path"/>
             </div>
             <div class="show-box">
             <p id="actor-name" ng-hide="!actor.profile_path">{{actor.name}}</p>
