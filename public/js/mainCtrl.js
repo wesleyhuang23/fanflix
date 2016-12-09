@@ -24,7 +24,7 @@ angular.module('flixApp').controller('mainCtrl', function($scope, mainSvc){
         result.push(response[i]);
       }
       $scope.populars = response;
-      console.log($scope.popular);
+      // console.log($scope.popular);
 
       id.id = response[0].id;
         console.log(id);
