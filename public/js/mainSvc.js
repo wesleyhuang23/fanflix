@@ -128,7 +128,7 @@ angular.module('flixApp').service('mainSvc', function($http){
   this.getImages = imdb_id => {
     return $http({
       method: 'GET',
-      url: 'http://api.themoviedb.org/3/movie/' + imdb_id + '/images?api_key=8eecf03080f34edf303e14b5f1476653'
+      url: 'https://api.themoviedb.org/3/movie/' + imdb_id + '/images?api_key=8eecf03080f34edf303e14b5f1476653'
     }).then(response => response.data);
   };
   this.getUserReviews = mdb_id => {
