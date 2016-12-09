@@ -34,7 +34,7 @@ $scope.getFbUser();
 
 
 var fav;
-var watch;
+
 
   $scope.getDetails = id => {
     mainSvc.getDetails(id).then(response => {
@@ -42,13 +42,13 @@ var watch;
       console.log(imdb_id);
       console.log(response.id);
       fav = response;
-      watch = response;
+
       console.log('FAV BTN', fav);
-      console.log('WATCH BTN', watch);
+      // console.log('WATCH BTN', watch);
       $scope.id = response;
       $scope.detail = response;
       $scope.production_companies = response.production_companies;
-      console.log($scope.detail);
+      // console.log($scope.detail);
       $scope.getImdb(imdb_id);
       $scope.getVideos(imdb_id);
       $scope.getCast(imdb_id);
@@ -75,7 +75,7 @@ var watch;
     }
     console.log(links);
     $scope.videos = links;
-    console.log($scope.videos);
+    // console.log($scope.videos);
   })
 }
   $scope.getCast = imdb_id => {
@@ -92,9 +92,9 @@ var watch;
       });
       $scope.director = director;
       $scope.crew = response.crew2;
-      console.log($scope.cast);
-      console.log('DIRECTOR', $scope.director);
-      console.log('$scope.crew', $scope.crew);
+      // console.log($scope.cast);
+      // console.log('DIRECTOR', $scope.director);
+      // console.log('$scope.crew', $scope.crew);
     });
   }
   $scope.getImages = imdb_id => {
