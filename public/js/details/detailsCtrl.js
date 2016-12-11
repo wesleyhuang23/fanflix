@@ -133,13 +133,13 @@ var fav;
   $scope.getGuideBoxDetails = gb_id => {
     mainSvc.getGuideBoxDetails(gb_id).then(response => {
       function metaColor(response, metascore){
-        if(metascore > 60){
+        if(metascore >= 60){
           response.metaColor = '#66CC33';
         }
-        else if(metascore > 30){
+        else if(metascore >= 30){
           response.metaColor = '#FFCC33';
         }
-        else if(metascore > 0){
+        else if(metascore >= 0){
           response.metaColor = '#FF0000';
         }
       }
