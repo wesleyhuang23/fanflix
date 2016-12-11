@@ -38,9 +38,6 @@ main{
 ::-webkit-scrollbar-corner {
   background: transparent;
 }
-
-
-
 .detail-container{
   /*border: 1px solid blue;*/
   position: relative;
@@ -421,4 +418,14 @@ main{
     color: orange;
     text-decoration: none;
     cursor: pointer;
+}
+.metacritic{
+  border: 1px solid white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+}
+.metacritic p{
+  padding: 5px;
 }

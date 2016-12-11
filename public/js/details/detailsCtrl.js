@@ -60,9 +60,12 @@ var fav;
   }
   $scope.getDetails(id);
 
+  var metascore;
   $scope.getImdb = imdb_id => {
     mainSvc.getImdb(imdb_id).then(response => {
       $scope.imdb = response;
+      metascore = response.Metascore;
+      console.log(metascore);
       console.log('imdb_details',$scope.imdb);
     });
   }
@@ -129,6 +132,18 @@ var fav;
   }
   $scope.getGuideBoxDetails = gb_id => {
     mainSvc.getGuideBoxDetails(gb_id).then(response => {
+      function metaColor(response, metascore){
+        if(metascore > 60){
+          response.metaColor = '#66CC33';
+        }
+        else if(metascore > 30){
+          response.metaColor = '#FFCC33';
+        }
+        else if(metascore > 0){
+          response.metaColor = '#FF0000';
+        }
+      }
+      metaColor(response, metascore);
       $scope.guidebox = response;
       console.log('GUIDEBOX DETAILS', $scope.guidebox)
       $scope.guideboxVideo = response.trailers.web;

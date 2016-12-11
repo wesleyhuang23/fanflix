@@ -76,17 +76,19 @@
   <h3>Writer</h3>
   <p>{{imdb.Writer}}</p>
   <br>
+  <h3>Metascore</h3>
+  <a href="{{guidebox.metacritic}}">
+  <div class="metacritic" ng-style="{'background-color': guidebox.metaColor}"><p>{{imdb.Metascore}}</p></div>
+  </a>
+  <br>
   <h3>Genre</h3>
   <p>{{imdb.Genre}}</p>
   <br>
   <h3>Rating</h3>
   <p>{{imdb.Rated}}</p>
-    <!-- <div ng-repeat="company in production_companies">
-  <p>{{company.name}}</p>
-  </div> -->
+  <br>
 </div>
 <div id="o-right">
-
   <h3>Runtime</h3>
   <p>{{imdb.Runtime}}</p>
   <br>
