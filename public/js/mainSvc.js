@@ -274,7 +274,7 @@ angular.module('flixApp').service('mainSvc', function($http){
   this.getShowtimes = function(date, zip){
     return $http({
       method: 'GET',
-      url: 'http://data.tmsapi.com/v1.1/movies/showings?startDate=' + date + '&zip=' + zip + '&api_key=tx8g3c9h9ca737eh3y7sw66v'
+      url: 'https://data.tmsapi.com/v1.1/movies/showings?startDate=' + date + '&zip=' + zip + '&api_key=tx8g3c9h9ca737eh3y7sw66v'
     }).then(function(response){
       return response.data;
     });
