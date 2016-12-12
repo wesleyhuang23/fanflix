@@ -173,6 +173,36 @@ var fav;
       console.log('USER REVIEWS', $scope.userReviews);
     });
   }
+  $scope.getShowtimes = function(zip){
+    var date = new Date().toISOString().substring(0, 10);
+    console.log(date);
+    mainSvc.getShowtimes(date, zip).then(function(response){
+      var currentFilm = fav.title;
+      var currentFilmShowTimes = [];
+      for(var i = 0; i < response.length; i++){
+        if(response[i].title.includes(currentFilm)){
+          currentFilmShowTimes.push(response[i]);
+        }
+      }
+      $scope.title1 = currentFilmShowTimes[0];
+      $scope.title2 = currentFilmShowTimes[1];
+      $scope.title3 = currentFilmShowTimes[2];
+      $scope.showtimes = currentFilmShowTimes;
+      var showings = [];
+      for(var j = 0; j < currentFilmShowTimes.length; j++){
+        showings.push(currentFilmShowTimes[j].showtimes);
+      }
+      // for(var k = 0; k < showings.length; k++){
+      //   showings[k].dateTime.substring(11, 15);
+      // }
+      $scope.showings1 = showings[0];
+      $scope.showings2 = showings[1];
+      $scope.showings3 = showings[2];
+      console.log('showtimes', $scope.title1);
+      console.log('showings', $scope.showings);
+
+    });
+  }
   //DETAIL AND WATCH LIST BUTTONS
   $scope.addToFav = () => {
     fav.fb_id = fb_id;

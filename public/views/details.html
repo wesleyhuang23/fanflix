@@ -21,6 +21,51 @@
   </div>
   </div>
 
+  <div class="showtimes-bg" ng-show="showtimes">
+      <span ng-click="showtimes = !showtimes" id="close-showtime">x</span>
+    <div class="showtimes-container">
+      <div class="showtime-input">
+        <h2>Showtimes</h2>
+        <br>
+      <input type="text" placeholder="zip code" ng-model="zip"><img src="./icons/6983-200.png" ng-click="getShowtimes(zip)"/>
+    </div>
+    <br>
+      <div class="showtimes-wrapper" >
+        <div class="showtimes-view">
+          <h2>{{title1.title}}</h2>
+          <div class="showings" ng-repeat="shows in showings1">
+            <a href={{shows.ticketURI}}>
+            <p>{{shows.dateTime}}</p>
+            <h4>{{shows.theatre.name}}</h4>
+          </a>
+          </div>
+        </div>
+        <br>
+        <div class="showtimes-view">
+          <h2>{{title2.title}}</h2>
+          <div class="showings" ng-repeat="shows in showings2">
+            <a href={{shows.ticketURI}}>
+            <p>{{shows.dateTime}}</p>
+            <h4>{{shows.theatre.name}}</h4>
+          </a>
+          </div>
+        </div>
+        <br>
+        <div class="showtimes-view">
+          <h2>{{title3.title}}</h2>
+          <div class="showings" ng-repeat="shows in showings3">
+            <a href={{shows.ticketURI}}>
+            <p>{{shows.dateTime}}</p>
+            <h4>{{shows.theatre.name}}</h4>
+          </a>
+          </div>
+        </div>
+
+
+    </div>
+  </div>
+  </div>
+
   <div class="backdrop-wrapper">
   <img src="https://image.tmdb.org/t/p/original/{{detail.backdrop_path}}">
   <div class="shadow">
@@ -40,6 +85,9 @@
         <img src="{{platform.img}}"/>
       </a>
       </div>
+    </div>
+    <div ng-show="guidebox.in_theaters" class="showtimes-btn" ng-click="showtimes = true">
+      <p>Showtimes</p>
     </div>
   </div>
 

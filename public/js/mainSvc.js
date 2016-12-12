@@ -271,6 +271,14 @@ angular.module('flixApp').service('mainSvc', function($http){
       url: '/logout'
     }).then(response => response);
   };
+  this.getShowtimes = function(date, zip){
+    return $http({
+      method: 'GET',
+      url: 'http://data.tmsapi.com/v1.1/movies/showings?startDate=' + date + '&zip=' + zip + '&api_key=tx8g3c9h9ca737eh3y7sw66v'
+    }).then(function(response){
+      return response.data;
+    });
+  }
   //people page STUFF
   this.getPersonDetails = person_id => {
     return $http({

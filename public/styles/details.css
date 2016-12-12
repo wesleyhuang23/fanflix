@@ -429,3 +429,66 @@ main{
 .metacritic p{
   padding: 5px;
 }
+.showtimes-bg{
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  z-index: 9;
+  /*border: 1px solid green;*/
+  width: 100%;
+  height: 100%;
+  background-color: black;
+}
+.showtime-input{
+  position: absolute;
+  top: -22px;
+  left: 0px;
+  margin-top: 50px;
+  margin-right: 20px;
+}
+.showtime-input img{
+  position: absolute;
+  top: 49px;
+  left: 227px;
+  width: 23px;
+  height: 23px;
+  filter: invert(100%);
+  cursor: pointer;
+}
+.showings{
+  background-color: #EF7622;
+  border-radius: 5px;
+  margin: 10px;
+  text-align: center;
+  display: inline-block;
+}
+.showings h4{
+  padding: 10px;
+}
+.showings p{
+  padding: 10px;
+}
+.showtimes-btn{
+  background-color: #EF7622;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+    width: 330px;
+    border-radius: 20px
+}
+.showtimes-btn p{
+  padding: 10px;
+}
+.showtimes-wrapper{
+  position: absolute;
+  top: 128px;
+  left: 11px;
+}
+#close-showtime{
+  position: fixed;
+  top:90px;
+  right: 20px;
+  font-size: 30px;
+  cursor: pointer;
+}
