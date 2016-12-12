@@ -28,6 +28,12 @@
         <h2>Showtimes</h2>
         <br>
       <input type="text" placeholder="zip code" ng-model="zip"><img src="./icons/6983-200.png" ng-click="getShowtimes(zip)"/>
+      <select>
+        <option value="volvo">Volvo</option>
+        <option value="saab">Saab</option>
+        <option value="mercedes">Mercedes</option>
+        <option value="audi">Audi</option>
+      </select>
     </div>
     <br>
       <div class="showtimes-wrapper" >
@@ -86,7 +92,7 @@
       </a>
       </div>
     </div>
-    <div ng-show="guidebox.in_theaters" class="showtimes-btn" ng-click="showtimes = true">
+    <div ng-show="guideboxPurchases.link" class="showtimes-btn" ng-click="showtimes = true">
       <p>Showtimes</p>
     </div>
   </div>
