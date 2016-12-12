@@ -13,9 +13,9 @@
       <div class="user-rev-view" ng-repeat="film in userReviews2 | filter: titleFilter">
 
         <div class="user-rev" ng-style="{'border': '{{film.reviewColor}} 1px solid'}">
-
+          <a ui-sref="details({id:film.mdb_id})">
           <img id="rev-poster" ng-src="{{film.poster}}">
-
+        </a>
           <div class="right-rev-info">
 
             <div class="rev-info">
