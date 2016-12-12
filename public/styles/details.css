@@ -258,6 +258,7 @@ main{
   width: 280px;
   display: flex;
   justify-content: space-between;
+  margin-bottom: 18px;
 }
 .platforms img{
   width: 130px;

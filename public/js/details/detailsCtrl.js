@@ -184,6 +184,7 @@ var fav;
           currentFilmShowTimes.push(response[i]);
         }
       }
+      
       $scope.title1 = currentFilmShowTimes[0];
       $scope.title2 = currentFilmShowTimes[1];
       $scope.title3 = currentFilmShowTimes[2];
