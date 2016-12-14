@@ -11,7 +11,7 @@ var port = serverConfig.serverPort;
 // var connectionString = 'postgres://wesleyhuang@localhost/fanflix';
 
 var app = module.exports = express();
-var massiveInstance = massive.connectSync({connectionString : process.env.dbString});
+var massiveInstance = massive.connectSync({connectionString : process.env.dbString || serverConfig.dbString});
 
 app.set('db', massiveInstance);
 var db = app.get('db');
@@ -25,8 +25,8 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 passport.use(new FacebookStrategy({
-    clientID: process.env.facebookId,
-    clientSecret: process.env.facebookSecret,
+    clientID: process.env.facebookId || config.facebookId,
+    clientSecret: process.env.facebookSecret || config.facebookSecret,
     callbackURL: config.baseDomian + '/auth/facebook/callback'
   },
   function(accessToken, refreshToken, profile, done) {
