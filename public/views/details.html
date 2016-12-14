@@ -27,7 +27,7 @@
       <div class="showtime-input">
         <h2>Showtimes</h2>
         <br>
-      <input type="text" placeholder="zip code" ng-model="zip"><img src="./icons/6983-200.png" ng-click="getShowtimes(zip)"/>
+      <input id="showtime-search" type="text" placeholder="zip code" ng-keyup="getShowTimesFunc($event)"  ng-model="zip"><img src="./icons/6983-200.png" ng-click="getShowtimes(zip)"/>
     </div>
     <br>
       <div class="showtimes-wrapper" >

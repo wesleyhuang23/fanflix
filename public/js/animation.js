@@ -20,6 +20,14 @@ $(document).ready(function(){
     $('.search img').click();
   });
 
+//   $("#showtime-search").keyup(function(event){
+//     if(event.keyCode == 13){
+//       console.log('enter');
+//         $(".showtime-input img").click();
+//     }
+// });
+
+
   $('.search-content').on('click', function(){
     console.log('search-content clicked');
     $('#input-search input[type="text"]').val(" ");

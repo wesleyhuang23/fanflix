@@ -184,7 +184,7 @@ var fav;
           currentFilmShowTimes.push(response[i]);
         }
       }
-      
+
       $scope.title1 = currentFilmShowTimes[0];
       $scope.title2 = currentFilmShowTimes[1];
       $scope.title3 = currentFilmShowTimes[2];
@@ -203,6 +203,11 @@ var fav;
       console.log('showings', $scope.showings);
 
     });
+  }
+  $scope.getShowTimesFunc = $event => {
+    if ($event.keyCode == 13) {
+      $scope.getShowtimes($scope.zip);
+    }
   }
   //DETAIL AND WATCH LIST BUTTONS
   $scope.addToFav = () => {

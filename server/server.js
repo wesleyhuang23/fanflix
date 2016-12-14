@@ -8,10 +8,10 @@ var serverConfig = require("./server_config.js");
 var FacebookStrategy = require('passport-facebook').Strategy;
 var config = require('./config.js');
 var port = serverConfig.serverPort;
-var connectionString = 'postgres://wesleyhuang@localhost/fanflix';
+// var connectionString = 'postgres://wesleyhuang@localhost/fanflix';
 
 var app = module.exports = express();
-var massiveInstance = massive.connectSync({connectionString : serverConfig.dbString});
+var massiveInstance = massive.connectSync({connectionString : process.env.dbString || serverConfig.dbString});
 
 app.set('db', massiveInstance);
 var db = app.get('db');
@@ -25,8 +25,8 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 passport.use(new FacebookStrategy({
-    clientID: config.facebookId,
-    clientSecret: config.facebookSecret,
+    clientID: process.env.dbString || config.facebookId,
+    clientSecret: process.env.dbString || config.facebookSecret,
     callbackURL: config.baseDomian + '/auth/facebook/callback'
   },
   function(accessToken, refreshToken, profile, done) {
@@ -117,4 +117,4 @@ app.delete('/deletereview/:id/:fb_id/:id2', nodeCtrl.delete_review);
 
 app.listen(process.env.PORT || 3000, function(){
   console.log('listening on port' + this.address().port);
-})
+});
