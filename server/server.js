@@ -25,8 +25,8 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 passport.use(new FacebookStrategy({
-    clientID: process.env.dbString,
-    clientSecret: process.env.dbString,
+    clientID: process.env.facebookId,
+    clientSecret: process.env.facebookSecret,
     callbackURL: config.baseDomian + '/auth/facebook/callback'
   },
   function(accessToken, refreshToken, profile, done) {
