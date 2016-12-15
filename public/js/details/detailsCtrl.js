@@ -1,20 +1,6 @@
 angular.module('flixApp').controller('detailsCtrl', function($scope, $stateParams, mainSvc, $sce){
   var id = $stateParams.id;
   console.log(id);
-
-  // function colorPicker(rating){
-  //   if(rating >= 8){
-  //     return 'green';
-  //   }
-  //   else if(rating >= 4){
-  //     return 'orange';
-  //   }
-  //   else if(rating >= 0){
-  //     return 'red';
-  //   }
-  // }
-
-
   $scope.trustSrc = function(link) {
   return $sce.trustAsResourceUrl(link);
 };
@@ -32,9 +18,8 @@ $scope.getFbUser = function(){
 }
 $scope.getFbUser();
 
-
+//putting film into object on fav
 var fav;
-
 
   $scope.getDetails = id => {
     mainSvc.getDetails(id).then(response => {

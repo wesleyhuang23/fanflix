@@ -1,5 +1,6 @@
 angular.module('flixApp').service('mainSvc', function($http){
 //HOME PAGE SECTION
+  //get popular for home page billboard and row
   this.getPopular = () => {
     return $http({
       method: 'GET',
@@ -7,7 +8,7 @@ angular.module('flixApp').service('mainSvc', function($http){
     }).then(response => response.data.results);
       console.log(response.data.results);
   };
-
+  //getting details on mdb for billboard
   this.getPopularDetails = id => {
     console.log(id.id);
     return $http({
@@ -16,7 +17,7 @@ angular.module('flixApp').service('mainSvc', function($http){
     }).then(response => response.data);
       console.log(response);
   };
-
+  //getting details on omdb for billboard
   this.getPopImdb = imdb_id => {
     console.log(imdb_id.id);
     return $http({
@@ -25,7 +26,7 @@ angular.module('flixApp').service('mainSvc', function($http){
     }).then(response => response.data);
       console.log(response);
   };
-
+  //getting now playing row
   this.getNowPlaying = function(){
     return $http({
       method:'GET',
@@ -33,13 +34,14 @@ angular.module('flixApp').service('mainSvc', function($http){
     }).then(response => response.data.results);
       console.log(response.data);
   };
+  //getting page 2 of now playing
   this.getNowPlaying2 = () => {
     return $http({
       method: 'GET',
       url: 'https://api.themoviedb.org/3/movie/now_playing?api_key=8eecf03080f34edf303e14b5f1476653&language=en-US&page=2'
     }).then(response => response.data.results);
   };
-
+  //getting comming soon for row
   this.getComingSoon = function(){
     return $http({
       method: 'GET',
@@ -49,6 +51,7 @@ angular.module('flixApp').service('mainSvc', function($http){
       return response.data.results;
     })
   }
+  //getting page 2 for coming soon
   this.getComingSoon2 = () => {
     return $http({
       method: 'GET',
@@ -56,7 +59,7 @@ angular.module('flixApp').service('mainSvc', function($http){
     }).then(response => response.data.results);
   };
   //DETAILS SECTION
-
+  //getting detail of movie from mdb
   this.getDetails = id => {
     return $http({
       method:'GET',
@@ -64,6 +67,7 @@ angular.module('flixApp').service('mainSvc', function($http){
     }).then(response => response.data);
       console.log(response.data);
   };
+  //getting omdb details for movie
   this.getImdb = imdb_id => {
     console.log(imdb_id);
     return $http({
@@ -72,18 +76,21 @@ angular.module('flixApp').service('mainSvc', function($http){
     }).then(response => response.data);
       console.log('imdb_deets', response);
   };
+  //get videos for details page from mdb
   this.getVideos = imdb_id => {
     return $http({
       method:'GET',
       url:'https://api.themoviedb.org/3/movie/'+ imdb_id +'/videos?api_key=8eecf03080f34edf303e14b5f1476653'
     }).then(response => response.data.results);
   };
+  //getting cast for movie from mdb
   this.getCast = imdb_id => {
     return $http({
       method: 'GET',
       url:'https://api.themoviedb.org/3/movie/'+ imdb_id +'/credits?api_key=8eecf03080f34edf303e14b5f1476653'
     }).then(response => response.data);
   };
+  //getting credits for movie detail
   this.getCredits = id => {
     return $http({
       url: 'https://api.themoviedb.org/3/movie/'+ id +'/credits?api_key=8eecf03080f34edf303e14b5f1476653'
@@ -91,6 +98,7 @@ angular.module('flixApp').service('mainSvc', function($http){
       return response.data;
     });
   };
+  //getting similar movies for movie detail
   this.getSimilars = imdb_id => {
     return $http({
       method:'GET',
@@ -98,6 +106,7 @@ angular.module('flixApp').service('mainSvc', function($http){
     }).then(response => response.data.results);
       console.log(response.data);
   };
+  //getting guidebox info using mdb id
   this.getGuideBox = id => {
     return $http({
       method: 'GET',
@@ -105,25 +114,12 @@ angular.module('flixApp').service('mainSvc', function($http){
     }).then(response => response.data);
       console.log('guidebox', response.data)
   };
+  //getting the guidbox detail id to get detailed information
   this.getGuideBoxDetails = id => {
     return $http({
       method: 'GET',
       url: 'https://api-public.guidebox.com/v1.43/US/rKsvLMllrJ7ebTRG3cMa5smyjptG5sDJ/movie/' + id
     }).then(response => response.data);
-  };
-  //search view
-  this.getSearchMovie = term =>{
-    return $http({
-      method:'GET',
-      url: 'https://api.themoviedb.org/3/search/movie?api_key=8eecf03080f34edf303e14b5f1476653&language=en-US&query=' + term
-    }).then(response => response.data.results);
-  };
-  this.getPeople = term =>{
-    return $http({
-      method: 'GET',
-      url: 'https://api.themoviedb.org/3/search/person?api_key=8eecf03080f34edf303e14b5f1476653&language=en-US&query=' + term + '&page=1&include_adult=false'
-    }).then(response => response.data.results);
-    //function(response);
   };
   this.getImages = imdb_id => {
     return $http({
@@ -137,7 +133,24 @@ angular.module('flixApp').service('mainSvc', function($http){
       url: '/user_reviews/' + mdb_id
     }).then(response => response.data);
   };
-  //DATABASE STUFF
+//SEARCH VIEW
+  //get search based on term
+  this.getSearchMovie = term =>{
+    return $http({
+      method:'GET',
+      url: 'https://api.themoviedb.org/3/search/movie?api_key=8eecf03080f34edf303e14b5f1476653&language=en-US&query=' + term
+    }).then(response => response.data.results);
+  };
+  //get people based on term
+  this.getPeople = term =>{
+    return $http({
+      method: 'GET',
+      url: 'https://api.themoviedb.org/3/search/person?api_key=8eecf03080f34edf303e14b5f1476653&language=en-US&query=' + term + '&page=1&include_adult=false'
+    }).then(response => response.data.results);
+    //function(response);
+  };
+//DATABASE STUFF
+  //adding movie to favorites list
   this.addToFav = fav => {
     console.log(fav);
     return $http({

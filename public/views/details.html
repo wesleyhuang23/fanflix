@@ -34,7 +34,7 @@
         <div class="showtimes-view">
           <h2>{{title1.title}}</h2>
           <div class="showings" ng-repeat="shows in showings1">
-            <a href={{shows.ticketURI}}>
+          <a href={{shows.ticketURI}}>
             <p>{{shows.dateTime | date: "h:mm a MMM d"}}</p>
             <h4>{{shows.theatre.name}}</h4>
           </a>
@@ -44,7 +44,7 @@
         <div class="showtimes-view">
           <h2>{{title2.title}}</h2>
           <div class="showings" ng-repeat="shows in showings2">
-            <a href={{shows.ticketURI}}>
+          <a href={{shows.ticketURI}}>
             <p>{{shows.dateTime | date: "h:mm a MMM d"}}</p>
             <h4>{{shows.theatre.name}}</h4>
           </a>
@@ -54,7 +54,7 @@
         <div class="showtimes-view">
           <h2>{{title3.title}}</h2>
           <div class="showings" ng-repeat="shows in showings3">
-            <a href={{shows.ticketURI}}>
+          <a href={{shows.ticketURI}}>
             <p>{{shows.dateTime | date: "h:mm a MMM d"}}</p>
             <h4>{{shows.theatre.name}}</h4>
           </a>
@@ -67,9 +67,9 @@
   </div>
 
   <div class="backdrop-wrapper">
-  <img src="https://image.tmdb.org/t/p/original/{{detail.backdrop_path}}">
-  <div class="shadow">
-  </div>
+    <img src="https://image.tmdb.org/t/p/original/{{detail.backdrop_path}}">
+    <div class="shadow">
+    </div>
   </div>
 </div>
   <div class="detail-container">
