@@ -42,8 +42,8 @@ passport.use(new FacebookStrategy({
         });
       } else {
         return done(null, users);
-      };
-    })
+      }
+    });
     //if they dont exist create them in the database;
   }
 ));
@@ -69,8 +69,8 @@ app.get('/user', function(req, res){
 
 app.get('/logout', function(req, res){
   req.logout();
-  return res.status(200).json({user: null})
-})
+  return res.status(200).json({user: null});
+});
 
 var nodeCtrl = require('./nodeCtrl.js');
 

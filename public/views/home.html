@@ -29,11 +29,12 @@
 
                         <div class="company-wrapper">
                           <p id="genres">Companies:</p>
-                        <div class="companies-home" ng-repeat="company in companies"/>
+                          <div class="companies-container">
+                        <div class="companies-home" ng-repeat="company in companies">
                     <p id="genres"> {{company.name}}</p>
-
+                    </div>
+                    </div>
                   </div>
-                </div>
                   <div class="btn-row">
                       <a ui-sref="details({id:'{{popular.id}}'})">
                           <div id="details-btn">
@@ -42,6 +43,7 @@
                       </a>
                       <br>
                   </div>
+                </div>
                     <br>
                     <br>
                     <br>

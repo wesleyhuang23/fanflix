@@ -177,7 +177,7 @@ HOME VIEW
 }
 .left-info-wrapper{
   /*border: 1px solid green;*/
-  width: 29vw;
+  width: 32vw;
   height: auto;
   position: absolute;
   z-index: 4;
@@ -188,7 +188,7 @@ HOME VIEW
   color: white;
   font-weight: bold;
   background-color: rgba(0,0,0,0);
-  width: 29vw;
+  width: 32vw;
   height: 65vh;
   position: absolute;
   z-index: 2;
@@ -205,7 +205,7 @@ HOME VIEW
 
 .left-info p{
   font-weight: 100;
-  font-size: 20px;
+  font-size: 17px;
 }
 
 .left-info h2{
@@ -216,10 +216,15 @@ HOME VIEW
 }
 .company-wrapper{
   display: flex;
+
 }
 .companies-home{
   margin-right: 10px;
   margin-left: 10px;
+}
+.companies-container{
+  display: flex;
+  flex-direction: column;
 }
 #rating-home{
   border: 1px solid gray;
@@ -235,14 +240,14 @@ HOME VIEW
 }
 
 #in-theatres{
-  padding-right: 30px;
+  padding-right: 20px;
   color:#666666;
 }
 #date{
   color: white;
 }
 #runtime{
-  padding-left: 30px;
+  padding-left: 20px;
   color: white;
 }
 .rating p {
@@ -269,6 +274,7 @@ HOME VIEW
 }
 
 .btn-row{
+  position: relative;
   padding-top: 30px;
   display: flex;
   flex-direction: row;
@@ -378,7 +384,7 @@ li{
 }
 .poster img{
   height: 360px;
-  width: 240px;
+  max-width: 100%;
   position: relative;
   z-index: 1;
   cursor: pointer;
