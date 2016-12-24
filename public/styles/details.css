@@ -563,3 +563,86 @@ iframe{
     font-size: 10px;
   }
 }
+/*phone*/
+@media (max-width:376px){
+  .detail-container{
+    left: 236px;
+    width: 365px;
+  }
+  .details_poster{
+    width: 367px;
+    text-align: center;
+  }
+  .details_poster img{
+    max-height: 300px;
+  }
+  .showtimes-btn{
+    width: 200px;
+    margin: auto;
+  }
+  .first-row{
+    flex-direction: column;
+  }
+  .info-section{
+    margin-left: 8px;
+  }
+  .info-section h2{
+    font-size: 20px;
+    width: 200px;
+  }
+  .info-section span{
+    font: 12px;
+  }
+  .btn{
+    width: 73px;
+  }
+  .overview{
+    flex-direction: column;
+  }
+  .overview p{
+    font: 12px;
+  }
+  #o-left{
+    width: 330px;
+  }
+  #o-right{
+    margin-left: 0px;
+  }
+  .second-row-wrapper{
+    overflow-x: scroll;
+    width: 365px;
+  }
+  .second-row-detail{
+    margin-bottom: 10px;
+  }
+  .detail-wrapper #section{
+    width: 365px;
+    text-align: center;
+  }
+  .full-cast-btn-container{
+    width: 365px;
+  }
+  .videos-container{
+    width: 365px;
+  }
+  iframe{
+    width: 365px;
+    height: 205.31px;
+  }
+  .backdrops-container{
+    width: 375px;
+  }
+  .backdrops img{
+    width: 187.5px;
+  }
+  .user-review-container{
+    width: 365px;
+    height: 300px;
+  }
+  .similar-container{
+    width: 365px;
+  }
+  .similar img{
+    width: 121.66px;
+  }
+}

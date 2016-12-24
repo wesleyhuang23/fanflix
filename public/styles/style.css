@@ -604,3 +604,20 @@ li{
     margin-right: 50px;
   }
 }
+@media (max-width: 376px){
+  .container-fluid{
+    padding-left: 0px;
+  }
+  .header-right{
+    display: none;
+  }
+  .nav-bar{
+    padding-left: 0px;
+  }
+  .header-wrapper{
+    width: 100vw;
+  }
+  .header-content{
+    justify-content: center;
+  }
+}
