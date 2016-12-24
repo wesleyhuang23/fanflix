@@ -158,8 +158,8 @@ var fav;
       console.log('USER REVIEWS', $scope.userReviews);
     });
   }
-  $scope.getShowtimes = function(zip){
-    var date = new Date().toISOString().substring(0, 10);
+  $scope.getShowtimes = function(zip, date){
+    var date = date.toISOString().substring(0, 10);
     console.log(date);
     mainSvc.getShowtimes(date, zip).then(function(response){
       var currentFilm = fav.title;

@@ -493,3 +493,9 @@ main{
   font-size: 30px;
   cursor: pointer;
 }
+#datepicker{
+  margin-left: 10px;
+  font-size: 16px;
+  position: relative;
+  top: -2px;
+}

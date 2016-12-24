@@ -205,7 +205,7 @@ HOME VIEW
 
 .left-info p{
   font-weight: 100;
-  font-size: 17px;
+  font-size: 20px;
 }
 
 .left-info h2{
@@ -556,7 +556,7 @@ li{
       opacity: 1;
     }
 }
-@keyframs fadeout{
+@keyframes fadeout{
   from {
     opacity: 1
   }
@@ -575,6 +575,12 @@ li{
   .box{
     height: 550px;
   }
+  
+}
+@media (max-width: 1440px){
+  .left-info p{
+  font-size: 17px;
+  } 
 }
 
 @media (max-width: 1125px){
