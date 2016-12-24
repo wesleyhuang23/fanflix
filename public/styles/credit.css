@@ -112,7 +112,10 @@
   }
 }
 @media(max-width: 1300px){
-  
+  .cast-view-cred img{
+    width: 110px;
+    height: 160px;
+  }
 }
 @media (max-width: 1190px){
   .credits-view{
