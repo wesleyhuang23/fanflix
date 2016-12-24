@@ -72,6 +72,7 @@ iframe{
   justify-content: center;
   position: relative;
   overflow: hidden;
+  background-size: cover;
 }
 .backdrop-wrapper img{
   position: absolute;
@@ -575,6 +576,15 @@ iframe{
   }
   .details_poster img{
     max-height: 300px;
+  }
+  .backdrop-wrapper{
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 400px;
+    height: 414px;
+    margin: auto;
   }
   .showtimes-btn{
     width: 200px;
