@@ -103,8 +103,16 @@
 }
 @media (max-width: 1625px){
   .credits-view{
+    width: 70vw;
+  }
+}
+@media(max-width: 1427px){
+  .credits-view{
     width: 65vw;
   }
+}
+@media(max-width: 1300px){
+  
 }
 @media (max-width: 1190px){
   .credits-view{

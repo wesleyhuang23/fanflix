@@ -4,7 +4,10 @@
 main{
   position: relative;
 }
-
+iframe{
+  width: 1200px;
+  height: 675px;
+}
 ::-webkit-scrollbar {
   width: 7px;
   height: 7px;
@@ -498,4 +501,46 @@ main{
   font-size: 16px;
   position: relative;
   top: -2px;
+}
+@media (max-width: 1300px){
+  .details_poster img{
+  height: 400px;
+  } 
+  .showtimes-btn{
+    width: 266px
+  }
+  .info-section{
+  margin-left: 5px;
+  }
+  .detail-container{
+    left: 90px;
+  }
+  .videos-container{
+    width: 1000px;
+  }
+  iframe{
+  width: 1000px;
+  height: 562.50px;
+  }
+  .backdrops-container{
+    width: 1000px;
+  }
+  .backdrops img{
+    width: 500px;
+  }
+  .review-bg-container{
+    width: 1000px;
+  }
+  .similar-container{
+    width: 1000px;
+  }
+  .similar img{
+    width: 333.33px;
+  }
+  .cast-view img{
+    height: 165px;
+  }
+  .full-cast-btn-container{
+    width: 1000px;
+  }
 }
