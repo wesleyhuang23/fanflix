@@ -143,15 +143,15 @@
   <h3>Release Date</h3>
   <p>{{imdb.Released}}</p>
   <br>
-  <h3>Country</h3>
-  <p>{{imdb.Country}}</p>
-  <br>
-  <h3>Language</h3>
-  <p>{{imdb.Language}}</p>
-  <br>
-  <h3>Also Known As</h3>
-  <p>{{detail.original_title}}</p>
-  <br>
+  <h3 id="no-mobile">Country</h3>
+  <p id="no-mobile">{{imdb.Country}}</p>
+  <br id="no-mobile">
+  <h3 id="no-mobile">Language</h3>
+  <p id="no-mobile">{{imdb.Language}}</p>
+  <br id="no-mobile">
+  <h3 id="no-mobile">Also Known As</h3>
+  <p id="no-mobile">{{detail.original_title}}</p>
+  <br id="no-mobile">
   <h3>Budget</h3>
   <p ng-show="detail.budget">{{detail.budget | currency:"USD$":0}}</p>
   <p ng-show="!detail.budget">N/A</p>
