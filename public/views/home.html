@@ -7,7 +7,7 @@
                     <div class="box"></div>
                     <h2>{{popular.original_title}}</h2>
 
-                    <br>
+
                     <div class="second-row">
                         <p id="in-theatres">Release Date
                             <span id="date">{{imdb_detail.Released}}</span>
@@ -16,19 +16,18 @@
                         <p id="runtime">{{imdb_detail.Runtime}}</p>
                     </div>
 
-                    <br>
+
                     <p id="plot">{{imdb_detail.Plot}}</p>
-                    <br>
+
                     <p id="starring">Starring:
                         <span id='actors'>{{imdb_detail.Actors}}</span>
                     </p>
-                    <br>
+
                     <p id="genres">Genres:
                         {{imdb_detail.Genre}}</p>
-                        <br>
 
                         <div class="company-wrapper">
-                          <p id="genres">Companies:</p>
+                          <p id="companies">Companies:</p>
                           <div class="companies-container">
                         <div class="companies-home" ng-repeat="company in companies">
                     <p id="genres"> {{company.name}}</p>
