@@ -564,8 +564,168 @@ iframe{
     font-size: 10px;
   }
 }
+@media (max-width: 1025px){
+  .backdrop-wrapper{
+    background-position: center;
+  }
+  .detail-container{
+    left: 128px;
+  }
+  .details_poster img{
+  height: 350px;
+  } 
+  .container-fluid{
+    padding-left: 0px;
+  }
+  .showtimes-btn{
+    width: 232px;
+  }
+  .platforms-container{
+    width: 240px;
+  }
+  .platforms img{
+    width: 110px;
+    height: 41px;
+  }
+  .info-section{
+    width: 640px;
+  }
+  .info-section h2{
+    font-size: 30px;
+    width: 660px;
+  }
+  .first-row{
+    width: 1000px;
+    margin-left: 75px;
+  }
+  .user-review-container{
+    width: 1000px;
+  }
+  .box-user{
+    width: 1000px;
+  }
+  .user-review-wrapper{
+    width: 1000px;
+  }
+  /*search conent*/
+  .search-content img{
+    width: 200px;
+    height: 300px;
+  }
+  .search-content p{
+    width: 200px;
+  }
+}
+/*ipad view*/
+@media (max-width: 769px){
+  .backdrop-wrapper{
+    background-position: center;
+  }
+  .detail-container{
+    left: 33px;
+  }
+  .container-fluid{
+    padding-left: 0px;
+  }
+  .details_poster img{
+  height: 350px;
+  } 
+  .first-row{
+    width: 758px;
+    margin-left: 25px;
+  }
+  .info-section h2{
+    font-size: 28px;
+  }
+  .info-section span{
+    font-size: 15px;
+  }
+  .showtimes-btn{
+    width: 232px;
+  }
+  .info-section{
+  margin-left: 25px;
+  }
+  .overview{
+    width: 435px;
+  }
+  #o-left{
+    width: auto;
+  }
+  .videos-container{
+    width: 758px;
+  }
+  iframe{
+  width: 758px;
+  height: 426.38px;
+  }
+  .backdrops-container{
+    width: 758px;
+  }
+  .backdrops img{
+    width: 379px;
+  }
+  .user-review-container{
+    width: 759px;
+  }
+  .review-bg-container{
+    width: 758px;
+  }
+  .review-bg-container img{
+    width: 758px;
+  }
+  .box-user{
+    width: 758px;
+  }
+  .user-review-wrapper{
+    width: 758px;
+  }
+  .similar-container{
+    width: 758px;
+  }
+  .similar img{
+    width: 253px;
+  }
+  .similar h4{
+    font-size: 11px;
+  }
+  .second-row-wrapper{
+    overflow-x: scroll;
+    width: 759px;
+  }
+  .cast-view{
+    margin-bottom: 20px;
+  }
+  .cast-view img{
+    height: 165px;
+  }
+  .full-cast-btn-container{
+    width: 758px;
+  }
+  .platforms-container{
+    width: 240px;
+  }
+  .platforms img{
+    width: 110px;
+    height: 41px;
+  }
+  .cast-view p{
+    font-size: 10px;
+  }
+}
 /*phone*/
 @media (max-width:376px){
+  #mobile-search{
+    filter: invert(100%);
+    width: 25px;
+    position: absolute;
+    left: 10px;
+    top: 13px;
+    display: block;
+  }
+  .backdrop-wrapper{
+    background-position: center;
+  }
   .detail-container{
     left: 10px;
     width: 365px;
@@ -605,6 +765,9 @@ iframe{
   }
   .info-section span{
     font-size: 12px;
+  }
+  .left-info-wrapper{
+    margin-top: 10px;
   }
   .similar h4{
     font-size: 10px;

@@ -42,6 +42,12 @@ body{
   left: 0px;
   z-index: 10;
 }
+.mobile-search-wrapper{
+  display: none;
+}
+#mobile-search{
+    display: none;
+  }
 .user-box{
   /*border: 1px solid green;*/
   display: flex;
@@ -612,6 +618,17 @@ li{
   }
 }
 @media (max-width: 376px){
+  .mobile-search-wrapper{
+  display: block;
+  }
+  #mobile-search{
+    filter: invert(100%);
+    width: 25px;
+    position: absolute;
+    left: 10px;
+    top: 13px;
+    display: block;
+  }
   .container-fluid{
     padding-left: 0px;
   }
