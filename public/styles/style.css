@@ -588,6 +588,9 @@ li{
   .box{
     height: 550px;
   }
+  .contact{
+    margin-left: 5%;
+  }
   
 }
 @media (max-width: 1440px){
@@ -615,6 +618,79 @@ li{
   .header-right{
     width: 500px;
     margin-right: 50px;
+  }
+}
+@media (max-width: 1025px){
+  .billboard-wrapper{
+    height: 490px;
+  }
+  ul{
+    width: 95vw;
+  }
+  li{
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+  .left-info{
+    margin-left: 10px;
+  }
+  .carosel-wrapper{
+    left: -70px;
+  }
+  .btn-row{
+    padding-top: 10px;
+    margin-left: 10px;
+  }
+}
+@media (max-width: 769px){
+  .carosel-wrapper{
+    left: -80px;
+  }
+  ul{
+    width: 95vw;
+  }
+  li{
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+  .left-info h2{
+    font-size: 20px;
+  }
+  .second-row{
+    width: 300px;
+  }
+  .left-info p{
+    font-size: 12px;
+  }
+  .billboard-wrapper{
+    height: 344px;
+    margin-left: 5px;
+  }
+  .btn-row{
+    padding-top: 5px;
+  }
+  #details-btn{
+    padding: 0px;
+    margin-left: 10px;
+  }
+  .poster:hover #sum {
+    opacity: 0;
+  }
+  .poster:hover .release{
+    opacity: 0;
+  }
+  .poster:hover #title{
+    opacity: 0;
+  }
+  .poster:hover #sum-box{
+    opacity: 0;
+  }
+  .poster{
+    height: 220px;
+    width: 146.67px;
+  }
+  .poster img{
+    height: 220px;
   }
 }
 @media (max-width: 376px){

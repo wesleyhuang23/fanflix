@@ -564,6 +564,7 @@ iframe{
     font-size: 10px;
   }
 }
+/*ipad pro*/
 @media (max-width: 1025px){
   .backdrop-wrapper{
     background-position: center;
