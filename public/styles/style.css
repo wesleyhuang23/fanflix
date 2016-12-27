@@ -699,4 +699,18 @@ li{
   .company-wrapper{
     margin-top: 5px;
   }
+  .poster{
+    height: 200px;
+    width: 133.33px;
+  }
+  .poster img{
+    height: 200px;
+  }
+  li{
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+  ul{
+    width: 100vw;
+  }
 }
