@@ -591,7 +591,6 @@ li{
   .contact{
     margin-left: 5%;
   }
-  
 }
 @media (max-width: 1440px){
   .left-info p{
@@ -691,6 +690,114 @@ li{
   }
   .poster img{
     height: 220px;
+  }
+}
+@media (max-width: 415px){
+  .mobile-search-wrapper{
+  display: block;
+  }
+  #mobile-search{
+    filter: invert(100%);
+    width: 25px;
+    position: absolute;
+    left: 10px;
+    top: 13px;
+    display: block;
+  }
+  .container-fluid{
+    padding-left: 0px;
+  }
+  .header-right{
+    display: none;
+  }
+  .nav-bar{
+    padding-left: 0px;
+  }
+  .header-wrapper{
+    width: 100vw;
+  }
+  .header-content{
+    justify-content: center;
+  }
+  .poster:hover{
+  transform: inherit
+  }
+  .poster:hover #sum {
+    opacity: 0;
+  }
+  .poster:hover .release{
+    opacity: 0;
+  }
+  .poster:hover #title{
+    opacity: 0;
+  }
+  .poster:hover #sum-box{
+    opacity: 0;
+  }
+  .left-info{
+    height: 42vh;
+  }
+  .left-info h2{
+    font-size: 15px;
+    margin-top: 0px;
+  }
+  .second-row{
+    width: 165px;
+  }
+  .left-info p{
+    font-size: 7px;
+  }
+  #in-theatres{
+    padding-right: 5px;
+  }
+  #rating-home{
+    padding: 3px 3px 3px 3px;
+  }
+  #runtime{
+    padding-left: 5px;
+  }
+  .btn-row{
+    padding-top: 10px;
+  }
+  #details-btn{
+    width: 15px;
+    height: 17px;
+  }
+  #starring{
+    padding-bottom: 5px;
+  }
+  #plot{
+    padding-bottom: 5px;
+  }
+  .billboard-wrapper{
+    height:260px;
+  }
+  .background-img img{
+    width: 118vw;
+    right: -161px;
+  }
+  .bg-img-shadow{
+    box-shadow: inset 95px -60px 234em black;
+  }
+  .company-wrapper{
+    margin-top: 5px;
+  }
+  .poster{
+    height: 200px;
+    width: 133.33px;
+  }
+  .poster img{
+    height: 200px;
+  }
+  li{
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+  ul{
+    width: 95vw;
+  }
+  .carosel-wrapper{
+    left: -87px;
   }
 }
 @media (max-width: 376px){

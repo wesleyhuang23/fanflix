@@ -5,23 +5,23 @@
     <div class="picture">
       <br>
       <img ng-src="https://image.tmdb.org/t/p/w640/{{personDetail.profile_path}}" ng-show="personDetail.profile_path"/>
-      <div class="first-letter" ng-show="!personDetail.profile_path">
+      <div id="hide-people" class="first-letter" ng-show="!personDetail.profile_path">
         <h1>{{personDetail.firstLetter}}</h1>
       </div>
       <br>
-      <br>
+      <br id="hide-people">
       <hr>
-      <br>
-      <h3>Place of Birth</h3>
-      <p> {{personDetail.place_of_birth}}</p>
-      <br>
-      <h3>Birthday</h3>
-      <p> {{personDetail.birthday}}</p>
-      <br>
-      <h3 ng-show="{{personDetail.deathday}}">Date of Death</h3>
-      <p ng-show="{{personDetail.deathday}}"> {{personDetail.deathday}}</p>
-      <h3>Number of Credits</h3>
-      <p>{{credNum}}</p>
+      <br id="hide-people">
+      <h3 id="hide-people">Place of Birth</h3>
+      <p id="hide-people"> {{personDetail.place_of_birth}}</p>
+      <br id="hide-people">
+      <h3 id="hide-people">Birthday</h3>
+      <p id="hide-people"> {{personDetail.birthday}}</p>
+      <br id="hide-people">
+      <h3 ng-show="{{personDetail.deathday}}" id="hide-people">Date of Death</h3>
+      <p ng-show="{{personDetail.deathday}}" id="hide-people"> {{personDetail.deathday}}</p>
+      <h3 id="hide-people">Number of Credits</h3>
+      <p id="hide-people">{{credNum}}</p>
     </div>
 
     <div class="info-right">
@@ -29,7 +29,7 @@
       <h2> {{personDetail.name}}</h2>
       <br>
       <h3>Bio</h3>
-      <p>{{personDetail.biography}}</p>
+      <p id="people-bio">{{personDetail.biography}}</p>
       <br>
       <h3>Known For</h3>
       <br>
