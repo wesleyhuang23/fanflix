@@ -560,7 +560,9 @@ li{
 .left-ctrl:hover{
   background-color: rgba(0,0,0,.7);
 }
-
+.burger{
+  display: none;
+}
 @keyframes fadein {
     from {
       opacity: 0;
@@ -929,5 +931,19 @@ li{
   }
   ul{
     width: 100vw;
+  }
+  .burger{
+  display: block;
+  filter: invert(100%);
+  width: 20px;
+  height: 20px;
+  position: relative;
+  top: 2px;
+  right: -92px;
+  cursor: pointer;
+}
+  .burger img{
+    width: 30px;
+    height: 30px;
   }
 }

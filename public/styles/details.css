@@ -761,7 +761,7 @@ iframe{
     margin-left: 8px;
   }
   .info-section h2{
-    font-size: 27px;
+    font-size: 30px;
     width: 405px;
   }
   .info-section span{
@@ -881,6 +881,9 @@ iframe{
   .no-review{
     left: 20%;
   }
+  .shadow{
+    display: none;
+  }
 }
 @media (max-width: 413px){
   #mobile-search{
@@ -929,7 +932,7 @@ iframe{
     margin-left: 8px;
   }
   .info-section h2{
-    font-size: 27px;
+    font-size: 30px;
     width: 405px;
   }
   .info-section span{
@@ -1049,6 +1052,9 @@ iframe{
   .no-review{
     left: 20%;
   }
+  .shadow{
+    display: none;
+  }
 }
 /*phone*/
 @media (max-width:376px){
@@ -1100,7 +1106,7 @@ iframe{
     margin-left: 8px;
   }
   .info-section h2{
-    font-size: 27px;
+    font-size: 30px;
     width: 365px;
   }
   .info-section span{
@@ -1213,5 +1219,8 @@ iframe{
   #profile-pic{
     width: 40px;
     height: 40px;
+  }
+  .shadow{
+    display: none;
   }
 }
