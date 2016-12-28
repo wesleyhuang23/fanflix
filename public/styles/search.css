@@ -29,5 +29,207 @@
 #people-name{
   font-size: 12px;
   width: 150px;
+}
+.search-mobile{
+    display: none;
+}
+@media (max-width: 415px){
+  .search-container{
+    text-align: center;
+    width: 100%;
+    margin-top: 10px;
+  }
+  .search-mobile{
+    display: flex;
+    justify-content: center;
+    height: 30px;
+  }
+  .search-mobile .input-search{
+    margin: auto;
+  }
+  .search-mobile img{
+    filter: invert(100%);
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 4px;
+    right: 135px;
+  }
+  .search-content img{
+    width: 100px;
+    height: 150px;
 
+  }
+  .search-content p{
+    width: 100px;
+    font-size: 5px;
+  }
+  #people-search img{
+    width: 70px;
+    height: 105px;
+  }
+  #people-name{
+    width: 80px;
+    font-size: 8px;
+  }
+}
+@media (max-width: 413px){
+  .search-container{
+    text-align: center;
+    width: 100%;
+    margin-top: 10px;
+  }
+  .search-mobile{
+    display: flex;
+    justify-content: center;
+    height: 30px;
+  }
+  .search-mobile .input-search{
+    margin: auto;
+  }
+  .search-mobile img{
+    filter: invert(100%);
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 4px;
+    right: 132px;
+  }
+  .search-content img{
+    width: 100px;
+    height: 150px;
+
+  }
+  .search-content p{
+    width: 100px;
+    font-size: 5px;
+  }
+  #people-search img{
+    width: 70px;
+    height: 105px;
+  }
+  #people-name{
+    width: 80px;
+    font-size: 8px;
+  }
+}
+@media (max-width: 367px){
+  .search-container{
+    text-align: center;
+    width: 100%;
+    margin-top: 10px;
+  }
+  .search-mobile{
+    display: flex;
+    justify-content: center;
+    height: 30px;
+  }
+  .search-mobile .input-search{
+    margin: auto;
+  }
+  .search-mobile img{
+    filter: invert(100%);
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 4px;
+    right: 88px;
+  }
+  .search-content img{
+    width: 100px;
+    height: 150px;
+
+  }
+  .search-content p{
+    width: 100px;
+    font-size: 5px;
+  }
+  #people-search img{
+    width: 70px;
+    height: 105px;
+  }
+  #people-name{
+    width: 80px;
+    font-size: 8px;
+  }
+}
+@media (max-width: 361px){
+  .search-container{
+    text-align: center;
+    width: 100%;
+    margin-top: 10px;
+  }
+  .search-mobile{
+    display: flex;
+    justify-content: center;
+    height: 30px;
+  }
+  .search-mobile .input-search{
+    margin: auto;
+  }
+  .search-mobile img{
+    filter: invert(100%);
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 4px;
+    right: 107px;
+  }
+  .search-content img{
+    width: 100px;
+    height: 150px;
+
+  }
+  .search-content p{
+    width: 100px;
+    font-size: 5px;
+  }
+  #people-search img{
+    width: 70px;
+    height: 105px;
+  }
+  #people-name{
+    width: 80px;
+    font-size: 8px;
+  }
+}
+@media (max-width: 321px){
+  .search-container{
+    text-align: center;
+    width: 100%;
+    margin-top: 10px;
+  }
+  .search-mobile{
+    display: flex;
+    justify-content: center;
+    height: 30px;
+  }
+  .search-mobile .input-search{
+    margin: auto;
+  }
+  .search-mobile img{
+    filter: invert(100%);
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 4px;
+    right: 88px;
+  }
+  .search-content img{
+    width: 100px;
+    height: 150px;
+
+  }
+  .search-content p{
+    width: 100px;
+    font-size: 5px;
+  }
+  #people-search img{
+    width: 70px;
+    height: 105px;
+  }
+  #people-name{
+    width: 80px;
+    font-size: 8px;
+  }
 }

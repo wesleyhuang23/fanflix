@@ -19,6 +19,9 @@ $(document).ready(function(){
   $('.search input').keyup(function(){
     $('.search img').click();
   });
+  $('.search-mobile input').keyup(function(){
+    $('.search-mobile img').click();
+  });
 
 //   $("#showtime-search").keyup(function(event){
 //     if(event.keyCode == 13){

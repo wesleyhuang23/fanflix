@@ -1,5 +1,9 @@
 <main>
-
+  <div class="search-mobile"/>
+      <input id="input-search" type="text" placeholder="Search" ng-model="term"/>
+      <a ui-sref="search"><img src="./icons/6983-200.png" ng-click="getSearch(term)"/>
+      </a>
+      </div>
   <div class="search-container">
     <div class="search-wrapper">
     <div class="search-view" ng-repeat="film in movieSearch track by film.id">
