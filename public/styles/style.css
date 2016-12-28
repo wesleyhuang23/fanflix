@@ -640,8 +640,20 @@ li{
     padding-top: 10px;
     margin-left: 10px;
   }
+  .poster:hover{
+  transform: inherit;
+  padding-left: inherit;
+  padding-right: inherit;
+  cursor: pointer;
+}
 }
 @media (max-width: 769px){
+  .poster:hover{
+  transform: inherit;
+  padding-left: inherit;
+  padding-right: inherit;
+  cursor: pointer;
+}
   .carosel-wrapper{
     left: -80px;
   }
@@ -693,6 +705,12 @@ li{
   }
 }
 @media (max-width: 415px){
+  .poster:hover{
+  transform: inherit;
+  padding-left: inherit;
+  padding-right: inherit;
+  cursor: pointer;
+}
   .mobile-search-wrapper{
   display: block;
   }
@@ -801,6 +819,12 @@ li{
   }
 }
 @media (max-width: 376px){
+  .poster:hover{
+  transform: inherit;
+  padding-left: inherit;
+  padding-right: inherit;
+  cursor: pointer;
+}
   .mobile-search-wrapper{
   display: block;
   }
@@ -873,15 +897,6 @@ li{
   }
   #starring{
     padding-bottom: 5px;
-  }
-  #actors{
-
-  }
-  #genres{
-    
-  }
-  #companies{
-   
   }
   #plot{
     padding-bottom: 5px;
