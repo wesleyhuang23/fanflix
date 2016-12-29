@@ -53,3 +53,13 @@
   opacity: .4;
   filter: grayscale(100%);
 }
+
+@media (max-width: 376px){
+  .background-img-login img{
+    width: 1280px;
+    height: 720px;
+  }
+  .login-wrapper{
+    left: 7%;
+  }
+}

@@ -563,6 +563,23 @@ li{
 .burger{
   display: none;
 }
+.burger-menu{
+  background-color: black;
+  position: fixed;
+  top: 7%;
+  width: 100%;
+  text-align: -webkit-center;
+  height: 10%;
+}
+.burger-menu div{
+  /*border: 1px solid green;*/
+  width: 61px;
+  text-align: center;
+}
+.burger-menu p {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
 @keyframes fadein {
     from {
       opacity: 0;
@@ -644,16 +661,16 @@ li{
   }
   .poster:hover{
   transform: inherit;
-  padding-left: inherit;
-  padding-right: inherit;
+  padding-left: 0px;
+  padding-right: 0px;
   cursor: pointer;
 }
 }
 @media (max-width: 769px){
   .poster:hover{
   transform: inherit;
-  padding-left: inherit;
-  padding-right: inherit;
+  padding-left: 0px;
+  padding-right: 0px;
   cursor: pointer;
 }
   .carosel-wrapper{
@@ -701,16 +718,18 @@ li{
   .poster{
     height: 220px;
     width: 146.67px;
+
   }
   .poster img{
     height: 220px;
   }
+  
 }
 @media (max-width: 415px){
   .poster:hover{
   transform: inherit;
-  padding-left: inherit;
-  padding-right: inherit;
+  padding-left: 0px;
+  padding-right: 0px;
   cursor: pointer;
 }
   .mobile-search-wrapper{
@@ -804,11 +823,12 @@ li{
     margin-top: 5px;
   }
   .poster{
-    height: 200px;
-    width: 133.33px;
+    height: 150px;
+    width: 100px;
+    padding: 2px 2px 0px 0px;
   }
   .poster img{
-    height: 200px;
+    height: 100px;
   }
   li{
     margin-top: 0px;
@@ -820,12 +840,26 @@ li{
   .carosel-wrapper{
     left: -87px;
   }
+  .burger{
+  display: block;
+  filter: invert(100%);
+  width: 20px;
+  height: 20px;
+  position: relative;
+  top: 2px;
+  right: -111px;
+  cursor: pointer;
+}
+  .burger img{
+    width: 30px;
+    height: 30px;
+  }
 }
 @media (max-width: 376px){
   .poster:hover{
   transform: inherit;
-  padding-left: inherit;
-  padding-right: inherit;
+  padding-left: 0px;
+  padding-right: 0px;
   cursor: pointer;
 }
   .mobile-search-wrapper{
@@ -910,20 +944,24 @@ li{
   }
   .background-img img{
     width: 123vw;
-    right: -161px;
+    right: -106px;
   }
   .bg-img-shadow{
     box-shadow: inset 95px -60px 234em black;
+    position: absolute;
+    left: 15px;
+    width: 100%;
   }
   .company-wrapper{
     margin-top: 5px;
   }
   .poster{
-    height: 200px;
-    width: 133.33px;
+    height: 150px;
+    width: 100px;
+    padding: 2px 2px 0px 0px;
   }
   .poster img{
-    height: 200px;
+    height: 150px;
   }
   li{
     margin-top: 0px;

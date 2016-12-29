@@ -657,8 +657,9 @@ iframe{
     width: 758px;
   }
   iframe{
-  width: 758px;
-  height: 426.38px;
+    width: 758px;
+    height: 426.38px;
+    margin-bottom: 20px;
   }
   .backdrops-container{
     width: 758px;
@@ -762,7 +763,7 @@ iframe{
   }
   .info-section h2{
     font-size: 30px;
-    width: 405px;
+    width: 400px;
   }
   .info-section span{
     font-size: 12px;
@@ -812,6 +813,7 @@ iframe{
   iframe{
     width: 405px;
     height: 227.81px;
+    margin-bottom: 20px;
   }
   .backdrops-container{
     width: 375px;
@@ -933,7 +935,7 @@ iframe{
   }
   .info-section h2{
     font-size: 30px;
-    width: 405px;
+    width: 400px;
   }
   .info-section span{
     font-size: 12px;
@@ -983,6 +985,7 @@ iframe{
   iframe{
     width: 405px;
     height: 227.81px;
+    margin-bottom: 20px;
   }
   .backdrops-container{
     width: 405px;
@@ -1154,6 +1157,7 @@ iframe{
   iframe{
     width: 365px;
     height: 205.31px;
+    margin-bottom: 20px;
   }
   .backdrops-container{
     width: 375px;

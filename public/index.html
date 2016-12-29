@@ -34,9 +34,23 @@
       
     </div>
         </a>
-        <div class="burger">
+        <!--Burger menu-->
+        <div class="burger" ng-click="show = !show">
           <img src="./icons/burger-menu.png"/>
           </div>
+          <div class="burger-menu" ng-hide="!show">
+            <div>
+            <a ui-sref="login" ng-hide="user.name" />
+              <p ng-click="show = !show">Login</p>
+            </a>
+            <a ng-click="logoutUser()" ng-show="user.name" ui-sref="home"/>
+              <p>Logout</p>
+            </a>
+            <a ui-sref="mylist" ng-show="user.name"><p>My List</p></a>
+            <a ui-sref="reviews" ng-show="user.name"><p>Reviews</p></a>
+            </div>
+          </div>
+
     <div class="header-right">
       <div class="search"/>
       <input id="input-search" type="text" placeholder="Search" ng-model="term"/>
