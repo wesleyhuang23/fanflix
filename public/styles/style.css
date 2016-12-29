@@ -575,10 +575,11 @@ li{
   /*border: 1px solid green;*/
   width: 61px;
   text-align: center;
+  padding-bottom: 10px;
 }
 .burger-menu p {
-  margin-top: 5px;
-  margin-bottom: 5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 @keyframes fadein {
     from {

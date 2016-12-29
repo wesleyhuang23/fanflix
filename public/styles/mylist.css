@@ -275,3 +275,35 @@
   opacity: 0;
   display: none;
 }
+@media (max-width: 376px){
+  .watch-container{
+    text-align: center;
+  }
+  .watch-view img{
+    width: 100px;
+    height: 150px;
+  }
+  .watch-view{
+    width: 100px;
+    margin-bottom: 30px;
+  }
+  .watch-view p{
+    width: 100px;
+    font-size: 11px;
+  }
+  .fav-view img{
+    width: 100px;
+    height: 150px;
+  }
+  .fav-view p{
+    width: 100px;
+    font-size: 11px;
+  }
+  .fav-view{
+    width: 100px;
+    margin-bottom: 30px;
+  }
+  .fav-container{
+    text-align: center;
+  }
+}

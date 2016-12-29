@@ -44,7 +44,7 @@
               <p ng-click="show = !show">Login</p>
             </a>
             <a ng-click="logoutUser()" ng-show="user.name" ui-sref="home"/>
-              <p>Logout</p>
+              <p ng-click="show = !show">Logout</p>
             </a>
             <a ui-sref="mylist" ng-show="user.name"><p>My List</p></a>
             <a ui-sref="reviews" ng-show="user.name"><p>Reviews</p></a>
