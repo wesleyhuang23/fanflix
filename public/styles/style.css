@@ -828,7 +828,7 @@ li{
     padding: 2px 2px 0px 0px;
   }
   .poster img{
-    height: 100px;
+    height: 150px;
   }
   li{
     margin-top: 0px;
@@ -978,6 +978,136 @@ li{
   position: relative;
   top: 2px;
   right: -92px;
+  cursor: pointer;
+}
+  .burger img{
+    width: 30px;
+    height: 30px;
+  }
+}
+@media (max-width: 321px){
+  .poster:hover{
+  transform: inherit;
+  padding-left: 0px;
+  padding-right: 0px;
+  cursor: pointer;
+}
+  .mobile-search-wrapper{
+  display: block;
+  }
+  #mobile-search{
+    filter: invert(100%);
+    width: 25px;
+    position: absolute;
+    left: 10px;
+    top: 13px;
+    display: block;
+  }
+  .container-fluid{
+    padding-left: 0px;
+  }
+  .header-right{
+    display: none;
+  }
+  .nav-bar{
+    padding-left: 0px;
+  }
+  .header-wrapper{
+    width: 100vw;
+  }
+  .header-content{
+    justify-content: center;
+  }
+  .poster:hover{
+  transform: inherit
+  }
+  .poster:hover #sum {
+    opacity: 0;
+  }
+  .poster:hover .release{
+    opacity: 0;
+  }
+  .poster:hover #title{
+    opacity: 0;
+  }
+  .poster:hover #sum-box{
+    opacity: 0;
+  }
+  .left-info{
+    height: 42vh;
+  }
+  .left-info h2{
+    font-size: 13px;
+    margin-top: 0px;
+  }
+  .second-row{
+    width: 165px;
+  }
+  .left-info p{
+    font-size: 5px;
+  }
+  #in-theatres{
+    padding-right: 5px;
+  }
+  #rating-home{
+    padding: 3px 3px 3px 3px;
+  }
+  #runtime{
+    padding-left: 5px;
+  }
+  .btn-row{
+    padding-top: 10px;
+  }
+  #details-btn{
+     width: 35px;
+
+    height: 17px;
+  }
+  #starring{
+    padding-bottom: 5px;
+  }
+  #plot{
+    padding-bottom: 5px;
+  }
+  .billboard-wrapper{
+    height:260px;
+  }
+  .background-img img{
+    width: 123vw;
+    right: -106px;
+  }
+  .bg-img-shadow{
+    box-shadow: inset 95px -60px 234em black;
+    position: absolute;
+    left: 15px;
+    width: 100%;
+  }
+  .company-wrapper{
+    margin-top: 5px;
+  }
+  .poster{
+    height: 150px;
+    width: 100px;
+    padding: 2px 2px 0px 0px;
+  }
+  .poster img{
+    height: 150px;
+  }
+  li{
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+  ul{
+    width: 100vw;
+  }
+  .burger{
+  display: block;
+  filter: invert(100%);
+  width: 20px;
+  height: 20px;
+  position: relative;
+  top: 2px;
+  right: -62px;
   cursor: pointer;
 }
   .burger img{
