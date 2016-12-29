@@ -1228,3 +1228,171 @@ iframe{
     display: none;
   }
 }
+@media (max-width:321px){
+  #mobile-search{
+    filter: invert(100%);
+    width: 25px;
+    position: absolute;
+    left: 10px;
+    top: 13px;
+    display: block;
+  }
+  .backdrop-wrapper{
+    background-position: center;
+  }
+  .detail-container{
+    left: 10px;
+    width: 310px;
+  }
+  .details_poster{
+    width: 315px;
+    text-align: center;
+  }
+  .details_poster img{
+    max-height: 300px;
+  }
+  .detail-wrapper{
+    margin-left: 56px;
+  }
+  .backdrop-wrapper{
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 400px;
+    height: 414px;
+    margin: auto;
+  }
+  #tagline-detail{
+    font-size: 12px;
+  }
+  .showtimes-btn{
+    width: 200px;
+    margin: auto;
+  }
+  .first-row{
+    flex-direction: column;
+    width: 310px;
+  }
+  .info-section{
+    margin-left: 8px;
+  }
+  .info-section h2{
+    font-size: 30px;
+    width: 310px;
+  }
+  .info-section span{
+    font-size: 12px;
+  }
+  .left-info-wrapper{
+    margin-top: 10px;
+  }
+  .similar h4{
+    font-size: 10px;
+  }
+  .btn{
+    width: 73px;
+  }
+  .overview{
+    flex-direction: column;
+  }
+  .overview p{
+    font: 12px;
+  }
+  #o-left{
+    width: 310px;
+  }
+  #o-right{
+    margin-left: 0px;
+    width: 310px;
+  }
+  .second-row-wrapper{
+    overflow-x: scroll;
+    width: 310px;
+  }
+  .second-row-detail{
+    margin-bottom: 10px;
+  }
+  .detail-wrapper #section{
+    width: 310px;
+    text-align: center;
+  }
+  .full-cast-btn-container{
+    width: 310px;
+  }
+  .videos-container{
+    width: 310px;
+  }
+  iframe{
+    width: 310px;
+    height: 174.38px;
+    margin-bottom: 20px;
+  }
+  .backdrops-container{
+    width: 375px;
+  }
+  .backdrops img{
+    width: 155px;
+  }
+  .user-review-container{
+    width: 310px;
+    height: 200px;
+  }
+  .similar-container{
+    width: 310px;
+  }
+  .similar img{
+    width: 103.33px;
+  }
+  #no-mobile{
+    display: none;
+  }
+  .review-bg-container{
+    width: 300px;
+  }
+  .user-review-wrapper{
+    width: 300px;
+  }
+  .platforms-container{
+    margin: auto;
+    padding-bottom: 15px;
+    width: 208px;
+  }
+  .platforms img{
+    width: 100px;
+    height: 38px;
+  }
+  .review-review-container{
+    height: 200px;
+  }
+  .review-bg-container img{
+    width: 310px;
+  }
+  .box-user{
+    width: 300px;
+    height: 200px;
+  }
+  .user-review-view{
+    padding: 10px;
+    margin: 5px;
+    width: 310px;
+  }
+  .review-info-right{
+    margin-left: 50px;
+  }
+  .review-info-right h3{
+    font-size: 15px;
+  }
+  .review-info-right p{
+    font-size: 12px;
+  }
+  #rating-input{
+    width: 13px;
+  }
+  #profile-pic{
+    width: 40px;
+    height: 40px;
+  }
+  .shadow{
+    display: none;
+  }
+}
