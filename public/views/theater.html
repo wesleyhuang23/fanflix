@@ -1,3 +1,24 @@
 <main>
-    
+    <div class="theater-container">
+        <h1>{{theater[0].showtimes[0].theatre.name}}</h1>
+        <div class="showing-view">
+
+            <div class="showing-card" ng-repeat="movie in theater">
+                <div class="showing-poster"><img src="http://aval.tmsimg.com/{{movie.preferredImage.uri}}"></div>
+                <div class="title-info">
+                    <h3>{{movie.title}}</h3>
+                    <p id="second-column">{{movie.ratings[0].code}}, {{movie.runTime.substring(2, 8)}}</p>
+                    <div id="title-genre" ng-repeat="genre in movie.genres"><p>{{genre}}</p></div>
+                    <br>
+                    <p>{{movie.releaseDate}}</p>
+                </div>
+                <div class="times">
+                    <p>{{movie.showtimes[0].quals}}</p>
+                    <br>
+                    <div ng-repeat="time in movie.showtimes"><a href="{{time.ticketURI}}"><p>{{time.dateTime | date:'hh:mma'}}</p></a></div>
+                </div>
+
+            </div>
+        </div>
+    </div>
 </main>

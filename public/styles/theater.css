@@ -1,0 +1,35 @@
+.showing-card{
+    border: 2px solid white;
+    margin-bottom: 20px;
+    padding: 10px;
+    display: flex;
+}
+.showing-card img{
+    width: 200px;
+}
+.showing-card div{
+    margin-right: 20px;
+}
+.title-info h3{
+    text-transform: uppercase;
+    font-weight: bolder;
+    width: 220px;
+    margin-bottom: 10px;
+}
+.title-info #second-column{
+    margin-bottom: 10px;
+}
+#title-genre{
+    font-style: italic;
+}
+.times div{
+    display: inline-block;
+    background-color: #EF7622;
+    border-radius: 5px;
+    margin-right: 10px;
+    margin-bottom: 5px;
+    padding: 10px;
+}
+.times div p{
+    font-weight: bolder;
+}
