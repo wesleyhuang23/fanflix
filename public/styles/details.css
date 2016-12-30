@@ -443,6 +443,9 @@ iframe{
 .metacritic p{
   padding: 5px;
 }
+.showtimes-container{
+  height: auto;
+}
 .showtimes-bg{
   position: absolute;
   top: 0px;
@@ -453,17 +456,20 @@ iframe{
   height: 100%;
   background-color: black;
 }
+.showtimes-view{
+  height: auto;
+}
 .showtime-input{
-  position: absolute;
+  position: relative;
   top: -22px;
   left: 0px;
   margin-top: 50px;
   margin-right: 20px;
 }
 .showtime-input img{
-  position: absolute;
-  top: 49px;
-  left: 227px;
+  position: relative;
+  top: 5px;
+    left: -295px;
   width: 23px;
   height: 23px;
   filter: invert(100%);
@@ -495,13 +501,13 @@ iframe{
   padding: 10px;
 }
 .showtimes-wrapper{
-  position: absolute;
-  top: 128px;
+  position: relative;
+  top: -45px;
   left: 11px;
 }
 #close-showtime{
   position: fixed;
-  top:90px;
+  top:80px;
   right: 20px;
   font-size: 30px;
   cursor: pointer;
@@ -511,6 +517,24 @@ iframe{
   font-size: 16px;
   position: relative;
   top: -2px;
+}
+#map{
+  height: 80%;
+  width: 100%;
+}
+#theater-view{
+  overflow: scroll;
+}
+.theaters{
+  position: relative;
+  margin-bottom: 25px;
+  margin-top: 15px;
+  width: 10%;
+}
+#theater{
+  display: block !important;
+  overflow: none;
+  margin-right: 10px;
 }
 @media (max-width: 1300px){
   .details_poster img{

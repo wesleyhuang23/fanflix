@@ -40,6 +40,10 @@ angular.module('flixApp', ['ui.router'])
     templateUrl: 'views/credits.html',
     url: '/credits/:id',
     controller: 'creditsCtrl'
+  }).state('theater', {
+    templateUrl: 'views/theater.html',
+    url: '/theater/:id',
+    controller: 'theaterCtrl'
   });
 
 

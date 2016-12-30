@@ -1,112 +1,125 @@
 <!DOCTYPE html>
 <html ng-app="flixApp">
-  <head>
-    <link rel="stylesheet" type="text/css" href="./styles/style.css"/>
-    <link rel="stylesheet" type="text/css" href="./styles/details.css"/>
-    <link rel="stylesheet" type="text/css" href="./styles/overview.css"/>
-    <link rel="stylesheet" type="text/css" href="./styles/search.css"/>
-    <link rel="stylesheet" type="text/css" href="./styles/mylist.css"/>
-    <link rel="stylesheet" type ="text/css" href="./styles/reviews.css"/>
-    <link rel="stylesheet" type"text/css" href="./styles/edit.css"/>
-    <link rel="stylesheet" type="text/css" href="./styles/login.css"/>
-    <link rel="stylesheet" type="text/css" href="./styles/people.css"/>
-    <link rel="stylesheet" type="text/css" href="./styles/user_reviews.css"/>
-    <link rel="stylesheet" type="text/css" href="./styles/credit.css"/>
-    <meta charseth="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Fanflix</title>
-  </head>
-  <body ng-controller="mainCtrl">
-    <div class="container-fluid">
 
+<head>
+  <link rel="stylesheet" type="text/css" href="./styles/style.css" />
+  <link rel="stylesheet" type="text/css" href="./styles/details.css" />
+  <link rel="stylesheet" type="text/css" href="./styles/overview.css" />
+  <link rel="stylesheet" type="text/css" href="./styles/search.css" />
+  <link rel="stylesheet" type="text/css" href="./styles/mylist.css" />
+  <link rel="stylesheet" type="text/css" href="./styles/reviews.css" />
+  <link rel="stylesheet" type "text/css" href="./styles/edit.css" />
+  <link rel="stylesheet" type="text/css" href="./styles/login.css" />
+  <link rel="stylesheet" type="text/css" href="./styles/people.css" />
+  <link rel="stylesheet" type="text/css" href="./styles/user_reviews.css" />
+  <link rel="stylesheet" type="text/css" href="./styles/credit.css" />
+  <meta charseth="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fanflix</title>
+</head>
+
+<body ng-controller="mainCtrl">
+  <div class="container-fluid">
     <header class="nav-bar">
       <div class="header-wrapper">
-      <div class="header-content">
-        <div class="mobile-search-wrapper">
-          <a ui-sref="search">
-        <img id="mobile-search" src="./icons/6983-200.png"/>
-        </a>
-        </div>
-        
-        <a id="home-btn" ui-sref="home">
-          <div id="logo-container">
-      <h1 id="logo"><span class="o">FAN</span><span class="r">FLIX</span></h1>
-      
-    </div>
-        </a>
-        <!--Burger menu-->
-        <div class="burger" ng-click="show = !show">
-          <img src="./icons/burger-menu.png"/>
+        <div class="header-content">
+          <div class="mobile-search-wrapper">
+            <a ui-sref="search">
+              <img id="mobile-search" src="./icons/6983-200.png" />
+            </a>
+          </div>
+          <a id="home-btn" ui-sref="home">
+            <div id="logo-container">
+              <h1 id="logo"><span class="o">FAN</span><span class="r">FLIX</span></h1>
+            </div>
+          </a>
+          <!--Burger menu-->
+          <div class="burger" ng-click="show = !show">
+            <img src="./icons/burger-menu.png" />
           </div>
           <div class="burger-menu" ng-hide="!show">
             <div>
-            <a ui-sref="login" ng-hide="user.name" />
+              <a ui-sref="login" ng-hide="user.name" />
               <p ng-click="show = !show">Login</p>
-            </a>
-            <a ng-click="logoutUser()" ng-show="user.name" ui-sref="home"/>
+              </a>
+              <a ng-click="logoutUser()" ng-show="user.name" ui-sref="home" />
               <p ng-click="show = !show">Logout</p>
-            </a>
-            <a ui-sref="mylist" ng-show="user.name"><p>My List</p></a>
-            <!--<a ui-sref="reviews" ng-show="user.name"><p>Reviews</p></a>-->
+              </a>
+              <a ui-sref="mylist" ng-show="user.name">
+                <p>My List</p>
+              </a>
+              <!--<a ui-sref="reviews" ng-show="user.name"><p>Reviews</p></a>-->
             </div>
           </div>
-
-    <div class="header-right">
-      <div class="search"/>
-      <input id="input-search" type="text" placeholder="Search" ng-model="term"/>
-      <a ui-sref="search"><img src="./icons/6983-200.png" ng-click="getSearch(term)"/>
-      </a>
-    </div>
-      <a ui-sref="mylist" ng-show="user.name"><p>My List</p></a>
-      <a ui-sref="reviews" ng-show="user.name">
-      <p>Reviews</p>
-    </a>
-
-      <a ui-sref="login" ng-hide="user.name"/>
-      <p>Login</p>
-    </a>
-    <a ng-click="logoutUser()" ng-show="user.name" ui-sref="home"/>
-    <p>Logout</p>
-  </a>
-  <div class="user-box" ng-show="user.name">
-    <img ng-src="{{user.photo}}" />
-    {{user.name}}
+          <div class="header-right">
+            <div class="search" />
+            <input id="input-search" type="text" placeholder="Search" ng-model="term" />
+            <a ui-sref="search"><img src="./icons/6983-200.png" ng-click="getSearch(term)" />
+            </a>
+          </div>
+          <a ui-sref="mylist" ng-show="user.name">
+            <p>My List</p>
+          </a>
+          <a ui-sref="reviews" ng-show="user.name">
+            <p>Reviews</p>
+          </a>
+          <a ui-sref="login" ng-hide="user.name" />
+          <p>Login</p>
+          </a>
+          <a ng-click="logoutUser()" ng-show="user.name" ui-sref="home" />
+          <p>Logout</p>
+          </a>
+          <div class="user-box" ng-show="user.name">
+            <img ng-src="{{user.photo}}" /> {{user.name}}
+          </div>
+        </div>
+      </div>
   </div>
-    </div>
-
-    </div>
+  </header>
+  <header>
+  </header>
+  <div ui-view>
+    <!-- SECRET PORTAL -->
   </div>
-    </header>
-    <header>
-    </header>
 
-    <div ui-view>
-      <!-- SECRET PORTAL -->
-    </div>
-    <footer>
+  <footer>
+  </footer>
+
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.js"></script>
+  <script src="./js/flix.js"></script>
+  <script src="./js/mainCtrl.js"></script>
+  <script src="./js/mainSvc.js"></script>
+  <script src="./js/details/detailsCtrl.js"></script>
+  <script src="./js/edit/editCtrl.js"></script>
+  <script src="./js/search/searchCtrl.js"></script>
+  <script src="./js/mylist/mylistCtrl.js"></script>
+  <script src="./js/login/loginCtrl.js"></script>
+  <script src="./js/people/peopleCtrl.js"></script>
+  <script src="./js/userReviews/userReviewsCtrl.js"></script>
+  <script src="./js/credits/creditsCtrl.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.slim.js"></script>
+  <!--<script>
+    function initMap() {
+        var uluru = {lat: -25.363, lng: 131.044};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 4,
+          center: uluru
+        });
+        var marker = new google.maps.Marker({
+          position: uluru,
+          map: map
+        });
+      }
+    
+  </script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAdNucqud2SYX7cmwiYH_bYffQB5tp5__A
+&callback=initMap" async defer>
+  </script>-->
+  <script src="./js/animation.js"></script>
+  <!--google maps-->
   
-    </footer>
-  </div>
+</body>
 
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.js"></script>
-<script src="./js/flix.js"></script>
-<script src="./js/mainCtrl.js"></script>
-<script src="./js/mainSvc.js"></script>
-<script src="./js/details/detailsCtrl.js"></script>
-<script src="./js/edit/editCtrl.js"></script>
-<script src="./js/search/searchCtrl.js"></script>
-<script src="./js/mylist/mylistCtrl.js"></script>
-<script src="./js/login/loginCtrl.js"></script>
-<script src="./js/people/peopleCtrl.js"></script>
-<script src="./js/userReviews/userReviewsCtrl.js"></script>
-<script src="./js/credits/creditsCtrl.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.slim.js"></script>
-<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> -->
-<script src="./js/animation.js"></script>
-<!-- <script src="https://unpkg.com/react@15/dist/react.js"></script>
-<script src="https://unpkg.com/react-dom@15/dist/react-dom.js"></script> -->
-<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/6.1.19/browser.js"></script>-->
-
-  </body>
 </html>

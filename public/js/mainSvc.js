@@ -292,6 +292,22 @@ angular.module('flixApp').service('mainSvc', function($http){
       return response.data;
     });
   }
+  this.getTheatersInArea = function(zip){
+    return $http({
+      method: 'GET',
+      url: 'http://data.tmsapi.com/v1.1/theatres?zip=' + zip + '&numTheatres=6&api_key=tx8g3c9h9ca737eh3y7sw66v'
+    }).then(function(response){
+      return response.data;
+    });
+  }
+  this.getTheater = function(theaterId, date){
+    return $http({
+      method: 'GET',
+      url: 'http://data.tmsapi.com/v1.1/theatres/' + 5264 + '/showings?startDate=' + date + '&imageSize=Lg&imageText=true&api_key=tx8g3c9h9ca737eh3y7sw66v'
+    }).then(response => {
+      return response.data;
+    })
+  }
   //people page STUFF
   this.getPersonDetails = person_id => {
     return $http({

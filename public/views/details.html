@@ -31,6 +31,17 @@
     </div>
     <br>
       <div class="showtimes-wrapper" >
+         <div class="theaters">
+      <ul id="theater-view">
+        
+        <li id="theater" ng-repeat="theater in theaters">
+          <a ui-sref="theater({id:theater.theatreId})">
+          <div>
+          <p style="text-transform: uppercase; color:#EF7622">{{theater.name}}<p><br>{{theater.location.address.street}} {{theater.location.address.city}} {{theater.location.address.state}},<br> {{theater.location.address.postalCode}} {{theater.location.address.country}}</li>
+          </div>
+          </a>
+      </ul>
+    </div>
         <div class="showtimes-view">
           <h2>{{title1.title}}</h2>
           <div class="showings" ng-repeat="shows in showings1">
@@ -63,6 +74,7 @@
 
 
     </div>
+   
   </div>
   </div>
 
@@ -165,6 +177,8 @@
 </div>
 <br>
 <br>
+      <!--<div id="map"></div>-->
+
 <h3 id="section">LEADING CAST</h3>
 <br>
 <div class="second-row-wrapper">
