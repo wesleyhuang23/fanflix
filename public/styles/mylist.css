@@ -306,4 +306,21 @@
   .fav-container{
     text-align: center;
   }
+  .black-bg{
+    display: none;
+    width: 100px;
+    height: 150px;
+  }
+  .watch-box #x{
+    width: 30px;
+    height: 30px;
+  }
+  .watch-box #eye{
+    width: 15px;
+    height: 15px;
+  }
+  .watch-box #heart{
+    width: 15px;
+    height: 15px;
+  }
 }

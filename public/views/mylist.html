@@ -26,7 +26,9 @@
 
         </div>
       </div>
+      <a ui-sref="details({id:'{{film.id}}'})">
         <img id="watch-poster" src="{{film.poster}}"/>
+      </a>
         <p>{{film.title}}</p>
       </div>
 
@@ -59,7 +61,9 @@
 
         </div>
       </div>
+      <a ui-sref="details({id:'{{film.id}}'})">
         <img id="watch-poster" alt="watched" src="{{film.poster}}"/>
+        </a>
         <p>{{film.title}}</p>
       </div>
 
@@ -86,7 +90,9 @@
           </a>
         </div>
         </div>
+        <a ui-sref="details({id:'{{film.id}}'})">
         <img src="{{film.poster}}"/>
+        </a>
         <p>{{film.title}}</p>
       </div>
     </div>
