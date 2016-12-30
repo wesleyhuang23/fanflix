@@ -306,6 +306,7 @@
   .fav-container{
     text-align: center;
   }
+  
   .black-bg{
     display: none;
     width: 100px;
@@ -323,4 +324,23 @@
     width: 15px;
     height: 15px;
   }
+  .watch-view:hover .black-bg{
+  display: none;
+}
+.watch-view:hover #x{
+  display: none;
+}
+.watch-view:hover #heart{
+  display: none;
+}
+.watch-view:hover #eye{
+  display: none;
+}
+.watch-view:hover #i{
+  display: none;
+}
+.watch-view:hover #review{
+  display: none;
+}
+
 }

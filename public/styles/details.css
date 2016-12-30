@@ -688,6 +688,9 @@ iframe{
   .similar img{
     width: 253px;
   }
+  .similar{
+    margin-bottom: 40px;
+  }
   .similar h4{
     font-size: 11px;
   }
@@ -742,7 +745,7 @@ iframe{
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    width: 400px;
+    width: 420px;
     height: 414px;
     margin: auto;
   }
@@ -819,7 +822,7 @@ iframe{
     width: 375px;
   }
   .backdrops img{
-    width: 187.5px;
+    width: 405px;
   }
   .user-review-container{
     width: 405px;
@@ -829,7 +832,10 @@ iframe{
     width: 405px;
   }
   .similar img{
-    width: 121.66px;
+    width: 405px;
+  }
+  .similar{
+    margin-bottom: 40px;
   }
   #no-mobile{
     display: none;
@@ -914,7 +920,7 @@ iframe{
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    width: 400px;
+    width: 420px;
     height: 414px;
     margin: auto;
   }
@@ -991,7 +997,7 @@ iframe{
     width: 405px;
   }
   .backdrops img{
-    width: 202.5px;
+    width: 405px;
   }
   .user-review-container{
     width: 405px;
@@ -1001,7 +1007,10 @@ iframe{
     width: 405px;
   }
   .similar img{
-    width: 121.66px;
+    width: 405px;
+  }
+  .similar{
+    margin-bottom: 40px;
   }
   #no-mobile{
     display: none;
@@ -1073,7 +1082,7 @@ iframe{
     background-position: center;
   }
   .detail-container{
-    left: 10px;
+    left: 5px;
     width: 365px;
   }
   .details_poster{
@@ -1157,13 +1166,13 @@ iframe{
   iframe{
     width: 365px;
     height: 205.31px;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
   }
   .backdrops-container{
-    width: 375px;
+    width: 365px;
   }
   .backdrops img{
-    width: 187.5px;
+    width: 365px;
   }
   .user-review-container{
     width: 365px;
@@ -1172,8 +1181,11 @@ iframe{
   .similar-container{
     width: 365px;
   }
+  .similar{
+    margin-bottom: 40px;
+  }
   .similar img{
-    width: 121.66px;
+    width: 365px;
   }
   #no-mobile{
     display: none;
@@ -1331,7 +1343,7 @@ iframe{
     width: 375px;
   }
   .backdrops img{
-    width: 155px;
+    width: 310px;
   }
   .user-review-container{
     width: 310px;
@@ -1340,8 +1352,11 @@ iframe{
   .similar-container{
     width: 310px;
   }
+  .similar{
+    margin-bottom: 40px;
+  }
   .similar img{
-    width: 103.33px;
+    width: 310px;
   }
   #no-mobile{
     display: none;

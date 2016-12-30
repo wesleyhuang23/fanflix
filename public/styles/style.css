@@ -567,7 +567,7 @@ li{
   background-color: black;
   position: fixed;
   top: 7%;
-  width: 100%;
+  width: 100vw;
   text-align: -webkit-center;
   height: 10%;
 }
@@ -661,18 +661,16 @@ li{
     margin-left: 10px;
   }
   .poster:hover{
-  transform: inherit;
+  transform: none;
   padding-left: 0px;
   padding-right: 0px;
-  cursor: pointer;
-}
+  }
 }
 @media (max-width: 769px){
   .poster:hover{
-  transform: inherit;
+  transform: none;
   padding-left: 0px;
   padding-right: 0px;
-  cursor: pointer;
 }
   .carosel-wrapper{
     left: -80px;
@@ -728,10 +726,9 @@ li{
 }
 @media (max-width: 415px){
   .poster:hover{
-  transform: inherit;
+  transform: none;
   padding-left: 0px;
   padding-right: 0px;
-  cursor: pointer;
 }
   .mobile-search-wrapper{
   display: block;
@@ -760,7 +757,7 @@ li{
     justify-content: center;
   }
   .poster:hover{
-  transform: inherit
+  transform: none;
   }
   .poster:hover #sum {
     opacity: 0;
@@ -858,10 +855,9 @@ li{
 }
 @media (max-width: 376px){
   .poster:hover{
-  transform: inherit;
+  transform: none;
   padding-left: 0px;
-  padding-right: 0px;
-  cursor: pointer;
+  padding-right: 2px;
 }
   .mobile-search-wrapper{
   display: block;
@@ -888,9 +884,6 @@ li{
   }
   .header-content{
     justify-content: center;
-  }
-  .poster:hover{
-  transform: inherit
   }
   .poster:hover #sum {
     opacity: 0;
@@ -988,10 +981,9 @@ li{
 }
 @media (max-width: 321px){
   .poster:hover{
-  transform: inherit;
+  transform: none;
   padding-left: 0px;
   padding-right: 0px;
-  cursor: pointer;
 }
   .mobile-search-wrapper{
   display: block;
@@ -1020,7 +1012,7 @@ li{
     justify-content: center;
   }
   .poster:hover{
-  transform: inherit
+  transform: none;
   }
   .poster:hover #sum {
     opacity: 0;
