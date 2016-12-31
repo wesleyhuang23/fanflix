@@ -17,12 +17,12 @@ The search view will give you realtime results as your type in the search bar. T
 # Movie Detail
 ![alt tag](https://github.com/wesleyhuang23/fanflix/blob/master/screenshots/details.png?raw=true)
 ![alt tag](https://github.com/wesleyhuang23/fanflix/blob/master/screenshots/lead%20cast%20and%20trailer.png?raw=true)
-Every movie you can search for on Fanflix will have its own detail pages. This applies to all 2 million possible titles. As you scroll you get more information about the movie as well as trailers, high resolution backdrops that make great desktop wallpapers and user reviews.
+Every movie you can search for on Fanflix will have its own detail pages. This applies to all 2 million possible titles. As you scroll you get more information about the movie as well as trailers, high resolution backdrops that make great desktop wallpapers and user reviews. Under the poster if the film is not currently in theaters, but is availible on itunes or google play, it will display the two platform indicators. These will take you to their site where users can make their purchase of the movie.
 
 # Full Cast and Crew
 ![alt tag](https://github.com/wesleyhuang23/fanflix/blob/master/screenshots/fullcast.png?raw=true)
 ![alt tag](https://github.com/wesleyhuang23/fanflix/blob/master/screenshots/crew.png?raw=true)
-Clicking on the full cast and crew button on the details page will list the full list of actors playing in the movie as well as the crew of directors, producers and camera people who worked on the film. Clicking on anyone of these will take you to their detail page.
+Clicking on the full cast and crew button on the details page will list the full list of actors playing in the movie as well as the crew of directors, producers and camera people who worked on the film. Clicking on anyone of these will take you to their detail page. If the image of the actor is not availible then it will display the first letter of the persons name as a replacement using a simple conditional.
 
 # People
 ![alt tag](https://github.com/wesleyhuang23/fanflix/blob/master/screenshots/person2.png?raw=true)
@@ -37,4 +37,8 @@ Passing the theaters id as state params and displaying the specific theater with
 Users can login using facebook. This is accomplished using facebook auth. Once the user logs in they can create their own user reviews and movie list. Keep a list of the movies they want to watch, which movies are their favorites. Facebook auth was most challenging in that I had to match the users facebook id to every object they manipulate so every user would get their own list and custom pages. Making sure every call to the database was the correct was the most challenging of the project. 
 
 # Mobile Responsive
-![alt tag](https://github.com/wesleyhuang23/fanflix/blob/master/screenshots/login.png?raw=true)
+![alt-text-1](https://github.com/wesleyhuang23/fanflix/blob/master/screenshots/mobile-responsive2.png?raw=true) ![alt-text-2](https://github.com/wesleyhuang23/fanflix/blob/master/screenshots/mobile-responsive3.png?raw=true) ![alt-text-3](https://github.com/wesleyhuang23/fanflix/blob/master/screenshots/mobile-responsive4.png?raw=true)
+The site is mobile responisve. Using media queries to change the design and positioning of most elements. 
+
+
+
