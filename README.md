@@ -10,9 +10,7 @@ The Billboard changes based on the most popular film, based on the mdb api.
 Using an ng-repeat to display films that are coming soon or now playing in theaters. When hovered over the poster will scale up and display a summary of the movie on top of the poster. When the user creates their own watchlist of movies it will appear as the first carosel. So when they login they will be greeted by the movie that they need to watch.
 
 # Search for Movies, People or Theaters
- Movies                    |People                     | Theaters
-:-------------------------:|:-------------------------:|:-------------------------:
-![](https://github.com/wesleyhuang23/fanflix/blob/master/screenshots/search.png?raw=true) | ![](https://github.com/wesleyhuang23/fanflix/blob/master/screenshots/people-search.png?raw=true) | ![](https://github.com/wesleyhuang23/fanflix/blob/master/screenshots/theater-search.png?raw=true)
+![](https://github.com/wesleyhuang23/fanflix/blob/master/screenshots/search.png?raw=true) ![](https://github.com/wesleyhuang23/fanflix/blob/master/screenshots/people-search.png?raw=true) ![](https://github.com/wesleyhuang23/fanflix/blob/master/screenshots/theater-search.png?raw=true)
 
 The search view will give you realtime results as your type in the search bar. This is done by using Jquery. You can search for over 2 million titles, based on the movie database api and will be upadted when new titles are added into the database.
 
