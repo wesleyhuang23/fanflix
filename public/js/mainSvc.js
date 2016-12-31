@@ -295,7 +295,7 @@ angular.module('flixApp').service('mainSvc', function($http){
   this.getTheatersInArea = function(zip){
     return $http({
       method: 'GET',
-      url: 'http://data.tmsapi.com/v1.1/theatres?zip=' + zip + '&numTheatres=6&api_key=tx8g3c9h9ca737eh3y7sw66v'
+      url: 'http://data.tmsapi.com/v1.1/theatres?zip=' + zip + '&numTheatres=10&api_key=tx8g3c9h9ca737eh3y7sw66v'
     }).then(function(response){
       return response.data;
     });

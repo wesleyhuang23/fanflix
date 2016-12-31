@@ -33,5 +33,18 @@
   </div>
 </div>
 
+<br>
+ <div class="search-wrapper">
+  <div class="search-view" ng-repeat="theater in theaters">
+    <div id="theater-search" class="search-content">
+      <a ui-sref="theater({id:theater.theatreId})">
+    <div>
+          <p style="text-transform: uppercase; color:#EF7622">{{theater.name}}<p><br>{{theater.location.address.street}} <br> {{theater.location.address.city}} {{theater.location.address.state}},<br> {{theater.location.address.postalCode}} {{theater.location.address.country}}</li>
+    </div>
+  </a>
+</div>
+  </div>
+</div>
+
   </div>
 </main>

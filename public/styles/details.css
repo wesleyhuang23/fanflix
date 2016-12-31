@@ -510,6 +510,7 @@ iframe{
   top:80px;
   right: 20px;
   font-size: 30px;
+  z-index: 9;
   cursor: pointer;
 }
 #datepicker{

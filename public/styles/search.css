@@ -33,6 +33,15 @@
 .search-mobile{
     display: none;
 }
+#theater-search{
+  border: 1px solid red;
+  padding: 25px;
+  margin: 10px;
+}
+#theater-search p{
+  position: relative;
+  width: auto;
+}
 @media (max-width: 415px){
   .search-container{
     text-align: center;
