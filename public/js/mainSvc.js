@@ -1,10 +1,13 @@
 angular.module('flixApp').service('mainSvc', function($http){
+
+  var tmsapi = 'tx8g3c9h9ca737eh3y7sw66v';
+  var mdbapi = '8eecf03080f34edf303e14b5f1476653'
 //HOME PAGE SECTION
   //get popular for home page billboard and row
   this.getPopular = () => {
     return $http({
       method: 'GET',
-      url: 'https://api.themoviedb.org/3/movie/popular?api_key=8eecf03080f34edf303e14b5f1476653&language=en-US'
+      url: 'https://api.themoviedb.org/3/movie/popular?api_key='+ mdbapi +'&language=en-US'
     }).then(response => response.data.results);
       console.log(response.data.results);
   };
@@ -13,7 +16,7 @@ angular.module('flixApp').service('mainSvc', function($http){
     console.log(id.id);
     return $http({
       method: 'GET',
-      url: 'https://api.themoviedb.org/3/movie/' + id.id + '?api_key=8eecf03080f34edf303e14b5f1476653&language=en-US&append_to_response=undefined'
+      url: 'https://api.themoviedb.org/3/movie/' + id.id + '?api_key='+ mdbapi +'&language=en-US&append_to_response=undefined'
     }).then(response => response.data);
       console.log(response);
   };
@@ -30,7 +33,7 @@ angular.module('flixApp').service('mainSvc', function($http){
   this.getNowPlaying = function(){
     return $http({
       method:'GET',
-      url: 'https://api.themoviedb.org/3/movie/now_playing?api_key=8eecf03080f34edf303e14b5f1476653&language=en-US'
+      url: 'https://api.themoviedb.org/3/movie/now_playing?api_key='+ mdbapi +'&language=en-US'
     }).then(response => response.data.results);
       console.log(response.data);
   };
@@ -38,14 +41,14 @@ angular.module('flixApp').service('mainSvc', function($http){
   this.getNowPlaying2 = () => {
     return $http({
       method: 'GET',
-      url: 'https://api.themoviedb.org/3/movie/now_playing?api_key=8eecf03080f34edf303e14b5f1476653&language=en-US&page=2'
+      url: 'https://api.themoviedb.org/3/movie/now_playing?api_key='+ mdbapi +'&language=en-US&page=2'
     }).then(response => response.data.results);
   };
   //getting comming soon for row
   this.getComingSoon = function(){
     return $http({
       method: 'GET',
-      url: 'https://api.themoviedb.org/3/movie/upcoming?api_key=8eecf03080f34edf303e14b5f1476653&language=en-US'
+      url: 'https://api.themoviedb.org/3/movie/upcoming?api_key='+ mdbapi +'&language=en-US'
     }).then(function(response){
       //console.log(response.data);
       return response.data.results;
@@ -55,7 +58,7 @@ angular.module('flixApp').service('mainSvc', function($http){
   this.getComingSoon2 = () => {
     return $http({
       method: 'GET',
-      url: 'https://api.themoviedb.org/3/movie/upcoming?api_key=8eecf03080f34edf303e14b5f1476653&language=en-US&page=2'
+      url: 'https://api.themoviedb.org/3/movie/upcoming?api_key='+ mdbapi +'&language=en-US&page=2'
     }).then(response => response.data.results);
   };
   //DETAILS SECTION
@@ -63,7 +66,7 @@ angular.module('flixApp').service('mainSvc', function($http){
   this.getDetails = id => {
     return $http({
       method:'GET',
-      url: 'https://api.themoviedb.org/3/movie/'+ id + '?api_key=8eecf03080f34edf303e14b5f1476653&language=en-US&append_to_response=undefined'
+      url: 'https://api.themoviedb.org/3/movie/'+ id + '?api_key='+ mdbapi +'&language=en-US&append_to_response=undefined'
     }).then(response => response.data);
       console.log(response.data);
   };
@@ -80,20 +83,20 @@ angular.module('flixApp').service('mainSvc', function($http){
   this.getVideos = imdb_id => {
     return $http({
       method:'GET',
-      url:'https://api.themoviedb.org/3/movie/'+ imdb_id +'/videos?api_key=8eecf03080f34edf303e14b5f1476653'
+      url:'https://api.themoviedb.org/3/movie/'+ imdb_id +'/videos?api_key=' + mdbapi
     }).then(response => response.data.results);
   };
   //getting cast for movie from mdb
   this.getCast = imdb_id => {
     return $http({
       method: 'GET',
-      url:'https://api.themoviedb.org/3/movie/'+ imdb_id +'/credits?api_key=8eecf03080f34edf303e14b5f1476653'
+      url:'https://api.themoviedb.org/3/movie/'+ imdb_id +'/credits?api_key=' + mdbapi
     }).then(response => response.data);
   };
   //getting credits for movie detail
   this.getCredits = id => {
     return $http({
-      url: 'https://api.themoviedb.org/3/movie/'+ id +'/credits?api_key=8eecf03080f34edf303e14b5f1476653'
+      url: 'https://api.themoviedb.org/3/movie/'+ id +'/credits?api_key=' + mdbapi
     }).then(function(response){
       return response.data;
     });
@@ -102,7 +105,7 @@ angular.module('flixApp').service('mainSvc', function($http){
   this.getSimilars = imdb_id => {
     return $http({
       method:'GET',
-      url:'https://api.themoviedb.org/3/movie/' + imdb_id + '/similar?api_key=8eecf03080f34edf303e14b5f1476653&language=en-US'
+      url:'https://api.themoviedb.org/3/movie/' + imdb_id + '/similar?api_key='+ mdbapi +'&language=en-US'
     }).then(response => response.data.results);
       console.log(response.data);
   };
@@ -124,7 +127,7 @@ angular.module('flixApp').service('mainSvc', function($http){
   this.getImages = imdb_id => {
     return $http({
       method: 'GET',
-      url: 'https://api.themoviedb.org/3/movie/' + imdb_id + '/images?api_key=8eecf03080f34edf303e14b5f1476653'
+      url: 'https://api.themoviedb.org/3/movie/' + imdb_id + '/images?api_key=' + mdbapi
     }).then(response => response.data);
   };
   this.getUserReviews = mdb_id => {
@@ -138,14 +141,14 @@ angular.module('flixApp').service('mainSvc', function($http){
   this.getSearchMovie = term =>{
     return $http({
       method:'GET',
-      url: 'https://api.themoviedb.org/3/search/movie?api_key=8eecf03080f34edf303e14b5f1476653&language=en-US&query=' + term
+      url: 'https://api.themoviedb.org/3/search/movie?api_key='+ mdbapi +'&language=en-US&query=' + term
     }).then(response => response.data.results);
   };
   //get people based on term
   this.getPeople = term =>{
     return $http({
       method: 'GET',
-      url: 'https://api.themoviedb.org/3/search/person?api_key=8eecf03080f34edf303e14b5f1476653&language=en-US&query=' + term + '&page=1&include_adult=false'
+      url: 'https://api.themoviedb.org/3/search/person?api_key='+ mdbapi +'&language=en-US&query=' + term + '&page=1&include_adult=false'
     }).then(response => response.data.results);
     //function(response);
   };
@@ -287,7 +290,7 @@ angular.module('flixApp').service('mainSvc', function($http){
   this.getShowtimes = function(date, zip){
     return $http({
       method: 'GET',
-      url: 'https://data.tmsapi.com/v1.1/movies/showings?startDate=' + date + '&zip=' + zip + '&api_key=tx8g3c9h9ca737eh3y7sw66v'
+      url: 'https://data.tmsapi.com/v1.1/movies/showings?startDate=' + date + '&zip=' + zip + '&api_key=' + tmsapi
     }).then(function(response){
       return response.data;
     });
@@ -295,7 +298,7 @@ angular.module('flixApp').service('mainSvc', function($http){
   this.getTheatersInArea = function(zip){
     return $http({
       method: 'GET',
-      url: 'http://data.tmsapi.com/v1.1/theatres?zip=' + zip + '&numTheatres=10&api_key=tx8g3c9h9ca737eh3y7sw66v'
+      url: 'http://data.tmsapi.com/v1.1/theatres?zip=' + zip + '&api_key=' + tmsapi
     }).then(function(response){
       return response.data;
     });
@@ -303,7 +306,7 @@ angular.module('flixApp').service('mainSvc', function($http){
   this.getTheater = function(theaterId, date){
     return $http({
       method: 'GET',
-      url: 'http://data.tmsapi.com/v1.1/theatres/' + theaterId.id + '/showings?startDate=' + date + '&imageSize=Lg&imageText=true&api_key=tx8g3c9h9ca737eh3y7sw66v'
+      url: 'http://data.tmsapi.com/v1.1/theatres/' + theaterId.id + '/showings?startDate=' + date + '&imageSize=Lg&imageText=true&api_key=' + tmsapi
     }).then(response => {
       return response.data;
     })
@@ -311,7 +314,7 @@ angular.module('flixApp').service('mainSvc', function($http){
   this.getTheaterDetails = function(theaterId){
     return $http({
       method: 'GET',
-      url: 'http://data.tmsapi.com/v1.1/theatres/' + theaterId.id + '?api_key=tx8g3c9h9ca737eh3y7sw66v'
+      url: 'http://data.tmsapi.com/v1.1/theatres/' + theaterId.id + '?api_key=' + tmsapi
     }).then(function(response){
       return response.data;
     });
@@ -320,19 +323,19 @@ angular.module('flixApp').service('mainSvc', function($http){
   this.getPersonDetails = person_id => {
     return $http({
       method: 'GET',
-      url: 'https://api.themoviedb.org/3/person/' + person_id + '?api_key=8eecf03080f34edf303e14b5f1476653&language=en-US'
+      url: 'https://api.themoviedb.org/3/person/' + person_id + '?api_key='+ mdbapi +'&language=en-US'
     }).then(response => response.data);
   };
   this.getPersonMovieCredits = person_id => {
     return $http({
       method: 'GET',
-      url: 'https://api.themoviedb.org/3/person/' + person_id + '/movie_credits?api_key=8eecf03080f34edf303e14b5f1476653&language=en-US'
+      url: 'https://api.themoviedb.org/3/person/' + person_id + '/movie_credits?api_key='+ mdbapi +'&language=en-US'
     }).then(response => response.data);
   };
   this.getKnownFor = person_name => {
     return $http({
     method: 'GET',
-    url: 'https://api.themoviedb.org/3/search/person?api_key=8eecf03080f34edf303e14b5f1476653&language=en-US&query=' + person_name + '&page=1&include_adult=false'
+    url: 'https://api.themoviedb.org/3/search/person?api_key='+ mdbapi +'&language=en-US&query=' + person_name + '&page=1&include_adult=false'
   }).then(response => response.data);
 };
 });

@@ -1,50 +1,47 @@
 <main>
-  <div class="search-mobile"/>
-      <input id="input-search" type="text" placeholder="Search" ng-model="term"/>
-      <a ui-sref="search"><img src="./icons/6983-200.png" ng-click="getSearch(term)"/>
-      </a>
-      </div>
+  <div class="search-mobile" />
+  <input id="input-search" type="text" placeholder="Search" ng-model="term" />
+  <a ui-sref="search"><img src="./icons/6983-200.png" ng-click="getSearch(term)" />
+  </a>
+  </div>
   <div class="search-container">
     <div class="search-wrapper">
-    <div class="search-view" ng-repeat="film in movieSearch track by film.id">
-      <div class="search-content">
-        <a ui-sref="details({id:'{{film.id}}'})">
-      <img ng-show="{{film.poster_path}}" ng-src="https://image.tmdb.org/t/p/original/{{film.poster_path}}"/>
-      <p ng-show="{{film.poster_path}}">{{film.title}} ({{film.release_date}})</p>
-    </a>
-  </div>
+      <div class="search-view" ng-repeat="film in movieSearch track by film.id">
+        <div class="search-content">
+          <a ui-sref="details({id:'{{film.id}}'})">
+            <img ng-show="{{film.poster_path}}" ng-src="https://image.tmdb.org/t/p/original/{{film.poster_path}}" />
+            <p ng-show="{{film.poster_path}}">{{film.title}} ({{film.release_date}})</p>
+          </a>
+        </div>
+      </div>
     </div>
-  </div>
-  <br>
-
-  <!-- <div ng-show="{{person.name}}">
+    <br>
+    <!-- <div ng-show="{{person.name}}">
   <hr>
 </div> -->
-
-  <br>
-  <div class="search-wrapper">
-  <div class="search-view" ng-repeat="person in person">
-    <div id="people-search" class="search-content">
-      <a ui-sref="people({id:'{{person.id}}'})">
-    <img ng-show="{{person.profile_path}}" ng-src="https://image.tmdb.org/t/p/w1280/{{person.profile_path}}"/>
-    <p id="people-name" ng-show="{{person.profile_path}}">{{person.name}}</p>
-  </a>
-</div>
-  </div>
-</div>
-
-<br>
- <div class="search-wrapper">
-  <div class="search-view" ng-repeat="theater in theaters">
-    <div id="theater-search" class="search-content">
-      <a ui-sref="theater({id:theater.theatreId})">
-    <div>
-          <p style="text-transform: uppercase; color:#EF7622">{{theater.name}}<p><br>{{theater.location.address.street}} <br> {{theater.location.address.city}} {{theater.location.address.state}},<br> {{theater.location.address.postalCode}} {{theater.location.address.country}}</li>
+    <br>
+    <div class="search-wrapper">
+      <div class="search-view" ng-repeat="person in person">
+        <div id="people-search" class="search-content">
+          <a ui-sref="people({id:'{{person.id}}'})">
+            <img ng-show="{{person.profile_path}}" ng-src="https://image.tmdb.org/t/p/w1280/{{person.profile_path}}" />
+            <p id="people-name" ng-show="{{person.profile_path}}">{{person.name}}</p>
+          </a>
+        </div>
+      </div>
     </div>
-  </a>
-</div>
-  </div>
-</div>
-
+    <br>
+    <div class="search-wrapper">
+      <div class="search-view" ng-repeat="theater in theaters">
+        <div id="theater-search" class="search-content">
+          <a ui-sref="theater({id:theater.theatreId})">
+            <div>
+              <p style="text-transform: uppercase; color:#EF7622">{{theater.name}}
+                <p><br>{{theater.location.address.street}} <br> {{theater.location.address.city}} {{theater.location.address.state}},<br>                  {{theater.location.address.postalCode}} {{theater.location.address.country}}</li>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
   </div>
 </main>
