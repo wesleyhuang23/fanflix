@@ -5,7 +5,7 @@
         <h1>{{theaterDetails.name}}</h1>
         <br>
         <a href="https://www.google.com/maps/place/{{theaterDetails.location.address.street}} {{theaterDetails.location.address.city}} {{theaterDetails.location.address.state}} {{theaterDetails.location.address.postalCode}}" target="_blank">
-        <p>{{theaterDetails.location.address.street}} <br> {{theaterDetails.location.address.city}} {{theaterDetails.location.address.state}}, {{theaterDetails.location.address.postalCode}} {{theaterDetails.location.address.country}}</p>
+        <p id="address">{{theaterDetails.location.address.street}} <br> {{theaterDetails.location.address.city}} {{theaterDetails.location.address.state}}, {{theaterDetails.location.address.postalCode}} {{theaterDetails.location.address.country}}</p>
         </a>
         <br>
         <input type="date" id="datepicker2" placeholder="choose date..." ng-model="date"/><button ng-click="getTheater(date)">Search</button><br><br>

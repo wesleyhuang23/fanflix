@@ -1,7 +1,8 @@
 angular.module('flixApp').service('mainSvc', function($http){
 
   var tmsapi = 'tx8g3c9h9ca737eh3y7sw66v';
-  var mdbapi = '8eecf03080f34edf303e14b5f1476653'
+  var mdbapi = '8eecf03080f34edf303e14b5f1476653';
+  var guideboxapi = 'rKsvLMllrJ7ebTRG3cMa5smyjptG5sDJ';
 //HOME PAGE SECTION
   //get popular for home page billboard and row
   this.getPopular = () => {
@@ -113,7 +114,7 @@ angular.module('flixApp').service('mainSvc', function($http){
   this.getGuideBox = id => {
     return $http({
       method: 'GET',
-      url: 'https://api-public.guidebox.com/v1.43/US/rKsvLMllrJ7ebTRG3cMa5smyjptG5sDJ/search/movie/id/themoviedb/' + id
+      url: 'https://api-public.guidebox.com/v1.43/US/'+ guideboxapi +'/search/movie/id/themoviedb/' + id
     }).then(response => response.data);
       console.log('guidebox', response.data)
   };
@@ -121,7 +122,7 @@ angular.module('flixApp').service('mainSvc', function($http){
   this.getGuideBoxDetails = id => {
     return $http({
       method: 'GET',
-      url: 'https://api-public.guidebox.com/v1.43/US/rKsvLMllrJ7ebTRG3cMa5smyjptG5sDJ/movie/' + id
+      url: 'https://api-public.guidebox.com/v1.43/US/'+ guideboxapi +'/movie/' + id
     }).then(response => response.data);
   };
   this.getImages = imdb_id => {
@@ -298,7 +299,7 @@ angular.module('flixApp').service('mainSvc', function($http){
   this.getTheatersInArea = function(zip){
     return $http({
       method: 'GET',
-      url: 'http://data.tmsapi.com/v1.1/theatres?zip=' + zip + '&api_key=' + tmsapi
+      url: 'http://data.tmsapi.com/v1.1/theatres?zip=' + zip + '&radius=20&api_key=' + tmsapi
     }).then(function(response){
       return response.data;
     });

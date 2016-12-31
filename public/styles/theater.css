@@ -65,3 +65,15 @@ button{
 .theater-header{
     padding-left: 35px;
 }
+#address{
+    border: 1px solid #EF7622;
+    padding: 10px;
+    width: auto; 
+    position: relative; 
+    display: inline-block; 
+    margin-bottom:10px;
+    transition: background 1s;
+}
+#address:hover{
+    background: red;
+}
