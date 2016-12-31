@@ -303,7 +303,7 @@ angular.module('flixApp').service('mainSvc', function($http){
   this.getTheater = function(theaterId, date){
     return $http({
       method: 'GET',
-      url: 'http://data.tmsapi.com/v1.1/theatres/' + 5264 + '/showings?startDate=' + date + '&imageSize=Lg&imageText=true&api_key=tx8g3c9h9ca737eh3y7sw66v'
+      url: 'http://data.tmsapi.com/v1.1/theatres/' + theaterId.id + '/showings?startDate=' + date + '&imageSize=Lg&imageText=true&api_key=tx8g3c9h9ca737eh3y7sw66v'
     }).then(response => {
       return response.data;
     })
@@ -311,7 +311,7 @@ angular.module('flixApp').service('mainSvc', function($http){
   this.getTheaterDetails = function(theaterId){
     return $http({
       method: 'GET',
-      url: 'http://data.tmsapi.com/v1.1/theatres/' + theaterId + '?api_key=tx8g3c9h9ca737eh3y7sw66v'
+      url: 'http://data.tmsapi.com/v1.1/theatres/' + theaterId.id + '?api_key=tx8g3c9h9ca737eh3y7sw66v'
     }).then(function(response){
       return response.data;
     });

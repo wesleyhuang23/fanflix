@@ -1,6 +1,16 @@
 <main>
     <div class="theater-container">
-        <h1>{{theater[0].showtimes[0].theatre.name}}</h1>
+        <div class="theater-header">
+        <h1>{{theaterDetails.name}}</h1>
+        <br>
+        <p>{{theaterDetails.location.address.street}} <br> {{theaterDetails.location.address.city}} {{theaterDetails.location.address.state}}, {{theaterDetails.location.address.postalCode}} <br> {{theaterDetails.location.address.country}}</p>
+        <br>
+        <input type="date" id="datepicker" placeholder="choose date..." ng-model="date"/><button ng-click="getTheater(date)">Search</button><br><br>
+        <h2>Showings on </h2>
+        {{day}}
+        <br>
+        <br>
+        </div>
         <div class="showing-view">
 
             <div class="showing-card" ng-repeat="movie in theater">
@@ -10,7 +20,8 @@
                     <p id="second-column">{{movie.ratings[0].code}}, {{movie.runTime.substring(2, 8)}}</p>
                     <div id="title-genre" ng-repeat="genre in movie.genres"><p>{{genre}}</p></div>
                     <br>
-                    <p>{{movie.releaseDate}}</p>
+                    
+                    <p>Release: {{movie.releaseDate}}</p>
                 </div>
                 <div class="times">
                     <p>{{movie.showtimes[0].quals}}</p>

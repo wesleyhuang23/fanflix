@@ -1,8 +1,10 @@
 .showing-card{
     border: 2px solid white;
+    margin: auto;
     margin-bottom: 20px;
     padding: 10px;
     display: flex;
+    width: 90vw;
 }
 .showing-card img{
     width: 200px;
@@ -27,9 +29,23 @@
     background-color: #EF7622;
     border-radius: 5px;
     margin-right: 10px;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
     padding: 10px;
 }
 .times div p{
     font-weight: bolder;
+    font-size: 20px;
+}
+button{
+    color:white;
+    background-color: transparent;
+    border: 1px solid white;
+    cursor: pointer;
+    margin-left: 5px;
+    padding: 5px;
+    position: relative;
+    top: -3px;
+}
+.theater-header{
+    padding-left: 35px;
 }

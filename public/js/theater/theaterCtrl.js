@@ -1,9 +1,18 @@
 angular.module('flixApp').controller('theaterCtrl', function($scope, mainSvc, $stateParams){
     console.log($stateParams);
     var theaterId = $stateParams;
-    var date = new Date().toISOString().substring(0, 10);
 
-    $scope.getTheater = function(){
+    if(!$scope.date){
+    var date = new Date().toISOString().substring(0, 10);
+    }
+
+    $scope.getTheater = function(date){
+        
+        if($scope.date){
+        var date = $scope.date.toISOString().substring(0, 10);
+        }
+        $scope.day = date;
+        console.log(date);
         mainSvc.getTheater(theaterId, date).then(function(response){
         response.sort(function (a, b) {
         if (a.title < b.title) {
@@ -17,15 +26,17 @@ angular.module('flixApp').controller('theaterCtrl', function($scope, mainSvc, $s
         });
         $scope.theater = response;
         console.log('theater detail', $scope.theater);
+        $scope.getTheaterDetails();
       });
     }
     $scope.getTheaterDetails = function(){
+        console.log(theaterId);
         mainSvc.getTheaterDetails(theaterId).then(function(response){
             $scope.theaterDetails = response;
             console.log('theater address', $scope.theaterDetails);
         })
     }
 
-    $scope.getTheater();
-    $scope.getTheaterDetails();
+    $scope.getTheater(date);
+    
 });
