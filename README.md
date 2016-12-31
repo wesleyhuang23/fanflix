@@ -37,7 +37,10 @@ Passing the theaters id as state params and displaying the specific theater with
 Users can login using facebook. This is accomplished using facebook auth. Once the user logs in they can create their own user reviews and movie list. Keep a list of the movies they want to watch, which movies are their favorites. Facebook auth was most challenging in that I had to match the users facebook id to every object they manipulate so every user would get their own list and custom pages. Making sure every call to the database was the correct was the most challenging of the project. 
 
 # Mobile Responsive
-![alt-text-1](https://github.com/wesleyhuang23/fanflix/blob/master/screenshots/mobile-responsive2.png?raw=true) ![alt-text-2](https://github.com/wesleyhuang23/fanflix/blob/master/screenshots/mobile-responsive3.png?raw=true) ![alt-text-3](https://github.com/wesleyhuang23/fanflix/blob/master/screenshots/mobile-responsive4.png?raw=true)
+Solarized dark             |  Solarized Ocean
+:-------------------------:|:-------------------------:
+![](https://github.com/wesleyhuang23/fanflix/blob/master/screenshots/mobile-responsive2.png?raw=true)  |  ![](https://github.com/wesleyhuang23/fanflix/blob/master/screenshots/mobile-responsive3.png?raw=true)
+
 The site is mobile responisve. Using media queries to change the design and positioning of most elements. 
 
 
