@@ -35,3 +35,6 @@ Passing the theaters id as state params and displaying the specific theater with
 # Login
 ![alt tag](https://github.com/wesleyhuang23/fanflix/blob/master/screenshots/login.png?raw=true)
 Users can login using facebook. This is accomplished using facebook auth. Once the user logs in they can create their own user reviews and movie list. Keep a list of the movies they want to watch, which movies are their favorites. Facebook auth was most challenging in that I had to match the users facebook id to every object they manipulate so every user would get their own list and custom pages. Making sure every call to the database was the correct was the most challenging of the project. 
+
+# Mobile Responsive
+![alt tag](https://github.com/wesleyhuang23/fanflix/blob/master/screenshots/login.png?raw=true)
