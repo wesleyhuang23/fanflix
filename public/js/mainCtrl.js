@@ -94,15 +94,15 @@ angular.module('flixApp').controller('mainCtrl', function($scope, mainSvc){
         masterComingSoon.push(response[i]);
       }
 
-      $scope.getComingSoon2 = () => {
-        mainSvc.getComingSoon2().then(response => {
-          for(var j = 0; j < response.length; j++){
-            masterComingSoon.push(response[j]);
-          }
+      // $scope.getComingSoon2 = () => {
+      //   mainSvc.getComingSoon2().then(response => {
+      //     for(var j = 0; j < response.length; j++){
+      //       masterComingSoon.push(response[j]);
+      //     }
 
-        });
-      };
-      $scope.getComingSoon2();
+      //   });
+      // };
+      // $scope.getComingSoon2();
 
 
 

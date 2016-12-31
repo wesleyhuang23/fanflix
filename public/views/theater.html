@@ -1,15 +1,18 @@
 <main>
     <div class="theater-container">
         <div class="theater-header">
+            <div>
         <h1>{{theaterDetails.name}}</h1>
         <br>
         <p>{{theaterDetails.location.address.street}} <br> {{theaterDetails.location.address.city}} {{theaterDetails.location.address.state}}, {{theaterDetails.location.address.postalCode}} <br> {{theaterDetails.location.address.country}}</p>
         <br>
-        <input type="date" id="datepicker" placeholder="choose date..." ng-model="date"/><button ng-click="getTheater(date)">Search</button><br><br>
-        <h2>Showings on </h2>
+        <input type="date" id="datepicker2" placeholder="choose date..." ng-model="date"/><button ng-click="getTheater(date)">Search</button><br><br>
+        <h2 style="color: #EF7622">Showings on </h2>
         {{day}}
+        </div>
         <br>
         <br>
+        <div id="map"></div>
         </div>
         <div class="showing-view">
 
@@ -21,12 +24,14 @@
                     <div id="title-genre" ng-repeat="genre in movie.genres"><p>{{genre}}</p></div>
                     <br>
                     
-                    <p>Release: {{movie.releaseDate}}</p>
+                    <p id=>Release: {{movie.releaseDate}}</p>
                 </div>
                 <div class="times">
+                    <p>Click on showing and get tickets on Fandango</p>
+                    <br>
                     <p>{{movie.showtimes[0].quals}}</p>
                     <br>
-                    <div ng-repeat="time in movie.showtimes"><a href="{{time.ticketURI}}"><p>{{time.dateTime | date:'hh:mma'}}</p></a></div>
+                    <div ng-repeat="time in movie.showtimes"><a href="{{time.ticketURI}}" target="_blank"><p id="showing">{{time.dateTime | date:'hh:mma'}}</p></a></div>
                 </div>
 
             </div>
