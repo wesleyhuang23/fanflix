@@ -87,3 +87,101 @@ button{
   display: flex;
   justify-content: center;
 }
+@media (max-width: 415px){
+    .theater-header{
+        flex-direction: column;
+    }
+    .showing-card{
+        display: inline-block;
+        margin-left: 7px;
+    }
+    .showing-card img{
+        width: 150px;
+    }
+    .times div p{
+        font-size: 15px;
+    }
+    .showing-card div{
+        margin-bottom: 20px;
+    }
+    #map{
+        margin-left: 25px;
+        margin-bottom: -20px;
+        width: 84%;
+    }
+}
+@media (max-width: 413px){
+    .theater-header{
+        flex-direction: column;
+    }
+    .showing-card{
+        display: inline-block;
+        margin-left: 7px;
+    }
+    .showing-card img{
+        width: 150px;
+    }
+    .times div p{
+        font-size: 15px;
+    }
+    .showing-card div{
+        margin-bottom: 20px;
+    }
+    #map{
+        margin-left: 25px;
+        margin-bottom: -20px;
+        width: 84%;
+    }
+}
+@media (max-width: 376px){
+    .theater-header{
+        flex-direction: column;
+    }
+    .showing-card{
+        display: inline-block;
+        margin-left: 7px;
+    }
+    .showing-card img{
+        width: 150px;
+    }
+    .times div p{
+        font-size: 15px;
+    }
+    .showing-card div{
+        margin-bottom: 20px;
+    }
+    #map{
+        margin-left: 25px;
+        margin-bottom: -20px;
+        width: 84%;
+    }
+}
+@media (max-width: 321px){
+    .theater-header{
+        flex-direction: column;
+    }
+    .theater-header div{
+        margin-left: -32px;
+    }
+    .theater-header h1{
+        font-size: 18px;
+    }
+    .showing-card{
+        display: inline-block;
+        margin-left: 6px;
+    }
+    .showing-card img{
+        width: 150px;
+    }
+    .times div p{
+        font-size: 15px;
+    }
+    .showing-card div{
+        margin-bottom: 20px;
+    }
+    #map{
+        margin-left: 25px;
+        margin-bottom: -20px;
+        width: 78%;
+    }
+}
