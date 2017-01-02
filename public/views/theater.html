@@ -14,7 +14,14 @@
         </div>
         <br>
         <br>
-        <div id="map"></div>
+        <div id="map">
+            <iframe id="iframe-map"
+                width="500"
+                height="350"
+                frameborder="0" style="border:0"
+                ng-src="{{trustSrc(map)}}" allowfullscreen>
+            </iframe>
+        </div>
         </div>
         <div class="showing-view">
 

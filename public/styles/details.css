@@ -519,10 +519,7 @@ iframe{
   position: relative;
   top: -2px;
 }
-#map{
-  height: 80%;
-  width: 100%;
-}
+
 #theater-view{
   overflow: scroll;
 }

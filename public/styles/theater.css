@@ -64,16 +64,26 @@ button{
 }
 .theater-header{
     padding-left: 35px;
+    display: flex;
+    flex-direction: row;
 }
 #address{
-    border: 1px solid #EF7622;
-    padding: 10px;
     width: auto; 
     position: relative; 
     display: inline-block; 
     margin-bottom:10px;
-    transition: background 1s;
 }
-#address:hover{
-    background: red;
+
+#iframe-map{
+    width: 800px;
+    height: 350px;
+    margin-right: 20px;
+    margin-top: 20px;
+}
+#map{
+  margin-left: 20px;
+  margin-bottom: 40px;
+  width: 65%;
+  display: flex;
+  justify-content: center;
 }
