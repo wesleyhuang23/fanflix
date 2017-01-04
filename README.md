@@ -12,7 +12,7 @@ Using an ng-repeat to display films that are coming soon or now playing in theat
 # Search for Movies, People or Theaters
 ![](https://github.com/wesleyhuang23/fanflix/blob/master/screenshots/search.png?raw=true) ![](https://github.com/wesleyhuang23/fanflix/blob/master/screenshots/people-search.png?raw=true) ![](https://github.com/wesleyhuang23/fanflix/blob/master/screenshots/theater-search.png?raw=true)
 
-The search view will give you realtime results as your type in the search bar. This is done by using Jquery. You can search for over 2 million titles, based on the movie database api and will be upadted when new titles are added into the database.
+The search view will give you realtime results as your type in the search bar. This is done by using Jquery. You can search for over 900,000 titles, based on the movie database api and will be upadted when new titles are added into the database.
 
 # Movie Detail
 ![alt tag](https://github.com/wesleyhuang23/fanflix/blob/master/screenshots/details.png?raw=true)
