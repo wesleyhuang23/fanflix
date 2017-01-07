@@ -139,6 +139,15 @@
   .info-right h2{
     font-size: 30px;
   }
+  .person-img{
+    width: 97.5vw;
+  }
+  .person-img div{
+    width: 97.5vw;
+  }
+  .person-img img{
+    width: 97.5vw;
+  }
 }
 @media (max-width: 413px){
     .person-wrapper{
@@ -176,6 +185,15 @@
   .info-right h2{
     font-size: 30px;
   }
+  .person-img{
+    width: 97.5vw;
+  }
+  .person-img div{
+    width: 97.5vw;
+  }
+  .person-img img{
+    width: 97.5vw;
+  }
 }
 @media (max-width: 376px){
   .person-wrapper{
@@ -212,6 +230,15 @@
   .info-right h2{
     font-size: 30px;
   }
+  .person-img{
+    width: 97.5vw;
+  }
+  .person-img div{
+    width: 97.5vw;
+  }
+  .person-img img{
+    width: 97.5vw;
+  }
 }
   @media (max-width: 321px){
     .person-wrapper{
@@ -247,6 +274,15 @@
   }
   .info-right h2{
     font-size: 30px;
+  }
+  .person-img{
+    width: 97vw;
+  }
+  .person-img div{
+    width: 97vw;
+  }
+  .person-img img{
+    width: 97vw;
   }
 }
 
