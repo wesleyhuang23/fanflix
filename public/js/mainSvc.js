@@ -110,6 +110,12 @@ angular.module('flixApp').service('mainSvc', function($http){
     }).then(response => response.data.results);
       console.log(response.data);
   };
+  this.getRecommendations = id => {
+    return $http({
+      method: 'GET',
+      url: 'https://api.themoviedb.org/3/movie/' + id + '/recommendations?api_key='+ mdbapi +'&language=en-US&page=1'
+    }).then(response => response.data.results);
+  }
   //getting guidebox info using mdb id
   this.getGuideBox = id => {
     return $http({

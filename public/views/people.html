@@ -18,8 +18,8 @@
       <h3 id="hide-people">Birthday</h3>
       <p id="hide-people"> {{personDetail.birthday}}</p>
       <br id="hide-people">
-      <h3 ng-show="{{personDetail.deathday}}" id="hide-people">Date of Death</h3>
-      <p ng-show="{{personDetail.deathday}}" id="hide-people"> {{personDetail.deathday}}</p>
+      <h3 ng-show="personDetail.deathday" id="hide-people">Date of Death</h3>
+      <p ng-show="personDetail.deathday" id="hide-people"> {{personDetail.deathday}}</p>
       <h3 id="hide-people">Number of Credits</h3>
       <p id="hide-people">{{credNum}}</p>
     </div>
@@ -37,8 +37,8 @@
         <div id="known" class="credit-wrapper" ng-repeat="credit in knownFor | filter:titleFilter">
           <a ui-sref="details({id:'{{credit.id}}'})">
           <div class="credit-view">
-            <img ng-src="https://image.tmdb.org/t/p/w640{{credit.poster_path}}" ng-show="{{credit.poster_path}}"/>
-            <p ng-show="{{credit.poster_path}}">{{credit.title}}<br> ({{credit.release_date}})</p>
+            <img ng-src="https://image.tmdb.org/t/p/w640{{credit.poster_path}}" ng-show="credit.poster_path"/>
+            <p ng-show="credit.poster_path">{{credit.title}}<br> ({{credit.release_date}})</p>
           </div>
         </a>
         </div>
@@ -48,26 +48,22 @@
       <div class="person-img" ng-hide="!personImg">
           <div ng-repeat="img in personImg" ng-hide="!personImg">
             <a ui-sref="details({id:'{{img.media.id}}'})">
-            <img src="https://image.tmdb.org/t/p/original/{{img.file_path}}"/>
-            <figcaption>{{img.media.title}}</figcaption>
+            <img src="https://image.tmdb.org/t/p/original{{img.file_path}}" alt="{{img.media.title}}"/>
             </a>
           </div>
           <div ng-repeat="img in personImg2" ng-hide="!personImg2">
             <a ui-sref="details({id:'{{img.media.id}}'})">
-            <img src="https://image.tmdb.org/t/p/original/{{img.file_path}}"/>
-            <figcaption>{{img.media.title}}</figcaption>
+            <img src="https://image.tmdb.org/t/p/original{{img.file_path}}" alt="{{img.media.title}}"/>
             </a>
           </div>
           <div ng-repeat="img in personImg3" ng-hide="!personImg3">
             <a ui-sref="details({id:'{{img.media.id}}'})">
-            <img src="https://image.tmdb.org/t/p/original/{{img.file_path}}"/>
-            <figcaption>{{img.media.title}}</figcaption>
+            <img src="https://image.tmdb.org/t/p/original{{img.file_path}}" alt="{{img.media.title}}"/>
             </a>
           </div>
           <div ng-repeat="img in personImg4" ng-hide="!personImg4">
             <a ui-sref="details({id:'{{img.media.id}}'})">
-            <img src="https://image.tmdb.org/t/p/original/{{img.file_path}}"/>
-            <figcaption>{{img.media.title}}</figcaption>
+            <img src="https://image.tmdb.org/t/p/original{{img.file_path}}" alt="{{img.media.title}}"/>
             </a>
           </div>
       </div>
@@ -84,8 +80,8 @@
         <div class="credit-wrapper" ng-repeat="credit in personCast | filter:titleFilter">
           <a ui-sref="details({id:'{{credit.id}}'})">
           <div class="credit-view">
-            <img ng-src="https://image.tmdb.org/t/p/w640{{credit.poster_path}}" ng-show="{{credit.poster_path}}"/>
-            <p ng-show="{{credit.poster_path}}">{{credit.title}}<br>({{credit.character}})<br> ({{credit.release_date}})</p>
+            <img ng-src="https://image.tmdb.org/t/p/w640{{credit.poster_path}}" ng-show="credit.poster_path"/>
+            <p ng-show="credit.poster_path">{{credit.title}}<br>({{credit.character}})<br> ({{credit.release_date}})</p>
           </div>
         </a>
         </div>
@@ -97,8 +93,8 @@
         <div class="credit-wrapper" ng-repeat="film in crew | filter:titleFilter">
           <a ui-sref="details({id:'{{film.id}}'})">
           <div class="credit-view">
-            <img ng-src="https://image.tmdb.org/t/p/w640{{film.poster_path}}" ng-show="{{film.poster_path}}"/>
-            <p ng-show="{{film.poster_path}}">{{film.title}}<br>({{film.job}})</p>
+            <img ng-src="https://image.tmdb.org/t/p/w640{{film.poster_path}}" ng-show="film.poster_path"/>
+            <p ng-show="film.poster_path">{{film.title}}<br>({{film.job}})</p>
           </div>
         </a>
         </div>

@@ -259,6 +259,20 @@
 </div>
 <br>
 <br>
+<h3 id="section">RECOMMENDATIONS</h3>
+<br>
+<div class="similar-container">
+  <div class="similar-wrapper" ng-repeat="film in recommendations">
+    <a ui-sref="details({id:'{{film.id}}'})">
+    <div class="similar" ng-show="film.backdrop_path">
+    <img src="https://image.tmdb.org/t/p/original{{film.backdrop_path}}"/>
+    <h4>{{film.title}}</h4>
+  </div>
+</a>
+  </div>
+</div>
+<br>
+<br>
 <h3 id="section">SIMILAR MOVIES</h3>
 <br>
 <div class="similar-container">

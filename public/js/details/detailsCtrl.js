@@ -38,6 +38,7 @@ var fav;
       $scope.getVideos(imdb_id);
       $scope.getCast(imdb_id);
       $scope.getSimilars(imdb_id);
+      $scope.getRecommendations(id);
       $scope.getImages(imdb_id);
       $scope.getGuideBox(response.id);
       $scope.getUserReviews(response.id);
@@ -106,6 +107,12 @@ var fav;
       console.log('similar', $scope.similar);
 
     });
+  }
+  $scope.getRecommendations = id => {
+    mainSvc.getRecommendations(id).then(function(response){
+      $scope.recommendations = response;
+      console.log('recommendations', $scope.recommendations);
+    })
   }
   $scope.getGuideBox = id => {
     console.log(id);
@@ -238,49 +245,4 @@ var fav;
       $scope.getWatched();
     });
   }
-  // google maps
-  // function initMap() {
-  //       var map = new google.maps.Map(document.getElementById('map'), {
-  //         center: {lat: -34.397, lng: 150.644},
-  //         zoom: 6
-  //       });
-  //       var infoWindow = new google.maps.InfoWindow({map: map});
-
-  //       // Try HTML5 geolocation.
-  //       if (navigator.geolocation) {
-  //         navigator.geolocation.getCurrentPosition(function(position) {
-  //           var pos = {
-  //             lat: position.coords.latitude,
-  //             lng: position.coords.longitude
-  //           };
-
-  //           infoWindow.setPosition(pos);
-  //           infoWindow.setContent('Location found.');
-  //           map.setCenter(pos);
-  //         }, function() {
-  //           handleLocationError(true, infoWindow, map.getCenter());
-  //         });
-  //       } else {
-  //         // Browser doesn't support Geolocation
-  //         handleLocationError(false, infoWindow, map.getCenter());
-  //       }
-  //     }
-
-  //     function handleLocationError(browserHasGeolocation, infoWindow, pos) {
-  //       infoWindow.setPosition(pos);
-  //       infoWindow.setContent(browserHasGeolocation ?
-  //                             'Error: The Geolocation service failed.' :
-  //                             'Error: Your browser doesn\'t support geolocation.');
-  //     }
-  // function initMap() {
-  //       var uluru = {lat: -25.363, lng: 131.044};
-  //       var map = new google.maps.Map(document.getElementById('map'), {
-  //         zoom: 4,
-  //         center: uluru
-  //       });
-  //       var marker = new google.maps.Marker({
-  //         position: uluru,
-  //         map: map
-  //       });
-  //     }
 });
