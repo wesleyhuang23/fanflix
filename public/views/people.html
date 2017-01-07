@@ -43,16 +43,28 @@
         </a>
         </div>
       </div>
-      <h3>Images</h3>
-      <br>
-      <div class="person-img">
-          <div ng-repeat="img in personImg">
+      <h3 ng-hide="!personImg">Images</h3>
+      <br ng-hide="!personImg">
+      <div class="person-img" ng-hide="!personImg">
+          <div ng-repeat="img in personImg" ng-hide="!personImg">
             <a ui-sref="details({id:'{{img.media.id}}'})">
             <img src="https://image.tmdb.org/t/p/original/{{img.file_path}}"/>
             <figcaption>{{img.media.title}}</figcaption>
             </a>
           </div>
-          <div ng-repeat="img in personImg2">
+          <div ng-repeat="img in personImg2" ng-hide="!personImg2">
+            <a ui-sref="details({id:'{{img.media.id}}'})">
+            <img src="https://image.tmdb.org/t/p/original/{{img.file_path}}"/>
+            <figcaption>{{img.media.title}}</figcaption>
+            </a>
+          </div>
+          <div ng-repeat="img in personImg3" ng-hide="!personImg3">
+            <a ui-sref="details({id:'{{img.media.id}}'})">
+            <img src="https://image.tmdb.org/t/p/original/{{img.file_path}}"/>
+            <figcaption>{{img.media.title}}</figcaption>
+            </a>
+          </div>
+          <div ng-repeat="img in personImg4" ng-hide="!personImg4">
             <a ui-sref="details({id:'{{img.media.id}}'})">
             <img src="https://image.tmdb.org/t/p/original/{{img.file_path}}"/>
             <figcaption>{{img.media.title}}</figcaption>

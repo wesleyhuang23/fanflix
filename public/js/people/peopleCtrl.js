@@ -65,6 +65,46 @@ angular.module('flixApp').controller('peopleCtrl', function($scope, $stateParams
     });
   }
   $scope.getPersonImages2(person_id);
+
+  $scope.getPersonImages3 = (person_id) => {
+    mainSvc.getPersonImages3(person_id).then(function(response){
+      let personBackdrops3 = response.filter(function(response){
+        return response.image_type === 'backdrop';
+      });
+      //sorts images by movie title
+      personBackdrops3.sort(function (a, b) {
+        if (a.media.title > b.media.title) {
+          return 1;
+        }
+        if (a.media.title < b.media.title) {
+          return -1;
+        }
+        return 0;
+        });
+      $scope.personImg3 = personBackdrops3;
+    });
+  }
+  $scope.getPersonImages3(person_id);
+
+  $scope.getPersonImages4 = (person_id) => {
+    mainSvc.getPersonImages4(person_id).then(function(response){
+      let personBackdrops4 = response.filter(function(response){
+        return response.image_type === 'backdrop';
+      });
+      //sorts images by movie title
+      personBackdrops4.sort(function (a, b) {
+        if (a.media.title > b.media.title) {
+          return 1;
+        }
+        if (a.media.title < b.media.title) {
+          return -1;
+        }
+        return 0;
+        });
+      $scope.personImg4 = personBackdrops4;
+    });
+  }
+  $scope.getPersonImages4(person_id);
   
 
   $scope.getPersonMovieCredits = person_id => {

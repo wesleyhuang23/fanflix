@@ -352,6 +352,24 @@ angular.module('flixApp').service('mainSvc', function($http){
     }).then(response => {
       console.log('people img 2', response.data.results);
       return response.data.results;
-  });
-  }
+    });
+  };
+  this.getPersonImages3 = person_id => {
+    return $http({
+      method: 'GET',
+      url: 'https://api.themoviedb.org/3/person/'+ person_id +'/tagged_images?api_key=' + mdbapi +'&language=en-US&page=3'
+    }).then(response => {
+      console.log('people img 3', response.data.results);
+      return response.data.results;
+    });
+  };
+  this.getPersonImages4 = person_id => {
+    return $http({
+      method: 'GET',
+      url: 'https://api.themoviedb.org/3/person/'+ person_id +'/tagged_images?api_key=' + mdbapi +'&language=en-US&page=4'
+    }).then(response => {
+      console.log('people img 3', response.data.results);
+      return response.data.results;
+    });
+  };
 });
