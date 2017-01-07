@@ -39,7 +39,7 @@
   display: inline-block;
 }
 .credit-view{
-  margin-bottom: 60px;
+  margin-bottom: 50px;
 }
 .credit-view img{
   width: 176px;
@@ -70,6 +70,8 @@
 }
 .person-img figcaption{
   text-align: center;
+  color: gray;
+  opacity: .3;
 }
 @media (max-width: 1025px){
   .person-wrapper{

@@ -93,7 +93,7 @@
     <br>
     <div class="platforms-container">
       <div class="platforms" ng-repeat="platform in guideboxPurchases">
-        <a href="{{platform.link}}"/>
+        <a href="{{platform.link}}" target="_blank"/>
         <img src="{{platform.img}}"/>
       </a>
       </div>
@@ -220,7 +220,7 @@
 <br>
 <div class="backdrops-container">
   <div class="backdrops" ng-repeat="photo in backDrops">
-    <a href="https://image.tmdb.org/t/p/original{{photo.file_path}}"/>
+    <a href="https://image.tmdb.org/t/p/original{{photo.file_path}}" target="_blank"/>
     <img src="https://image.tmdb.org/t/p/original{{photo.file_path}}"/>
   </a>
   </div>
