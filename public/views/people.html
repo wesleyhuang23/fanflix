@@ -4,7 +4,7 @@
     <div class="person-wrapper">
     <div class="picture">
       <br>
-      <img ng-src="https://image.tmdb.org/t/p/w640/{{personDetail.profile_path}}" ng-show="personDetail.profile_path"/>
+      <img ng-src="https://image.tmdb.org/t/p/w640{{personDetail.profile_path}}" ng-show="personDetail.profile_path"/>
       <div id="hide-people" class="first-letter" ng-show="!personDetail.profile_path">
         <h1>{{personDetail.firstLetter}}</h1>
       </div>
@@ -37,12 +37,29 @@
         <div id="known" class="credit-wrapper" ng-repeat="credit in knownFor | filter:titleFilter">
           <a ui-sref="details({id:'{{credit.id}}'})">
           <div class="credit-view">
-            <img ng-src="https://image.tmdb.org/t/p/w640/{{credit.poster_path}}" ng-show="{{credit.poster_path}}"/>
+            <img ng-src="https://image.tmdb.org/t/p/w640{{credit.poster_path}}" ng-show="{{credit.poster_path}}"/>
             <p ng-show="{{credit.poster_path}}">{{credit.title}}<br> ({{credit.release_date}})</p>
           </div>
         </a>
         </div>
       </div>
+      <h3>Images</h3>
+      <br>
+      <div class="person-img">
+          <div ng-repeat="img in personImg">
+            <a ui-sref="details({id:'{{img.media.id}}'})">
+            <img src="https://image.tmdb.org/t/p/original/{{img.file_path}}"/>
+            <figcaption>{{img.media.title}}</figcaption>
+            </a>
+          </div>
+          <div ng-repeat="img in personImg2">
+            <a ui-sref="details({id:'{{img.media.id}}'})">
+            <img src="https://image.tmdb.org/t/p/original/{{img.file_path}}"/>
+            <figcaption>{{img.media.title}}</figcaption>
+            </a>
+          </div>
+      </div>
+      <br>
       <h3>Credits</h3>
       <br>
       <input id="person-input" type="text" placeholder="search credits" ng-model="titleFilter.title"/>
@@ -55,8 +72,8 @@
         <div class="credit-wrapper" ng-repeat="credit in personCast | filter:titleFilter">
           <a ui-sref="details({id:'{{credit.id}}'})">
           <div class="credit-view">
-            <img ng-src="https://image.tmdb.org/t/p/w640/{{credit.poster_path}}" ng-show="{{credit.poster_path}}"/>
-            <p ng-show="{{credit.poster_path}}">{{credit.title}}<br> ({{credit.release_date}})</p>
+            <img ng-src="https://image.tmdb.org/t/p/w640{{credit.poster_path}}" ng-show="{{credit.poster_path}}"/>
+            <p ng-show="{{credit.poster_path}}">{{credit.title}}<br>({{credit.character}})<br> ({{credit.release_date}})</p>
           </div>
         </a>
         </div>
@@ -68,7 +85,7 @@
         <div class="credit-wrapper" ng-repeat="film in crew | filter:titleFilter">
           <a ui-sref="details({id:'{{film.id}}'})">
           <div class="credit-view">
-            <img ng-src="https://image.tmdb.org/t/p/w640/{{film.poster_path}}" ng-show="{{film.poster_path}}"/>
+            <img ng-src="https://image.tmdb.org/t/p/w640{{film.poster_path}}" ng-show="{{film.poster_path}}"/>
             <p ng-show="{{film.poster_path}}">{{film.title}}<br>({{film.job}})</p>
           </div>
         </a>

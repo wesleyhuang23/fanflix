@@ -39,7 +39,7 @@
   display: inline-block;
 }
 .credit-view{
-  margin-bottom: 50px;
+  margin-bottom: 60px;
 }
 .credit-view img{
   width: 176px;
@@ -54,6 +54,22 @@
 }
 #known{
   padding-right: 10px;
+}
+.person-img{
+  width: 60vw;
+  display: flex;
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
+.person-img div{
+  width: 450px;
+  margin-bottom: 20px;
+}
+.person-img img{
+  width: 450px;
+}
+.person-img figcaption{
+  text-align: center;
 }
 @media (max-width: 1025px){
   .person-wrapper{

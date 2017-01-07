@@ -67,17 +67,8 @@ angular.module('flixApp').controller('mainCtrl', function($scope, mainSvc){
         if (a.release_date > b.release_date) {
           return -1;
         }
-  // a must be equal to b
         return 0;
         });
-
-        // var result = response.filter(response => {
-        //   return response.vote_count > 1;
-        // });
-        // var result2 = [];
-        // for(var i = 0; i < 7; i++){
-        //   result2.push(result[i]);
-        // }
 
       $scope.nowPlaying = response;
       console.log('now playing', $scope.nowPlaying);
@@ -94,18 +85,6 @@ angular.module('flixApp').controller('mainCtrl', function($scope, mainSvc){
         masterComingSoon.push(response[i]);
       }
 
-      // $scope.getComingSoon2 = () => {
-      //   mainSvc.getComingSoon2().then(response => {
-      //     for(var j = 0; j < response.length; j++){
-      //       masterComingSoon.push(response[j]);
-      //     }
-
-      //   });
-      // };
-      // $scope.getComingSoon2();
-
-
-
       masterComingSoon.sort(function (a, b) {
         if (a.release_date < b.release_date) {
           return 1;
@@ -113,17 +92,8 @@ angular.module('flixApp').controller('mainCtrl', function($scope, mainSvc){
         if (a.release_date > b.release_date) {
           return -1;
         }
-  // a must be equal to b
         return 0;
         });
-
-        // var result = response.filter(response => {
-        //   return response.vote_count > 1;
-        // });
-        // var result2 = [];
-        // for(var i = 0; i < 7; i++){
-        //   result2.push(result[i]);
-        // }
       $scope.comingSoon = masterComingSoon;
 
       console.log('master coming soon', $scope.comingSoon);

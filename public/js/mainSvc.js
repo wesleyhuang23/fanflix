@@ -335,8 +335,23 @@ angular.module('flixApp').service('mainSvc', function($http){
   };
   this.getKnownFor = person_name => {
     return $http({
-    method: 'GET',
-    url: 'https://api.themoviedb.org/3/search/person?api_key='+ mdbapi +'&language=en-US&query=' + person_name + '&page=1&include_adult=false'
-  }).then(response => response.data);
-};
+      method: 'GET',
+      url: 'https://api.themoviedb.org/3/search/person?api_key='+ mdbapi +'&language=en-US&query=' + person_name + '&page=1&include_adult=false'
+    }).then(response => response.data);
+  };
+  this.getPersonImages = person_id => {
+    return $http({
+      method:'GET',
+      url: 'https://api.themoviedb.org/3/person/'+ person_id +'/tagged_images?api_key=' + mdbapi +'&language=en-US&page=1'
+    }).then( response => response.data.results);
+  };
+  this.getPersonImages2 = person_id => {
+    return $http({
+      method: 'GET',
+      url: 'https://api.themoviedb.org/3/person/'+ person_id +'/tagged_images?api_key=' + mdbapi +'&language=en-US&page=2'
+    }).then(response => {
+      console.log('people img 2', response.data.results);
+      return response.data.results;
+  });
+  }
 });
