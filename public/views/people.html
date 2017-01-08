@@ -53,7 +53,7 @@
           <div ng-repeat="img in personImg" ng-hide="!personImg">
             <a ui-sref="details({id:'{{img.media.id}}'})">
             <img src="https://image.tmdb.org/t/p/original{{img.file_path}}" alt="{{img.media.title}}"/>
-            <figcaption>{{img.media.title}}</figcaption>
+            <figcaption ng-hide="!img.media.title">{{img.media.title}}</figcaption>
             </a>
           </div>
           <div ng-repeat="img in personImg2" ng-hide="!personImg2">

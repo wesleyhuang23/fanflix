@@ -1,15 +1,17 @@
 .person-bg{
   width: 100vw;
-  height: 680px;
+  height: 800px;
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
   position: absolute;
-  opacity: .3;
+  opacity: .25;
 }
 .person-shadow{
   width: 100vw;
-  height: 680px;
-  box-shadow: inset 200px -75px 234em black;
+  height: 800px;
+  box-shadow: inset 20px -55px 10em black;
 }
 .person-container{
   /*border: 1px solid green;*/
@@ -76,7 +78,6 @@
 }
 .person-img div{
   width: 450px;
-  margin-bottom: 20px;
 }
 .person-img img{
   width: 450px;
@@ -84,8 +85,10 @@
 .person-img figcaption{
   text-align: center;
   font-weight: lighter;
-  color: gray;
-  opacity: .3;
+  position: relative;
+  top: -32px;
+  padding: 5px;
+  background-color: rgba(0,0,0,0.5);
 }
 @media (max-width: 1025px){
   .person-wrapper{
