@@ -17,7 +17,7 @@ The search view will give you realtime results as your type in the search bar. T
 # Movie Details
 ![alt tag](https://github.com/wesleyhuang23/fanflix/blob/master/screenshots/details.png?raw=true)
 ![alt tag](https://github.com/wesleyhuang23/fanflix/blob/master/screenshots/lead%20cast%20and%20trailer.png?raw=true)
-Every movie you can search for on Fanflix will have its own detail pages. This applies to all 2 million possible titles. As you scroll you get more information about the movie as well as trailers, high resolution backdrops that make great desktop wallpapers and user reviews. Under the poster if the film is not currently in theaters, but is availible on itunes or google play, it will display the two platform indicators. These will take you to their site where users can make their purchase of the movie. Scrolling to the bottom reveals movies that are similar and recommendations by users.
+Every movie you can search for on Fanflix will have its own detail pages. This applies to all 2 million possible titles. As you scroll you get more information about the movie as well as trailers, high resolution backdrops that make great desktop wallpapers and user reviews. Under the poster if the film is not currently in theaters, but is availible on itunes or google play, it will display the two platform indicators. These will take you to their site where users can make their purchase of the movie. Scrolling to the bottom reveals movies that are similar and recommendations by users.sdflknlfvljndfvnjdfvnnvnvnn
 
 # Creating Movie List
 ![alt tag](https://github.com/wesleyhuang23/fanflix/blob/master/screenshots/mylist2.png)
@@ -47,9 +47,9 @@ Passing the theaters id as state params and displaying the specific theater with
 Users can login using facebook. This is accomplished using facebook auth. Once the user logs in they can create their own user reviews and movie list. Keep a list of the movies they want to watch, which movies are their favorites. Facebook auth was most challenging in that I had to match the users facebook id to every object they manipulate so every user would get their own list and custom pages. Making sure every call to the database was the correct was the most challenging of the project. 
 
 # Mobile Responsive
- Backdrop and Poster       |Overview                   | Search                    | People                    | People Body of Work
-:-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:
-![](https://github.com/wesleyhuang23/fanflix/blob/master/screenshots/mobile-responsive2.png?raw=true)  |  ![](https://github.com/wesleyhuang23/fanflix/blob/master/screenshots/mobile-responsive3.png?raw=true) | ![](https://github.com/wesleyhuang23/fanflix/blob/master/screenshots/starwars.png) | ![](https://github.com/wesleyhuang23/fanflix/blob/master/screenshots/leo1.png) | ![](https://github.com/wesleyhuang23/fanflix/blob/master/screenshots/leo2.png) 
+ Backdrop and Poster       |Overview                   | Search                    | People                    
+:-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:
+![](https://github.com/wesleyhuang23/fanflix/blob/master/screenshots/mobile-responsive2.png?raw=true)  |  ![](https://github.com/wesleyhuang23/fanflix/blob/master/screenshots/mobile-responsive3.png?raw=true) | ![](https://github.com/wesleyhuang23/fanflix/blob/master/screenshots/starwars.png) | ![](https://github.com/wesleyhuang23/fanflix/blob/master/screenshots/leo1.png)
 
 The site is mobile responisve. Using media queries to change the design and positioning of most elements. 
 
