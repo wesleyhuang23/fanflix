@@ -8,7 +8,7 @@ The Billboard changes based on the most popular film, based on the mdb api.
 # Carousel
 ![alt tag](https://github.com/wesleyhuang23/fanflix/blob/master/screenshots/slider.png?raw=true)
 ![alt tag](https://github.com/wesleyhuang23/fanflix/blob/master/screenshots/watchlist-home.png)
-Using an ng-repeat to display films that are coming soon or now playing in theaters. When hovered over the poster will scale up and display a summary of the movie on top of the poster. When the user creates their own watchlist of movies it will appear as the first carosel. So when they login they will be greeted by the movie that they need to watch.
+Using an ng-repeat to display films that are coming soon or now playing in theaters. When hovered over the poster will scale up and display a summary of the movie on top of the poster dimming the background so the text can be read. When the user creates their own watchlist of movies it will appear as the first carosel. So when they login they will be greeted by the movie that they need to watch. When the user logs out the watchlist carousel disapears.
 
 # Search for Movies, People or Theaters
 ![](https://github.com/wesleyhuang23/fanflix/blob/master/screenshots/search.png?raw=true) ![](https://github.com/wesleyhuang23/fanflix/blob/master/screenshots/people-search.png?raw=true) ![](https://github.com/wesleyhuang23/fanflix/blob/master/screenshots/theater-search.png?raw=true)
@@ -47,7 +47,7 @@ Passing the theaters id as state params and displaying the specific theater with
 Users can login using facebook. This is accomplished using facebook auth. Once the user logs in they can create their own user reviews and movie list. Keep a list of the movies they want to watch, which movies are their favorites. Facebook auth was most challenging in that I had to match the users facebook id to every object they manipulate so every user would get their own list and custom pages. Making sure every call to the database was the correct was the most challenging of the project. 
 
 # Mobile Responsive
- Backdrop and Poster       |Overview                   | Search                    | People                    
+ Movie Details             |Overview                   | Search                    | People                    
 :-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:
 ![](https://github.com/wesleyhuang23/fanflix/blob/master/screenshots/mobile-responsive2.png?raw=true)  |  ![](https://github.com/wesleyhuang23/fanflix/blob/master/screenshots/mobile-responsive3.png?raw=true) | ![](https://github.com/wesleyhuang23/fanflix/blob/master/screenshots/starwars.png) | ![](https://github.com/wesleyhuang23/fanflix/blob/master/screenshots/leo1.png)
 
