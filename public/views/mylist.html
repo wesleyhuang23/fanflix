@@ -5,6 +5,7 @@
   <h2 id="watchlist">Watchlist</h2>
   <hr>
   <div class="watch-container">
+    <div>
     <div class="watch-wrapper" ng-repeat="film in watch | filter:titleFilter">
 
 
@@ -33,11 +34,13 @@
       </div>
 
     </div>
+    </div>
   </div>
 
   <h2>Watched</h2>
   <hr>
   <div class="watch-container">
+    <div>
     <div class="watch-wrapper" ng-repeat="film in watched | filter:titleFilter">
 
 
@@ -68,11 +71,13 @@
       </div>
 
     </div>
+    </div>
   </div>
 
   <h2 id="favorites">My Favorites</h2>
   <hr>
   <div class="fav-container">
+    <div>
     <div class="fav-wrapper" ng-repeat="film in favorites | filter:titleFilter">
       <div class="fav-view">
         <div class="black-bg">
@@ -95,6 +100,7 @@
         </a>
         <p>{{film.title}}</p>
       </div>
+    </div>
     </div>
   </div>
 </main>

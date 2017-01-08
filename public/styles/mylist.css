@@ -31,6 +31,8 @@
 .watch-container{
   margin-top: 10px;
   margin-bottom: 60px;
+  display: flex;
+  justify-content: center;
 }
 .watch-wrapper{
   display: inline;
@@ -305,6 +307,8 @@
   }
   .fav-container{
     text-align: center;
+    display: flex;
+    justify-content: center;
   }
   
   .black-bg{
