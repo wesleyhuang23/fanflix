@@ -1,9 +1,22 @@
-
+.person-bg{
+  width: 100vw;
+  height: 680px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  opacity: .3;
+}
+.person-shadow{
+  width: 100vw;
+  height: 680px;
+  box-shadow: inset 200px -75px 234em black;
+}
 .person-container{
   /*border: 1px solid green;*/
   display: flex;
   justify-content: center;
-    background-color: #141414;
+    /*background-color: #141414;*/
+    background: transparent;
     position: relative;
 }
 .person-wrapper{
@@ -70,6 +83,7 @@
 }
 .person-img figcaption{
   text-align: center;
+  font-weight: lighter;
   color: gray;
   opacity: .3;
 }

@@ -23,8 +23,11 @@ angular.module('flixApp').controller('peopleCtrl', function($scope, $stateParams
     });
   }
   
-  $scope.getPersonImages = (person_id) => {
+  $scope.getPersonImages = (person_id, cycle) => {
     mainSvc.getPersonImages(person_id).then(response => {
+      
+      cycle(response);
+
       let personBackdrops1 = response;
       let personBackdrops = personBackdrops1.filter(function(personBackdrops1){
         return personBackdrops1.image_type === 'backdrop'
@@ -43,8 +46,20 @@ angular.module('flixApp').controller('peopleCtrl', function($scope, $stateParams
       $scope.personImg = personBackdrops;
       console.log('person img', $scope.personImg);
     })
-  }
-  $scope.getPersonImages(person_id);
+  } 
+  ;
+  function cycle(response){
+    var count;
+        if(count === response.length - 1){
+          count = 0;
+        } else if(count === 0){
+          count = count + 1;
+        }
+        console.log(count);
+      $scope.personBG = response[3]
+      console.log('bg', $scope.personBG);
+      }
+  $scope.getPersonImages(person_id, cycle);
 
   $scope.getPersonImages2 = (person_id) => {
     mainSvc.getPersonImages2(person_id).then(function(response){

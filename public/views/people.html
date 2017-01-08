@@ -1,4 +1,8 @@
 <main>
+  <div class="person-bg" style="background-image: url('https://image.tmdb.org/t/p/w640{{personBG.file_path}}')">
+  <div class="person-shadow">
+    </div>
+  </div>
 
   <div class="person-container">
     <div class="person-wrapper">
@@ -49,21 +53,25 @@
           <div ng-repeat="img in personImg" ng-hide="!personImg">
             <a ui-sref="details({id:'{{img.media.id}}'})">
             <img src="https://image.tmdb.org/t/p/original{{img.file_path}}" alt="{{img.media.title}}"/>
+            <figcaption>{{img.media.title}}</figcaption>
             </a>
           </div>
           <div ng-repeat="img in personImg2" ng-hide="!personImg2">
             <a ui-sref="details({id:'{{img.media.id}}'})">
             <img src="https://image.tmdb.org/t/p/original{{img.file_path}}" alt="{{img.media.title}}"/>
+            <figcaption>{{img.media.title}}</figcaption>
             </a>
           </div>
           <div ng-repeat="img in personImg3" ng-hide="!personImg3">
             <a ui-sref="details({id:'{{img.media.id}}'})">
             <img src="https://image.tmdb.org/t/p/original{{img.file_path}}" alt="{{img.media.title}}"/>
+            <figcaption>{{img.media.title}}</figcaption>
             </a>
           </div>
           <div ng-repeat="img in personImg4" ng-hide="!personImg4">
             <a ui-sref="details({id:'{{img.media.id}}'})">
             <img src="https://image.tmdb.org/t/p/original{{img.file_path}}" alt="{{img.media.title}}"/>
+            <figcaption>{{img.media.title}}</figcaption>
             </a>
           </div>
       </div>
