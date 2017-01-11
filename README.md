@@ -36,6 +36,7 @@ Clicking on the full cast and crew button on the details page will list the full
 
 # People
 ![alt tag](https://github.com/wesleyhuang23/fanflix/blob/master/screenshots/emma%20with%20background.png)
+![alt tag](https://github.com/wesleyhuang23/fanflix/blob/master/screenshots/emma-cast.png)
 Clicking on an actors photo will take you to their detail page where it shows their bio and their body of work. Images of the actors from the movies they play will apear right after the known work row and clicking the image will take you to the actual movie details page. Passing in the actors id into state params. 
 
 # Theater Showtimes
