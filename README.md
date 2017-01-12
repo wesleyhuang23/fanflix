@@ -2,7 +2,7 @@
 Find movies with detailed movie information and trailers. Write your own reviews and create your personal watchlist. Built in AngularJS, Node, SQL
 
 # Billboard
-![alt tag](https://github.com/wesleyhuang23/fanflix/blob/master/screenshots/billboard.png?raw=true)
+![alt tag](https://github.com/wesleyhuang23/fanflix/blob/master/screenshots/fanflix.jpg?raw=true)
 The Billboard changes based on the most popular film, based on the mdb api.
 
 # Carousel
