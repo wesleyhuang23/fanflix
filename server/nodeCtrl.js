@@ -155,5 +155,11 @@ module.exports = {
     db.update_review([req.params.mdb_id, req.params.fb_id], function(err, reviews){
       res.send(reviews);
     });
+  },
+  get_users: function(req, res, next){
+    console.log(req.params);
+    db.get_users([req.params.name], function(err, users){
+      res.send(users);
+    });
   }
 };

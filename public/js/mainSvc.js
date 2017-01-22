@@ -159,6 +159,15 @@ angular.module('flixApp').service('mainSvc', function($http){
     }).then(response => response.data.results);
     //function(response);
   };
+  this.getUsers = term => {
+    return $http({
+      method:'GET',
+      url: '/users/' + term
+    }).then(function(response){
+      console.log('users', response);
+      return response.data;
+    });
+  }
 //DATABASE STUFF
   //adding movie to favorites list
   this.addToFav = fav => {

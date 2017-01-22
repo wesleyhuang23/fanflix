@@ -106,6 +106,7 @@ angular.module('flixApp').controller('mainCtrl', function($scope, mainSvc){
   $scope.getSearch = term => {
     $scope.getPeople(term);
     $scope.getTheatersInArea(term);
+    $scope.getUsers(term);
     console.log('search', term);
     mainSvc.getSearchMovie(term).then(response => {
       for(var i = 0; i < response.length; i++){
@@ -127,6 +128,12 @@ angular.module('flixApp').controller('mainCtrl', function($scope, mainSvc){
       $scope.theaters = response;
       console.log('theaters', $scope.theaters);
     })
+  }
+  $scope.getUsers = term => {
+    console.log('get users', term);
+    mainSvc.getUsers(term).then(function(response){
+      $scope.users = response;
+    });
   }
 
   //MYLIST VIEW

@@ -115,6 +115,9 @@ app.put('/update_watched', nodeCtrl.update_to_watched);
 app.delete('/delete/:id/:fb_id/:id2', nodeCtrl.delete);
 app.delete('/deletereview/:id/:fb_id/:id2', nodeCtrl.delete_review);
 
+//search
+app.get('/users/:name', nodeCtrl.get_users);
+
 app.listen(process.env.PORT || 3000, function(){
   console.log('listening on port' + this.address().port);
 });
