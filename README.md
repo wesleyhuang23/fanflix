@@ -3,7 +3,7 @@ Find movies with detailed movie information and trailers. Write your own reviews
 
 # Billboard
 ![alt tag](https://github.com/wesleyhuang23/fanflix/blob/master/screenshots/fanflix.jpg?raw=true)
-The Billboard changes based on the most popular film, based on the mdb api.
+The Billboard changes based on the most popular film, based on the mdb api. The billboard is based on the most popular movie being talk about on the movie database api. It will automaticlly switch when there is a new popular movie with high traffic.
 
 # Carousel
 ![alt tag](https://github.com/wesleyhuang23/fanflix/blob/master/screenshots/slider.png?raw=true)
