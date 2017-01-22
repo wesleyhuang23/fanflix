@@ -42,6 +42,20 @@
   position: relative;
   width: auto;
 }
+#user-search{
+  margin: 5px;
+}
+#user-search img{
+  border-radius: 100px;
+  border: 1px solid yellow;
+  width: 100px;
+  height: 100px;
+}
+#user-search p{
+  text-align: center;
+  font-size: 10px;
+  width: 100px;
+}
 @media (max-width: 415px){
   .search-container{
     text-align: center;
