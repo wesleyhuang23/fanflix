@@ -1,290 +1,282 @@
 <main>
-
   <div ng-show="showModal" ng-click="showModal = !showModal" id="favorites-modal" class="modal">
     <div id="fav-modal-content" class="modal-content">
-    <span class="close">x</span>
-    <p><span id="title-span">"{{detail.title}}"</span> is added to your <span id="fav-span">Favorites</span></p>
-  </div>
-  </div>
-
-  <div ng-show="showModalwatch" ng-click="showModalwatch = !showModalwatch" id="favorites-modal" class="modal" id="watched-modal" class="modal">
-    <div id= "watched-modal-content" class="modal-content">
-    <span class="close">x</span>
-    <p><span id="title-span">"{{detail.title}}"</span> is added to your <span id="watched-span">Watched</span>.</p>
-  </div>
-  </div>
-
-  <div ng-show="showModalwatchlist" ng-click="showModalwatchlist = !showModalwatchlist" id="favorites-modal" class="modal" id="watchlist-modal" class="modal">
-    <div id="watchlist-modal-content" class="modal-content">
-    <span class="close">x</span>
-    <p><span id="title-span">"{{detail.title}}"</span> is added to your <span id="watchlist-span">Watchlist</span>.</p>
-  </div>
-  </div>
-
-  <div class="showtimes-bg" ng-show="showtimes">
-      <span ng-click="showtimes = !showtimes" id="close-showtime">x</span>
-    <div class="showtimes-container">
-      <div class="showtime-input">
-        <h2>Showtimes</h2>
-        <br>
-      <input id="showtime-search" type="text" placeholder="zip code" ng-keyup="getShowTimesFunc($event)"  ng-model="zip"><input type="date" id="datepicker" placeholder="choose date..." ng-model="date"/><img src="./icons/6983-200.png" ng-click="getShowtimes(zip, date)"/>
-    </div>
-    <br>
-      <div class="showtimes-wrapper" >
-         <div class="theaters">
-      <ul id="theater-view">
-        
-        <li id="theater" ng-repeat="theater in theaters">
-          <a ui-sref="theater({id:theater.theatreId})">
-          <div>
-          <p style="text-transform: uppercase; color:#EF7622">{{theater.name}}<p><br>{{theater.location.address.street}} {{theater.location.address.city}} {{theater.location.address.state}},<br> {{theater.location.address.postalCode}} {{theater.location.address.country}}</li>
-          </div>
-          </a>
-      </ul>
-    </div>
-        <div class="showtimes-view">
-          <h2>{{title1.title}}</h2>
-          <div class="showings" ng-repeat="shows in showings1">
-          <a href={{shows.ticketURI}}>
-            <p>{{shows.dateTime | date: "h:mm a MMM d"}}</p>
-            <h4>{{shows.theatre.name}}</h4>
-          </a>
-          </div>
-        </div>
-        <br>
-        <div class="showtimes-view">
-          <h2>{{title2.title}}</h2>
-          <div class="showings" ng-repeat="shows in showings2">
-          <a href={{shows.ticketURI}}>
-            <p>{{shows.dateTime | date: "h:mm a MMM d"}}</p>
-            <h4>{{shows.theatre.name}}</h4>
-          </a>
-          </div>
-        </div>
-        <br>
-        <div class="showtimes-view">
-          <h2>{{title3.title}}</h2>
-          <div class="showings" ng-repeat="shows in showings3">
-          <a href={{shows.ticketURI}}>
-            <p>{{shows.dateTime | date: "h:mm a MMM d"}}</p>
-            <h4>{{shows.theatre.name}}</h4>
-          </a>
-          </div>
-        </div>
-
-
-    </div>
-   
-  </div>
-  </div>
-
-  <div class="backdrop-wrapper" style="background-image: url('https://image.tmdb.org/t/p/original/{{detail.backdrop_path}}')">
-    <!--<img src="https://image.tmdb.org/t/p/original/{{detail.backdrop_path}}">-->
-    <div class="shadow">
+      <span class="close">x</span>
+      <p><span id="title-span">"{{detail.title}}"</span> is added to your <span id="fav-span">Favorites</span></p>
     </div>
   </div>
-</div>
-  <div class="detail-container">
-    <div class="detail-wrapper">
-  <div class="first-row">
-  <div class="details_poster">
-    <img ng-src="https://image.tmdb.org/t/p/original/{{detail.poster_path}}"/>
-    <br>
-    <br>
-    <div class="platforms-container">
-      <div class="platforms" ng-repeat="platform in guideboxPurchases">
-        <a href="{{platform.link}}" target="_blank"/>
-        <img src="{{platform.img}}"/>
-      </a>
+  <div ng-show="showModalwatch" ng-click="showModalwatch = !showModalwatch" id="favorites-modal" class="modal" id="watched-modal"
+    class="modal">
+    <div id="watched-modal-content" class="modal-content">
+      <span class="close">x</span>
+      <p><span id="title-span">"{{detail.title}}"</span> is added to your <span id="watched-span">Watched</span>.</p>
+    </div>
+    </div>
+    <div ng-show="showModalwatchlist" ng-click="showModalwatchlist = !showModalwatchlist" id="favorites-modal" class="modal"
+      id="watchlist-modal" class="modal">
+      <div id="watchlist-modal-content" class="modal-content">
+        <span class="close">x</span>
+        <p><span id="title-span">"{{detail.title}}"</span> is added to your <span id="watchlist-span">Watchlist</span>.</p>
       </div>
-    </div>
-    <div ng-show="!guideboxPurchases" ng-hide="!guidebox.in_theaters" class="showtimes-btn" ng-click="showtimes = true">
-      <p>Showtimes</p>
-    </div>
-  </div>
-
-  <br>
-<div class="info-section">
-  <h2>{{detail.title}}<span> ({{imdb.Year}})</span></h2>
-  <br>
-  <h3 id="tagline-detail" ng-show="detail.tagline">"{{detail.tagline}}"</h3>
-  <div class="buttons">
-
-
-    <div class="btn" id="fav" ng-click="addToFav()">
-      <p>Favorite</p>
-    </div>
-
-
-    <div class="btn" id="watched" ng-click="addToWatched()">
-      <p>Watched</p>
-    </div>
-    <div class="btn" id="list" ng-click="addToWatch()">
-      <p>Watchlist</p>
-    </div>
-
-  </div>
-  <br>
-  <div class="overview">
-    <div id="o-left">
-  <h3>Plot</h3>
-  <p>{{detail.overview}}</p>
-  <br>
-  <h3>Director</h3>
-  <p>{{imdb.Director}}</p>
-  <br>
-  <h3>Writer</h3>
-  <p>{{imdb.Writer}}</p>
-  <br>
-  <h3>Metascore</h3>
-  <a href="{{guidebox.metacritic}}" target="_blank">
-  <div class="metacritic" ng-style="{'background-color': guidebox.metaColor}"><p>{{imdb.Metascore}}</p></div>
-  </a>
-  <br>
-  <h3>Genre</h3>
-  <p>{{imdb.Genre}}</p>
-  <br>
-  <h3>Rating</h3>
-  <p>{{imdb.Rated}}</p>
-  <br>
-</div>
-<div id="o-right">
-  <h3>Runtime</h3>
-  <p>{{imdb.Runtime}}</p>
-  <br>
-  <h3>Release Date</h3>
-  <p>{{imdb.Released}}</p>
-  <br>
-  <h3 id="no-mobile">Country</h3>
-  <p id="no-mobile">{{imdb.Country}}</p>
-  <br id="no-mobile">
-  <h3 id="no-mobile">Language</h3>
-  <p id="no-mobile">{{imdb.Language}}</p>
-  <br id="no-mobile">
-  <h3 id="no-mobile">Also Known As</h3>
-  <p id="no-mobile">{{detail.original_title}}</p>
-  <br id="no-mobile">
-  <h3>Budget</h3>
-  <p ng-show="detail.budget">{{detail.budget | currency:"USD$":0}}</p>
-  <p ng-show="!detail.budget">N/A</p>
-  <br>
-  <h3>Revenue</h3>
-  <p ng-show="detail.revenue">{{detail.revenue | currency:"USD$":0 }}</p>
-  <p ng-show="!detail.revenue">N/A</p>
-</div>
-</div>
-</div>
-</div>
-<br>
-<br>
-      <!--<div id="map"></div>-->
-
-<h3 id="section">LEADING CAST</h3>
-<br>
-<div class="second-row-wrapper">
-
-<br>
-<div class="second-row-detail" ng-repeat="person in cast">
-  <a ui-sref="people({id:person.id})">
-  <div class="cast-view" ng-show="person.profile_path">
-    <img ng-src="https://image.tmdb.org/t/p/w300_and_h450_bestv2{{person.profile_path}}"/>
-    <br>
-    <p>{{person.name}}</p>
-    <br>
-    <p id="character-name">{{person.character}}</p>
-  </div>
-</a>
-</div>
-<br>
-</div>
-<br>
-<div class="full-cast-btn-container">
-  <a ui-sref="credits({id:detail.id})">
-<div class="full-cast-btn">
-  <p>Full Cast & Crew</p>
-</div>
-</a>
-</div>
-
-<br>
-<h3 id="section">VIDEOS</h3>
-<br>
-<div class="videos-container">
-  <div class="videos" ng-repeat="video in videos">
-    <iframe ng-src="{{trustSrc(video)}}" frameborder="0" allowfullscreen></iframe>
-  </div>
-</div>
-<br>
-<br>
-<h3 id="section">BACKDROPS</h3>
-<br>
-<div class="backdrops-container">
-  <div class="backdrops" ng-repeat="photo in backDrops">
-    <a href="https://image.tmdb.org/t/p/original{{photo.file_path}}" target="_blank"/>
-    <img src="https://image.tmdb.org/t/p/original{{photo.file_path}}"/>
-  </a>
-  </div>
-</div>
-<br>
-<br>
-<h3 id="section">USER REVIEWS</h3>
-<br>
-<div class="user-review-container">
-  <div class="review-bg-container">
-  <img ng-src="https://image.tmdb.org/t/p/original{{secondBackdrop.file_path}}"/>
-  </div>
-  <div class="box-user">
-  <div class="user-review-wrapper" ng-repeat="review in userReviews">
-      <div class="user-review-view">
-        <a ui-sref="user_review({id:'{{review.fb_id}}'})">
-        <img id="profile-pic" ng-src="{{review.photo}}"/>
-        <div class="review-info-right">
-        <h3>{{review.title}}</h3>
-        <p>{{review.tagline}}</p>
-        <p>by: {{review.name}}</p>
-      </a>
-        <br>
-        <div id="rating-input" ng-style="{'background-color': review.reviewColor}">
-          <p>{{review.rating}}</p>
-        </div>
-        <br>
-        <p>{{review.review}}</p>
       </div>
-  </div>
-  </div>
-  <div ng-show="userReviews.length === 0" class="no-review">
-    <p> currently no user reviews for this film</p>
-  </div>
-</div>
-</div>
-<br>
-<br>
-<h3 id="section">RECOMMENDATIONS</h3>
-<br>
-<div class="similar-container">
-  <div class="similar-wrapper" ng-repeat="film in recommendations">
-    <a ui-sref="details({id:'{{film.id}}'})">
-    <div class="similar" ng-show="film.backdrop_path">
-    <img src="https://image.tmdb.org/t/p/original{{film.backdrop_path}}"/>
-    <h4>{{film.title}}</h4>
-  </div>
-</a>
-  </div>
-</div>
-<br>
-<br>
-<h3 id="section">SIMILAR MOVIES</h3>
-<br>
-<div class="similar-container">
-  <div class="similar-wrapper" ng-repeat="film in similar">
-    <a ui-sref="details({id:'{{film.id}}'})">
-    <div class="similar" ng-show="film.backdrop_path">
-    <img src="https://image.tmdb.org/t/p/original{{film.backdrop_path}}"/>
-    <h4>{{film.title}}</h4>
-  </div>
-</a>
-  </div>
-</div>
-</div>
-</div>
+      <div class="showtimes-bg" ng-show="showtimes">
+        <span ng-click="showtimes = !showtimes" id="close-showtime">x</span>
+        <div class="showtimes-container">
+          <div class="showtime-input">
+            <h2>Showtimes</h2>
+            <br>
+            <input id="showtime-search" type="text" placeholder="zip code" ng-keyup="getShowTimesFunc($event)" ng-model="zip"><input
+              type="date" id="datepicker" placeholder="choose date..." ng-model="date" /><img src="./icons/6983-200.png" ng-click="getShowtimes(zip, date)"
+            />
+          </div>
+          <br>
+          <div class="showtimes-wrapper">
+            <div class="theaters">
+              <ul id="theater-view">
+                <li id="theater" ng-repeat="theater in theaters">
+                  <a ui-sref="theater({id:theater.theatreId})">
+                    <div>
+                      <p style="text-transform: uppercase; color:#EF7622">{{theater.name}}
+                        <p><br>{{theater.location.address.street}} {{theater.location.address.city}} {{theater.location.address.state}},<br>                          {{theater.location.address.postalCode}} {{theater.location.address.country}}</li>
+                </div>
+                </a>
+              </ul>
+            </div>
+            <div class="showtimes-view">
+              <h2>{{title1.title}}</h2>
+              <div class="showings" ng-repeat="shows in showings1">
+                <a href={{shows.ticketURI}}>
+                  <p>{{shows.dateTime | date: "h:mm a MMM d"}}</p>
+                  <h4>{{shows.theatre.name}}</h4>
+                </a>
+              </div>
+            </div>
+            <br>
+            <div class="showtimes-view">
+              <h2>{{title2.title}}</h2>
+              <div class="showings" ng-repeat="shows in showings2">
+                <a href={{shows.ticketURI}}>
+                  <p>{{shows.dateTime | date: "h:mm a MMM d"}}</p>
+                  <h4>{{shows.theatre.name}}</h4>
+                </a>
+              </div>
+            </div>
+            <br>
+            <div class="showtimes-view">
+              <h2>{{title3.title}}</h2>
+              <div class="showings" ng-repeat="shows in showings3">
+                <a href={{shows.ticketURI}}>
+                  <p>{{shows.dateTime | date: "h:mm a MMM d"}}</p>
+                  <h4>{{shows.theatre.name}}</h4>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="backdrop-wrapper" style="background-image: url('https://image.tmdb.org/t/p/original/{{detail.backdrop_path}}')">
+        <!--<img src="https://image.tmdb.org/t/p/original/{{detail.backdrop_path}}">-->
+        <div class="shadow">
+        </div>
+      </div>
+      </div>
+      <div class="detail-container">
+        <div class="detail-wrapper">
+          <div class="first-row">
+            <div class="details_poster">
+              <img ng-src="https://image.tmdb.org/t/p/original/{{detail.poster_path}}" />
+              <br>
+              <br>
+              <div class="platforms-container">
+                <div class="platforms" ng-repeat="platform in guideboxPurchases">
+                  <a href="{{platform.link}}" target="_blank" />
+                  <img src="{{platform.img}}" />
+                  </a>
+                </div>
+              </div>
+              <div ng-show="!guideboxPurchases" ng-hide="!guidebox.in_theaters" class="showtimes-btn" ng-click="showtimes = true">
+                <p>Showtimes</p>
+              </div>
+            </div>
+            <br>
+            <div class="info-section">
+              <h2>{{detail.title}}<span> ({{imdb.Year}})</span></h2>
+              <br>
+              <h3 id="tagline-detail" ng-show="detail.tagline">"{{detail.tagline}}"</h3>
+              <div class="buttons">
+                <div class="btn" id="fav" ng-click="addToFav()">
+                  <p>Favorite</p>
+                </div>
+                <div class="btn" id="watched" ng-click="addToWatched()">
+                  <p>Watched</p>
+                </div>
+                <div class="btn" id="list" ng-click="addToWatch()">
+                  <p>Watchlist</p>
+                </div>
+              </div>
+              <br>
+              <div class="overview">
+                <div id="o-left">
+                  <h3>Plot</h3>
+                  <p>{{detail.overview}}</p>
+                  <br>
+                  <h3>Director</h3>
+                  <p>{{imdb.Director}}</p>
+                  <br>
+                  <h3>Writer</h3>
+                  <p>{{imdb.Writer}}</p>
+                  <br>
+                  <h3>Metascore</h3>
+                  <a href="{{guidebox.metacritic}}" target="_blank">
+                    <div class="metacritic" ng-style="{'background-color': guidebox.metaColor}">
+                      <p>{{imdb.Metascore}}</p>
+                    </div>
+                  </a>
+                  <br>
+                  <h3>Genre</h3>
+                  <p>{{imdb.Genre}}</p>
+                  <br>
+                  <h3>Rating</h3>
+                  <p>{{imdb.Rated}}</p>
+                  <br>
+                  <h3>Awards</h3>
+                  <p>{{imdb.Awards}}</p>
+                  <br>
+                </div>
+                <div id="o-right">
+                  <h3>Runtime</h3>
+                  <p>{{imdb.Runtime}}</p>
+                  <br>
+                  <h3>Release Date</h3>
+                  <p>{{imdb.Released}}</p>
+                  <br>
+                  <h3 id="no-mobile">Country</h3>
+                  <p id="no-mobile">{{imdb.Country}}</p>
+                  <br id="no-mobile">
+                  <h3 id="no-mobile">Language</h3>
+                  <p id="no-mobile">{{imdb.Language}}</p>
+                  <br id="no-mobile">
+                  <h3 id="no-mobile">Also Known As</h3>
+                  <p id="no-mobile">{{detail.original_title}}</p>
+                  <br id="no-mobile">
+                  <h3>Budget</h3>
+                  <p ng-show="detail.budget">{{detail.budget | currency:"USD$":0}}</p>
+                  <p ng-show="!detail.budget">N/A</p>
+                  <br>
+                  <h3>Revenue</h3>
+                  <p ng-show="detail.revenue">{{detail.revenue | currency:"USD$":0 }}</p>
+                  <p ng-show="!detail.revenue">N/A</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <br>
+          <br>
+          <!--<div id="map"></div>-->
+          <h3 id="section">LEADING CAST</h3>
+          <br>
+          <div class="second-row-wrapper">
+            <br>
+            <div class="second-row-detail" ng-repeat="person in cast">
+              <a ui-sref="people({id:person.id})">
+                <div class="cast-view" ng-show="person.profile_path">
+                  <img ng-src="https://image.tmdb.org/t/p/w300_and_h450_bestv2{{person.profile_path}}" />
+                  <br>
+                  <p>{{person.name}}</p>
+                  <br>
+                  <p id="character-name">{{person.character}}</p>
+                </div>
+              </a>
+            </div>
+            <br>
+          </div>
+          <br>
+          <div class="full-cast-btn-container">
+            <a ui-sref="credits({id:detail.id})">
+              <div class="full-cast-btn">
+                <p>Full Cast & Crew</p>
+              </div>
+            </a>
+          </div>
+          <br>
+          <h3 id="section">VIDEOS</h3>
+          <br>
+          <div class="videos-container">
+            <div class="videos" ng-repeat="video in videos">
+              <iframe ng-src="{{trustSrc(video)}}" frameborder="0" allowfullscreen></iframe>
+            </div>
+          </div>
+          <br>
+          <br>
+          <h3 id="section">BACKDROPS</h3>
+          <br>
+          <div class="backdrops-container">
+            <div class="backdrops" ng-repeat="photo in backDrops">
+              <a href="https://image.tmdb.org/t/p/original{{photo.file_path}}" target="_blank" />
+              <img src="https://image.tmdb.org/t/p/original{{photo.file_path}}" />
+              </a>
+            </div>
+          </div>
+          <br>
+          <br>
+          <h3 id="section">USER REVIEWS</h3>
+          <br>
+          <div class="user-review-container">
+            <div class="review-bg-container">
+              <img ng-src="https://image.tmdb.org/t/p/original{{secondBackdrop.file_path}}" />
+            </div>
+            <div class="box-user">
+              <div class="user-review-wrapper" ng-repeat="review in userReviews">
+                <div class="user-review-view">
+                  <a ui-sref="user_review({id:'{{review.fb_id}}'})">
+                    <img id="profile-pic" ng-src="{{review.photo}}" />
+                    <div class="review-info-right">
+                      <h3>{{review.title}}</h3>
+                      <p>{{review.tagline}}</p>
+                      <p>by: {{review.name}}</p>
+                  </a>
+                  <br>
+                  <div id="rating-input" ng-style="{'background-color': review.reviewColor}">
+                    <p>{{review.rating}}</p>
+                  </div>
+                  <br>
+                  <p>{{review.review}}</p>
+                  </div>
+                </div>
+              </div>
+              <div ng-show="userReviews.length === 0" class="no-review">
+                <p> currently no user reviews for this film</p>
+              </div>
+            </div>
+          </div>
+          <br>
+          <br>
+          <h3 id="section">RECOMMENDATIONS</h3>
+          <br>
+          <div class="similar-container">
+            <div class="similar-wrapper" ng-repeat="film in recommendations">
+              <a ui-sref="details({id:'{{film.id}}'})">
+                <div class="similar" ng-show="film.backdrop_path">
+                  <img src="https://image.tmdb.org/t/p/original{{film.backdrop_path}}" />
+                  <h4>{{film.title}}</h4>
+                </div>
+              </a>
+            </div>
+          </div>
+          <br>
+          <br>
+          <h3 id="section">SIMILAR MOVIES</h3>
+          <br>
+          <div class="similar-container">
+            <div class="similar-wrapper" ng-repeat="film in similar">
+              <a ui-sref="details({id:'{{film.id}}'})">
+                <div class="similar" ng-show="film.backdrop_path">
+                  <img src="https://image.tmdb.org/t/p/original{{film.backdrop_path}}" />
+                  <h4>{{film.title}}</h4>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
 </main>
