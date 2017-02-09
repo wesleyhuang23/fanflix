@@ -387,4 +387,13 @@ angular.module('flixApp').service('mainSvc', function($http){
       return response.data.results;
     });
   };
+  //user data
+  this.getUserData = id =>{
+    return $http({
+      method: 'GET',
+      url: '/user/' + id.id,
+    }).then(response => {
+      return response.data;
+    });
+  };
 });
