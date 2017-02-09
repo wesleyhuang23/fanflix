@@ -100,7 +100,7 @@
             </div>
             <br>
             <div class="info-section">
-              <h2>{{detail.title}}<span> ({{imdb.Year}})</span></h2>
+              <h2>{{detail.title}}<span> ({{guidebox.release_year}})</span></h2>
               <br>
               <h3 id="tagline-detail" ng-show="detail.tagline">"{{detail.tagline}}"</h3>
               <div class="buttons">
@@ -121,10 +121,10 @@
                   <p>{{detail.overview}}</p>
                   <br>
                   <h3>Director</h3>
-                  <p>{{guidebox.directors[0].name}}<span ng-show="guidebox.directors[1]">,</span> {{guidebox.directors[1].name}}</p>
+                  <p>{{guidebox.directors[0].name}}<span style="color:white" ng-show="guidebox.directors[1]">,</span> {{guidebox.directors[1].name}}</p>
                   <br>
                   <h3>Writer</h3>
-                  <p>{{imdb.Writer}}</p>
+                  <p>{{guidebox.writers[0].name}}<span style="color:white" ng-show="guidebox.writers[1]">,</span> {{guidebox.writers[1].name}}</p>
                   <br>
                   <h3>Metascore</h3>
                   <a href="{{guidebox.metacritic}}" target="_blank">
@@ -136,9 +136,6 @@
                   <h3>Genre</h3>
                   <p>{{imdb.Genre}}</p>
                   <br>
-                  <h3>Rating</h3>
-                  <p>{{imdb.Rated}}</p>
-                  <br>
                   <h3>Awards</h3>
                   <p>{{imdb.Awards}}</p>
                   <br>
@@ -147,8 +144,11 @@
                   <h3>Runtime</h3>
                   <p>{{imdb.Runtime}}</p>
                   <br>
+                  <h3>Rating</h3>
+                  <p>{{imdb.Rated}}</p>
+                  <br>
                   <h3>Release Date</h3>
-                  <p>{{imdb.Released}}</p>
+                  <p>{{guidebox.release_date | date: "longDate"}}</p>
                   <br>
                   <h3 id="no-mobile">Country</h3>
                   <p id="no-mobile">{{imdb.Country}}</p>
