@@ -1,4 +1,9 @@
-angular.module('flixApp', ['ui.router', 'watchlistCardDirective'])
+angular.module('flixApp', [
+  'ui.router', 
+  'watchlistCardDirective',
+  'watchedCardDirective',
+  'favoritesCardDirective'
+  ])
 
 .config(function($urlRouterProvider, $stateProvider){
 
