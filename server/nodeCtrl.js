@@ -167,5 +167,10 @@ module.exports = {
     db.get_user_data([req.params.id], function(err, user){
       res.send(user);
     });
+  },
+  get_user_info: function(req, res, next){
+    db.get_user_info([req.params.id], function(err, user){
+      res.send(user);
+    });
   }
 };

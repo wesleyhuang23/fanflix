@@ -1,22 +1,26 @@
 <main>
+    
     <h2 id="watchlist">Watchlist</h2>
     <hr>
+    <br>
     <section>
-        <div ng-repeat="film in watchlist">
+        <div class="user-list-wrapper" ng-repeat="film in watchlist">
             <watchlist-card film="film"></watchlist-card>
         </div>
     </section>
     <h2>Watched</h2>
     <hr>
+    <br>
     <section>
-        <div ng-repeat="film in watched">
+        <div class="user-list-wrapper" ng-repeat="film in watched">
             <watched-card film="film"></watched-card>
         </div>
     </section>
     <h2 id="favorites">My Favorites</h2>
     <hr>
+    <br>
     <section>
-        <div ng-repeat="film in favorites">
+        <div class="user-list-wrapper" ng-repeat="film in favorites">
             <favorites-card film="film"></favorites-card>
         </div>
     </section>

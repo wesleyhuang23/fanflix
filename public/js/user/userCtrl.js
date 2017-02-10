@@ -3,6 +3,10 @@ angular.module('flixApp').controller('userCtrl', function($scope, mainSvc, $stat
     console.log(id);
 
      var getUserData = function(id){
+            mainSvc.getUserInfo(id).then(function(response){
+                $scope.userInfo = response;
+                console.log($scope.userInfo);
+            });
             mainSvc.getUserData(id).then(function(response){
             var films = response.filter(function(response){
                 return response.status === 2;
@@ -16,7 +20,6 @@ angular.module('flixApp').controller('userCtrl', function($scope, mainSvc, $stat
             $scope.watched = watched;
             $scope.favorites = favorites;
             $scope.watchlist = films;
-            console.log($scope.watched, 'ctrl watchlist');
             });
         }
     getUserData(id);

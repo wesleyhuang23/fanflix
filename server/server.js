@@ -120,6 +120,7 @@ app.get('/users/:name', nodeCtrl.get_users);
 
 //user
 app.get('/user/:id', nodeCtrl.get_user_data);
+app.get('/userinfo/:id', nodeCtrl.get_user_info);
 
 app.listen(process.env.PORT || 3000, function(){
   console.log('listening on port' + this.address().port);
