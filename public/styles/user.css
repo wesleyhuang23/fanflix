@@ -1,8 +1,19 @@
 .user-list-wrapper{
     display: inline-block;
-    margin-left: 3px;
-    margin-right: 3px;
-    margin-bottom: 25px;
+    margin-left: 2px;
+    margin-right: 2px;
+    margin-bottom: 30px;
+}
+.user-thumnail{
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.user-thumnail img{
+    width: 200px;
+    height: 200px;
+    margin-right: 10px;
 }
 .user-list img{
     width: 200px;

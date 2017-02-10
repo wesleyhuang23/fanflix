@@ -6,7 +6,6 @@ angular.module('watchedCardDirective', []).directive('watchedCard', function(){
         },
         templateUrl: './js/user/filmCard.html',
         controller: function($scope){
-            console.log($scope.film, 'directive watched');
             $scope.film;
         }
     }

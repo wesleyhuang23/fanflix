@@ -4,7 +4,7 @@ angular.module('flixApp').controller('userCtrl', function($scope, mainSvc, $stat
 
      var getUserData = function(id){
             mainSvc.getUserInfo(id).then(function(response){
-                $scope.userInfo = response;
+                $scope.userInfo = response[0];
                 console.log($scope.userInfo);
             });
             mainSvc.getUserData(id).then(function(response){
