@@ -11,6 +11,12 @@ gulp.task('concatCSS', function(){
     .pipe(concat('main.css'))
     .pipe(gulp.dest('./public/css'))
 })
+gulp.task('concatJS', function(){
+    gulp.src(['./public/js/**/**/*.js'])
+    .pipe(concat('main.js'))
+    .pipe(gulp.dest('./public/scripts'))
+})
+
 gulp.task('minify', function(){
     gulp.src('./public/css/main.css')
     .pipe(minifyCSS())
@@ -18,7 +24,7 @@ gulp.task('minify', function(){
     .pipe(gulp.dest('./public/css'))
 });
 
-gulp.task('default', ['concatCSS'], function(){
+gulp.task('default', ['concatCSS', 'concatJS'], function(){
     console.log('gulp running...')
 });
 
