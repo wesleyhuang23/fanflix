@@ -1,6 +1,6 @@
 angular.module('flixApp').controller('detailsCtrl', function($scope, $stateParams, mainSvc, $sce){
   var id = $stateParams.id;
-  console.log(id);
+  // console.log(id);
   $scope.trustSrc = function(link) {
   return $sce.trustAsResourceUrl(link);
 };
@@ -10,10 +10,10 @@ var user_name;
 
 $scope.getFbUser = function(){
   mainSvc.getUser().then(function(response){
-      console.log('user', response.data);
+      // console.log('user', response.data);
       fb_id = response.data.fb_id;
       user_name = response.data.name
-      console.log('fb_id', fb_id, 'user_name', user_name);
+      // console.log('fb_id', fb_id, 'user_name', user_name);
 });
 }
 $scope.getFbUser();
@@ -24,11 +24,11 @@ var fav;
   $scope.getDetails = id => {
     mainSvc.getDetails(id).then(response => {
       var imdb_id = response.imdb_id;
-      console.log(imdb_id);
-      console.log(response.id);
+      // console.log(imdb_id);
+      // console.log(response.id);
       fav = response;
 
-      console.log('FAV BTN', fav);
+      // console.log('FAV BTN', fav);
       // console.log('WATCH BTN', watch);
       $scope.id = response;
       $scope.detail = response;
@@ -51,8 +51,8 @@ var fav;
     mainSvc.getImdb(imdb_id).then(response => {
       $scope.imdb = response;
       metascore = response.Metascore;
-      console.log(metascore);
-      console.log('imdb_details',$scope.imdb);
+      // console.log(metascore);
+      // console.log('imdb_details',$scope.imdb);
     });
   }
 
@@ -62,7 +62,7 @@ var fav;
     for(var i = 0; i < response.length; i++){
       links.push('https://www.youtube.com/embed/' + response[i].key);
     }
-    console.log(links);
+    // console.log(links);
     $scope.videos = links;
     // console.log($scope.videos);
   })
@@ -97,25 +97,25 @@ var fav;
         $scope.secondBackdrop = response.backdrops[0];
       }
       $scope.backDrops = response.backdrops;
-      console.log('back drop IMAGES', $scope.backDrops);
-      console.log('second backdrop', $scope.secondBackdrop);
+      // console.log('back drop IMAGES', $scope.backDrops);
+      // console.log('second backdrop', $scope.secondBackdrop);
     });
   }
   $scope.getSimilars = imdb_id => {
     mainSvc.getSimilars(imdb_id).then(response => {
       $scope.similar = response;
-      console.log('similar', $scope.similar);
+      // console.log('similar', $scope.similar);
 
     });
   }
   $scope.getRecommendations = id => {
     mainSvc.getRecommendations(id).then(function(response){
       $scope.recommendations = response;
-      console.log('recommendations', $scope.recommendations);
+      // console.log('recommendations', $scope.recommendations);
     })
   }
   $scope.getGuideBox = id => {
-    console.log(id);
+    // console.log(id);
     mainSvc.getGuideBox(id).then(response => {
       // console.log(response.id);
       var gb_id = response.id
@@ -137,11 +137,11 @@ var fav;
       }
       metaColor(response, metascore);
       $scope.guidebox = response;
-      console.log('GUIDEBOX DETAILS', $scope.guidebox)
+      // console.log('GUIDEBOX DETAILS', $scope.guidebox)
       $scope.guideboxVideo = response.trailers.web;
-      console.log('gb-videos', $scope.guideboxVideo);
+      // console.log('gb-videos', $scope.guideboxVideo);
       var webPurchase = response.purchase_web_sources;
-      console.log(webPurchase);
+      // console.log(webPurchase);
       var result = webPurchase.filter(webPurchase => {
         return webPurchase.source === "google_play" || webPurchase.source === "itunes"; //webPurchase.source === "amazon_buy";
       });
@@ -153,7 +153,7 @@ var fav;
     });
   }
   $scope.getUserReviews = mdb_id => {
-    console.log('user review id', mdb_id);
+    // console.log('user review id', mdb_id);
     mainSvc.getUserReviews(mdb_id).then(response => {
       // for(var i = 0; i < response.length; i++){
       //   response[i].photo = "https://scontent.xx.fbcdn.net/t31.0-1/10457710_" + response[i].fb_id + '_7996853287290615145_o.jpg'
@@ -162,12 +162,12 @@ var fav;
         response[i].reviewColor = $scope.colorPicker(response[i].rating);
       }
       $scope.userReviews = response;
-      console.log('USER REVIEWS', $scope.userReviews);
+      // console.log('USER REVIEWS', $scope.userReviews);
     });
   }
   $scope.getShowtimes = function(zip, date){
     var date = date.toISOString().substring(0, 10);
-    console.log(date);
+    // console.log(date);
     $scope.getTheatersInArea(zip);
     mainSvc.getShowtimes(date, zip).then(function(response){
       var currentFilm = fav.title;
@@ -192,8 +192,8 @@ var fav;
       $scope.showings1 = showings[0];
       $scope.showings2 = showings[1];
       $scope.showings3 = showings[2];
-      console.log('showtimes', $scope.title1);
-      console.log('showings', $scope.showings);
+      // console.log('showtimes', $scope.title1);
+      // console.log('showings', $scope.showings);
 
     });
   }
@@ -203,10 +203,10 @@ var fav;
     }
   }
   $scope.getTheatersInArea = (zip) => {
-    console.log('get theaters', zip);
+    // console.log('get theaters', zip);
     mainSvc.getTheatersInArea(zip).then(function(response){
       $scope.theaters = response;
-      console.log('theaters', $scope.theaters);
+      // console.log('theaters', $scope.theaters);
     })
   }
   //DETAIL AND WATCH LIST BUTTONS

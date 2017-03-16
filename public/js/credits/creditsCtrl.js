@@ -1,7 +1,7 @@
 angular.module('flixApp').controller('creditsCtrl', function($scope, $stateParams, mainSvc){
-  console.log($stateParams);
+  // console.log($stateParams);
   var id = $stateParams.id;
-  console.log(id);
+  // console.log(id);
 
   $scope.getCredits = () => {
     mainSvc.getCast(id).then(function(response){
@@ -70,8 +70,8 @@ angular.module('flixApp').controller('creditsCtrl', function($scope, $stateParam
       $scope.editing = editing;
 
 
-      console.log($scope.cast);
-      console.log($scope.crew);
+      // console.log($scope.cast);
+      // console.log($scope.crew);
       $scope.getDetails(id);
     });
   }

@@ -1,6 +1,6 @@
 angular.module('flixApp').controller('peopleCtrl', function($scope, $stateParams, mainSvc){
   var person_id = $stateParams.id;
-  console.log(person_id);
+  // console.log(person_id);
 
   $scope.getPersonDetails = person_id => {
     mainSvc.getPersonDetails(person_id).then(response => {
@@ -8,7 +8,7 @@ angular.module('flixApp').controller('peopleCtrl', function($scope, $stateParams
       response.firstLetter = response.name[0];
 
       $scope.personDetail = response;
-      console.log($scope.personDetail);
+      // console.log($scope.personDetail);
       $scope.getKnownFor(person_name);
     });
     }
@@ -17,7 +17,7 @@ angular.module('flixApp').controller('peopleCtrl', function($scope, $stateParams
   $scope.getKnownFor = person_name => {
     mainSvc.getKnownFor(person_name).then(response => {
       $scope.knownFor = response.results[0].known_for;
-      console.log('Known for', $scope.knownFor);
+      // console.log('Known for', $scope.knownFor);
       $scope.firstKnown = response.results[0].known_for[0];
       // console.log('first knwon', $scope.firstKnown);
     });
@@ -44,7 +44,7 @@ angular.module('flixApp').controller('peopleCtrl', function($scope, $stateParams
         });
 
       $scope.personImg = personBackdrops;
-      console.log('person img', $scope.personImg);
+      // console.log('person img', $scope.personImg);
     })
   } 
   ;
@@ -57,7 +57,7 @@ angular.module('flixApp').controller('peopleCtrl', function($scope, $stateParams
         }
         console.log(count);
       $scope.personBG = response[3]
-      console.log('bg', $scope.personBG);
+      // console.log('bg', $scope.personBG);
       }
   $scope.getPersonImages(person_id, cycle);
 
@@ -129,7 +129,7 @@ angular.module('flixApp').controller('peopleCtrl', function($scope, $stateParams
 
       var personCast = response.cast;
       var crew = response.crew;
-      console.log('person crew', personCrew);
+      // console.log('person crew', personCrew);
       // for(var i = 0; i < personCast.length; i++){
       //   personCast[i].release_date = personCast[i].release_date.substring(0, 4);
       // }
@@ -173,8 +173,8 @@ angular.module('flixApp').controller('peopleCtrl', function($scope, $stateParams
         // console.log(newCrew);
 
         $scope.crew = crew;
-        console.log($scope.personCast);
-      console.log('person movie cred', $scope.personCrew, $scope.personCast);
+        // console.log($scope.personCast);
+      // console.log('person movie cred', $scope.personCrew, $scope.personCast);
     });
   }
   $scope.getPersonMovieCredits(person_id);

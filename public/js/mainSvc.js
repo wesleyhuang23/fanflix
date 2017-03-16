@@ -10,25 +10,25 @@ angular.module('flixApp').service('mainSvc', function($http){
       method: 'GET',
       url: 'https://api.themoviedb.org/3/movie/popular?api_key='+ mdbapi +'&language=en-US'
     }).then(response => response.data.results);
-      console.log(response.data.results);
+      // console.log(response.data.results);
   };
   //getting details on mdb for billboard
   this.getPopularDetails = id => {
-    console.log(id.id);
+    // console.log(id.id);
     return $http({
       method: 'GET',
       url: 'https://api.themoviedb.org/3/movie/' + id.id + '?api_key='+ mdbapi +'&language=en-US&append_to_response=undefined'
     }).then(response => response.data);
-      console.log(response);
+      // console.log(response);
   };
   //getting details on omdb for billboard
   this.getPopImdb = imdb_id => {
-    console.log(imdb_id.id);
+    // console.log(imdb_id.id);
     return $http({
       method: 'GET',
       url: 'https://www.omdbapi.com/?i=' + imdb_id.id
     }).then(response => response.data);
-      console.log(response);
+      // console.log(response);
   };
   //getting now playing row
   this.getNowPlaying = function(){
@@ -36,7 +36,7 @@ angular.module('flixApp').service('mainSvc', function($http){
       method:'GET',
       url: 'https://api.themoviedb.org/3/movie/now_playing?api_key='+ mdbapi +'&language=en-US'
     }).then(response => response.data.results);
-      console.log(response.data);
+      // console.log(response.data);
   };
   //getting page 2 of now playing
   this.getNowPlaying2 = () => {
@@ -69,16 +69,16 @@ angular.module('flixApp').service('mainSvc', function($http){
       method:'GET',
       url: 'https://api.themoviedb.org/3/movie/'+ id + '?api_key='+ mdbapi +'&language=en-US&append_to_response=undefined'
     }).then(response => response.data);
-      console.log(response.data);
+      // console.log(response.data);
   };
   //getting omdb details for movie
   this.getImdb = imdb_id => {
-    console.log(imdb_id);
+    // console.log(imdb_id);
     return $http({
       method:'GET',
       url: 'https://www.omdbapi.com/?i=' + imdb_id
     }).then(response => response.data);
-      console.log('imdb_deets', response);
+      // console.log('imdb_deets', response);
   };
   //get videos for details page from mdb
   this.getVideos = imdb_id => {
@@ -108,7 +108,7 @@ angular.module('flixApp').service('mainSvc', function($http){
       method:'GET',
       url:'https://api.themoviedb.org/3/movie/' + imdb_id + '/similar?api_key='+ mdbapi +'&language=en-US'
     }).then(response => response.data.results);
-      console.log(response.data);
+      // console.log(response.data);
   };
   this.getRecommendations = id => {
     return $http({
@@ -164,14 +164,14 @@ angular.module('flixApp').service('mainSvc', function($http){
       method:'GET',
       url: '/users/' + term
     }).then(function(response){
-      console.log('users', response);
+      // console.log('users', response);
       return response.data;
     });
   }
 //DATABASE STUFF
   //adding movie to favorites list
   this.addToFav = fav => {
-    console.log(fav);
+    // console.log(fav);
     return $http({
       method:'POST',
       url: '/favorites',
@@ -199,7 +199,7 @@ angular.module('flixApp').service('mainSvc', function($http){
       method: 'GET',
       url: '/watched/' + fb_id,
     }).then(response => response.data);
-      console.log('get_watched', response.data);
+      // console.log('get_watched', response.data);
   };
 
   this.addToWatch = fav => {
@@ -241,7 +241,7 @@ angular.module('flixApp').service('mainSvc', function($http){
       method:'DELETE',
       url: '/delete/' + del_id.id + '/' + del_id.fb_id + '/' + del_id.id2
     }).then(response => response);
-      console.log("From Service: ", response);
+      // console.log("From Service: ", response);
   };
 
   this.deleteReview = del_id => {
@@ -365,7 +365,7 @@ angular.module('flixApp').service('mainSvc', function($http){
       method: 'GET',
       url: 'https://api.themoviedb.org/3/person/'+ person_id +'/tagged_images?api_key=' + mdbapi +'&language=en-US&page=2'
     }).then(response => {
-      console.log('people img 2', response.data.results);
+      // console.log('people img 2', response.data.results);
       return response.data.results;
     });
   };
@@ -374,7 +374,7 @@ angular.module('flixApp').service('mainSvc', function($http){
       method: 'GET',
       url: 'https://api.themoviedb.org/3/person/'+ person_id +'/tagged_images?api_key=' + mdbapi +'&language=en-US&page=3'
     }).then(response => {
-      console.log('people img 3', response.data.results);
+      // console.log('people img 3', response.data.results);
       return response.data.results;
     });
   };
@@ -383,7 +383,7 @@ angular.module('flixApp').service('mainSvc', function($http){
       method: 'GET',
       url: 'https://api.themoviedb.org/3/person/'+ person_id +'/tagged_images?api_key=' + mdbapi +'&language=en-US&page=4'
     }).then(response => {
-      console.log('people img 3', response.data.results);
+      // console.log('people img 3', response.data.results);
       return response.data.results;
     });
   };

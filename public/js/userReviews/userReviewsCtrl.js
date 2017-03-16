@@ -1,5 +1,5 @@
 angular.module('flixApp').controller('userReviewsCtrl', function($scope, mainSvc, $stateParams){
-  console.log('USER REVIEW STATE PARAMS', $stateParams);
+  // console.log('USER REVIEW STATE PARAMS', $stateParams);
   var id = $stateParams;
   $scope.getUserReviews2 = (id) => {
     mainSvc.getUserReviews2(id).then(function(response){
@@ -8,7 +8,7 @@ angular.module('flixApp').controller('userReviewsCtrl', function($scope, mainSvc
       }
       $scope.userReviews2 = response;
       $scope.userAuthor = response[0].name;
-      console.log('USER reviews2', $scope.userReviews2);
+      // console.log('USER reviews2', $scope.userReviews2);
     });
   }
   $scope.getUserReviews2(id);

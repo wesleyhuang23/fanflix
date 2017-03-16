@@ -16,7 +16,7 @@ angular.module('flixApp').controller('mainCtrl', function($scope, mainSvc){
 
   $scope.getPopular = () => {
     mainSvc.getPopular().then(response => {
-      console.log($scope.populars);
+      // console.log($scope.populars);
 
       $scope.popular = response[0];
       var result = []
@@ -35,10 +35,10 @@ angular.module('flixApp').controller('mainCtrl', function($scope, mainSvc){
   $scope.getPopularDetails = id => {
     mainSvc.getPopularDetails(id).then(response => {
       $scope.popularDetail = response;
-      console.log('popDeets', $scope.popularDetail);
+      // console.log('popDeets', $scope.popularDetail);
       $scope.companies = response.production_companies;
       imdb_id.id = response.imdb_id;
-      console.log(imdb_id);
+      // console.log(imdb_id);
       $scope.getPopImdb(imdb_id);
     })
   }
@@ -71,7 +71,7 @@ angular.module('flixApp').controller('mainCtrl', function($scope, mainSvc){
         });
 
       $scope.nowPlaying = response;
-      console.log('now playing', $scope.nowPlaying);
+      // console.log('now playing', $scope.nowPlaying);
     });
   }
   $scope.getNowPlaying();
@@ -96,7 +96,7 @@ angular.module('flixApp').controller('mainCtrl', function($scope, mainSvc){
         });
       $scope.comingSoon = masterComingSoon;
 
-      console.log('master coming soon', $scope.comingSoon);
+      // console.log('master coming soon', $scope.comingSoon);
     })
   }
   $scope.getComingSoon();
@@ -107,7 +107,7 @@ angular.module('flixApp').controller('mainCtrl', function($scope, mainSvc){
     $scope.getPeople(term);
     $scope.getTheatersInArea(term);
     $scope.getUsers(term);
-    console.log('search', term);
+    // console.log('search', term);
     mainSvc.getSearchMovie(term).then(response => {
       for(var i = 0; i < response.length; i++){
         response[i].release_date = response[i].release_date.substring(0, 4);
@@ -119,14 +119,14 @@ angular.module('flixApp').controller('mainCtrl', function($scope, mainSvc){
   $scope.getPeople = term => {
     mainSvc.getPeople(term).then(response => {
       $scope.person = response;
-      console.log('PERSON SEARCH', $scope.person);
+      // console.log('PERSON SEARCH', $scope.person);
     });
   }
    $scope.getTheatersInArea = term => {
-    console.log('get theaters', term);
+    // console.log('get theaters', term);
     mainSvc.getTheatersInArea(term).then(function(response){
       $scope.theaters = response;
-      console.log('theaters', $scope.theaters);
+      // console.log('theaters', $scope.theaters);
     })
   }
   $scope.getUsers = term => {
@@ -147,14 +147,14 @@ angular.module('flixApp').controller('mainCtrl', function($scope, mainSvc){
         $scope.user = null;
         fb_id = null;
         $scope.getWatch();
-        console.log('logout getWatch');
+        // console.log('logout getWatch');
       }
 
     })
   }
     mainSvc.getUser().then(response => {
       if(response.data){
-        console.log('user', response.data);
+        // console.log('user', response.data);
         $scope.user = response.data;
         fb_id = response.data.fb_id;
         console.log(fb_id);
@@ -187,7 +187,7 @@ angular.module('flixApp').controller('mainCtrl', function($scope, mainSvc){
       // console.log('$scope.getWatch fired')
     mainSvc.getWatch(fb_id).then(response => {
       $scope.watch = response;
-      console.log('WATCHLIST', $scope.watch);
+      // console.log('WATCHLIST', $scope.watch);
       // console.log('mainSvc.getWatch fired')
 
       // console.log('watchlist', $scope.watch);
@@ -211,9 +211,9 @@ angular.module('flixApp').controller('mainCtrl', function($scope, mainSvc){
     var id = {}
     id.id = mdb_id;
     id.fb_id = fb_id;
-    console.log(id);
+    // console.log(id);
     mainSvc.updateFav(id).then(response => {
-      console.log('your list is updated');
+      // console.log('your list is updated');
       $scope.getFavs();
       $scope.getWatched();
       $scope.getWatch();
@@ -227,7 +227,7 @@ angular.module('flixApp').controller('mainCtrl', function($scope, mainSvc){
     del_id.id2 = id;
     console.log(del_id);
     mainSvc.delete(del_id).then(response => {
-      console.log('movie deleted');
+      // console.log('movie deleted');
       $scope.getFavs();
       $scope.getWatched();
       $scope.getWatch();
@@ -241,7 +241,7 @@ angular.module('flixApp').controller('mainCtrl', function($scope, mainSvc){
     console.log(del_id);
     mainSvc.deleteReview(del_id).then(response => {
       $scope.getReviews(fb_id);
-      console.log('movie deleted');
+      // console.log('movie deleted');
     });
   }
 
@@ -264,7 +264,7 @@ angular.module('flixApp').controller('mainCtrl', function($scope, mainSvc){
         response[i].reviewColor = $scope.colorPicker(response[i].rating);
       }
       $scope.reviews = response;
-      console.log('REVIEWS', $scope.reviews);
+      // console.log('REVIEWS', $scope.reviews);
     });
   }
 
@@ -276,7 +276,7 @@ angular.module('flixApp').controller('mainCtrl', function($scope, mainSvc){
       console.log(edit);
       mainSvc.editReview(edit).then(response => {
         $scope.reviewToEdit = response;
-        console.log('review to edit', $scope.reviewToEdit);
+        // console.log('review to edit', $scope.reviewToEdit);
 
         $scope.comments = response[0].review;
         $scope.tagline = response[0].tagline;
