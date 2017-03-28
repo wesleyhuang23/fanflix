@@ -52,7 +52,7 @@ var fav;
       $scope.imdb = response;
       metascore = response.Metascore;
       // console.log(metascore);
-      // console.log('imdb_details',$scope.imdb);
+      console.log('imdb_details',$scope.imdb);
     });
   }
 

@@ -830,6 +830,10 @@ angular.module('flixApp').service('mainSvc', function($http){
   }
 });
 
+angular.module('flixApp').controller('loginCtrl', function($scope, mainSvc){
+
+});
+
 angular.module('flixApp').controller('creditsCtrl', function($scope, $stateParams, mainSvc){
   // console.log($stateParams);
   var id = $stateParams.id;
@@ -1001,7 +1005,7 @@ var fav;
       $scope.imdb = response;
       metascore = response.Metascore;
       // console.log(metascore);
-      // console.log('imdb_details',$scope.imdb);
+      console.log('imdb_details',$scope.imdb);
     });
   }
 
@@ -1194,10 +1198,6 @@ var fav;
       $scope.getWatched();
     });
   }
-});
-
-angular.module('flixApp').controller('loginCtrl', function($scope, mainSvc){
-
 });
 
 angular.module('flixApp').controller('mylistCtrl', function($scope, mainSvc){
