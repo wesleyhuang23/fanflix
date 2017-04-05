@@ -55,7 +55,7 @@ angular.module('flixApp').controller('peopleCtrl', function($scope, $stateParams
         } else if(count === 0){
           count = count + 1;
         }
-        console.log(count);
+        // console.log(count);
       $scope.personBG = response[3]
       // console.log('bg', $scope.personBG);
       }

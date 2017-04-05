@@ -180,7 +180,7 @@
             <div class="second-row-detail" ng-repeat="person in cast">
               <a ui-sref="people({id:person.id})">
                 <div class="cast-view" ng-show="person.profile_path">
-                  <img ng-src="https://image.tmdb.org/t/p/w300_and_h450_bestv2{{person.profile_path}}" />
+                  <img ng-src="https://image.tmdb.org/t/p/w300_and_h450_bestv2/{{person.profile_path}}" />
                   <br>
                   <p>{{person.name}}</p>
                   <br>
@@ -212,8 +212,8 @@
           <br>
           <div class="backdrops-container">
             <div class="backdrops" ng-repeat="photo in backDrops">
-              <a href="https://image.tmdb.org/t/p/original{{photo.file_path}}" target="_blank" />
-              <img src="https://image.tmdb.org/t/p/original{{photo.file_path}}" />
+              <a href="https://image.tmdb.org/t/p/original/{{photo.file_path}}" target="_blank" />
+              <img src="https://image.tmdb.org/t/p/original/{{photo.file_path}}" />
               </a>
             </div>
           </div>
@@ -223,7 +223,7 @@
           <br>
           <div class="user-review-container">
             <div class="review-bg-container">
-              <img ng-src="https://image.tmdb.org/t/p/original{{secondBackdrop.file_path}}" />
+              <img ng-src="https://image.tmdb.org/t/p/original/{{secondBackdrop.file_path}}" />
             </div>
             <div class="box-user">
               <div class="user-review-wrapper" ng-repeat="review in userReviews">
@@ -257,7 +257,7 @@
             <div class="similar-wrapper" ng-repeat="film in recommendations">
               <a ui-sref="details({id:'{{film.id}}'})">
                 <div class="similar" ng-show="film.backdrop_path">
-                  <img src="https://image.tmdb.org/t/p/original{{film.backdrop_path}}" />
+                  <img src="https://image.tmdb.org/t/p/original/{{film.backdrop_path}}" />
                   <h4>{{film.title}}</h4>
                 </div>
               </a>
@@ -271,7 +271,7 @@
             <div class="similar-wrapper" ng-repeat="film in similar">
               <a ui-sref="details({id:'{{film.id}}'})">
                 <div class="similar" ng-show="film.backdrop_path">
-                  <img src="https://image.tmdb.org/t/p/original{{film.backdrop_path}}" />
+                  <img src="https://image.tmdb.org/t/p/original/{{film.backdrop_path}}" />
                   <h4>{{film.title}}</h4>
                 </div>
               </a>

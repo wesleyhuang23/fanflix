@@ -80,7 +80,7 @@ angular.module('flixApp').controller('creditsCtrl', function($scope, $stateParam
   $scope.getDetails = function(){
     mainSvc.getDetails(id).then(function(response){
       $scope.creditDetails = response;
-      console.log($scope.creditDetails);
+      // console.log($scope.creditDetails);
     });
   };
 });
