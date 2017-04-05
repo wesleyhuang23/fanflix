@@ -14,6 +14,7 @@ gulp.task('concatCSS', function(){
 gulp.task('concatJS', function(){
     gulp.src(['./public/js/**/**/*.js'])
     .pipe(concat('main.js'))
+    .pipe(maps.write('./'))
     .pipe(gulp.dest('./public/scripts'))
 })
 
