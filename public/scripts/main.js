@@ -1,7 +1,6 @@
 $(document).ready(function(){
   // $(this).scrollTop(0);
   var poster = document.getElementsByClassName('poster');
-  // console.log(poster);
 
   $('.overview-wrapper').click(function(){
   });
@@ -23,7 +22,6 @@ $(document).ready(function(){
 
 //   $("#showtime-search").keyup(function(event){
 //     if(event.keyCode == 13){
-//       console.log('enter');
 //         $(".showtime-input img").click();
 //     }
 // });
@@ -427,25 +425,20 @@ angular.module('flixApp').service('mainSvc', function($http){
       method: 'GET',
       url: 'https://api.themoviedb.org/3/movie/popular?api_key='+ mdbapi +'&language=en-US'
     }).then(response => response.data.results);
-      // console.log(response.data.results);
   };
   //getting details on mdb for billboard
   this.getPopularDetails = id => {
-    // console.log(id.id);
     return $http({
       method: 'GET',
       url: 'https://api.themoviedb.org/3/movie/' + id.id + '?api_key='+ mdbapi +'&language=en-US&append_to_response=undefined'
     }).then(response => response.data);
-      // console.log(response);
   };
   //getting details on omdb for billboard
   this.getPopImdb = imdb_id => {
-    // console.log(imdb_id.id);
     return $http({
       method: 'GET',
       url: 'https://www.omdbapi.com/?i=' + imdb_id.id
     }).then(response => response.data);
-      // console.log(response);
   };
   //getting now playing row
   this.getNowPlaying = function(){
@@ -453,7 +446,6 @@ angular.module('flixApp').service('mainSvc', function($http){
       method:'GET',
       url: 'https://api.themoviedb.org/3/movie/now_playing?api_key='+ mdbapi +'&language=en-US'
     }).then(response => response.data.results);
-      // console.log(response.data);
   };
   //getting page 2 of now playing
   this.getNowPlaying2 = () => {
@@ -468,7 +460,6 @@ angular.module('flixApp').service('mainSvc', function($http){
       method: 'GET',
       url: 'https://api.themoviedb.org/3/movie/upcoming?api_key='+ mdbapi +'&language=en-US'
     }).then(function(response){
-      //console.log(response.data);
       return response.data.results;
     })
   }
@@ -486,16 +477,13 @@ angular.module('flixApp').service('mainSvc', function($http){
       method:'GET',
       url: 'https://api.themoviedb.org/3/movie/'+ id + '?api_key='+ mdbapi +'&language=en-US&append_to_response=undefined'
     }).then(response => response.data);
-      // console.log(response.data);
   };
   //getting omdb details for movie
   this.getImdb = imdb_id => {
-    // console.log(imdb_id);
     return $http({
       method:'GET',
       url: 'https://www.omdbapi.com/?i=' + imdb_id
     }).then(response => response.data);
-      // console.log('imdb_deets', response);
   };
   //get videos for details page from mdb
   this.getVideos = imdb_id => {
@@ -525,7 +513,6 @@ angular.module('flixApp').service('mainSvc', function($http){
       method:'GET',
       url:'https://api.themoviedb.org/3/movie/' + imdb_id + '/similar?api_key='+ mdbapi +'&language=en-US'
     }).then(response => response.data.results);
-      // console.log(response.data);
   };
   this.getRecommendations = id => {
     return $http({
@@ -539,7 +526,6 @@ angular.module('flixApp').service('mainSvc', function($http){
       method: 'GET',
       url: 'https://api-public.guidebox.com/v1.43/US/'+ guideboxapi +'/search/movie/id/themoviedb/' + id
     }).then(response => response.data);
-      console.log('guidebox', response.data)
   };
   //getting the guidbox detail id to get detailed information
   this.getGuideBoxDetails = id => {
@@ -581,14 +567,12 @@ angular.module('flixApp').service('mainSvc', function($http){
       method:'GET',
       url: '/users/' + term
     }).then(function(response){
-      // console.log('users', response);
       return response.data;
     });
   }
 //DATABASE STUFF
   //adding movie to favorites list
   this.addToFav = fav => {
-    // console.log(fav);
     return $http({
       method:'POST',
       url: '/favorites',
@@ -603,7 +587,6 @@ angular.module('flixApp').service('mainSvc', function($http){
     }).then(response => response.data);
   };
   this.addtoWatched = fav => {
-    console.log(fav);
     return $http({
       method:'POST',
       url: '/watched',
@@ -616,11 +599,9 @@ angular.module('flixApp').service('mainSvc', function($http){
       method: 'GET',
       url: '/watched/' + fb_id,
     }).then(response => response.data);
-      // console.log('get_watched', response.data);
   };
 
   this.addToWatch = fav => {
-    console.log('adding to watchlist...', fav);
     return $http({
       method: 'POST',
       url: '/watchlist',
@@ -628,7 +609,6 @@ angular.module('flixApp').service('mainSvc', function($http){
     }).then(response => response.data);
   };
   this.getWatch = fb_id => {
-    console.log('getting watchlist...');
     return $http({
       method: 'GET',
       url: '/watchlist/' + fb_id
@@ -636,7 +616,6 @@ angular.module('flixApp').service('mainSvc', function($http){
   };
   this.updateFav = id => {
 
-    console.log('updating to fav');
     return $http({
       method: 'PUT',
       url: '/update',
@@ -644,7 +623,6 @@ angular.module('flixApp').service('mainSvc', function($http){
     }).then(response => response);
   };
   this.updateWatched = id => {
-    console.log('updating watched');
     return $http({
       method: 'PUT',
       url: '/update_watched',
@@ -652,17 +630,13 @@ angular.module('flixApp').service('mainSvc', function($http){
     }).then(response => response);
   }
   this.delete = del_id => {
-    console.log('deleting');
-    console.log(del_id);
     return $http({
       method:'DELETE',
       url: '/delete/' + del_id.id + '/' + del_id.fb_id + '/' + del_id.id2
     }).then(response => response);
-      // console.log("From Service: ", response);
   };
 
   this.deleteReview = del_id => {
-    console.log('deleting review', del_id);
     return $http({
       method: 'DELETE',
       url: '/deletereview/' + del_id.id + '/' + del_id.fb_id + '/' + del_id.id2
@@ -670,7 +644,6 @@ angular.module('flixApp').service('mainSvc', function($http){
   };
 
   this.addToReviews = film => {
-    console.log('adding to reviews', film);
     return $http({
       method: 'POST',
       url: '/reviews',
@@ -686,7 +659,6 @@ angular.module('flixApp').service('mainSvc', function($http){
   }
 
   this.submitReview = review => {
-    console.log(review);
     return $http({
       method: 'POST',
       url: '/comments',
@@ -695,7 +667,6 @@ angular.module('flixApp').service('mainSvc', function($http){
   };
 
   this.editReview = edit => {
-    console.log(edit);
     return $http({
       method: 'GET',
       url: '/update/' + edit.mdb_id + '/' + edit.fb_id
@@ -782,7 +753,6 @@ angular.module('flixApp').service('mainSvc', function($http){
       method: 'GET',
       url: 'https://api.themoviedb.org/3/person/'+ person_id +'/tagged_images?api_key=' + mdbapi +'&language=en-US&page=2'
     }).then(response => {
-      // console.log('people img 2', response.data.results);
       return response.data.results;
     });
   };
@@ -791,7 +761,6 @@ angular.module('flixApp').service('mainSvc', function($http){
       method: 'GET',
       url: 'https://api.themoviedb.org/3/person/'+ person_id +'/tagged_images?api_key=' + mdbapi +'&language=en-US&page=3'
     }).then(response => {
-      // console.log('people img 3', response.data.results);
       return response.data.results;
     });
   };
@@ -800,7 +769,6 @@ angular.module('flixApp').service('mainSvc', function($http){
       method: 'GET',
       url: 'https://api.themoviedb.org/3/person/'+ person_id +'/tagged_images?api_key=' + mdbapi +'&language=en-US&page=4'
     }).then(response => {
-      // console.log('people img 3', response.data.results);
       return response.data.results;
     });
   };
@@ -824,9 +792,7 @@ angular.module('flixApp').service('mainSvc', function($http){
 });
 
 angular.module('flixApp').controller('creditsCtrl', function($scope, $stateParams, mainSvc){
-  // console.log($stateParams);
   var id = $stateParams.id;
-  // console.log(id);
 
   $scope.getCredits = () => {
     mainSvc.getCast(id).then(function(response){
@@ -874,29 +840,18 @@ angular.module('flixApp').controller('creditsCtrl', function($scope, $stateParam
         return crew.department === 'Editing';
       });
       $scope.directing = directing;
-      // console.log('directing', $scope.directing);
       $scope.writing = writing;
-      // console.log('writing', $scope.writing);
       $scope.camera = camera;
-      // console.log('camera', $scope.camera);
       $scope.art = art;
-      // console.log('Art', $scope.art);
       $scope.production = production;
-      // console.log('Production', $scope.production);
       $scope.sound = sound;
-      // console.log('sound', $scope.sound);
       $scope.visualEffects = visualEffects;
-      // console.log('visualEffects', $scope.visualEffects);
       $scope.editorial = editorial;
-      // console.log('editorial', $scope.editorial);
       $scope.lighting = lighting;
-      // console.log('grip', $scope.grip);
       $scope.crewDep = crewDep;
       $scope.editing = editing;
 
 
-      // console.log($scope.cast);
-      // console.log($scope.crew);
       $scope.getDetails(id);
     });
   }
@@ -905,14 +860,12 @@ angular.module('flixApp').controller('creditsCtrl', function($scope, $stateParam
   $scope.getDetails = function(){
     mainSvc.getDetails(id).then(function(response){
       $scope.creditDetails = response;
-      // console.log($scope.creditDetails);
     });
   };
 });
 
 angular.module('flixApp').controller('detailsCtrl', function($scope, $stateParams, mainSvc, $sce){
   var id = $stateParams.id;
-  // console.log(id);
   $scope.trustSrc = function(link) {
   return $sce.trustAsResourceUrl(link);
 };
@@ -922,10 +875,8 @@ var user_name;
 
 $scope.getFbUser = function(){
   mainSvc.getUser().then(function(response){
-      // console.log('user', response.data);
       fb_id = response.data.fb_id;
       user_name = response.data.name
-      // console.log('fb_id', fb_id, 'user_name', user_name);
 });
 }
 $scope.getFbUser();
@@ -936,16 +887,10 @@ var fav;
   $scope.getDetails = id => {
     mainSvc.getDetails(id).then(response => {
       var imdb_id = response.imdb_id;
-      // console.log(imdb_id);
-      // console.log(response.id);
       fav = response;
-
-      // console.log('FAV BTN', fav);
-      // console.log('WATCH BTN', watch);
       $scope.id = response;
       $scope.detail = response;
       $scope.production_companies = response.production_companies;
-      // console.log($scope.detail);
       $scope.getImdb(imdb_id);
       $scope.getVideos(imdb_id);
       $scope.getCast(imdb_id);
@@ -963,8 +908,6 @@ var fav;
     mainSvc.getImdb(imdb_id).then(response => {
       $scope.imdb = response;
       metascore = response.Metascore;
-      // console.log(metascore);
-      // console.log('imdb_details',$scope.imdb);
     });
   }
 
@@ -974,9 +917,7 @@ var fav;
     for(var i = 0; i < response.length; i++){
       links.push('https://www.youtube.com/embed/' + response[i].key);
     }
-    // console.log(links);
     $scope.videos = links;
-    // console.log($scope.videos);
   })
 }
   $scope.getCast = imdb_id => {
@@ -993,9 +934,6 @@ var fav;
       });
       $scope.director = director;
       $scope.crew = response.crew2;
-      // console.log($scope.cast);
-      // console.log('DIRECTOR', $scope.director);
-      // console.log('$scope.crew', $scope.crew);
     });
   }
   $scope.getImages = imdb_id => {
@@ -1009,27 +947,20 @@ var fav;
         $scope.secondBackdrop = response.backdrops[0];
       }
       $scope.backDrops = response.backdrops;
-      // console.log('back drop IMAGES', $scope.backDrops);
-      // console.log('second backdrop', $scope.secondBackdrop);
     });
   }
   $scope.getSimilars = imdb_id => {
     mainSvc.getSimilars(imdb_id).then(response => {
       $scope.similar = response;
-      // console.log('similar', $scope.similar);
-
     });
   }
   $scope.getRecommendations = id => {
     mainSvc.getRecommendations(id).then(function(response){
       $scope.recommendations = response;
-      // console.log('recommendations', $scope.recommendations);
     })
   }
   $scope.getGuideBox = id => {
-    // console.log(id);
     mainSvc.getGuideBox(id).then(response => {
-      // console.log(response.id);
       var gb_id = response.id
       $scope.getGuideBoxDetails(gb_id);
     });
@@ -1049,9 +980,7 @@ var fav;
       }
       metaColor(response, metascore);
       $scope.guidebox = response;
-      // console.log('GUIDEBOX DETAILS', $scope.guidebox)
       var webPurchase = response.purchase_web_sources;
-      // console.log(webPurchase);
       var result = webPurchase.filter(webPurchase => {
         return webPurchase.source === "google_play" || webPurchase.source === "itunes"; //webPurchase.source === "amazon_buy";
       });
@@ -1063,11 +992,9 @@ var fav;
         result[1].img = "https://vignette2.wikia.nocookie.net/implosion/images/7/74/Google_play.png/revision/latest?cb=20150411081733";
         $scope.guideboxPurchases = result;
       }
-      // console.log('GUIDEBOX', $scope.guideboxPurchases);
     });
   }
   $scope.getUserReviews = mdb_id => {
-    // console.log('user review id', mdb_id);
     mainSvc.getUserReviews(mdb_id).then(response => {
       // for(var i = 0; i < response.length; i++){
       //   response[i].photo = "https://scontent.xx.fbcdn.net/t31.0-1/10457710_" + response[i].fb_id + '_7996853287290615145_o.jpg'
@@ -1076,12 +1003,10 @@ var fav;
         response[i].reviewColor = $scope.colorPicker(response[i].rating);
       }
       $scope.userReviews = response;
-      // console.log('USER REVIEWS', $scope.userReviews);
     });
   }
   $scope.getShowtimes = function(zip, date){
     var date = date.toISOString().substring(0, 10);
-    // console.log(date);
     $scope.getTheatersInArea(zip);
     mainSvc.getShowtimes(date, zip).then(function(response){
       var currentFilm = fav.title;
@@ -1106,9 +1031,6 @@ var fav;
       $scope.showings1 = showings[0];
       $scope.showings2 = showings[1];
       $scope.showings3 = showings[2];
-      // console.log('showtimes', $scope.title1);
-      // console.log('showings', $scope.showings);
-
     });
   }
   $scope.getShowTimesFunc = $event => {
@@ -1117,18 +1039,14 @@ var fav;
     }
   }
   $scope.getTheatersInArea = (zip) => {
-    // console.log('get theaters', zip);
     mainSvc.getTheatersInArea(zip).then(function(response){
       $scope.theaters = response;
-      // console.log('theaters', $scope.theaters);
     })
   }
   //DETAIL AND WATCH LIST BUTTONS
   $scope.addToFav = () => {
     fav.fb_id = fb_id;
     $scope.showModal = true;
-    // console.log(fav);
-    // console.log('i am in add to fav func');
     mainSvc.addToFav(fav).then(response => {
       $scope.getFavs();
 
@@ -1140,15 +1058,12 @@ var fav;
       }
 
       $scope.currentFilm = current;
-      // console.log('detailsCTRL', response);
     })
   };
   $scope.addToWatch = () => {
     $scope.showModalwatchlist = true;
     fav.fb_id = fb_id;
-    // console.log('film sent', fav);
     mainSvc.addToWatch(fav).then(response => {
-
       $scope.getWatch();
     });
   };
@@ -1163,12 +1078,10 @@ var fav;
 
 angular.module('flixApp').controller('editCtrl', function($scope, mainSvc, $stateParams){
   var id = $stateParams.id;
-  // console.log(id);
 
   $scope.getEditDetails = function(id){
     mainSvc.getDetails(id).then(function(response){
       $scope.editDetails = response;
-      // console.log($scope.editDetails);
 
     });
   }
@@ -1176,14 +1089,12 @@ angular.module('flixApp').controller('editCtrl', function($scope, mainSvc, $stat
 
   $scope.submitReview = function(tagline, author, comments, rating, fb_id){
     var review = {}
-    // console.log(review);
     review.tagline = tagline;
     review.author = author;
     review.review = comments;
     review.mdb_id = id;
     review.rating = rating;
     review.fb_id = fb_id;
-    // console.log(review);
     mainSvc.submitReview(review).then(function(response){
       $scope.getReviews(fb_id);
     });
@@ -1192,27 +1103,6 @@ angular.module('flixApp').controller('editCtrl', function($scope, mainSvc, $stat
 });
 
 angular.module('flixApp').controller('loginCtrl', function($scope, mainSvc){
-
-});
-
-angular.module('flixApp').controller('mylistCtrl', function($scope, mainSvc){
-
-
-
-  $scope.getFavs = function(){
-    mainSvc.getFavs().then(function(response){
-      $scope.favorites = response;
-      // console.log($scope.favorites);
-    });
-  }
-
-  $scope.getFavs();
-
-});
-
-angular.module('flixApp').controller('searchCtrl', function($scope, mainSvc){
-
-
 
 });
 
@@ -1399,8 +1289,27 @@ angular.module('flixApp').controller('peopleCtrl', function($scope, $stateParams
 
 });
 
+angular.module('flixApp').controller('mylistCtrl', function($scope, mainSvc){
+
+
+
+  $scope.getFavs = function(){
+    mainSvc.getFavs().then(function(response){
+      $scope.favorites = response;
+    });
+  }
+
+  $scope.getFavs();
+
+});
+
+angular.module('flixApp').controller('searchCtrl', function($scope, mainSvc){
+
+
+
+});
+
 angular.module('flixApp').controller('theaterCtrl', function($scope, mainSvc, $stateParams, $sce){
-    console.log($stateParams);
     var theaterId = $stateParams;
 
     $scope.trustSrc = function(map) {
@@ -1417,7 +1326,6 @@ angular.module('flixApp').controller('theaterCtrl', function($scope, mainSvc, $s
         var date = $scope.date.toISOString().substring(0, 10);
         }
         $scope.day = date;
-        console.log(date);
         mainSvc.getTheater(theaterId, date).then(function(response){
         response.sort(function (a, b) {
         if (a.title < b.title) {
@@ -1430,16 +1338,13 @@ angular.module('flixApp').controller('theaterCtrl', function($scope, mainSvc, $s
         return 0;
         });
         $scope.theater = response;
-        console.log('theater detail', $scope.theater);
         $scope.getTheaterDetails();
       });
     }
     $scope.getTheaterDetails = function(){
-        console.log(theaterId);
         mainSvc.getTheaterDetails(theaterId).then(function(response){
             $scope.map = 'https://www.google.com/maps/embed/v1/place?key=AIzaSyBG1FaMjyrJZWHUprmlMrpZBIwq_TH-hNs&q=' + response.name;
             $scope.theaterDetails = response;
-            console.log('theater address', $scope.theaterDetails);
         })
     }
 
@@ -1461,12 +1366,10 @@ angular.module('favoritesCardDirective', []).directive('favoritesCard', function
 });
 angular.module('flixApp').controller('userCtrl', function($scope, mainSvc, $stateParams){
     var id = $stateParams
-    console.log(id);
 
      var getUserData = function(id){
             mainSvc.getUserInfo(id).then(function(response){
                 $scope.userInfo = response[0];
-                console.log($scope.userInfo);
             });
             mainSvc.getUserData(id).then(function(response){
             var films = response.filter(function(response){
@@ -1511,7 +1414,6 @@ angular.module('watchlistCardDirective', []).directive('watchlistCard', function
     }
 });
 angular.module('flixApp').controller('userReviewsCtrl', function($scope, mainSvc, $stateParams){
-  // console.log('USER REVIEW STATE PARAMS', $stateParams);
   var id = $stateParams;
   $scope.getUserReviews2 = (id) => {
     mainSvc.getUserReviews2(id).then(function(response){
@@ -1520,7 +1422,6 @@ angular.module('flixApp').controller('userReviewsCtrl', function($scope, mainSvc
       }
       $scope.userReviews2 = response;
       $scope.userAuthor = response[0].name;
-      // console.log('USER reviews2', $scope.userReviews2);
     });
   }
   $scope.getUserReviews2(id);
