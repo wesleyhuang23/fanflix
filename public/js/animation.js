@@ -1,7 +1,6 @@
 $(document).ready(function(){
   // $(this).scrollTop(0);
   var poster = document.getElementsByClassName('poster');
-  // console.log(poster);
 
   $('.overview-wrapper').click(function(){
   });
@@ -23,7 +22,6 @@ $(document).ready(function(){
 
 //   $("#showtime-search").keyup(function(event){
 //     if(event.keyCode == 13){
-//       console.log('enter');
 //         $(".showtime-input img").click();
 //     }
 // });

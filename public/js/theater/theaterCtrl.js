@@ -1,5 +1,4 @@
 angular.module('flixApp').controller('theaterCtrl', function($scope, mainSvc, $stateParams, $sce){
-    console.log($stateParams);
     var theaterId = $stateParams;
 
     $scope.trustSrc = function(map) {
@@ -16,7 +15,6 @@ angular.module('flixApp').controller('theaterCtrl', function($scope, mainSvc, $s
         var date = $scope.date.toISOString().substring(0, 10);
         }
         $scope.day = date;
-        console.log(date);
         mainSvc.getTheater(theaterId, date).then(function(response){
         response.sort(function (a, b) {
         if (a.title < b.title) {
@@ -29,16 +27,13 @@ angular.module('flixApp').controller('theaterCtrl', function($scope, mainSvc, $s
         return 0;
         });
         $scope.theater = response;
-        console.log('theater detail', $scope.theater);
         $scope.getTheaterDetails();
       });
     }
     $scope.getTheaterDetails = function(){
-        console.log(theaterId);
         mainSvc.getTheaterDetails(theaterId).then(function(response){
             $scope.map = 'https://www.google.com/maps/embed/v1/place?key=AIzaSyBG1FaMjyrJZWHUprmlMrpZBIwq_TH-hNs&q=' + response.name;
             $scope.theaterDetails = response;
-            console.log('theater address', $scope.theaterDetails);
         })
     }
 

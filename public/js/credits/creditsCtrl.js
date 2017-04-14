@@ -1,7 +1,5 @@
 angular.module('flixApp').controller('creditsCtrl', function($scope, $stateParams, mainSvc){
-  // console.log($stateParams);
   var id = $stateParams.id;
-  // console.log(id);
 
   $scope.getCredits = () => {
     mainSvc.getCast(id).then(function(response){
@@ -49,29 +47,18 @@ angular.module('flixApp').controller('creditsCtrl', function($scope, $stateParam
         return crew.department === 'Editing';
       });
       $scope.directing = directing;
-      // console.log('directing', $scope.directing);
       $scope.writing = writing;
-      // console.log('writing', $scope.writing);
       $scope.camera = camera;
-      // console.log('camera', $scope.camera);
       $scope.art = art;
-      // console.log('Art', $scope.art);
       $scope.production = production;
-      // console.log('Production', $scope.production);
       $scope.sound = sound;
-      // console.log('sound', $scope.sound);
       $scope.visualEffects = visualEffects;
-      // console.log('visualEffects', $scope.visualEffects);
       $scope.editorial = editorial;
-      // console.log('editorial', $scope.editorial);
       $scope.lighting = lighting;
-      // console.log('grip', $scope.grip);
       $scope.crewDep = crewDep;
       $scope.editing = editing;
 
 
-      // console.log($scope.cast);
-      // console.log($scope.crew);
       $scope.getDetails(id);
     });
   }
@@ -80,7 +67,6 @@ angular.module('flixApp').controller('creditsCtrl', function($scope, $stateParam
   $scope.getDetails = function(){
     mainSvc.getDetails(id).then(function(response){
       $scope.creditDetails = response;
-      // console.log($scope.creditDetails);
     });
   };
 });

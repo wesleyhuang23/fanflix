@@ -12,77 +12,77 @@
   <title>Fanflix</title>
 </head>
 
-<body ng-controller="mainCtrl">
-  <div class="container-fluid">
-    <header class="nav-bar">
-      <div class="header-wrapper">
-        <div class="header-content">
-          <div class="mobile-search-wrapper">
-            <a ui-sref="search">
-              <img id="mobile-search" src="./icons/6983-200.png" />
-            </a>
-          </div>
-          <a id="home-btn" ui-sref="home">
-            <div id="logo-container">
-              <h1 id="logo"><span class="o">FAN</span><span class="r">FLIX</span></h1>
-            </div>
-          </a>
-          <!--Burger menu-->
-          <div class="burger" ng-click="show = !show">
-            <img src="./icons/burger-menu.png" />
-          </div>
-          <div class="burger-menu" ng-hide="!show">
-            <div>
-              <a ui-sref="login" ng-hide="user.name" />
-              <p ng-click="show = !show">Login</p>
+    <body ng-controller="mainCtrl">
+      <div class="container-fluid">
+        <header class="nav-bar">
+          <div class="header-wrapper">
+            <div class="header-content">
+              <div class="mobile-search-wrapper">
+                <a ui-sref="search">
+                  <img id="mobile-search" src="./icons/6983-200.png" />
+                </a>
+              </div>
+              <a id="home-btn" ui-sref="home">
+                <div id="logo-container">
+                  <h1 id="logo"><span class="o">FAN</span><span class="r">FLIX</span></h1>
+                </div>
               </a>
-              <a ng-click="logoutUser()" ng-show="user.name" ui-sref="home" />
-              <p ng-click="show = !show">Logout</p>
-              </a>
+              <!--Burger menu-->
+              <div class="burger" ng-click="show = !show">
+                <img src="./icons/burger-menu.png" />
+              </div>
+              <div class="burger-menu" ng-hide="!show">
+                <div>
+                  <a ui-sref="login" ng-hide="user.name" />
+                  <p ng-click="show = !show">Login</p>
+                  </a>
+                  <a ng-click="logoutUser()" ng-show="user.name" ui-sref="home" />
+                  <p ng-click="show = !show">Logout</p>
+                  </a>
+                  <a ui-sref="mylist" ng-show="user.name">
+                    <p>My List</p>
+                  </a>
+                  <!--<a ui-sref="reviews" ng-show="user.name"><p>Reviews</p></a>-->
+                </div>
+              </div>
+              <div class="header-right">
+                <div class="search" />
+                <input id="input-search" type="text" placeholder="Search..." ng-model="term" />
+                <a ui-sref="search"><img src="./icons/6983-200.png" ng-click="getSearch(term)" />
+                </a>
+              </div>
               <a ui-sref="mylist" ng-show="user.name">
                 <p>My List</p>
               </a>
-              <!--<a ui-sref="reviews" ng-show="user.name"><p>Reviews</p></a>-->
+              <a ui-sref="reviews" ng-show="user.name">
+                <p>Reviews</p>
+              </a>
+              <a ui-sref="login" ng-hide="user.name" />
+              <p>Login</p>
+              </a>
+              <a ng-click="logoutUser()" ng-show="user.name" ui-sref="home" />
+              <p>Logout</p>
+              </a>
+              <div class="user-box" ng-show="user.name">
+                <img ng-src="{{user.photo}}" /> {{user.name}}
+              </div>
             </div>
           </div>
-          <div class="header-right">
-            <div class="search" />
-            <input id="input-search" type="text" placeholder="Search..." ng-model="term" />
-            <a ui-sref="search"><img src="./icons/6983-200.png" ng-click="getSearch(term)" />
-            </a>
-          </div>
-          <a ui-sref="mylist" ng-show="user.name">
-            <p>My List</p>
-          </a>
-          <a ui-sref="reviews" ng-show="user.name">
-            <p>Reviews</p>
-          </a>
-          <a ui-sref="login" ng-hide="user.name" />
-          <p>Login</p>
-          </a>
-          <a ng-click="logoutUser()" ng-show="user.name" ui-sref="home" />
-          <p>Logout</p>
-          </a>
-          <div class="user-box" ng-show="user.name">
-            <img ng-src="{{user.photo}}" /> {{user.name}}
-          </div>
-        </div>
       </div>
-  </div>
-  </header>
-  <header>
-  </header>
-  <div ui-view>
-    <!-- SECRET PORTAL -->
-  </div>
-  <footer>
-  </footer>
-  </div>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.js"></script>
-  <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
-  <script src="./scripts/main.js"></script>
+      </header>
+      <header>
+      </header>
+      <div ui-view>
+        <!-- SECRET PORTAL -->
+      </div>
+      <footer>
+      </footer>
+      </div>
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.js"></script>
+      <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+      <script src="./scripts/main.js"></script>
 
-</body>
+    </body>
 
 </html>
