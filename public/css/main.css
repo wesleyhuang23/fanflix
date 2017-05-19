@@ -257,7 +257,7 @@ iframe{
 .backdrop-wrapper{
   position: absolute;
   /*border: 1px solid red;*/
-  height: 589px;
+  height: 700px;
   display: flex;
   justify-content: center;
   position: relative;

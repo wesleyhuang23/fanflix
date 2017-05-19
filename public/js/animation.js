@@ -26,7 +26,6 @@ $(document).ready(function(){
 //     }
 // });
 
-
   $('.search-content').on('click', function(){
     $('#input-search input[type="text"]').val(" ");
   });
@@ -45,8 +44,6 @@ $(document).ready(function(){
   $('#right-now-playing').click(function() {
     $('#now-playing').removeAttr('style');
   })
-
-
 
 });
 
