@@ -3398,7 +3398,7 @@ HOME VIEW
 ============*/
 .billboard-wrapper{
     overflow: hidden;
-    height: 675px;
+    height: 500px;
     position: relative;
 }
 .billboard{
@@ -3425,7 +3425,7 @@ HOME VIEW
   z-index: 1;
   right: 0px;
   width: 80vw;
-  height: 675px;
+  height: 500px;
   opacity: 1;
   box-shadow: inset 200px -110px 234em black;
 }

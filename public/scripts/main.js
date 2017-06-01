@@ -26,7 +26,6 @@ $(document).ready(function(){
 //     }
 // });
 
-
   $('.search-content').on('click', function(){
     $('#input-search input[type="text"]').val(" ");
   });
@@ -45,8 +44,6 @@ $(document).ready(function(){
   $('#right-now-playing').click(function() {
     $('#now-playing').removeAttr('style');
   })
-
-
 
 });
 
@@ -1106,6 +1103,20 @@ angular.module('flixApp').controller('loginCtrl', function($scope, mainSvc){
 
 });
 
+angular.module('flixApp').controller('mylistCtrl', function($scope, mainSvc){
+
+
+
+  $scope.getFavs = function(){
+    mainSvc.getFavs().then(function(response){
+      $scope.favorites = response;
+    });
+  }
+
+  $scope.getFavs();
+
+});
+
 angular.module('flixApp').controller('peopleCtrl', function($scope, $stateParams, mainSvc){
   var person_id = $stateParams.id;
   // console.log(person_id);
@@ -1289,20 +1300,6 @@ angular.module('flixApp').controller('peopleCtrl', function($scope, $stateParams
 
 });
 
-angular.module('flixApp').controller('mylistCtrl', function($scope, mainSvc){
-
-
-
-  $scope.getFavs = function(){
-    mainSvc.getFavs().then(function(response){
-      $scope.favorites = response;
-    });
-  }
-
-  $scope.getFavs();
-
-});
-
 angular.module('flixApp').controller('searchCtrl', function($scope, mainSvc){
 
 
@@ -1351,6 +1348,20 @@ angular.module('flixApp').controller('theaterCtrl', function($scope, mainSvc, $s
     $scope.getTheater(date);
     
 });
+angular.module('flixApp').controller('userReviewsCtrl', function($scope, mainSvc, $stateParams){
+  var id = $stateParams;
+  $scope.getUserReviews2 = (id) => {
+    mainSvc.getUserReviews2(id).then(function(response){
+      for(var i = 0; i < response.length; i++){
+        response[i].reviewColor = $scope.colorPicker(response[i].rating);
+      }
+      $scope.userReviews2 = response;
+      $scope.userAuthor = response[0].name;
+    });
+  }
+  $scope.getUserReviews2(id);
+});
+
 angular.module('favoritesCardDirective', []).directive('favoritesCard', function(){
     return {
         restrict: 'E',
@@ -1413,18 +1424,4 @@ angular.module('watchlistCardDirective', []).directive('watchlistCard', function
         }
     }
 });
-angular.module('flixApp').controller('userReviewsCtrl', function($scope, mainSvc, $stateParams){
-  var id = $stateParams;
-  $scope.getUserReviews2 = (id) => {
-    mainSvc.getUserReviews2(id).then(function(response){
-      for(var i = 0; i < response.length; i++){
-        response[i].reviewColor = $scope.colorPicker(response[i].rating);
-      }
-      $scope.userReviews2 = response;
-      $scope.userAuthor = response[0].name;
-    });
-  }
-  $scope.getUserReviews2(id);
-});
-
 //# sourceMappingURL=main.js.map
