@@ -434,7 +434,7 @@ angular.module('flixApp').service('mainSvc', function($http){
   this.getPopImdb = imdb_id => {
     return $http({
       method: 'GET',
-      url: 'https://www.omdbapi.com/?i=' + imdb_id.id
+      url: 'https://www.omdbapi.com/?i=' + imdb_id.id + '&apikey=752618d'
     }).then(response => response.data);
   };
   //getting now playing row
@@ -479,7 +479,7 @@ angular.module('flixApp').service('mainSvc', function($http){
   this.getImdb = imdb_id => {
     return $http({
       method:'GET',
-      url: 'https://www.omdbapi.com/?i=' + imdb_id
+      url: 'https://www.omdbapi.com/?i=' + imdb_id + '&apikey=752618d'
     }).then(response => response.data);
   };
   //get videos for details page from mdb
@@ -904,6 +904,7 @@ var fav;
   $scope.getImdb = imdb_id => {
     mainSvc.getImdb(imdb_id).then(response => {
       $scope.imdb = response;
+      console.log($scope.imdb);
       metascore = response.Metascore;
     });
   }
@@ -1348,20 +1349,6 @@ angular.module('flixApp').controller('theaterCtrl', function($scope, mainSvc, $s
     $scope.getTheater(date);
     
 });
-angular.module('flixApp').controller('userReviewsCtrl', function($scope, mainSvc, $stateParams){
-  var id = $stateParams;
-  $scope.getUserReviews2 = (id) => {
-    mainSvc.getUserReviews2(id).then(function(response){
-      for(var i = 0; i < response.length; i++){
-        response[i].reviewColor = $scope.colorPicker(response[i].rating);
-      }
-      $scope.userReviews2 = response;
-      $scope.userAuthor = response[0].name;
-    });
-  }
-  $scope.getUserReviews2(id);
-});
-
 angular.module('favoritesCardDirective', []).directive('favoritesCard', function(){
     return {
         restrict: 'E',
@@ -1424,4 +1411,18 @@ angular.module('watchlistCardDirective', []).directive('watchlistCard', function
         }
     }
 });
+angular.module('flixApp').controller('userReviewsCtrl', function($scope, mainSvc, $stateParams){
+  var id = $stateParams;
+  $scope.getUserReviews2 = (id) => {
+    mainSvc.getUserReviews2(id).then(function(response){
+      for(var i = 0; i < response.length; i++){
+        response[i].reviewColor = $scope.colorPicker(response[i].rating);
+      }
+      $scope.userReviews2 = response;
+      $scope.userAuthor = response[0].name;
+    });
+  }
+  $scope.getUserReviews2(id);
+});
+
 //# sourceMappingURL=main.js.map
