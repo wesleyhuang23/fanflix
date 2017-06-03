@@ -34,3 +34,8 @@ gulp.task('default', ['concatCSS', 'concatJS'], function(){
 gulp.task('mini', ['minify'], function(){
     console.log('minifying')
 });
+
+gulp.task('watch', function(){
+    gulp.watch('./public/js/**/*.js', ['concatJS', 'minify']);
+    gulp.watch('./public/styles/*.css', ['concatCSS', 'minify'])
+});

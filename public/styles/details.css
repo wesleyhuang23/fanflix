@@ -289,6 +289,7 @@ iframe{
   /*border: 1px solid red;*/
   overflow: scroll;
   overflow-y: hidden;
+  position: relative;
 }
 .videos{
   display: inline-block;
@@ -301,6 +302,23 @@ iframe{
   -webkit-scroll-snap-destination: 50% 50%;
       -ms-scroll-snap-destination: 50% 50%;
           scroll-snap-destination: 50% 50%;
+}
+.arrow-ctrl{
+  width: 1200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.left-arrow{
+  display: inline-block;
+  font-size: 50px;
+  cursor: pointer;
+}
+.right-arrow{
+  display: inline-block;
+  font-size: 50px;
+  transform: scaleX(-1);
+  cursor: pointer;
 }
 .backdrops-container{
   width: 1200px;
