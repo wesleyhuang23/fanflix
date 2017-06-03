@@ -13,6 +13,8 @@
 .poster-right-info{
   /*border: 5px solid green;*/
   width: 100vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 .black-bg-review{
@@ -22,6 +24,7 @@
   height: 450px;
   position: absolute;
   opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
 }
 .review{
   width: 100vw;
@@ -44,17 +47,23 @@
   top: 5px;
   height: 50px;
   width: 50px;
-  filter: invert(100%);
+  filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="table" tableValues="1 0" /><feFuncG type="table" tableValues="1 0" /><feFuncB type="table" tableValues="1 0" /></feComponentTransfer></filter></svg>#filter');
+  -webkit-filter: invert(100%);
+          filter: invert(100%);
   opacity: 1;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
   cursor: pointer;
 }
 
 #edit2{
-  filter: invert(100%);
+  filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="table" tableValues="1 0" /><feFuncG type="table" tableValues="1 0" /><feFuncB type="table" tableValues="1 0" /></feComponentTransfer></filter></svg>#filter');
+  -webkit-filter: invert(100%);
+          filter: invert(100%);
   height: 60px;
   width: 60px;
   cursor: pointer;
   opacity: 1;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
 }
 .review-poster{
   height: 450px;
@@ -63,9 +72,15 @@
   padding-bottom: 20px;
 }
 .rating-box{
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   border: 2px solid white;
   width: 40px;
   padding: 5px;
@@ -73,19 +88,27 @@
 #rating-input{
   border: 2px solid white;
   width: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   padding-left: 10px;
   padding-top: 5px;
   padding-right: 10px;
   padding-bottom: 5px;
 }
 #x-review:hover{
-  transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
 }
 #edit2:hover{
-  transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
 }
 .right-info h2{
   font-weight: bolder;

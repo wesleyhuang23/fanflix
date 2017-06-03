@@ -6,6 +6,8 @@
     margin: auto;
     margin-bottom: 20px;
     padding: 10px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     width: 90vw;
 }
@@ -64,8 +66,13 @@ button{
 }
 .theater-header{
     padding-left: 35px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: row;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
 }
 #address{
     width: auto; 
@@ -84,12 +91,19 @@ button{
   margin-left: 20px;
   margin-bottom: 40px;
   width: 65%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 @media (max-width: 415px){
     .theater-header{
-        flex-direction: column;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
     }
     .showing-card{
         display: inline-block;
@@ -112,7 +126,10 @@ button{
 }
 @media (max-width: 413px){
     .theater-header{
-        flex-direction: column;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
     }
     .showing-card{
         display: inline-block;
@@ -135,7 +152,10 @@ button{
 }
 @media (max-width: 376px){
     .theater-header{
-        flex-direction: column;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
     }
     .showing-card{
         display: inline-block;
@@ -158,7 +178,10 @@ button{
 }
 @media (max-width: 321px){
     .theater-header{
-        flex-direction: column;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
     }
     .theater-header div{
         margin-left: -32px;

@@ -63,15 +63,21 @@
     margin-top: 10px;
   }
   .search-mobile{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     height: 30px;
   }
   .search-mobile .input-search{
     margin: auto;
   }
   .search-mobile img{
-    filter: invert(100%);
+    filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="table" tableValues="1 0" /><feFuncG type="table" tableValues="1 0" /><feFuncB type="table" tableValues="1 0" /></feComponentTransfer></filter></svg>#filter');
+    -webkit-filter: invert(100%);
+            filter: invert(100%);
     width: 20px;
     height: 20px;
     position: absolute;
@@ -109,15 +115,21 @@
     margin-top: 10px;
   }
   .search-mobile{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     height: 30px;
   }
   .search-mobile .input-search{
     margin: auto;
   }
   .search-mobile img{
-    filter: invert(100%);
+    filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="table" tableValues="1 0" /><feFuncG type="table" tableValues="1 0" /><feFuncB type="table" tableValues="1 0" /></feComponentTransfer></filter></svg>#filter');
+    -webkit-filter: invert(100%);
+            filter: invert(100%);
     width: 20px;
     height: 20px;
     position: absolute;
@@ -155,15 +167,21 @@
     margin-top: 10px;
   }
   .search-mobile{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     height: 30px;
   }
   .search-mobile .input-search{
     margin: auto;
   }
   .search-mobile img{
-    filter: invert(100%);
+    filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="table" tableValues="1 0" /><feFuncG type="table" tableValues="1 0" /><feFuncB type="table" tableValues="1 0" /></feComponentTransfer></filter></svg>#filter');
+    -webkit-filter: invert(100%);
+            filter: invert(100%);
     width: 20px;
     height: 20px;
     position: absolute;
@@ -201,15 +219,21 @@
     margin-top: 10px;
   }
   .search-mobile{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     height: 30px;
   }
   .search-mobile .input-search{
     margin: auto;
   }
   .search-mobile img{
-    filter: invert(100%);
+    filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="table" tableValues="1 0" /><feFuncG type="table" tableValues="1 0" /><feFuncB type="table" tableValues="1 0" /></feComponentTransfer></filter></svg>#filter');
+    -webkit-filter: invert(100%);
+            filter: invert(100%);
     width: 20px;
     height: 20px;
     position: absolute;
@@ -247,15 +271,21 @@
     margin-top: 10px;
   }
   .search-mobile{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     height: 30px;
   }
   .search-mobile .input-search{
     margin: auto;
   }
   .search-mobile img{
-    filter: invert(100%);
+    filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="table" tableValues="1 0" /><feFuncG type="table" tableValues="1 0" /><feFuncB type="table" tableValues="1 0" /></feComponentTransfer></filter></svg>#filter');
+    -webkit-filter: invert(100%);
+            filter: invert(100%);
     width: 20px;
     height: 20px;
     position: absolute;

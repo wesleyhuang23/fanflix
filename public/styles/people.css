@@ -7,6 +7,7 @@
   background-attachment: fixed;
   position: absolute;
   opacity: .25;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=25)";
 }
 .person-shadow{
   width: 100vw;
@@ -15,16 +16,25 @@
 }
 .person-container{
   /*border: 1px solid green;*/
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
     /*background-color: #141414;*/
     background: transparent;
     position: relative;
 }
 .person-wrapper{
   /*border: 1px solid orange;*/
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
   width: 1200px;
 }
 .picture img{
@@ -34,9 +44,15 @@
 .first-letter{
   width: 300px;
   height: 450px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   font-size: 70px;
   background-color: gray;
 }
@@ -72,6 +88,8 @@
 }
 .person-img{
   width: 60vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   overflow-x: scroll;
   overflow-y: hidden;
@@ -124,7 +142,10 @@
 }
 @media (max-width: 415px){
   .person-wrapper{
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     width: 365px;
   }
   .picture img{
@@ -170,7 +191,10 @@
 }
 @media (max-width: 413px){
     .person-wrapper{
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     width: 365px;
   }
   .picture img{
@@ -216,7 +240,10 @@
 }
 @media (max-width: 376px){
   .person-wrapper{
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     width: 365px;
   }
   .picture img{
@@ -261,7 +288,10 @@
 }
   @media (max-width: 321px){
     .person-wrapper{
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     width: 311px;
   }
   .picture img{

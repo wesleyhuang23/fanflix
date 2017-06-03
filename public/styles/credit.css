@@ -1,7 +1,12 @@
 .credits-container{
   /*border: 1px solid red;*/
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
 }
 .crew-container .cast-view-wrapper-cred{
   border: 1px solid orange;
@@ -10,18 +15,28 @@
   padding-bottom: 20px;
   margin-top: 25px;
   margin-left: 10px;
+  -webkit-transition: background-color 2s;
   transition: background-color 2s;
 }
 .crew-container .cast-view-wrapper-cred:hover{
   background-color: red;
 }
 .crew-container .cast-view-cred{
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 .credits-wrapper{
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
 }
 .credits h1{
   font-size: 50px;
@@ -52,8 +67,12 @@
 }
 .cast-view-cred{
     padding: 8px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     position: relative;
     top: 0px;
 }
@@ -95,9 +114,15 @@
   position: relative;
   top: -33px;
   left: 47px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   width: 125px;
   height: 185px;
 }
