@@ -412,9 +412,13 @@ angular.module('flixApp').controller('mainCtrl', function($scope, mainSvc){
 
 angular.module('flixApp').service('mainSvc', function($http){
 
-  var tmsapi = 'tx8g3c9h9ca737eh3y7sw66v';
-  var mdbapi = '8eecf03080f34edf303e14b5f1476653';
-  var guideboxapi = 'rKsvLMllrJ7ebTRG3cMa5smyjptG5sDJ';
+// var config = require('./../../server/config');
+
+var tmsapi = 'tx8g3c9h9ca737eh3y7sw66v';
+var mdbapi = '8eecf03080f34edf303e14b5f1476653';
+var guideboxapi = 'rKsvLMllrJ7ebTRG3cMa5smyjptG5sDJ';
+var omdbapi = '752618d';
+  
 //HOME PAGE SECTION
   //get popular for home page billboard and row
   this.getPopular = () => {
@@ -434,7 +438,7 @@ angular.module('flixApp').service('mainSvc', function($http){
   this.getPopImdb = imdb_id => {
     return $http({
       method: 'GET',
-      url: 'https://www.omdbapi.com/?i=' + imdb_id.id + '&apikey=752618d'
+      url: 'https://www.omdbapi.com/?i=' + imdb_id.id + '&apikey=' + omdbapi
     }).then(response => response.data);
   };
   //getting now playing row
@@ -479,7 +483,7 @@ angular.module('flixApp').service('mainSvc', function($http){
   this.getImdb = imdb_id => {
     return $http({
       method:'GET',
-      url: 'https://www.omdbapi.com/?i=' + imdb_id + '&apikey=752618d'
+      url: 'https://www.omdbapi.com/?i=' + imdb_id + '&apikey=' + omdbapi
     }).then(response => response.data);
   };
   //get videos for details page from mdb
@@ -699,7 +703,7 @@ angular.module('flixApp').service('mainSvc', function($http){
   this.getTheatersInArea = function(zip){
     return $http({
       method: 'GET',
-      url: 'http://data.tmsapi.com/v1.1/theatres?zip=' + zip + '&radius=20&api_key=' + tmsapi
+      url: 'http://data.tmsapi.com/v1.1/theatres?zip=' + zip + '&radius=20&api_key=' + config.tmsapi
     }).then(function(response){
       return response.data;
     });
@@ -715,7 +719,7 @@ angular.module('flixApp').service('mainSvc', function($http){
   this.getTheaterDetails = function(theaterId){
     return $http({
       method: 'GET',
-      url: 'http://data.tmsapi.com/v1.1/theatres/' + theaterId.id + '?api_key=' + tmsapi
+      url: 'http://data.tmsapi.com/v1.1/theatres/' + theaterId.id + '?api_key=' + config.tmsapi
     }).then(function(response){
       return response.data;
     });
@@ -724,31 +728,31 @@ angular.module('flixApp').service('mainSvc', function($http){
   this.getPersonDetails = person_id => {
     return $http({
       method: 'GET',
-      url: 'https://api.themoviedb.org/3/person/' + person_id + '?api_key='+ mdbapi +'&language=en-US'
+      url: 'https://api.themoviedb.org/3/person/' + person_id + '?api_key='+ config.mdbapi +'&language=en-US'
     }).then(response => response.data);
   };
   this.getPersonMovieCredits = person_id => {
     return $http({
       method: 'GET',
-      url: 'https://api.themoviedb.org/3/person/' + person_id + '/movie_credits?api_key='+ mdbapi +'&language=en-US'
+      url: 'https://api.themoviedb.org/3/person/' + person_id + '/movie_credits?api_key='+ config.mdbapi +'&language=en-US'
     }).then(response => response.data);
   };
   this.getKnownFor = person_name => {
     return $http({
       method: 'GET',
-      url: 'https://api.themoviedb.org/3/search/person?api_key='+ mdbapi +'&language=en-US&query=' + person_name + '&page=1&include_adult=false'
+      url: 'https://api.themoviedb.org/3/search/person?api_key='+ config.mdbapi +'&language=en-US&query=' + person_name + '&page=1&include_adult=false'
     }).then(response => response.data);
   };
   this.getPersonImages = person_id => {
     return $http({
       method:'GET',
-      url: 'https://api.themoviedb.org/3/person/'+ person_id +'/tagged_images?api_key=' + mdbapi +'&language=en-US&page=1'
+      url: 'https://api.themoviedb.org/3/person/'+ person_id +'/tagged_images?api_key=' + config.mdbapi +'&language=en-US&page=1'
     }).then( response => response.data.results);
   };
   this.getPersonImages2 = person_id => {
     return $http({
       method: 'GET',
-      url: 'https://api.themoviedb.org/3/person/'+ person_id +'/tagged_images?api_key=' + mdbapi +'&language=en-US&page=2'
+      url: 'https://api.themoviedb.org/3/person/'+ person_id +'/tagged_images?api_key=' + config.mdbapi +'&language=en-US&page=2'
     }).then(response => {
       return response.data.results;
     });
@@ -756,7 +760,7 @@ angular.module('flixApp').service('mainSvc', function($http){
   this.getPersonImages3 = person_id => {
     return $http({
       method: 'GET',
-      url: 'https://api.themoviedb.org/3/person/'+ person_id +'/tagged_images?api_key=' + mdbapi +'&language=en-US&page=3'
+      url: 'https://api.themoviedb.org/3/person/'+ person_id +'/tagged_images?api_key=' + config.mdbapi +'&language=en-US&page=3'
     }).then(response => {
       return response.data.results;
     });
@@ -764,7 +768,7 @@ angular.module('flixApp').service('mainSvc', function($http){
   this.getPersonImages4 = person_id => {
     return $http({
       method: 'GET',
-      url: 'https://api.themoviedb.org/3/person/'+ person_id +'/tagged_images?api_key=' + mdbapi +'&language=en-US&page=4'
+      url: 'https://api.themoviedb.org/3/person/'+ person_id +'/tagged_images?api_key=' + config.mdbapi +'&language=en-US&page=4'
     }).then(response => {
       return response.data.results;
     });
@@ -788,77 +792,30 @@ angular.module('flixApp').service('mainSvc', function($http){
   }
 });
 
-angular.module('flixApp').controller('creditsCtrl', function($scope, $stateParams, mainSvc){
+angular.module('flixApp').controller('editCtrl', function($scope, mainSvc, $stateParams){
   var id = $stateParams.id;
 
-  $scope.getCredits = () => {
-    mainSvc.getCast(id).then(function(response){
-      $scope.cast = response.cast;
-      $scope.crew = response.crew;
-      $scope.numCredits = response.cast.length + response.crew.length;
+  $scope.getEditDetails = function(id){
+    mainSvc.getDetails(id).then(function(response){
+      $scope.editDetails = response;
 
-      for(var i = 0; i < response.cast.length; i++){
-        response.cast[i].firstLetter = response.cast[i].name[0];
-      }
-
-      var crew = response.crew
-
-      var directing = crew.filter(function(crew){
-        return crew.department === 'Directing';
-      });
-      var writing = crew.filter(function(crew){
-        return crew.department === 'Writing';
-      })
-      var camera = crew.filter(function(crew){
-        return crew.department === 'Camera';
-      })
-      var art = crew.filter(function(crew){
-        return crew.department === 'Art';
-      })
-      var production = crew.filter(function(crew){
-        return crew.department === 'Production';
-      });
-      var sound = crew.filter(function(crew){
-        return crew.department === 'Sound';
-      });
-      var visualEffects = crew.filter(function(crew){
-        return crew.department === 'Visual Effects';
-      });
-      var editorial = crew.filter(function(crew){
-        return crew.department === 'Editorial Staff';
-      });
-      var lighting = crew.filter(function(crew){
-        return crew.department === 'Lighting';
-      });
-      var crewDep = crew.filter(function(crew){
-        return crew.department === 'Crew';
-      })
-      var editing = crew.filter(function(crew){
-        return crew.department === 'Editing';
-      });
-      $scope.directing = directing;
-      $scope.writing = writing;
-      $scope.camera = camera;
-      $scope.art = art;
-      $scope.production = production;
-      $scope.sound = sound;
-      $scope.visualEffects = visualEffects;
-      $scope.editorial = editorial;
-      $scope.lighting = lighting;
-      $scope.crewDep = crewDep;
-      $scope.editing = editing;
-
-
-      $scope.getDetails(id);
     });
   }
+  $scope.getEditDetails(id);
 
-  $scope.getCredits();
-  $scope.getDetails = function(){
-    mainSvc.getDetails(id).then(function(response){
-      $scope.creditDetails = response;
+  $scope.submitReview = function(tagline, author, comments, rating, fb_id){
+    var review = {}
+    review.tagline = tagline;
+    review.author = author;
+    review.review = comments;
+    review.mdb_id = id;
+    review.rating = rating;
+    review.fb_id = fb_id;
+    mainSvc.submitReview(review).then(function(response){
+      $scope.getReviews(fb_id);
     });
   };
+
 });
 
 angular.module('flixApp').controller('detailsCtrl', function($scope, $stateParams, mainSvc, $sce){
@@ -910,14 +867,22 @@ var fav;
   }
 
   $scope.getVideos = imdb_id => {
-  mainSvc.getVideos(imdb_id).then(response => {
-    var links = []
-    for(var i = 0; i < response.length; i++){
-      links.push('https://www.youtube.com/embed/' + response[i].key);
-    }
-    $scope.videos = links;
-  })
-}
+    mainSvc.getVideos(imdb_id).then(response => {
+      var links = []
+      for(var i = 0; i < response.length; i++){
+        links.push('https://www.youtube.com/embed/' + response[i].key);
+      }
+      $scope.videos = links;
+    })
+  }
+  $scope.shiftLeft = function(){
+    let container = document.getElementsByClassName('videos-container')[0];
+    container.scrollLeft += container.offsetWidth;
+  }
+  $scope.shiftRight = function(){
+    let container = document.getElementsByClassName('videos-container')[0];
+    container.scrollLeft -= container.offsetWidth;
+  }
   $scope.getCast = imdb_id => {
     mainSvc.getCast(imdb_id).then(response => {
       var newCast = [];
@@ -1074,47 +1039,80 @@ var fav;
   }
 });
 
-angular.module('flixApp').controller('editCtrl', function($scope, mainSvc, $stateParams){
+angular.module('flixApp').controller('creditsCtrl', function($scope, $stateParams, mainSvc){
   var id = $stateParams.id;
 
-  $scope.getEditDetails = function(id){
-    mainSvc.getDetails(id).then(function(response){
-      $scope.editDetails = response;
+  $scope.getCredits = () => {
+    mainSvc.getCast(id).then(function(response){
+      $scope.cast = response.cast;
+      $scope.crew = response.crew;
+      $scope.numCredits = response.cast.length + response.crew.length;
 
+      for(var i = 0; i < response.cast.length; i++){
+        response.cast[i].firstLetter = response.cast[i].name[0];
+      }
+
+      var crew = response.crew
+
+      var directing = crew.filter(function(crew){
+        return crew.department === 'Directing';
+      });
+      var writing = crew.filter(function(crew){
+        return crew.department === 'Writing';
+      })
+      var camera = crew.filter(function(crew){
+        return crew.department === 'Camera';
+      })
+      var art = crew.filter(function(crew){
+        return crew.department === 'Art';
+      })
+      var production = crew.filter(function(crew){
+        return crew.department === 'Production';
+      });
+      var sound = crew.filter(function(crew){
+        return crew.department === 'Sound';
+      });
+      var visualEffects = crew.filter(function(crew){
+        return crew.department === 'Visual Effects';
+      });
+      var editorial = crew.filter(function(crew){
+        return crew.department === 'Editorial Staff';
+      });
+      var lighting = crew.filter(function(crew){
+        return crew.department === 'Lighting';
+      });
+      var crewDep = crew.filter(function(crew){
+        return crew.department === 'Crew';
+      })
+      var editing = crew.filter(function(crew){
+        return crew.department === 'Editing';
+      });
+      $scope.directing = directing;
+      $scope.writing = writing;
+      $scope.camera = camera;
+      $scope.art = art;
+      $scope.production = production;
+      $scope.sound = sound;
+      $scope.visualEffects = visualEffects;
+      $scope.editorial = editorial;
+      $scope.lighting = lighting;
+      $scope.crewDep = crewDep;
+      $scope.editing = editing;
+
+
+      $scope.getDetails(id);
     });
   }
-  $scope.getEditDetails(id);
 
-  $scope.submitReview = function(tagline, author, comments, rating, fb_id){
-    var review = {}
-    review.tagline = tagline;
-    review.author = author;
-    review.review = comments;
-    review.mdb_id = id;
-    review.rating = rating;
-    review.fb_id = fb_id;
-    mainSvc.submitReview(review).then(function(response){
-      $scope.getReviews(fb_id);
+  $scope.getCredits();
+  $scope.getDetails = function(){
+    mainSvc.getDetails(id).then(function(response){
+      $scope.creditDetails = response;
     });
   };
-
 });
 
 angular.module('flixApp').controller('loginCtrl', function($scope, mainSvc){
-
-});
-
-angular.module('flixApp').controller('mylistCtrl', function($scope, mainSvc){
-
-
-
-  $scope.getFavs = function(){
-    mainSvc.getFavs().then(function(response){
-      $scope.favorites = response;
-    });
-  }
-
-  $scope.getFavs();
 
 });
 
@@ -1304,6 +1302,20 @@ angular.module('flixApp').controller('peopleCtrl', function($scope, $stateParams
 angular.module('flixApp').controller('searchCtrl', function($scope, mainSvc){
 
 
+
+});
+
+angular.module('flixApp').controller('mylistCtrl', function($scope, mainSvc){
+
+
+
+  $scope.getFavs = function(){
+    mainSvc.getFavs().then(function(response){
+      $scope.favorites = response;
+    });
+  }
+
+  $scope.getFavs();
 
 });
 

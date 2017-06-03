@@ -47,14 +47,22 @@ var fav;
   }
 
   $scope.getVideos = imdb_id => {
-  mainSvc.getVideos(imdb_id).then(response => {
-    var links = []
-    for(var i = 0; i < response.length; i++){
-      links.push('https://www.youtube.com/embed/' + response[i].key);
-    }
-    $scope.videos = links;
-  })
-}
+    mainSvc.getVideos(imdb_id).then(response => {
+      var links = []
+      for(var i = 0; i < response.length; i++){
+        links.push('https://www.youtube.com/embed/' + response[i].key);
+      }
+      $scope.videos = links;
+    })
+  }
+  $scope.shiftLeft = function(){
+    let container = document.getElementsByClassName('videos-container')[0];
+    container.scrollLeft += container.offsetWidth;
+  }
+  $scope.shiftRight = function(){
+    let container = document.getElementsByClassName('videos-container')[0];
+    container.scrollLeft -= container.offsetWidth;
+  }
   $scope.getCast = imdb_id => {
     mainSvc.getCast(imdb_id).then(response => {
       var newCast = [];

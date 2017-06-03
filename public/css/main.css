@@ -528,12 +528,14 @@ iframe{
   display: inline-block;
   font-size: 50px;
   cursor: pointer;
+  user-select: none;
 }
 .right-arrow{
   display: inline-block;
   font-size: 50px;
   transform: scaleX(-1);
   cursor: pointer;
+  user-select: none;
 }
 .backdrops-container{
   width: 1200px;
