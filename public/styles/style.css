@@ -719,10 +719,10 @@ li{
 .burger-menu{
   background-color: black;
   position: fixed;
-  top: 7%;
+  top: 50px;
   width: 100vw;
   text-align: -webkit-center;
-  height: 10%;
+  height: auto;
 }
 .burger-menu div{
   /*border: 1px solid green;*/
