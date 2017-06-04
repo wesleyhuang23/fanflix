@@ -698,6 +698,9 @@ iframe{
   .videos-container{
     width: 1000px;
   }
+  .arrow-ctrl{
+    width: 1000px;
+  }
   iframe{
   width: 1000px;
   height: 562.50px;
@@ -825,11 +828,14 @@ iframe{
     width: auto;
   }
   .videos-container{
-    width: 758px;
+    width: 750px;
+  }
+  .arrow-ctrl{
+    width: 750px;
   }
   iframe{
-    width: 758px;
-    height: 426.38px;
+    width: 750px;
+    height: 421.88px;
     margin-bottom: 40px;
   }
   .backdrops-container{
@@ -978,7 +984,7 @@ iframe{
     width: 405px;
   }
   .detail-wrapper{
-    margin-left: 0px;
+    margin-left: 800px;
   }
   .second-row-detail{
     margin-bottom: 10px;
@@ -991,11 +997,14 @@ iframe{
     width: 405px;
   }
   .videos-container{
-    width: 405px;
+    width: 400px;
+  }
+  .arrow-ctrl{
+    width: 400px;
   }
   iframe{
-    width: 405px;
-    height: 227.81px;
+    width: 400px;
+    height: 225px;
     margin-bottom: 40px;
   }
   .backdrops-container{
@@ -1174,11 +1183,14 @@ iframe{
     width: 405px;
   }
   .videos-container{
-    width: 405px;
+    width: 400px;
+  }
+  .arrow-ctrl{
+    width: 400px;
   }
   iframe{
-    width: 405px;
-    height: 227.81px;
+    width: 400px;
+    height: 225px;
     margin-bottom: 40px;
   }
   .backdrops-container{
@@ -1357,11 +1369,14 @@ iframe{
     width: 365px;
   }
   .videos-container{
-    width: 365px;
+    width: 360px;
+  }
+  .arrow-ctrl{
+    width: 350px;
   }
   iframe{
-    width: 365px;
-    height: 205.31px;
+    width: 360px;
+    height: 202.50px;
     margin-bottom: 40px;
   }
   .backdrops-container{
@@ -1536,6 +1551,9 @@ iframe{
     width: 310px;
   }
   .videos-container{
+    width: 310px;
+  }
+  .arrow-ctrl{
     width: 310px;
   }
   iframe{
