@@ -865,6 +865,32 @@ angular.module('flixApp').controller('creditsCtrl', function($scope, $stateParam
   };
 });
 
+angular.module('flixApp').controller('editCtrl', function($scope, mainSvc, $stateParams){
+  var id = $stateParams.id;
+
+  $scope.getEditDetails = function(id){
+    mainSvc.getDetails(id).then(function(response){
+      $scope.editDetails = response;
+
+    });
+  }
+  $scope.getEditDetails(id);
+
+  $scope.submitReview = function(tagline, author, comments, rating, fb_id){
+    var review = {}
+    review.tagline = tagline;
+    review.author = author;
+    review.review = comments;
+    review.mdb_id = id;
+    review.rating = rating;
+    review.fb_id = fb_id;
+    mainSvc.submitReview(review).then(function(response){
+      $scope.getReviews(fb_id);
+    });
+  };
+
+});
+
 angular.module('flixApp').controller('detailsCtrl', function($scope, $stateParams, mainSvc, $sce){
   var id = $stateParams.id;
   $scope.trustSrc = function(link) {
@@ -927,20 +953,20 @@ var fav;
   $scope.shiftLeft = function(){
     let container = document.getElementsByClassName('videos-container')[0];
     function IntervalLogic(){    
-      console.log(count);
+      // console.log(count);
       if(container.scrollLeft < container.children.length * container.offsetWidth - (container.offsetWidth)){
         container.scrollLeft += 10;
       }
-      console.log(container.scrollLeft, count + 1);
+      // console.log(container.scrollLeft, count + 1);
       if(container.scrollLeft == (container.offsetWidth * count)){
         clearInterval(refresh);
         count++;
-        console.log(container.children.length * container.offsetWidth - (container.offsetWidth));
+        // console.log(container.children.length * container.offsetWidth - (container.offsetWidth));
         if(container.scrollLeft >= (container.children.length * container.offsetWidth) - container.offsetWidth){
           clearInterval(refresh);
           container.scrollLeft = container.offsetWidth * (count - 1);
           beyondFlag = true;
-          console.log(beyondFlag, container.scrollLeft);
+          // console.log(beyondFlag, container.scrollLeft);
         }
       }
     }
@@ -954,11 +980,11 @@ var fav;
     if(beyondFlag){
       beyondFlag = !beyondFlag;
     }
-    console.log(beyondFlag);
+    // console.log(beyondFlag);
     let container = document.getElementsByClassName('videos-container')[0];
     function IntervalLogic(){
       container.scrollLeft -= 10;
-      console.log(container.scrollLeft, count, (container.offsetWidth * (count - 1)) - container.offsetWidth);
+      // console.log(container.scrollLeft, count, (container.offsetWidth * (count - 1)) - container.offsetWidth);
       if(container.scrollLeft == (container.offsetWidth * (count - 1)) - container.offsetWidth){
         clearInterval(refresh);
         count--;
@@ -1124,32 +1150,6 @@ var fav;
       $scope.getWatched();
     });
   }
-});
-
-angular.module('flixApp').controller('editCtrl', function($scope, mainSvc, $stateParams){
-  var id = $stateParams.id;
-
-  $scope.getEditDetails = function(id){
-    mainSvc.getDetails(id).then(function(response){
-      $scope.editDetails = response;
-
-    });
-  }
-  $scope.getEditDetails(id);
-
-  $scope.submitReview = function(tagline, author, comments, rating, fb_id){
-    var review = {}
-    review.tagline = tagline;
-    review.author = author;
-    review.review = comments;
-    review.mdb_id = id;
-    review.rating = rating;
-    review.fb_id = fb_id;
-    mainSvc.submitReview(review).then(function(response){
-      $scope.getReviews(fb_id);
-    });
-  };
-
 });
 
 angular.module('flixApp').controller('loginCtrl', function($scope, mainSvc){

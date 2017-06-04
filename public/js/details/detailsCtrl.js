@@ -60,20 +60,20 @@ var fav;
   $scope.shiftLeft = function(){
     let container = document.getElementsByClassName('videos-container')[0];
     function IntervalLogic(){    
-      console.log(count);
+      // console.log(count);
       if(container.scrollLeft < container.children.length * container.offsetWidth - (container.offsetWidth)){
         container.scrollLeft += 10;
       }
-      console.log(container.scrollLeft, count + 1);
+      // console.log(container.scrollLeft, count + 1);
       if(container.scrollLeft == (container.offsetWidth * count)){
         clearInterval(refresh);
         count++;
-        console.log(container.children.length * container.offsetWidth - (container.offsetWidth));
+        // console.log(container.children.length * container.offsetWidth - (container.offsetWidth));
         if(container.scrollLeft >= (container.children.length * container.offsetWidth) - container.offsetWidth){
           clearInterval(refresh);
           container.scrollLeft = container.offsetWidth * (count - 1);
           beyondFlag = true;
-          console.log(beyondFlag, container.scrollLeft);
+          // console.log(beyondFlag, container.scrollLeft);
         }
       }
     }
@@ -87,11 +87,11 @@ var fav;
     if(beyondFlag){
       beyondFlag = !beyondFlag;
     }
-    console.log(beyondFlag);
+    // console.log(beyondFlag);
     let container = document.getElementsByClassName('videos-container')[0];
     function IntervalLogic(){
       container.scrollLeft -= 10;
-      console.log(container.scrollLeft, count, (container.offsetWidth * (count - 1)) - container.offsetWidth);
+      // console.log(container.scrollLeft, count, (container.offsetWidth * (count - 1)) - container.offsetWidth);
       if(container.scrollLeft == (container.offsetWidth * (count - 1)) - container.offsetWidth){
         clearInterval(refresh);
         count--;

@@ -537,6 +537,16 @@ iframe{
   cursor: pointer;
   user-select: none;
 }
+.right-arrow:active{
+  position: relative;
+  top: 5px;
+  left: 2px;
+}
+.left-arrow:active{
+  position: relative;
+  top: 5px;
+  left: 2px;
+}
 .backdrops-container{
   width: 1200px;
   display: -webkit-box;
