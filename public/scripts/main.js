@@ -923,23 +923,52 @@ var fav;
     })
   }
   var count = 1;
+  var beyondFlag = false;
   $scope.shiftLeft = function(){
     let container = document.getElementsByClassName('videos-container')[0];
-    function IntervalLogic(){
-      container.scrollLeft += 1;
-      console.log(container.scrollLeft);
+    function IntervalLogic(){    
+      console.log(count);
+      if(container.scrollLeft < container.children.length * container.offsetWidth - (container.offsetWidth)){
+        container.scrollLeft += 10;
+      }
+      console.log(container.scrollLeft, count + 1);
       if(container.scrollLeft == (container.offsetWidth * count)){
         clearInterval(refresh);
         count++;
+        console.log(container.children.length * container.offsetWidth - (container.offsetWidth));
+        if(container.scrollLeft >= (container.children.length * container.offsetWidth) - container.offsetWidth){
+          clearInterval(refresh);
+          container.scrollLeft = container.offsetWidth * (count - 1);
+          beyondFlag = true;
+          console.log(beyondFlag, container.scrollLeft);
+        }
       }
     }
-    var refresh = setInterval(IntervalLogic, 1);
+    if(!beyondFlag){
+      var refresh = setInterval(IntervalLogic, 0);
+    }
     
     // container.scrollLeft += container.offsetWidth;
   }
   $scope.shiftRight = function(){
+    if(beyondFlag){
+      beyondFlag = !beyondFlag;
+    }
+    console.log(beyondFlag);
     let container = document.getElementsByClassName('videos-container')[0];
-    container.scrollLeft -= container.offsetWidth;
+    function IntervalLogic(){
+      container.scrollLeft -= 10;
+      console.log(container.scrollLeft, count, (container.offsetWidth * (count - 1)) - container.offsetWidth);
+      if(container.scrollLeft == (container.offsetWidth * (count - 1)) - container.offsetWidth){
+        clearInterval(refresh);
+        count--;
+      } else if(container.scrollLeft == 0){
+        clearInterval(refresh);
+        count = 1;
+      }
+    }
+    var refresh = setInterval(IntervalLogic, 0);
+    // container.scrollLeft -= container.offsetWidth;
   }
   $scope.getCast = imdb_id => {
     mainSvc.getCast(imdb_id).then(response => {
@@ -1141,12 +1170,6 @@ angular.module('flixApp').controller('mylistCtrl', function($scope, mainSvc){
 
 });
 
-angular.module('flixApp').controller('searchCtrl', function($scope, mainSvc){
-
-
-
-});
-
 angular.module('flixApp').controller('peopleCtrl', function($scope, $stateParams, mainSvc){
   var person_id = $stateParams.id;
   // console.log(person_id);
@@ -1330,6 +1353,12 @@ angular.module('flixApp').controller('peopleCtrl', function($scope, $stateParams
 
 });
 
+angular.module('flixApp').controller('searchCtrl', function($scope, mainSvc){
+
+
+
+});
+
 angular.module('flixApp').controller('theaterCtrl', function($scope, mainSvc, $stateParams, $sce){
     var theaterId = $stateParams;
 
@@ -1372,20 +1401,6 @@ angular.module('flixApp').controller('theaterCtrl', function($scope, mainSvc, $s
     $scope.getTheater(date);
     
 });
-angular.module('flixApp').controller('userReviewsCtrl', function($scope, mainSvc, $stateParams){
-  var id = $stateParams;
-  $scope.getUserReviews2 = (id) => {
-    mainSvc.getUserReviews2(id).then(function(response){
-      for(var i = 0; i < response.length; i++){
-        response[i].reviewColor = $scope.colorPicker(response[i].rating);
-      }
-      $scope.userReviews2 = response;
-      $scope.userAuthor = response[0].name;
-    });
-  }
-  $scope.getUserReviews2(id);
-});
-
 angular.module('favoritesCardDirective', []).directive('favoritesCard', function(){
     return {
         restrict: 'E',
@@ -1448,4 +1463,18 @@ angular.module('watchlistCardDirective', []).directive('watchlistCard', function
         }
     }
 });
+angular.module('flixApp').controller('userReviewsCtrl', function($scope, mainSvc, $stateParams){
+  var id = $stateParams;
+  $scope.getUserReviews2 = (id) => {
+    mainSvc.getUserReviews2(id).then(function(response){
+      for(var i = 0; i < response.length; i++){
+        response[i].reviewColor = $scope.colorPicker(response[i].rating);
+      }
+      $scope.userReviews2 = response;
+      $scope.userAuthor = response[0].name;
+    });
+  }
+  $scope.getUserReviews2(id);
+});
+
 //# sourceMappingURL=main.js.map
