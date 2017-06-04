@@ -55,9 +55,20 @@ var fav;
       $scope.videos = links;
     })
   }
+  var count = 1;
   $scope.shiftLeft = function(){
     let container = document.getElementsByClassName('videos-container')[0];
-    container.scrollLeft += container.offsetWidth;
+    function IntervalLogic(){
+      container.scrollLeft += 1;
+      console.log(container.scrollLeft);
+      if(container.scrollLeft == (container.offsetWidth * count)){
+        clearInterval(refresh);
+        count++;
+      }
+    }
+    var refresh = setInterval(IntervalLogic, 1);
+    
+    // container.scrollLeft += container.offsetWidth;
   }
   $scope.shiftRight = function(){
     let container = document.getElementsByClassName('videos-container')[0];

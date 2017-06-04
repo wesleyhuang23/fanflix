@@ -792,30 +792,77 @@ var omdbapi = '752618d';
   }
 });
 
-angular.module('flixApp').controller('editCtrl', function($scope, mainSvc, $stateParams){
+angular.module('flixApp').controller('creditsCtrl', function($scope, $stateParams, mainSvc){
   var id = $stateParams.id;
 
-  $scope.getEditDetails = function(id){
-    mainSvc.getDetails(id).then(function(response){
-      $scope.editDetails = response;
+  $scope.getCredits = () => {
+    mainSvc.getCast(id).then(function(response){
+      $scope.cast = response.cast;
+      $scope.crew = response.crew;
+      $scope.numCredits = response.cast.length + response.crew.length;
 
+      for(var i = 0; i < response.cast.length; i++){
+        response.cast[i].firstLetter = response.cast[i].name[0];
+      }
+
+      var crew = response.crew
+
+      var directing = crew.filter(function(crew){
+        return crew.department === 'Directing';
+      });
+      var writing = crew.filter(function(crew){
+        return crew.department === 'Writing';
+      })
+      var camera = crew.filter(function(crew){
+        return crew.department === 'Camera';
+      })
+      var art = crew.filter(function(crew){
+        return crew.department === 'Art';
+      })
+      var production = crew.filter(function(crew){
+        return crew.department === 'Production';
+      });
+      var sound = crew.filter(function(crew){
+        return crew.department === 'Sound';
+      });
+      var visualEffects = crew.filter(function(crew){
+        return crew.department === 'Visual Effects';
+      });
+      var editorial = crew.filter(function(crew){
+        return crew.department === 'Editorial Staff';
+      });
+      var lighting = crew.filter(function(crew){
+        return crew.department === 'Lighting';
+      });
+      var crewDep = crew.filter(function(crew){
+        return crew.department === 'Crew';
+      })
+      var editing = crew.filter(function(crew){
+        return crew.department === 'Editing';
+      });
+      $scope.directing = directing;
+      $scope.writing = writing;
+      $scope.camera = camera;
+      $scope.art = art;
+      $scope.production = production;
+      $scope.sound = sound;
+      $scope.visualEffects = visualEffects;
+      $scope.editorial = editorial;
+      $scope.lighting = lighting;
+      $scope.crewDep = crewDep;
+      $scope.editing = editing;
+
+
+      $scope.getDetails(id);
     });
   }
-  $scope.getEditDetails(id);
 
-  $scope.submitReview = function(tagline, author, comments, rating, fb_id){
-    var review = {}
-    review.tagline = tagline;
-    review.author = author;
-    review.review = comments;
-    review.mdb_id = id;
-    review.rating = rating;
-    review.fb_id = fb_id;
-    mainSvc.submitReview(review).then(function(response){
-      $scope.getReviews(fb_id);
+  $scope.getCredits();
+  $scope.getDetails = function(){
+    mainSvc.getDetails(id).then(function(response){
+      $scope.creditDetails = response;
     });
   };
-
 });
 
 angular.module('flixApp').controller('detailsCtrl', function($scope, $stateParams, mainSvc, $sce){
@@ -875,9 +922,20 @@ var fav;
       $scope.videos = links;
     })
   }
+  var count = 1;
   $scope.shiftLeft = function(){
     let container = document.getElementsByClassName('videos-container')[0];
-    container.scrollLeft += container.offsetWidth;
+    function IntervalLogic(){
+      container.scrollLeft += 1;
+      console.log(container.scrollLeft);
+      if(container.scrollLeft == (container.offsetWidth * count)){
+        clearInterval(refresh);
+        count++;
+      }
+    }
+    var refresh = setInterval(IntervalLogic, 1);
+    
+    // container.scrollLeft += container.offsetWidth;
   }
   $scope.shiftRight = function(){
     let container = document.getElementsByClassName('videos-container')[0];
@@ -1039,80 +1097,53 @@ var fav;
   }
 });
 
-angular.module('flixApp').controller('creditsCtrl', function($scope, $stateParams, mainSvc){
+angular.module('flixApp').controller('editCtrl', function($scope, mainSvc, $stateParams){
   var id = $stateParams.id;
 
-  $scope.getCredits = () => {
-    mainSvc.getCast(id).then(function(response){
-      $scope.cast = response.cast;
-      $scope.crew = response.crew;
-      $scope.numCredits = response.cast.length + response.crew.length;
+  $scope.getEditDetails = function(id){
+    mainSvc.getDetails(id).then(function(response){
+      $scope.editDetails = response;
 
-      for(var i = 0; i < response.cast.length; i++){
-        response.cast[i].firstLetter = response.cast[i].name[0];
-      }
-
-      var crew = response.crew
-
-      var directing = crew.filter(function(crew){
-        return crew.department === 'Directing';
-      });
-      var writing = crew.filter(function(crew){
-        return crew.department === 'Writing';
-      })
-      var camera = crew.filter(function(crew){
-        return crew.department === 'Camera';
-      })
-      var art = crew.filter(function(crew){
-        return crew.department === 'Art';
-      })
-      var production = crew.filter(function(crew){
-        return crew.department === 'Production';
-      });
-      var sound = crew.filter(function(crew){
-        return crew.department === 'Sound';
-      });
-      var visualEffects = crew.filter(function(crew){
-        return crew.department === 'Visual Effects';
-      });
-      var editorial = crew.filter(function(crew){
-        return crew.department === 'Editorial Staff';
-      });
-      var lighting = crew.filter(function(crew){
-        return crew.department === 'Lighting';
-      });
-      var crewDep = crew.filter(function(crew){
-        return crew.department === 'Crew';
-      })
-      var editing = crew.filter(function(crew){
-        return crew.department === 'Editing';
-      });
-      $scope.directing = directing;
-      $scope.writing = writing;
-      $scope.camera = camera;
-      $scope.art = art;
-      $scope.production = production;
-      $scope.sound = sound;
-      $scope.visualEffects = visualEffects;
-      $scope.editorial = editorial;
-      $scope.lighting = lighting;
-      $scope.crewDep = crewDep;
-      $scope.editing = editing;
-
-
-      $scope.getDetails(id);
     });
   }
+  $scope.getEditDetails(id);
 
-  $scope.getCredits();
-  $scope.getDetails = function(){
-    mainSvc.getDetails(id).then(function(response){
-      $scope.creditDetails = response;
+  $scope.submitReview = function(tagline, author, comments, rating, fb_id){
+    var review = {}
+    review.tagline = tagline;
+    review.author = author;
+    review.review = comments;
+    review.mdb_id = id;
+    review.rating = rating;
+    review.fb_id = fb_id;
+    mainSvc.submitReview(review).then(function(response){
+      $scope.getReviews(fb_id);
     });
   };
+
 });
 
 angular.module('flixApp').controller('loginCtrl', function($scope, mainSvc){
+
+});
+
+angular.module('flixApp').controller('mylistCtrl', function($scope, mainSvc){
+
+
+
+  $scope.getFavs = function(){
+    mainSvc.getFavs().then(function(response){
+      $scope.favorites = response;
+    });
+  }
+
+  $scope.getFavs();
+
+});
+
+angular.module('flixApp').controller('searchCtrl', function($scope, mainSvc){
+
+
 
 });
 
@@ -1299,26 +1330,6 @@ angular.module('flixApp').controller('peopleCtrl', function($scope, $stateParams
 
 });
 
-angular.module('flixApp').controller('searchCtrl', function($scope, mainSvc){
-
-
-
-});
-
-angular.module('flixApp').controller('mylistCtrl', function($scope, mainSvc){
-
-
-
-  $scope.getFavs = function(){
-    mainSvc.getFavs().then(function(response){
-      $scope.favorites = response;
-    });
-  }
-
-  $scope.getFavs();
-
-});
-
 angular.module('flixApp').controller('theaterCtrl', function($scope, mainSvc, $stateParams, $sce){
     var theaterId = $stateParams;
 
@@ -1361,6 +1372,20 @@ angular.module('flixApp').controller('theaterCtrl', function($scope, mainSvc, $s
     $scope.getTheater(date);
     
 });
+angular.module('flixApp').controller('userReviewsCtrl', function($scope, mainSvc, $stateParams){
+  var id = $stateParams;
+  $scope.getUserReviews2 = (id) => {
+    mainSvc.getUserReviews2(id).then(function(response){
+      for(var i = 0; i < response.length; i++){
+        response[i].reviewColor = $scope.colorPicker(response[i].rating);
+      }
+      $scope.userReviews2 = response;
+      $scope.userAuthor = response[0].name;
+    });
+  }
+  $scope.getUserReviews2(id);
+});
+
 angular.module('favoritesCardDirective', []).directive('favoritesCard', function(){
     return {
         restrict: 'E',
@@ -1423,18 +1448,4 @@ angular.module('watchlistCardDirective', []).directive('watchlistCard', function
         }
     }
 });
-angular.module('flixApp').controller('userReviewsCtrl', function($scope, mainSvc, $stateParams){
-  var id = $stateParams;
-  $scope.getUserReviews2 = (id) => {
-    mainSvc.getUserReviews2(id).then(function(response){
-      for(var i = 0; i < response.length; i++){
-        response[i].reviewColor = $scope.colorPicker(response[i].rating);
-      }
-      $scope.userReviews2 = response;
-      $scope.userAuthor = response[0].name;
-    });
-  }
-  $scope.getUserReviews2(id);
-});
-
 //# sourceMappingURL=main.js.map
