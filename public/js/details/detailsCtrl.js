@@ -41,7 +41,7 @@ var fav;
   $scope.getImdb = imdb_id => {
     mainSvc.getImdb(imdb_id).then(response => {
       $scope.imdb = response;
-      console.log($scope.imdb);
+      // console.log($scope.imdb);
       metascore = response.Metascore;
     });
   }

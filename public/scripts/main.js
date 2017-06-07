@@ -63,7 +63,8 @@ angular.module('flixApp', [
   'ui.router', 
   'watchlistCardDirective',
   'watchedCardDirective',
-  'favoritesCardDirective'
+  'favoritesCardDirective',
+  // 'ngMessages'
   ])
 
 .config(function($urlRouterProvider, $stateProvider){
@@ -703,7 +704,7 @@ var omdbapi = '752618d';
   this.getTheatersInArea = function(zip){
     return $http({
       method: 'GET',
-      url: 'http://data.tmsapi.com/v1.1/theatres?zip=' + zip + '&radius=20&api_key=' + config.tmsapi
+      url: 'http://data.tmsapi.com/v1.1/theatres?zip=' + zip + '&radius=20&api_key=' + tmsapi
     }).then(function(response){
       return response.data;
     });
@@ -719,7 +720,7 @@ var omdbapi = '752618d';
   this.getTheaterDetails = function(theaterId){
     return $http({
       method: 'GET',
-      url: 'http://data.tmsapi.com/v1.1/theatres/' + theaterId.id + '?api_key=' + config.tmsapi
+      url: 'http://data.tmsapi.com/v1.1/theatres/' + theaterId.id + '?api_key=' + tmsapi
     }).then(function(response){
       return response.data;
     });
@@ -728,31 +729,31 @@ var omdbapi = '752618d';
   this.getPersonDetails = person_id => {
     return $http({
       method: 'GET',
-      url: 'https://api.themoviedb.org/3/person/' + person_id + '?api_key='+ config.mdbapi +'&language=en-US'
+      url: 'https://api.themoviedb.org/3/person/' + person_id + '?api_key='+ mdbapi +'&language=en-US'
     }).then(response => response.data);
   };
   this.getPersonMovieCredits = person_id => {
     return $http({
       method: 'GET',
-      url: 'https://api.themoviedb.org/3/person/' + person_id + '/movie_credits?api_key='+ config.mdbapi +'&language=en-US'
+      url: 'https://api.themoviedb.org/3/person/' + person_id + '/movie_credits?api_key='+ mdbapi +'&language=en-US'
     }).then(response => response.data);
   };
   this.getKnownFor = person_name => {
     return $http({
       method: 'GET',
-      url: 'https://api.themoviedb.org/3/search/person?api_key='+ config.mdbapi +'&language=en-US&query=' + person_name + '&page=1&include_adult=false'
+      url: 'https://api.themoviedb.org/3/search/person?api_key='+ mdbapi +'&language=en-US&query=' + person_name + '&page=1&include_adult=false'
     }).then(response => response.data);
   };
   this.getPersonImages = person_id => {
     return $http({
       method:'GET',
-      url: 'https://api.themoviedb.org/3/person/'+ person_id +'/tagged_images?api_key=' + config.mdbapi +'&language=en-US&page=1'
+      url: 'https://api.themoviedb.org/3/person/'+ person_id +'/tagged_images?api_key=' + mdbapi +'&language=en-US&page=1'
     }).then( response => response.data.results);
   };
   this.getPersonImages2 = person_id => {
     return $http({
       method: 'GET',
-      url: 'https://api.themoviedb.org/3/person/'+ person_id +'/tagged_images?api_key=' + config.mdbapi +'&language=en-US&page=2'
+      url: 'https://api.themoviedb.org/3/person/'+ person_id +'/tagged_images?api_key=' + mdbapi +'&language=en-US&page=2'
     }).then(response => {
       return response.data.results;
     });
@@ -760,7 +761,7 @@ var omdbapi = '752618d';
   this.getPersonImages3 = person_id => {
     return $http({
       method: 'GET',
-      url: 'https://api.themoviedb.org/3/person/'+ person_id +'/tagged_images?api_key=' + config.mdbapi +'&language=en-US&page=3'
+      url: 'https://api.themoviedb.org/3/person/'+ person_id +'/tagged_images?api_key=' + mdbapi +'&language=en-US&page=3'
     }).then(response => {
       return response.data.results;
     });
@@ -768,7 +769,7 @@ var omdbapi = '752618d';
   this.getPersonImages4 = person_id => {
     return $http({
       method: 'GET',
-      url: 'https://api.themoviedb.org/3/person/'+ person_id +'/tagged_images?api_key=' + config.mdbapi +'&language=en-US&page=4'
+      url: 'https://api.themoviedb.org/3/person/'+ person_id +'/tagged_images?api_key=' + mdbapi +'&language=en-US&page=4'
     }).then(response => {
       return response.data.results;
     });
@@ -934,7 +935,7 @@ var fav;
   $scope.getImdb = imdb_id => {
     mainSvc.getImdb(imdb_id).then(response => {
       $scope.imdb = response;
-      console.log($scope.imdb);
+      // console.log($scope.imdb);
       metascore = response.Metascore;
     });
   }
@@ -1353,12 +1354,6 @@ angular.module('flixApp').controller('peopleCtrl', function($scope, $stateParams
 
 });
 
-angular.module('flixApp').controller('searchCtrl', function($scope, mainSvc){
-
-
-
-});
-
 angular.module('flixApp').controller('theaterCtrl', function($scope, mainSvc, $stateParams, $sce){
     var theaterId = $stateParams;
 
@@ -1401,6 +1396,12 @@ angular.module('flixApp').controller('theaterCtrl', function($scope, mainSvc, $s
     $scope.getTheater(date);
     
 });
+angular.module('flixApp').controller('searchCtrl', function($scope, mainSvc){
+
+
+
+});
+
 angular.module('favoritesCardDirective', []).directive('favoritesCard', function(){
     return {
         restrict: 'E',
