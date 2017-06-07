@@ -3,7 +3,7 @@ angular.module('flixApp', [
   'watchlistCardDirective',
   'watchedCardDirective',
   'favoritesCardDirective',
-  // 'ngMessages'
+  'ngMessages'
   ])
 
 .config(function($urlRouterProvider, $stateProvider){

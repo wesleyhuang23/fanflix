@@ -64,7 +64,7 @@ angular.module('flixApp', [
   'watchlistCardDirective',
   'watchedCardDirective',
   'favoritesCardDirective',
-  // 'ngMessages'
+  'ngMessages'
   ])
 
 .config(function($urlRouterProvider, $stateProvider){
@@ -866,32 +866,6 @@ angular.module('flixApp').controller('creditsCtrl', function($scope, $stateParam
   };
 });
 
-angular.module('flixApp').controller('editCtrl', function($scope, mainSvc, $stateParams){
-  var id = $stateParams.id;
-
-  $scope.getEditDetails = function(id){
-    mainSvc.getDetails(id).then(function(response){
-      $scope.editDetails = response;
-
-    });
-  }
-  $scope.getEditDetails(id);
-
-  $scope.submitReview = function(tagline, author, comments, rating, fb_id){
-    var review = {}
-    review.tagline = tagline;
-    review.author = author;
-    review.review = comments;
-    review.mdb_id = id;
-    review.rating = rating;
-    review.fb_id = fb_id;
-    mainSvc.submitReview(review).then(function(response){
-      $scope.getReviews(fb_id);
-    });
-  };
-
-});
-
 angular.module('flixApp').controller('detailsCtrl', function($scope, $stateParams, mainSvc, $sce){
   var id = $stateParams.id;
   $scope.trustSrc = function(link) {
@@ -1153,6 +1127,32 @@ var fav;
   }
 });
 
+angular.module('flixApp').controller('editCtrl', function($scope, mainSvc, $stateParams){
+  var id = $stateParams.id;
+
+  $scope.getEditDetails = function(id){
+    mainSvc.getDetails(id).then(function(response){
+      $scope.editDetails = response;
+
+    });
+  }
+  $scope.getEditDetails(id);
+
+  $scope.submitReview = function(tagline, author, comments, rating, fb_id){
+    var review = {}
+    review.tagline = tagline;
+    review.author = author;
+    review.review = comments;
+    review.mdb_id = id;
+    review.rating = rating;
+    review.fb_id = fb_id;
+    mainSvc.submitReview(review).then(function(response){
+      $scope.getReviews(fb_id);
+    });
+  };
+
+});
+
 angular.module('flixApp').controller('loginCtrl', function($scope, mainSvc){
 
 });
@@ -1354,6 +1354,12 @@ angular.module('flixApp').controller('peopleCtrl', function($scope, $stateParams
 
 });
 
+angular.module('flixApp').controller('searchCtrl', function($scope, mainSvc){
+
+
+
+});
+
 angular.module('flixApp').controller('theaterCtrl', function($scope, mainSvc, $stateParams, $sce){
     var theaterId = $stateParams;
 
@@ -1396,12 +1402,6 @@ angular.module('flixApp').controller('theaterCtrl', function($scope, mainSvc, $s
     $scope.getTheater(date);
     
 });
-angular.module('flixApp').controller('searchCtrl', function($scope, mainSvc){
-
-
-
-});
-
 angular.module('favoritesCardDirective', []).directive('favoritesCard', function(){
     return {
         restrict: 'E',
