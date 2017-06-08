@@ -292,6 +292,7 @@ iframe{
   position: relative;
 }
 .dots-container{
+  padding-top: 20px;
   width: 200px;
   display: flex;
   flex-direction: row;
@@ -299,10 +300,11 @@ iframe{
   margin: auto;
 }
 .dots{
-  border: 1px solid white;
+  border: 1px solid #F3F3F3;
   border-radius: 100px;
   height: 5px;
   width: 5px;
+  opacity: 0.5;
 }
 #whiteDot{
   background-color: white;
