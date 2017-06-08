@@ -1,8 +1,8 @@
 angular.module('flixApp').controller('detailsCtrl', function($scope, $stateParams, mainSvc, $sce){
   var id = $stateParams.id;
   $scope.trustSrc = function(link) {
-  return $sce.trustAsResourceUrl(link);
-};
+    return $sce.trustAsResourceUrl(link);
+  };
 
 var fb_id;
 var user_name;
@@ -47,14 +47,34 @@ var fav;
   }
 
   $scope.getVideos = imdb_id => {
+    
     mainSvc.getVideos(imdb_id).then(response => {
       var links = []
       for(var i = 0; i < response.length; i++){
         links.push('https://www.youtube.com/embed/' + response[i].key);
       }
       $scope.videos = links;
+      console.log($scope.videos);
+      setTimeout(createDots, 1);
+      function createDots(){
+        let container = document.getElementsByClassName('dots-container')[0];
+        let videoContainer = document.getElementsByClassName('videos-container')[0];
+        console.log(container, videoContainer.childElementCount);
+        for(let i = 0; i < videoContainer.childElementCount; i++){
+          let dot = document.createElement('div');
+          if(i === 0){
+            dot.id = 'whiteDot';
+          }
+          dot.className = 'dots';
+          dot.title = i;
+          console.log(dot);
+          container.appendChild(dot);
+        }
+      }
+
     })
   }
+
   var count = 1;
   var beyondFlag = false;
   $scope.shiftLeft = function(){
@@ -257,4 +277,8 @@ var fav;
       $scope.getWatched();
     });
   }
+
+
+  
+
 });

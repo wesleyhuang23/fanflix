@@ -502,9 +502,25 @@ iframe{
   display: flex;
   width: 1200px;
   /*border: 1px solid red;*/
-  overflow: scroll;
+  overflow: hidden;
   overflow-y: hidden;
   position: relative;
+}
+.dots-container{
+  width: 200px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: auto;
+}
+.dots{
+  border: 1px solid white;
+  border-radius: 100px;
+  height: 5px;
+  width: 5px;
+}
+#whiteDot{
+  background-color: white;
 }
 .videos{
   display: inline-block;
