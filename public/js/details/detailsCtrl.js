@@ -55,11 +55,10 @@ var fav;
       }
       $scope.videos = links;
       console.log($scope.videos);
-      setTimeout(createDots, 1);
+      setTimeout(createDots, 1); //avoid miss on asynchronous call
       function createDots(){
         let container = document.getElementsByClassName('dots-container')[0];
         let videoContainer = document.getElementsByClassName('videos-container')[0];
-        console.log(container, videoContainer.childElementCount);
         for(let i = 0; i < videoContainer.childElementCount; i++){
           let dot = document.createElement('div');
           if(i === 0){
@@ -67,7 +66,6 @@ var fav;
           }
           dot.className = 'dots';
           dot.title = i;
-          console.log(dot);
           container.appendChild(dot);
         }
       }
@@ -75,12 +73,22 @@ var fav;
     })
   }
 
+  //getting and updating dot logic
+  function dotUpdate(){
+    let oldDot = document.getElementById('whiteDot');
+    oldDot.id = ''; //removing the background
+    let newDot = document.getElementsByClassName('dots')[index];
+    newDot.id = 'whiteDot';
+  }
+
   var count = 1;
+  var index = 0;
   var beyondFlag = false;
   $scope.shiftLeft = function(){
+    index++
     let container = document.getElementsByClassName('videos-container')[0];
     function IntervalLogic(){    
-      // console.log(count);
+      console.log(index);
       if(container.scrollLeft < container.children.length * container.offsetWidth - (container.offsetWidth)){
         container.scrollLeft += 10;
       }
@@ -93,17 +101,18 @@ var fav;
           clearInterval(refresh);
           container.scrollLeft = container.offsetWidth * (count - 1);
           beyondFlag = true;
+          index = 5;
           // console.log(beyondFlag, container.scrollLeft);
         }
       }
     }
     if(!beyondFlag){
       var refresh = setInterval(IntervalLogic, 0);
+      dotUpdate()
     }
-    
-    // container.scrollLeft += container.offsetWidth;
   }
   $scope.shiftRight = function(){
+    index--;
     if(beyondFlag){
       beyondFlag = !beyondFlag;
     }
@@ -118,11 +127,15 @@ var fav;
       } else if(container.scrollLeft == 0){
         clearInterval(refresh);
         count = 1;
+        index = 0;
       }
     }
     var refresh = setInterval(IntervalLogic, 0);
+    console.log(index);
     // container.scrollLeft -= container.offsetWidth;
+    dotUpdate();
   }
+
   $scope.getCast = imdb_id => {
     mainSvc.getCast(imdb_id).then(response => {
       var newCast = [];
