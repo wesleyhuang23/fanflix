@@ -953,7 +953,6 @@ var fav;
   var index = 0;
   var beyondFlag = false;
   $scope.shiftLeft = function(){
-    index++
     let container = document.getElementsByClassName('videos-container')[0];
     function IntervalLogic(){    
       console.log(index);
@@ -969,14 +968,14 @@ var fav;
           clearInterval(refresh);
           container.scrollLeft = container.offsetWidth * (count - 1);
           beyondFlag = true;
-          index = 5;
           // console.log(beyondFlag, container.scrollLeft);
         }
       }
     }
     if(!beyondFlag){
       var refresh = setInterval(IntervalLogic, 0);
-      dotUpdate()
+      index++
+      dotUpdate();
     }
   }
   $scope.shiftRight = function(){
@@ -996,12 +995,15 @@ var fav;
         clearInterval(refresh);
         count = 1;
         index = 0;
+        dotUpdate();
       }
     }
     var refresh = setInterval(IntervalLogic, 0);
     console.log(index);
     // container.scrollLeft -= container.offsetWidth;
-    dotUpdate();
+    if(index >= 0){
+      dotUpdate();
+    }
   }
 
   $scope.getCast = imdb_id => {
@@ -1164,6 +1166,10 @@ var fav;
 
 });
 
+angular.module('flixApp').controller('loginCtrl', function($scope, mainSvc){
+
+});
+
 angular.module('flixApp').controller('editCtrl', function($scope, mainSvc, $stateParams){
   var id = $stateParams.id;
   $scope.enterClick = false;
@@ -1196,10 +1202,6 @@ angular.module('flixApp').controller('editCtrl', function($scope, mainSvc, $stat
   };
 });
 
-angular.module('flixApp').controller('loginCtrl', function($scope, mainSvc){
-
-});
-
 angular.module('flixApp').controller('mylistCtrl', function($scope, mainSvc){
 
 
@@ -1214,54 +1216,6 @@ angular.module('flixApp').controller('mylistCtrl', function($scope, mainSvc){
 
 });
 
-angular.module('flixApp').controller('searchCtrl', function($scope, mainSvc){
-
-
-
-});
-
-angular.module('flixApp').controller('theaterCtrl', function($scope, mainSvc, $stateParams, $sce){
-    var theaterId = $stateParams;
-
-    $scope.trustSrc = function(map) {
-        return $sce.trustAsResourceUrl(map);
-    };
-
-    if(!$scope.date){
-    var date = new Date().toISOString().substring(0, 10);
-    }
-
-    $scope.getTheater = function(date){
-        
-        if($scope.date){
-        var date = $scope.date.toISOString().substring(0, 10);
-        }
-        $scope.day = date;
-        mainSvc.getTheater(theaterId, date).then(function(response){
-        response.sort(function (a, b) {
-        if (a.title < b.title) {
-          return 1;
-        }
-        if (a.title > b.title) {
-          return -1;
-        }
-  // a must be equal to b
-        return 0;
-        });
-        $scope.theater = response;
-        $scope.getTheaterDetails();
-      });
-    }
-    $scope.getTheaterDetails = function(){
-        mainSvc.getTheaterDetails(theaterId).then(function(response){
-            $scope.map = 'https://www.google.com/maps/embed/v1/place?key=AIzaSyBG1FaMjyrJZWHUprmlMrpZBIwq_TH-hNs&q=' + response.name;
-            $scope.theaterDetails = response;
-        })
-    }
-
-    $scope.getTheater(date);
-    
-});
 angular.module('flixApp').controller('peopleCtrl', function($scope, $stateParams, mainSvc){
   var person_id = $stateParams.id;
   // console.log(person_id);
@@ -1445,6 +1399,54 @@ angular.module('flixApp').controller('peopleCtrl', function($scope, $stateParams
 
 });
 
+angular.module('flixApp').controller('searchCtrl', function($scope, mainSvc){
+
+
+
+});
+
+angular.module('flixApp').controller('theaterCtrl', function($scope, mainSvc, $stateParams, $sce){
+    var theaterId = $stateParams;
+
+    $scope.trustSrc = function(map) {
+        return $sce.trustAsResourceUrl(map);
+    };
+
+    if(!$scope.date){
+    var date = new Date().toISOString().substring(0, 10);
+    }
+
+    $scope.getTheater = function(date){
+        
+        if($scope.date){
+        var date = $scope.date.toISOString().substring(0, 10);
+        }
+        $scope.day = date;
+        mainSvc.getTheater(theaterId, date).then(function(response){
+        response.sort(function (a, b) {
+        if (a.title < b.title) {
+          return 1;
+        }
+        if (a.title > b.title) {
+          return -1;
+        }
+  // a must be equal to b
+        return 0;
+        });
+        $scope.theater = response;
+        $scope.getTheaterDetails();
+      });
+    }
+    $scope.getTheaterDetails = function(){
+        mainSvc.getTheaterDetails(theaterId).then(function(response){
+            $scope.map = 'https://www.google.com/maps/embed/v1/place?key=AIzaSyBG1FaMjyrJZWHUprmlMrpZBIwq_TH-hNs&q=' + response.name;
+            $scope.theaterDetails = response;
+        })
+    }
+
+    $scope.getTheater(date);
+    
+});
 angular.module('favoritesCardDirective', []).directive('favoritesCard', function(){
     return {
         restrict: 'E',

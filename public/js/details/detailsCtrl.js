@@ -85,7 +85,6 @@ var fav;
   var index = 0;
   var beyondFlag = false;
   $scope.shiftLeft = function(){
-    index++
     let container = document.getElementsByClassName('videos-container')[0];
     function IntervalLogic(){    
       console.log(index);
@@ -101,14 +100,14 @@ var fav;
           clearInterval(refresh);
           container.scrollLeft = container.offsetWidth * (count - 1);
           beyondFlag = true;
-          index = 5;
           // console.log(beyondFlag, container.scrollLeft);
         }
       }
     }
     if(!beyondFlag){
       var refresh = setInterval(IntervalLogic, 0);
-      dotUpdate()
+      index++
+      dotUpdate();
     }
   }
   $scope.shiftRight = function(){
@@ -128,12 +127,15 @@ var fav;
         clearInterval(refresh);
         count = 1;
         index = 0;
+        dotUpdate();
       }
     }
     var refresh = setInterval(IntervalLogic, 0);
     console.log(index);
     // container.scrollLeft -= container.offsetWidth;
-    dotUpdate();
+    if(index >= 0){
+      dotUpdate();
+    }
   }
 
   $scope.getCast = imdb_id => {
