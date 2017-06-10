@@ -230,6 +230,7 @@ iframe{
     font-size: 13px;
     text-transform: uppercase;
     font-weight: 900;
+    width: 171px;
   }
 #character-name{
   text-transform: inherit;
@@ -760,6 +761,7 @@ iframe{
   }
   .cast-view p{
     font-size: 10px;
+    width: 145px;
   }
 }
 /*ipad pro*/
