@@ -83,15 +83,17 @@ var fav;
       }
     })
   }
-
   setTimeout(keyPress, 1);
 
   //getting and updating dot logic
   function dotUpdate(){
-    let oldDot = document.getElementById('whiteDot');
-    oldDot.id = ''; //removing the background
-    let newDot = document.getElementsByClassName('dots')[index];
-    newDot.id = 'whiteDot';
+    let container = document.getElementsByClassName('videos-container')[0];
+    if(container.children.length > 1){
+      let oldDot = document.getElementById('whiteDot');
+      oldDot.id = ''; //removing the background
+      let newDot = document.getElementsByClassName('dots')[index];
+      newDot.id = 'whiteDot';
+    }
   }
 
   var count = 1;
@@ -101,7 +103,9 @@ var fav;
     let container = document.getElementsByClassName('videos-container')[0];
     function IntervalLogic(){    
       // console.log(index);
-      if(container.scrollLeft < container.children.length * container.offsetWidth - (container.offsetWidth)){
+      if(container.children.length <= 1){
+        beyondFlag = true;
+      } else if(container.scrollLeft < container.children.length * container.offsetWidth - (container.offsetWidth)){
         container.scrollLeft += 10;
       }
       // console.log(container.scrollLeft, count + 1);
@@ -117,6 +121,7 @@ var fav;
         }
       }
     }
+    
     if(!beyondFlag){
       var refresh = setInterval(IntervalLogic, 0);
       index++
@@ -124,12 +129,11 @@ var fav;
     }
   }
   $scope.shiftRight = function(){
-    index--;
+    let container = document.getElementsByClassName('videos-container')[0];
+    container.children.length <= 1 ? beyondFlag = true : index--;
     if(beyondFlag){
       beyondFlag = !beyondFlag;
     }
-    // console.log(beyondFlag);
-    let container = document.getElementsByClassName('videos-container')[0];
     function IntervalLogic(){
       container.scrollLeft -= 10;
       // console.log(container.scrollLeft, count, (container.offsetWidth * (count - 1)) - container.offsetWidth);
