@@ -70,21 +70,12 @@ var fav;
         }
       }
 
+      
+
     })
   }
 
-  //adding keyboard event listener
-  function keyPress(){
-    window.addEventListener('keyup', function(e){
-      if(e.keyCode == 39){
-        $scope.shiftLeft();
-      } else if(e.keyCode == 37){
-        $scope.shiftRight();
-      }
-    })
-  }
-  setTimeout(keyPress, 1);
-
+  
   //getting and updating dot logic
   function dotUpdate(){
     let container = document.getElementsByClassName('videos-container')[0];
@@ -154,6 +145,17 @@ var fav;
       dotUpdate();
     }
   }
+  //adding keyboard event listener
+  function keyPress(){
+    window.addEventListener('keydown', function(e){
+      if(e.keyCode == 39){
+        $scope.shiftLeft();
+      } else if(e.keyCode == 37){
+        $scope.shiftRight();
+      }
+    })
+  }
+  keyPress();
 
   $scope.getCast = imdb_id => {
     mainSvc.getCast(imdb_id).then(response => {
