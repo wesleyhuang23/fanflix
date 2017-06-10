@@ -3389,7 +3389,7 @@ HOME VIEW
 ============*/
 .billboard-wrapper{
     overflow: hidden;
-    height: 500px;
+    height: 600px;
     position: relative;
 }
 .billboard{
@@ -3421,7 +3421,7 @@ HOME VIEW
   z-index: 1;
   right: 0px;
   width: 80vw;
-  height: 500px;
+  height: 600px;
   opacity: 1;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
   box-shadow: inset 200px -110px 234em black;
