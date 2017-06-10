@@ -508,11 +508,10 @@ iframe{
 }
 .dots-container{
   padding-top: 20px;
-  width: 100px;
+  width: auto;
   display: flex;
   flex-direction: row;
   justify-content: center;
-  margin: auto;
   text-align: center;
 }
 .dots{
@@ -938,6 +937,9 @@ iframe{
   .arrow-ctrl{
     width: 1000px;
   }
+  .dots-container{
+    width: 1000px;
+  }
   iframe{
   width: 1000px;
   height: 562.50px;
@@ -1065,6 +1067,9 @@ iframe{
     width: auto;
   }
   .videos-container{
+    width: 750px;
+  }
+  .dots-container{
     width: 750px;
   }
   .arrow-ctrl{
@@ -1234,6 +1239,9 @@ iframe{
     width: 405px;
   }
   .videos-container{
+    width: 400px;
+  }
+  .dots-container{
     width: 400px;
   }
   .arrow-ctrl{
@@ -1422,6 +1430,9 @@ iframe{
   .videos-container{
     width: 400px;
   }
+  .dots-container{
+    width: 400px;
+  }
   .arrow-ctrl{
     width: 400px;
   }
@@ -1606,6 +1617,9 @@ iframe{
     width: 365px;
   }
   .videos-container{
+    width: 360px;
+  }
+  .dots-container{
     width: 360px;
   }
   .arrow-ctrl{
