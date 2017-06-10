@@ -293,11 +293,12 @@ iframe{
 }
 .dots-container{
   padding-top: 20px;
-  width: 200px;
+  width: 100px;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
   margin: auto;
+  text-align: center;
 }
 .dots{
   border: 1px solid #F3F3F3;
@@ -305,6 +306,9 @@ iframe{
   height: 5px;
   width: 5px;
   opacity: 0.5;
+  text-align: center;
+  margin-right: 5px;
+  margin-left: 5px;
 }
 #whiteDot{
   background-color: white;
