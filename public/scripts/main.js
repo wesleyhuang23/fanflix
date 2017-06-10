@@ -922,7 +922,7 @@ var fav;
         links.push('https://www.youtube.com/embed/' + response[i].key);
       }
       $scope.videos = links;
-      console.log($scope.videos);
+      // console.log($scope.videos);
       setTimeout(createDots, 1); //avoid miss on asynchronous call
       function createDots(){
         let container = document.getElementsByClassName('dots-container')[0];
@@ -941,6 +941,19 @@ var fav;
     })
   }
 
+  //adding keyboard event listener
+  function keyPress(){
+    window.addEventListener('keyup', function(e){
+      if(e.keyCode == 39){
+        $scope.shiftLeft();
+      } else if(e.keyCode == 37){
+        $scope.shiftRight();
+      }
+    })
+  }
+
+  setTimeout(keyPress, 1);
+
   //getting and updating dot logic
   function dotUpdate(){
     let oldDot = document.getElementById('whiteDot');
@@ -955,7 +968,7 @@ var fav;
   $scope.shiftLeft = function(){
     let container = document.getElementsByClassName('videos-container')[0];
     function IntervalLogic(){    
-      console.log(index);
+      // console.log(index);
       if(container.scrollLeft < container.children.length * container.offsetWidth - (container.offsetWidth)){
         container.scrollLeft += 10;
       }
@@ -999,7 +1012,7 @@ var fav;
       }
     }
     var refresh = setInterval(IntervalLogic, 0);
-    console.log(index);
+    // console.log(index);
     // container.scrollLeft -= container.offsetWidth;
     if(index >= 0){
       dotUpdate();
@@ -1166,10 +1179,6 @@ var fav;
 
 });
 
-angular.module('flixApp').controller('loginCtrl', function($scope, mainSvc){
-
-});
-
 angular.module('flixApp').controller('editCtrl', function($scope, mainSvc, $stateParams){
   var id = $stateParams.id;
   $scope.enterClick = false;
@@ -1200,6 +1209,10 @@ angular.module('flixApp').controller('editCtrl', function($scope, mainSvc, $stat
     }
 
   };
+});
+
+angular.module('flixApp').controller('loginCtrl', function($scope, mainSvc){
+
 });
 
 angular.module('flixApp').controller('mylistCtrl', function($scope, mainSvc){
