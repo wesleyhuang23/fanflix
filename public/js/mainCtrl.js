@@ -151,6 +151,7 @@ angular.module('flixApp').controller('mainCtrl', function($scope, mainSvc){
       if (!response.data.user) {
         $scope.user = null;
         fb_id = null;
+        localStorage.removeItem(user);
         $scope.getWatch();
         // console.log('logout getWatch');
       }
