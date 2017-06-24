@@ -142,7 +142,7 @@ angular.module('flixApp').controller('mainCtrl', function($scope, mainSvc){
   }
 
   //MYLIST VIEW
-      var fb_id;
+  var fb_id;
 
   $scope.logoutUser = () => {
     mainSvc.logoutUser().then(response => {
@@ -162,6 +162,7 @@ angular.module('flixApp').controller('mainCtrl', function($scope, mainSvc){
         // console.log('user', response.data);
         $scope.user = response.data;
         fb_id = response.data.fb_id;
+        localStorage.user = fb_id;
         // console.log(fb_id);
           $scope.getFavs(fb_id);
           $scope.getWatch(fb_id);
