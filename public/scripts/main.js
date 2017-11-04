@@ -9,22 +9,12 @@ $(document).ready(function(){
     $('#now-playing').animate({marginLeft: "-=500px"}, "fast");
   });
 
-  // $('.search img').on('click', function(){
-  //   $('input').val("");
-  // });
-
   $('.search input').keyup(function(){
     $('.search img').click();
   });
   $('.search-mobile input').keyup(function(){
     $('.search-mobile img').click();
   });
-
-//   $("#showtime-search").keyup(function(event){
-//     if(event.keyCode == 13){
-//         $(".showtime-input img").click();
-//     }
-// });
 
   $('.search-content').on('click', function(){
     $('#input-search input[type="text"]').val(" ");
@@ -44,20 +34,10 @@ $(document).ready(function(){
   $('#right-now-playing').click(function() {
     $('#now-playing').removeAttr('style');
   })
-
+  $('.slick').slick();
 });
 
-// function initMap() {
-//         var uluru = {lat: -25.363, lng: 131.044};
-//         var map = new google.maps.Map(document.getElementById('map'), {
-//           zoom: 4,
-//           center: uluru
-//         });
-//         var marker = new google.maps.Marker({
-//           position: uluru,
-//           map: map
-//         });
-//       }
+
 
 angular.module('flixApp', [
   'ui.router', 
@@ -122,6 +102,11 @@ angular.module('flixApp', [
 });
 
 angular.module('flixApp').controller('mainCtrl', function($scope, mainSvc){
+
+  if(localStorage.user){
+    window.location.href = 'https://www.fanflix.club/auth/facebook';
+  }
+
   $scope.colorPicker = function(rating){
     if(rating >= 7){
       return 'green';
@@ -260,7 +245,7 @@ angular.module('flixApp').controller('mainCtrl', function($scope, mainSvc){
   }
 
   //MYLIST VIEW
-      var fb_id;
+  var fb_id;
 
   $scope.logoutUser = () => {
     mainSvc.logoutUser().then(response => {
@@ -269,6 +254,7 @@ angular.module('flixApp').controller('mainCtrl', function($scope, mainSvc){
       if (!response.data.user) {
         $scope.user = null;
         fb_id = null;
+        localStorage.removeItem(user);
         $scope.getWatch();
         // console.log('logout getWatch');
       }
@@ -280,6 +266,7 @@ angular.module('flixApp').controller('mainCtrl', function($scope, mainSvc){
         // console.log('user', response.data);
         $scope.user = response.data;
         fb_id = response.data.fb_id;
+        localStorage.user = fb_id;
         // console.log(fb_id);
           $scope.getFavs(fb_id);
           $scope.getWatch(fb_id);
@@ -793,6 +780,38 @@ var omdbapi = '752618d';
   }
 });
 
+angular.module('flixApp').controller('editCtrl', function($scope, mainSvc, $stateParams){
+  var id = $stateParams.id;
+  $scope.enterClick = false;
+
+  $scope.getEditDetails = function(id){
+    mainSvc.getDetails(id).then(function(response){
+      $scope.editDetails = response;
+
+    });
+  }
+  $scope.getEditDetails(id);
+
+  $scope.submitReview = function(tagline, author, comments, rating, fb_id){
+    if(rating){ //if rating is true then run
+      var review = {}
+      review.tagline = tagline;
+      review.author = author;
+      review.review = comments;
+      review.mdb_id = id;
+      review.rating = rating;
+      review.fb_id = fb_id;
+
+      mainSvc.submitReview(review).then(function(response){
+        $scope.getReviews(fb_id);
+      });
+    } else {
+      $scope.enterClick = true;
+    }
+
+  };
+});
+
 angular.module('flixApp').controller('creditsCtrl', function($scope, $stateParams, mainSvc){
   var id = $stateParams.id;
 
@@ -1185,36 +1204,10 @@ var fav;
 
 });
 
-angular.module('flixApp').controller('editCtrl', function($scope, mainSvc, $stateParams){
-  var id = $stateParams.id;
-  $scope.enterClick = false;
-
-  $scope.getEditDetails = function(id){
-    mainSvc.getDetails(id).then(function(response){
-      $scope.editDetails = response;
-
-    });
-  }
-  $scope.getEditDetails(id);
-
-  $scope.submitReview = function(tagline, author, comments, rating, fb_id){
-    if(rating){ //if rating is true then run
-      var review = {}
-      review.tagline = tagline;
-      review.author = author;
-      review.review = comments;
-      review.mdb_id = id;
-      review.rating = rating;
-      review.fb_id = fb_id;
-
-      mainSvc.submitReview(review).then(function(response){
-        $scope.getReviews(fb_id);
-      });
-    } else {
-      $scope.enterClick = true;
+angular.module('flixApp').controller('loginCtrl', function($scope, mainSvc){
+    $scope.loginRecord = function(){
+        localStorage.user = 'true';
     }
-
-  };
 });
 
 angular.module('flixApp').controller('mylistCtrl', function($scope, mainSvc){
@@ -1228,6 +1221,12 @@ angular.module('flixApp').controller('mylistCtrl', function($scope, mainSvc){
   }
 
   $scope.getFavs();
+
+});
+
+angular.module('flixApp').controller('searchCtrl', function($scope, mainSvc){
+
+
 
 });
 
@@ -1411,16 +1410,6 @@ angular.module('flixApp').controller('peopleCtrl', function($scope, $stateParams
     });
   }
   $scope.getPersonMovieCredits(person_id);
-
-});
-
-angular.module('flixApp').controller('loginCtrl', function($scope, mainSvc){
-
-});
-
-angular.module('flixApp').controller('searchCtrl', function($scope, mainSvc){
-
-
 
 });
 
