@@ -3660,7 +3660,7 @@ NOW PLAYING
   overflow: scroll;
 }
 
-ul{
+.slick{
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -3674,8 +3674,6 @@ ul{
   padding-right: 0px;
   margin-left: 0px;
   margin-right: 0px;
-  overflow-x: scroll;
-  overflow-y: hidden;
 }
 li{
   text-align: center;
@@ -3735,10 +3733,6 @@ li{
           justify-content: center;
 }
 .poster:hover{
-  -webkit-transform: scale(1.25);
-          transform: scale(1.25);
-  padding-left: 34px;
-  padding-right: 37px;
   cursor: pointer;
 }
 /*.poster:hover .arrow {
@@ -3770,26 +3764,7 @@ li{
   opacity: 0;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
 }
-.arrow{
-  filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="table" tableValues="1 0" /><feFuncG type="table" tableValues="1 0" /><feFuncB type="table" tableValues="1 0" /></feComponentTransfer></filter></svg>#filter');
-  -webkit-filter: invert(100%);
-          filter: invert(100%);
-  background-size: cover;
-  /*border: 1px solid green;*/
-  -webkit-transform: rotate(-90deg);
-          transform: rotate(-90deg);
-  position: absolute;
-  z-index: 5;
-  bottom: -65px;
-  left: 120px;
-  width: 100px;
-  height: 150px;
-  opacity: 0;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-  -webkit-transition: opacity .4s ease-in-out;
-  transition: opacity .4s ease-in-out;
-  cursor: pointer;
-}
+
 #sum{
   /*border: 1px solid red;*/
   font-size: 12px;

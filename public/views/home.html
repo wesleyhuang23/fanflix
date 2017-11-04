@@ -51,56 +51,36 @@
         <div id="watchlist-homepage" ng-show="watch[0].id" class="now-playing-container">
             <h3 id="watchlist-home">WATCHLIST</h3>
             <br>
-            <ul id="watchlist-ul">
-                <div class="btn-div-watch">
-                    <div id="right-watchlist" class="right-ctrl">
-                        <img id="arrow" src="./icons/Arrow-Left-icon.png" />
-                    </div>
-                    <div id="left-watchlist" class="left-ctrl">
-                        <img id="arrow" src="./icons/Arrow-Left-icon.png" />
-                    </div>
-                </div>
+            <div id="watchlist-ul" class="slick">
                 <div class="poster-view" ng-repeat="films in watch">
-                    <li id="watchlist-li" ng-hide="!films.poster">
-                        <div class="poster">
-                            <img ng-src="{{films.poster}}">
-                            <div class="arrow" id="ar-btn" style="background-image: url('./icons/Arrow-Left-icon.png')"></div>
-                            <a ui-sref="details({id:'{{films.mdb_id}}'})">
-                                <div class="release">
-                                    <div class="title-wrapper">
-                                        <p id="title">{{films.title}}</p>
-                                    </div>
-                                    <p>{{films.release}}</p>
-                                    <p>
-                                        <br>
-                                        <br>
-                                        <p id="sum">{{films.plot}}</p>
+                    <div id="watchlist-li" class="poster" ng-hide="!films.poster">
+                        <img ng-src="{{films.poster}}">
+                        <div class="arrow" id="ar-btn" style="background-image: url('./icons/Arrow-Left-icon.png')"></div>
+                        <a ui-sref="details({id:'{{films.mdb_id}}'})">
+                            <div class="release">
+                                <div class="title-wrapper">
+                                    <p id="title">{{films.title}}</p>
                                 </div>
-                            </a>
-                            <div id="sum-box"></div>
-                            </a>
-                        </div>
-                    </li>
+                                <p>{{films.release}}</p>
+                                <p>
+                                    <br>
+                                    <br>
+                                    <p id="sum">{{films.plot}}</p>
+                            </div>
+                        </a>
+                        <div id="sum-box"></div>
+                    </div>
                 </div>
-            </ul>
+            </div>
         </div>
         <div class="now-playing-container">
             <h3>Now Playing</h3>
             <br>
-            <ul id="now-playing" class="slider">
-                <div class="btn-div-now">
-                    <div id="right-now-playing" class="right-ctrl">
-                        <img id="arrow" src="./icons/Arrow-Left-icon.png" />
-                    </div>
-                    <div id="left-now-playing" class="left-ctrl">
-                        <img id="arrow" src="./icons/Arrow-Left-icon.png" />
-                    </div>
-                </div>
+            <div id="now-playing" class="slick">
                 <div class="poster-view" ng-repeat="films in nowPlaying">
-                    <li>
+            
                         <div class="poster">
                             <img ng-src="https://image.tmdb.org/t/p/original{{films.poster_path}}">
-                            <div class="arrow" id="ar-btn" style="background-image: url('./icons/Arrow-Left-icon.png')"></div>
                             <a ui-sref="details({id:'{{films.id}}'})">
                                 <div class="release">
                                     <div class="title-wrapper">
@@ -108,64 +88,25 @@
                                     </div>
                                     <br>
                                     <p>{{films.release_date}}</p>
-                                    <p>
-                                        <br>
-                                        <br>
-                                        <p id="sum">{{films.overview}}</p>
-                                </div>
-                            </a>
-                            <div id="sum-box"></div>
-                            </a>
-                        </div>
-                    </li>
-                </div>
-                <div class="poster-view" ng-repeat="films in nowPlaying2">
-                    <li>
-                        <div class="poster">
-                            <img ng-src="https://image.tmdb.org/t/p/original{{films.poster_path}}">
-                            <div class="arrow" id="ar-btn" style="background-image: url('./icons/Arrow-Left-icon.png')"></div>
-                            <a ui-sref="details({id:'{{films.id}}'})">
-                                <div class="release">
-                                    <div class="title-wrapper">
-                                        <p id="title">{{films.original_title}}</p>
-                                    </div>
                                     <br>
-                                    <p>{{films.release_date}}</p>
-                                    <p>
-                                        <br id="no-mobile">
-                                        <br>
-                                        <p id="sum">{{films.overview}}</p>
+                                    <br>
+                                    <p id="sum">{{films.overview}}</p>
                                 </div>
                             </a>
                             <div id="sum-box"></div>
-                            </a>
                         </div>
-                    </li>
+
                 </div>
-            </ul>
-        </div>
-        <br>
-        <div class="overview-wrapper" ng-app="overviewApp">
-            <div class="overview">
-                <div ui-view></div>
             </div>
         </div>
+        <br>
         <br id="no-mobile">
         <br id="no-mobile">
         <div class="now-playing-container">
             <h3>Coming Soon</h3>
             <br>
-            <ul id="coming-soon">
-                <div class="btn-div-coming">
-                    <div id="right-coming-soon" class="right-ctrl">
-                        <img id="arrow" src="./icons/Arrow-Left-icon.png" />
-                    </div>
-                    <div id="left-coming-soon" class="left-ctrl">
-                        <img id="arrow" src="./icons/Arrow-Left-icon.png" />
-                    </div>
-                </div>
+            <div id="coming-soon" class="slick">
                 <div class="poster-view" ng-repeat="films in comingSoon">
-                    <li>
                         <div class="poster">
                             <img ng-src="https://image.tmdb.org/t/p/original{{films.poster_path}}">
                             <div class="arrow" id="ar-btn" style="background-image: url('./icons/Arrow-Left-icon.png')"></div>
@@ -182,15 +123,8 @@
                                 </div>
                             </a>
                             <div id="sum-box"></div>
-                            </a>
                         </div>
-                    </li>
                 </div>
-            </ul>
-        </div>
-        <div class="overview-wrapper" ng-app="overviewApp">
-            <div class="overview">
-                <div ui-view></div>
             </div>
         </div>
         <br id="no-mobile">
@@ -198,17 +132,8 @@
         <div class="now-playing-container">
             <h3>Popular</h3>
             <br>
-            <ul id="Popular">
-                <div class="btn-div-popular">
-                    <div id="right-pop" class="right-ctrl">
-                        <img id="arrow" src="./icons/Arrow-Left-icon.png" />
-                    </div>
-                    <div id="left-pop" class="left-ctrl">
-                        <img id="arrow" src="./icons/Arrow-Left-icon.png" />
-                    </div>
-                </div>
+            <div id="Popular" class="slick">         
                 <div class="poster-view" ng-repeat="films in populars">
-                    <li>
                         <div class="poster">
                             <img ng-src="https://image.tmdb.org/t/p/original{{films.poster_path}}">
                             <div class="arrow" id="ar-btn" style="background-image: url('./icons/Arrow-Left-icon.png')"></div>
@@ -225,11 +150,9 @@
                                 </div>
                             </a>
                             <div id="sum-box"></div>
-                            </a>
                         </div>
-                    </li>
                 </div>
-            </ul>
+            </div>
         </div>
     </div>
     <footer>

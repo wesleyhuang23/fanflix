@@ -34,7 +34,10 @@ $(document).ready(function(){
   $('#right-now-playing').click(function() {
     $('#now-playing').removeAttr('style');
   })
-  $('.slick').slick();
+  $('.slick').slick({
+    slidesToShow: 5,
+    slidesToScroll: 5
+  });
 });
 
 
