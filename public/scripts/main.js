@@ -122,6 +122,11 @@ angular.module('flixApp', [
 });
 
 angular.module('flixApp').controller('mainCtrl', function($scope, mainSvc){
+
+  if(localStorage.user){
+    window.location.href = 'https://www.fanflix.club/auth/facebook';
+  }
+
   $scope.colorPicker = function(rating){
     if(rating >= 7){
       return 'green';
@@ -260,7 +265,7 @@ angular.module('flixApp').controller('mainCtrl', function($scope, mainSvc){
   }
 
   //MYLIST VIEW
-      var fb_id;
+  var fb_id;
 
   $scope.logoutUser = () => {
     mainSvc.logoutUser().then(response => {
@@ -269,6 +274,7 @@ angular.module('flixApp').controller('mainCtrl', function($scope, mainSvc){
       if (!response.data.user) {
         $scope.user = null;
         fb_id = null;
+        localStorage.removeItem(user);
         $scope.getWatch();
         // console.log('logout getWatch');
       }
@@ -280,6 +286,7 @@ angular.module('flixApp').controller('mainCtrl', function($scope, mainSvc){
         // console.log('user', response.data);
         $scope.user = response.data;
         fb_id = response.data.fb_id;
+        localStorage.user = fb_id;
         // console.log(fb_id);
           $scope.getFavs(fb_id);
           $scope.getWatch(fb_id);
@@ -1217,6 +1224,12 @@ angular.module('flixApp').controller('editCtrl', function($scope, mainSvc, $stat
   };
 });
 
+angular.module('flixApp').controller('loginCtrl', function($scope, mainSvc){
+    $scope.loginRecord = function(){
+        localStorage.user = 'true';
+    }
+});
+
 angular.module('flixApp').controller('mylistCtrl', function($scope, mainSvc){
 
 
@@ -1411,10 +1424,6 @@ angular.module('flixApp').controller('peopleCtrl', function($scope, $stateParams
     });
   }
   $scope.getPersonMovieCredits(person_id);
-
-});
-
-angular.module('flixApp').controller('loginCtrl', function($scope, mainSvc){
 
 });
 
