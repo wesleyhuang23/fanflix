@@ -1,5 +1,6 @@
 angular.module('flixApp').controller('peopleCtrl', function($scope, $stateParams, mainSvc){
   var person_id = $stateParams.id;
+  window.scrollTo(0, 0);
   // console.log(person_id);
 
   $scope.getPersonDetails = person_id => {

@@ -1,5 +1,6 @@
 angular.module('flixApp').controller('editCtrl', function($scope, mainSvc, $stateParams){
   var id = $stateParams.id;
+  window.scrollTo(0, 0);
   $scope.enterClick = false;
 
   $scope.getEditDetails = function(id){

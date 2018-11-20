@@ -1,4 +1,5 @@
 angular.module('favoritesCardDirective', []).directive('favoritesCard', function(){
+    
     return {
         restrict: 'E',
         scope: {

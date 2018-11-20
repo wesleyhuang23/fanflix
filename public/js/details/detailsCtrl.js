@@ -1,5 +1,6 @@
 angular.module('flixApp').controller('detailsCtrl', function($scope, $stateParams, mainSvc, $sce){
   var id = $stateParams.id;
+  window.scrollTo(0, 0);
   $scope.trustSrc = function(link) {
     return $sce.trustAsResourceUrl(link);
   };

@@ -1,5 +1,6 @@
 angular.module('flixApp').controller('creditsCtrl', function($scope, $stateParams, mainSvc){
   var id = $stateParams.id;
+  window.scrollTo(0, 0);
 
   $scope.getCredits = () => {
     mainSvc.getCast(id).then(function(response){

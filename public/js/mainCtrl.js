@@ -4,6 +4,8 @@ angular.module('flixApp').controller('mainCtrl', function($scope, mainSvc){
     window.location.href = 'https://www.fanflix.club/auth/facebook';
   }
 
+  window.scrollTo(0, 0);
+
   $scope.colorPicker = function(rating){
     if(rating >= 7){
       return 'green';
